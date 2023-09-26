@@ -15,9 +15,13 @@ export const Contained: Story = {
 	render: () => <div style={{ width: '300px' }}>
 		<ProjectCard
 			title='Title text'
-			body='Body text lorem ipsum bla bla bla'
+			body='Body text lorem ipsum'
 			status='completed'
-			iconURLs={[]}
+			iconURLs={[
+				'https://cdn-icons-png.flaticon.com/128/44/44499.png',
+				'https://cdn-icons-png.flaticon.com/128/44/44499.png',
+				'https://cdn-icons-png.flaticon.com/128/44/44499.png',
+			]}
 			avatarURL='https://i.imgur.com/fCQHvUP.gif'
 		/>
 	</div>,
@@ -29,7 +33,11 @@ export const FullWidth: Story = {
 		title='Title text'
 		body='Body text lorem ipsum bla bla bla'
 		status='completed'
-		iconURLs={[]}
+		iconURLs={[
+			'https://cdn-icons-png.flaticon.com/128/44/44499.png',
+			'https://cdn-icons-png.flaticon.com/128/44/44499.png',
+			'https://cdn-icons-png.flaticon.com/128/44/44499.png',
+		]}
 		avatarURL='https://i.imgur.com/fCQHvUP.gif'
 	/>,
 }
