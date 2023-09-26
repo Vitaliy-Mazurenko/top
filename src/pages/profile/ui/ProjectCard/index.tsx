@@ -3,15 +3,16 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
 `
 
-const Card = styled.div`
+export const Card = styled.div`
 	position: relative;
-	box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
 	padding-top: 0.5rem;
+	min-height: 8.3125rem;
 `
 
 const Title = styled.h6`
-	${({ theme }) => theme.typography['Heading-6']}
-
+	${({ theme }) => theme.typography['Heading-6']};
+	margin-left: 0.5rem;
 	&::before {
 		content: " ";
 		width: 1rem;
@@ -21,10 +22,12 @@ const Title = styled.h6`
 `
 
 const Body = styled.p`
-	font-size: 0.5rem;
-	font-weight: 400;
-	line-height: 0.6875rem;
-	${({ theme }) => theme.typography['Body-1']}
+	margin-left: 0.5rem;
+	margin-top: 1rem;
+	line-height: 0.9875rem;
+	${({ theme }) => theme.typography['Body-1']};
+	width: 54%;
+ 
 `
 
 const Avatar = styled.img`
@@ -37,11 +40,14 @@ const Avatar = styled.img`
 	transform: translateY(-50%);
 `
 const Categories = styled.div`
-	display: flex;
+	display: inline-flex;
 	gap: 0.3343rem;
 	padding: 0.25rem 0.4285rem 0.625rem;
 	border-top-right-radius: 0.625rem;
 	border-bottom-right-radius: 0.625rem;
+	position: absolute;
+	bottom: 0;
+	left: 0;
 `
 
 const Icon = styled.img`
@@ -49,21 +55,23 @@ const Icon = styled.img`
 	height: 1.170625rem;
 `
 
-const Status = styled.div`
-	padding: 0.3125rem;
-	text-align: center;
-	font-size: 0.75rem;
-	margin-top: 0.625rem;
-	${({ theme }) => theme.typography['Heading-7']}
+// const Status = styled.div`
+// 	padding: 0.3125rem;
+// 	text-align: center;
+// 	font-size: 0.75rem;
+// 	margin-top: 0.625rem;
+// 	${({ theme }) => theme.typography['Heading-7']}
+// `
 
-`
-
-interface ProjectCardProps {
+export interface ProjectCardProps {
 	title: string
 	body: string
 	avatarURL?: string
-	status: 'scheduled' | 'testing' | 'frozen' | 'completed' | 'excellent' | 'development'
+	status: 'scheduled' | 'testing' | 'frozen' | 'completed' | 'canceled' | 'development'
 	iconURLs?: string[]
+
+	className?: string // for styled-components
+	slotAfter?: React.ReactNode
 }
 
 export const ProjectCard = (props: ProjectCardProps) => {
@@ -71,12 +79,13 @@ export const ProjectCard = (props: ProjectCardProps) => {
 		title,
 		body,
 		avatarURL,
-		status,
-		iconURLs
+		iconURLs,
+		className,
+		slotAfter
 	} = props
 
 	return (
-		<Wrapper>
+		<Wrapper className={className}>
 			<Card>
 				<Title>{title}</Title>
 				<Body>{body}</Body>
@@ -85,7 +94,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
 					{iconURLs && iconURLs.map(url => <Icon src={url} />)}
 				</Categories>
 			</Card>
-			<Status>{status}</Status>
+			{slotAfter}
 		</Wrapper>
 	)
 }
