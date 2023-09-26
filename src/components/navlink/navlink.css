@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+.mainpage--active {
+    color: #ff8c33; /* Цвет текста активной ссылки */
+   
+  }
+  
+  /* Стили для обычных ссылок */
+  .mainpageswitcher {
+    color: #2c4755; /* Цвет текста обычных ссылок */
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.48px;
+  }
+
+
+  .mainpage--active {
+    color: #ff8c33; /* Цвет текста активной ссылки */
+    /* Другие стили для активной ссылки */
+  
+    /* Добавьте линию под активной ссылкой */
+    position: relative;
+  }
+  
+  .mainpage--active::after {
+    content: ''; /* Пустой элемент для линии */
+    position: absolute;
+    bottom: 0; /* Расположите линию снизу */
+    top: 30px;
+    left: 0; /* Начало линии с края активной ссылки */
+    width: 100%; /* Ширина линии равна ширине активной ссылки */
+    height: 2px; /* Высота линии */
+    background-color: #ff8c33; /* Цвет линии (оранжевый) */
+  }
+  
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    margin-left: -11px;
+}
+ul {
+    
+    list-style: none;
+    gap: 32px;
+}
+
+li {
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.48px;
+}
+
+a {
+    text-decoration: none;
+}

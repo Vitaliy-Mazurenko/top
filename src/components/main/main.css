@@ -1,0 +1,84 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+.mainpageContent {
+    width: 100%;
+}
+
+.mainpageswitcher {
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.36px;
+    color: #d6d6d6;
+    
+}
+
+.activeLink {
+    color: red; /* Измените цвет подсветки на свой вкус */
+    font-weight: bold; /* Измените стиль текста на свой вкус */
+  }
+
+/* .first {
+    margin-left: 25px;
+    margin-right: 10px;
+} */
+.second {
+    margin-left: 10px;
+}
+
+.mainpageswitch {
+    display: flex;
+    flex-direction: row;
+    margin-left: 25px;
+}
+
+.mainpagehelperbar {
+    display: flex;
+    flex-direction: row;
+    gap: 952px;
+}
+
+.mainpageinfo {
+    display: flex;
+    flex-direction: row;
+}
+
+.mainpageheader {
+    color: #1c1c1e;
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0.90px;
+    margin-left: 28px;
+}
+
+
+
+.warningtable {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #8054e3;
+    margin-top: 40px;
+    margin-left: 25px;
+    gap: 16px;
+    width: 400px;
+}
+
+.warningtable img {
+    width: 24px;
+    height: 24px;
+    margin-top: 13px;
+    padding-left: 16px;
+}
+
+.warningtable p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
