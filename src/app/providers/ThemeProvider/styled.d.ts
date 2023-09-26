@@ -14,6 +14,18 @@ declare module 'styled-components' {
 			'Body-1': CSS,
 			'Body-2': CSS,
 			'Button': CSS,
-		}
+		},
+		palette: {
+			'primary': string,
+			'secondary-1': string,
+			'secondary-2': string,
+			'secondary-3': string,
+			'secondary-4': string,
+			'secondary-5': string,
+			'secondary-6': string,
+			'text': string,
+			'tertiary': string,
+			'alarm': string
+		},
 	}
 }
