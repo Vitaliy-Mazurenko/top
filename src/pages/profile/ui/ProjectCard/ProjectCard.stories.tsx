@@ -11,7 +11,20 @@ const meta: Meta<typeof ProjectCard> = {
 export default meta;
 type Story = StoryObj<typeof ProjectCard>;
 
-export const Primary: Story = {
+export const Contained: Story = {
+	render: () => <div style={{ width: '300px' }}>
+		<ProjectCard
+			title='Title text'
+			body='Body text lorem ipsum bla bla bla'
+			status='completed'
+			iconURLs={[]}
+			avatarURL='https://i.imgur.com/fCQHvUP.gif'
+		/>
+	</div>,
+}
+
+
+export const FullWidth: Story = {
 	render: () => <ProjectCard
 		title='Title text'
 		body='Body text lorem ipsum bla bla bla'
