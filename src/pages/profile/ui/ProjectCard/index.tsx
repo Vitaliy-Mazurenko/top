@@ -10,9 +10,7 @@ const Card = styled.div`
 `
 
 const Title = styled.h6`
-	font-size: 0.9375rem;
-	font-weight: 500;
-	line-height: 1.375rem;
+	${({ theme }) => theme.typography['Heading-6']}
 
 	&::before {
 		content: " ";
@@ -26,6 +24,7 @@ const Body = styled.p`
 	font-size: 0.5rem;
 	font-weight: 400;
 	line-height: 0.6875rem;
+	${({ theme }) => theme.typography['Body-1']}
 `
 
 const Avatar = styled.img`
@@ -55,6 +54,8 @@ const Status = styled.div`
 	text-align: center;
 	font-size: 0.75rem;
 	margin-top: 0.625rem;
+	${({ theme }) => theme.typography['Heading-7']}
+
 `
 
 interface ProjectCardProps {
