@@ -1,0 +1,102 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+.navbar {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid gray;
+    width: 199px;
+    height: 900px;
+}
+.logoImg {
+    margin: 20px 14px;
+    width: 171px;
+    height: 56px;
+}
+
+
+
+.sidebarinfo {
+    margin-left: 68px;
+    gap: 4px;
+}
+
+.sidebarimg {
+    width: 64px;
+    height: 64px;
+}
+
+.sidebarName {
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    word-wrap: break-word;
+    margin-top: 4px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.sidebarPosition {
+    color: #8c8c8c;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    word-wrap: break-word;
+    margin-top: -10px;
+    margin-left: 10px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.navbarButton {
+    width: 199px;
+    height: 48px;
+    border: 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    font-family: 'Raleway', sans-serif;
+    padding: 12px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.userImg {
+    margin-top: -3px;
+}
+
+.navbarButton:hover {
+    background: #ff8c33;
+    color: #fff;
+}
+
+.navbarButton img:hover {
+    -webkit-filter: grayscale(100) brightness(200);
+    filter: grayscale(100) brightness(200);
+  }
+
+.navbarButtons {
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.settingsBtn{
+    margin-top: 322px;
+}
+
+    
+.mainPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.extraText {
+    padding-top: 10px;
+}
+
