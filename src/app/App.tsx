@@ -1,11 +1,13 @@
+import Table from "../pages/profile/ui/Table/Table"; // Шлях до вашого компонента Table
+
+const App = () => {
+  return (
+    <div>
+      {/* <h1>Hello World</h1> */}
+      <Table /> {/* Використовуйте компонент Table тут */}
+    </div>
+  );
+};
 
 
-export const App = () => {
-
-	return (
-			// routing will be here 
-			<div>
-				123
-			</div>
-	)
-}
+export default App;
