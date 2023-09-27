@@ -7,7 +7,7 @@ const NavbarMainPage = () => {
   const normalLink = "mainpageswitcher";
   const location = useLocation(); 
 
-  // Создайте состояние для отслеживания активной ссылки
+
   const [activeTab, setActiveTab] = useState(null);
 
   useEffect(() => {
