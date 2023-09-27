@@ -4,7 +4,7 @@ const App = () => {
   return (
     <div>
       {/* <h1>Hello World</h1> */}
-      <Table /> {/* Використовуйте компонент Table тут */}
+      {/* <Table /> Використовуйте компонент Table тут */}
       <Main />
     </div>
   );

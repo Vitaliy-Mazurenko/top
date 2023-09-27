@@ -6,8 +6,6 @@ import lockImg from '../../assets/img/lock.png'
 import repoImg from '../../assets/img/repo.svg'
 import sidebarImg from './../../assets/img/sidebarimg.png'
 import settingsImg from '../../assets/img/Settings.png'
-
-
 import './Navbar.css'
 
  function Navbar() {
