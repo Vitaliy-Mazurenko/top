@@ -69,7 +69,7 @@ const columns: Column[] = [
   { Header: "Дані по проєкту", accessor: "project" },
   { Header: "Час в роботі", accessor: "time" },
   { Header: "Команда", accessor: "team" },
-  { Header: "Кількість людей в команді", accessor: "people" },
+  { Header: "Учасників", accessor: "people" },
   { Header: "Дедлайн", accessor: "deadline" },
   { Header: "Статус", accessor: "status" },
   { Header: "Додати в проєкт", accessor: "add" },
@@ -129,7 +129,7 @@ function Table() {
           <FaSearch className="search-icon" />
           <SearchInputField
             type="text"
-            placeholder="Search candidates..."
+            placeholder="Search candidats..."
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
