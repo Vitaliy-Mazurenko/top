@@ -7,7 +7,6 @@ import repoImg from '../../assets/img/repo.svg'
 import sidebarImg from './../../assets/img/sidebarimg.png'
 import settingsImg from '../../assets/img/Settings.png'
 import './Navbar.css'
-import './sidebar.css'
 
  function Navbar() {
   return (

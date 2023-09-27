@@ -1,13 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
 .mainpage--active {
-    color: #ff8c33; /* Цвет текста активной ссылки */
+    color: #ff8c33; 
    
   }
   
-  /* Стили для обычных ссылок */
+
   .mainpageswitcher {
-    color: #2c4755; /* Цвет текста обычных ссылок */
+    color: #2c4755; 
     font-size: 16px;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
@@ -17,22 +17,19 @@
 
 
   .mainpage--active {
-    color: #ff8c33; /* Цвет текста активной ссылки */
-    /* Другие стили для активной ссылки */
-  
-    /* Добавьте линию под активной ссылкой */
+    color: #ff8c33; 
     position: relative;
   }
   
   .mainpage--active::after {
-    content: ''; /* Пустой элемент для линии */
+    content: ''; 
     position: absolute;
-    bottom: 0; /* Расположите линию снизу */
+    bottom: 0;
     top: 30px;
-    left: 0; /* Начало линии с края активной ссылки */
-    width: 100%; /* Ширина линии равна ширине активной ссылки */
-    height: 2px; /* Высота линии */
-    background-color: #ff8c33; /* Цвет линии (оранжевый) */
+    left: 0; 
+    width: 100%; 
+    height: 2px;
+    background-color: #ff8c33; 
   }
   
 

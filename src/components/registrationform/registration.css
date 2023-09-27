@@ -1,6 +1,5 @@
 .input-box {
-    /* родительский блок относительно которого будем формировать положение
-    тега label */
+   
     position: relative;
     margin-top: 44px;
   }
@@ -28,7 +27,7 @@
   
   label {
     position: absolute;
-    /* смещение относительно родительского элемента 10px вверх от верхнего края и   10px влево */
+ 
     top: -20px;
     color: #48484a;
     font-size: 14px;
@@ -49,4 +48,5 @@
     font-weight: 500;
     border: none;
     margin-top: 24px;
+    cursor: pointer;
   }

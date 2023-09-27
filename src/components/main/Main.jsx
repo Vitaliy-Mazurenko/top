@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import warningImg from './../../assets/img/warningcircle.png'
-import ClientMenu from '../clientmenu/ClientMenu'
 import './main.css'
 import Navbar from '../navbar/Navbar'
 import NavbarMainPage from '../navlink/NavbarMainPage';
