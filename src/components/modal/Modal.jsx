@@ -14,23 +14,23 @@ function Modal({ isOpen, onClose, onImageUpload, children }) {
   };
 
   const handleUploadClick = () => {
-    // Вы можете выполнить необходимые действия с выбранным изображением здесь
+  
     if (selectedImage) {
       onImageUpload(selectedImage);
     }
-    // Закройте модальное окно
+
     onClose();
   };
 
   const handleCrossClick = (e) => {
-    // Предотвратить дальнейшие действия по умолчанию (открытие проводника компьютера)
+   
     e.preventDefault();
-    // Закрыть модальное окно
+
     onClose();
   };
 
   const handleModalClick = () => {
-    // Кликнули по модальному окну, активируем file input
+ 
     fileInputRef.current.click();
   };
 
@@ -47,7 +47,7 @@ function Modal({ isOpen, onClose, onImageUpload, children }) {
           type="file"
           accept="image/*"
           onChange={handleImageChange}
-          style={{ display: 'none' }} // Скрыть file input, так как его обработка происходит через клик по модальному окну
+          style={{ display: 'none' }} 
         />
         {selectedImage && <img src={selectedImage} alt="Selected" />}
         {children}
