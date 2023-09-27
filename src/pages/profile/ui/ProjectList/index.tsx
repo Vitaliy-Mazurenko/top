@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { ListContainer } from "./ListContainer.styled"
 import { StyledProjectCard } from "./ProjectCard.styled"
 import { Status } from "./Status.styled"
@@ -8,46 +8,26 @@ import { Wrapper } from "./Wrapper.styled"
 import { FilterContainer } from "./FilterList.styled"
 import { Search } from "./Search.styled"
 import useInput from "shared/hooks/useInput"
-import { mockData } from "./mockData"
 import { ProjectCardProps } from '../ProjectCard'
 import { useToggle } from 'shared/hooks/useToggle'
+import { useProjects } from 'shared/hooks/useProjects'
 
 export const ProjectList = () => {
 	const projectStatuses = useMemo(getProjectStatuses, [])
 	const search = useInput()
 
-	const [allProjects] = useState(mockData)
-	const [filteredProjects, setFilteredProjects] = useState<ProjectCardProps[]>([])
-
 	const [filterType, setFilterType] = useState<null | ProjectCardProps['status']>(null)
 	const showFilter = useToggle()
 
-	useEffect(() => {
-		if (filterType) console.log('filterType', filterType)
-		if (search.value) console.log('search.value', search.value)
-
-		if (!filterType && !search.value) {
-			showFilter.toggle(false)
-		}
-
-		else if (filterType || search.value) {
-			showFilter.toggle(true)
-			console.log('filterType', filterType)
-			const newFiltered = allProjects.filter(project => {
-				let matchesFilter = false
-				if (project.status === filterType) matchesFilter = true
-				if (search.value) {
-					if (project.title.includes(search.value)) matchesFilter = true
-					if (project.body.includes(search.value)) matchesFilter = true
-				}
-
-				return matchesFilter
-			})
-
-			setFilteredProjects(newFiltered)
-		}
-
-	}, [filterType, search.value])
+	const {
+		projects,
+		filteredProjects
+	} = useProjects({
+		status: filterType,
+		search: search.value,
+		onFilterTouched: () => showFilter.toggle(true),
+		onFilterUntouched: () => showFilter.toggle(false),
+	})
 
 	const filterHandler: React.MouseEventHandler<HTMLDivElement> = (event) => {
 		const target = event.target as HTMLElement
@@ -58,7 +38,7 @@ export const ProjectList = () => {
 		}
 	}
 
-	const projectsToShow = showFilter.value ? filteredProjects : allProjects
+	const projectsToShow = showFilter.value ? filteredProjects : projects
 
 	console.log('projectsToShow', projectsToShow)
 	console.log('showFilter.value', showFilter.value)
