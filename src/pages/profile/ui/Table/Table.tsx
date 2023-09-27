@@ -12,10 +12,10 @@ import {
   TableCell,
 } from "./Table.styled";
 import { CheckboxLabel } from "./Table.styled";
-import CustomSVG2 from "CustomSVG/CustomSVG2";
-import CustomSVG3 from "CustomSVG/CustomSVG3";
-import CustomSVG4 from "CustomSVG/CustomSVG4";
-import CloseSVG from "CustomSVG/CloseSVG";
+import CustomSVG2 from "shared/ui/CustomSVG/CustomSVG2";
+import CustomSVG3 from "shared/ui/CustomSVG/CustomSVG3";
+import CustomSVG4 from "shared/ui/CustomSVG/CustomSVG4";
+import CloseSVG from "shared/ui/CustomSVG/CloseSVG";
 
 const data = [
   {

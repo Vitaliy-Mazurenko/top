@@ -11,35 +11,32 @@ import ModalForm from '../modal/modalform';
 const Main = () => {
   const activeLink = "mainpageswitcher mainpage--active"
   const normalLink = "mainpageswitcher"
-  
+
   return (
 
     <div className='mainPage'>
       <Navbar />
-    
-        <div className='mainpageContent'>
+
+      <div className='mainpageContent'>
         <PageSwitcher />
-          <h1 className='mainpageheader'>Профіль</h1>
-          <NavbarMainPage />
-          <div className='mainpageinfo'>
+        <h1 className='mainpageheader'>Профіль</h1>
+        <NavbarMainPage />
+        <div className='mainpageinfo'>
           <div className='userinfo'>
             <div className='userdata'>
-                <div className='warningtable'>
-                  <img src={warningImg}/>
-                  <p>To continue work add the missing data</p>
-                </div>
-                <RegistrationPage />
+              <div className='warningtable'>
+                <img src={warningImg} />
+                <p>To continue work add the missing data</p>
+              </div>
+              <RegistrationPage />
             </div>
           </div>
           <ModalForm />
-        </div>  
-          
-          </div>
-          
-        
+        </div>
+      </div>
     </div>
-    
-    
+
+
   )
 }
 
