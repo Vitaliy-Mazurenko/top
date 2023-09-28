@@ -16,13 +16,19 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <ModalWrapper isOpen={isOpen}>
+    <ModalWrapper isOpen={isOpen} onClick={handleBackdropClick}>
       <ModalContent>
         <ModalHeader>Додати кандидата в проєкт?</ModalHeader>
         <ModalDescription>Ім’я кандидата</ModalDescription>
         <img
-          src="./src/shared/assets/img/modalImage.jpg"
+          src="/src/shared/assets/img/modalImage.jpg"
           alt="Фото кандидата"
           className="modalImage"
         />
