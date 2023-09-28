@@ -11,7 +11,13 @@ import ModalForm from '../modal/modalform';
 const Main = () => {
   const activeLink = "mainpageswitcher mainpage--active"
   const normalLink = "mainpageswitcher"
+
   
+  const [userData, setUserData] = useState(null);
+
+  const handleSaveUserData = (data) => {
+    setUserData(data);
+  };
   return (
 
     <div className='mainPage'>

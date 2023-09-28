@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, BrowserRouter as Router, useLocation } from 'react-router-dom';
+
 import './navlink.css';
+import Navbar from '../navbar/Navbar';
 
 const NavbarMainPage = () => {
   const activeLink = "mainpageswitcher mainpage--active";
@@ -20,7 +22,7 @@ const NavbarMainPage = () => {
       <nav className='navbarmainpage'>            
         <ul className="nav-list">
           <li className="nav-list__item">
-            <NavLink exact to="/" className={activeTab === '/' ? activeLink : normalLink}>
+            <NavLink exact to="/settings" className={activeTab === '/settings' ? activeLink : normalLink}>
               Налаштування
             </NavLink>
           </li>

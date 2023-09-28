@@ -1,17 +1,24 @@
-// RegistrationForm.js
 import React, { useState } from 'react';
 import './registration.css'
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ onUserDataChange }) => {
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [position, setPosition] = useState('');
-
+  const [isDataSaved, setIsDataSaved] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
- 
+    const userData = {
+      email,
+      firstName,
+      lastName,
+      companyName,
+      position,
+    };
+
+    onSave(userData);
   };
 
   return (
@@ -25,6 +32,7 @@ const RegistrationForm = () => {
           onChange={(e) => setEmail(e.target.value)}
           placeholder='ceo@digitaluniverse.com'
           required
+          className='inputform'
         />
       </div>
       <div className='input-box'>
@@ -35,6 +43,7 @@ const RegistrationForm = () => {
           onChange={(e) => setFirstName(e.target.value)}
           placeholder='Enter Your Full Name'
           required
+          className='inputform'
         />
       </div>
       <div className='input-box'>
@@ -45,6 +54,7 @@ const RegistrationForm = () => {
           onChange={(e) => setLastName(e.target.value)}
           placeholder='Enter Your Full Name'
           required
+          className='inputform'
         />
       </div>
       <div className='input-box'>
@@ -55,6 +65,7 @@ const RegistrationForm = () => {
           onChange={(e) => setCompanyName(e.target.value)}
           placeholder='Enter Company Name'
           required
+          className='inputform'
         />
       </div>
       <div className='input-box'>
@@ -65,6 +76,7 @@ const RegistrationForm = () => {
           onChange={(e) => setPosition(e.target.value)}
           placeholder='Enter Your Position'
           required
+          className='inputform'
         />
       </div>
       <button type="submit" className='userdatabtn'>Зберегти</button>

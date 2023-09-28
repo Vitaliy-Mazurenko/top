@@ -93,13 +93,13 @@ function Modal({ isOpen, onClose, onImageUpload, children, updateWarningData }) 
   const [selectedImage, setSelectedImage] = useState(null);
   const [imagePath, setImagePath] = useState('');
   const fileInputRef = useRef(null);
-  const fileReaderRef = useRef(null); // Создаем ref для объекта FileReader
+  const fileReaderRef = useRef(null); 
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
       const reader = new FileReader();
-      fileReaderRef.current = reader; // Сохраняем объект FileReader в ref
+      fileReaderRef.current = reader; 
       reader.onload = () => {
         setSelectedImage(reader.result);
         setImagePath(file.name);
@@ -117,9 +117,9 @@ function Modal({ isOpen, onClose, onImageUpload, children, updateWarningData }) 
   
   const handleCancelClick = () => {
     if (fileReaderRef.current) {
-      fileReaderRef.current.abort(); // Отменяем загрузку файла, если пользователь нажал "Отмена"
+      fileReaderRef.current.abort(); 
     }
-    setSelectedImage(null); // Сбрасываем выбранное изображение
+    setSelectedImage(null); 
     setImagePath('');
   };
 
