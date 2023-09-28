@@ -41,7 +41,7 @@
 //         <button className="modal-close" onClick={onClose}>
 //           <img src={closeBtn} alt="" id='closeBtn'/>
 //         </button>
-        
+
 //           <h2>Клацніть або перетягніть файл у цю область, щоб <br /> завантажити його</h2> 
 //           <p>Завантажене зображення буде використано як ваш аватар або логотип компанії.</p>
 //           <input
@@ -72,34 +72,34 @@
 //               {children}
 //             </>
 //           )}
-        
+
 //       </div>
 //     </div>
 //   );
 // }
 
 // export default Modal;
-
-
-
-
-
-import React, { useState, useRef } from 'react';
+import { useState, useRef, PropsWithChildren } from 'react';
 import './modal.css';
 import closeBtn from '../../assets/img/Close.svg';
 
-// function Modal({ isOpen, onClose, onImageUpload, children })
-function Modal({ isOpen, onClose, onImageUpload, children, updateWarningData }) {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [imagePath, setImagePath] = useState('');
-  const fileInputRef = useRef(null);
-  const fileReaderRef = useRef(null); 
+interface ModalProps extends PropsWithChildren {
+  isOpen: boolean
+  onClose: () => void
+  onImageUpload: (img: string | ArrayBuffer) => void
+}
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
+function Modal({ isOpen, onClose, children, onImageUpload }: ModalProps) {
+  const [imagePath, setImagePath] = useState('');
+  const fileReaderRef = useRef<null | FileReader>(null); // добавил тип FileReader. Потому что на 102 строчке ты пытаешься присвоить сюда reader с типом FileReader
+  const [selectedImage, setSelectedImage] = useState<null | string | ArrayBuffer>(null);
+  const fileInputRef = useRef<null | HTMLInputElement>(null);
+
+  const handleImageChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
-      fileReaderRef.current = reader; 
+      fileReaderRef.current = reader;
       reader.onload = () => {
         setSelectedImage(reader.result);
         setImagePath(file.name);
@@ -114,23 +114,23 @@ function Modal({ isOpen, onClose, onImageUpload, children, updateWarningData }) 
     }
     onClose();
   };
-  
+
   const handleCancelClick = () => {
     if (fileReaderRef.current) {
-      fileReaderRef.current.abort(); 
+      fileReaderRef.current
     }
-    setSelectedImage(null); 
+    setSelectedImage(null);
     setImagePath('');
   };
-
-  const handleCrossClick = (e) => {
-    e.preventDefault();
-    onClose();
-  };
+  // закомментил потому что оно не используется нигде
+  // const handleCrossClick = (e) => {
+  //   e.preventDefault();
+  //   onClose();
+  // };
 
   const handleModalClick = () => {
     if (!selectedImage) {
-      fileInputRef.current.click();
+      fileInputRef.current?.click();
     }
   };
 
@@ -140,10 +140,10 @@ function Modal({ isOpen, onClose, onImageUpload, children, updateWarningData }) 
     <div className="modal-overlay" onClick={handleModalClick}>
       <div className="modal-content">
         <button className="modal-close" onClick={onClose}>
-          <img src={closeBtn} alt="closebutton" id='closeBtn'/>
-        </button>
-        
-        <h2>Клацніть або перетягніть файл у цю область, щоб <br /> завантажити його</h2> 
+          <img src={closeBtn} alt="closebutton" id='closeBtn' />
+        </button >
+
+        <h2>Клацніть або перетягніть файл у цю область, щоб <br /> завантажити його</h2>
         <p>Завантажене зображення буде використано як ваш аватар або логотип компанії.</p>
         <input
           ref={fileInputRef}
@@ -152,26 +152,28 @@ function Modal({ isOpen, onClose, onImageUpload, children, updateWarningData }) 
           onChange={handleImageChange}
           style={{ display: 'none' }}
         />
-        {selectedImage ? (
-          <div className='modalImagedesc'>
-            <img src={selectedImage} alt="Selected" className='selectedImg' />
-            <input
-              type="text"
-              value={imagePath}
-              readOnly
-              placeholder='Путь к файлу'
-              className='modalInputtext'
-            />
-            <div className='modalBtns'>
-              <button onClick={handleCancelClick} className='modalBtncancel'>Скасувати</button>
-              <button onClick={handleUploadClick} className='modalBtnsave'>Зберегти</button>
+        {
+          selectedImage ? (
+            <div className='modalImagedesc'>
+              <img src={selectedImage.toString()} alt="Selected" className='selectedImg' />
+              <input
+                type="text"
+                value={imagePath}
+                readOnly
+                placeholder='Путь к файлу'
+                className='modalInputtext'
+              />
+              <div className='modalBtns'>
+                <button onClick={handleCancelClick} className='modalBtncancel'>Скасувати</button>
+                <button onClick={handleUploadClick} className='modalBtnsave'>Зберегти</button>
+              </div>
             </div>
-          </div>
-        ) : (
-          <>
-            {children}
-          </>
-        )}
+          ) : (
+            <>
+              {children}
+            </>
+          )
+        }
       </div>
     </div>
   );

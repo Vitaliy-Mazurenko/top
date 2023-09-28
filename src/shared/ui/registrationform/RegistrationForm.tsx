@@ -1,5 +1,5 @@
+import InputBoxYellow from '../reusable input/InputBoxYellow';
 import './registration.css'
-import InputBoxYellow from '../reusable input/inputBoxYellow';
 
 const RegistrationForm = () => {
   // const [email, setEmail] = useState('');
@@ -53,6 +53,7 @@ const RegistrationForm = () => {
           required
           className='inputform'
         />
+
         <button type="submit" className='userdatabtn'>Зберегти</button>
       </form>
     </div>

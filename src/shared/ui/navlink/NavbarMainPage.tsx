@@ -6,10 +6,10 @@ import './navlink.css';
 const NavbarMainPage = () => {
   const activeLink = "mainpageswitcher mainpage--active";
   const normalLink = "mainpageswitcher";
-  const location = useLocation(); 
+  const location = useLocation();
 
 
-  const [activeTab, setActiveTab] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<null | string>(null);
 
   useEffect(() => {
     setActiveTab(location.pathname);
@@ -17,7 +17,7 @@ const NavbarMainPage = () => {
 
   return (
     <div>
-      <nav className='navbarmainpage'>            
+      <nav className='navbarmainpage'>
         <ul className="nav-list">
           <li className="nav-list__item">
             <NavLink to="/settings" className={activeTab === '/settings' ? activeLink : normalLink}>
