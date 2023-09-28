@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
 import './registration.css'
 
-const RegistrationForm = ({ onUserDataChange }) => {
+const RegistrationForm = () => {
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [position, setPosition] = useState('');
-  const [isDataSaved, setIsDataSaved] = useState(false);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const userData = {
-      email,
-      firstName,
-      lastName,
-      companyName,
-      position,
-    };
+  // const handleSubmit = () => {
+  //   e.preventDefault();
+  //   const userData = {
+  //     email,
+  //     firstName,
+  //     lastName,
+  //     companyName,
+  //     position,
+  //   };
 
-    onSave(userData);
-  };
+  //   onSave(userData);
+  // };
 
   return (
     <div className='registrationforms'>
-    <form onSubmit={handleSubmit}>
+    {/* <form onSubmit={handleSubmit}> */}
+    <form>
       <div className='input-box'>
         <label>E-mail</label>
         <input
