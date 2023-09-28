@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const ModalWrapper = styled.div<{ $center?: boolean }>`
 position: relative;

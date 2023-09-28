@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+// @ts-ignore
 import ClientMenu from '../clientmenu/ClientMenu'
 import './pageswitcher.css'
 
@@ -7,7 +8,7 @@ import './pageswitcher.css'
 const PageSwitcher = () => {
     const [activeTab, setActiveTab] = useState('home');
   
-
+// @ts-ignore
     const handleTabClick = (tab) => {
       setActiveTab(tab);
     };

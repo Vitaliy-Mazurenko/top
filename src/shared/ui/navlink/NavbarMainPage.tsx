@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink, BrowserRouter as Router, useLocation } from 'react-router-dom';
 import './navlink.css';
 
@@ -11,7 +11,7 @@ const NavbarMainPage = () => {
   const [activeTab, setActiveTab] = useState(null);
 
   useEffect(() => {
-   
+   // @ts-ignore
     setActiveTab(location.pathname);
   }, [location.pathname]);
 
@@ -20,6 +20,7 @@ const NavbarMainPage = () => {
       <nav className='navbarmainpage'>            
         <ul className="nav-list">
           <li className="nav-list__item">
+           {/* @ts-ignore */}
             <NavLink exact to="/" className={activeTab === '/' ? activeLink : normalLink}>
               Налаштування
             </NavLink>

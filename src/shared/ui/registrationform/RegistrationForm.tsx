@@ -1,5 +1,5 @@
 // RegistrationForm.js
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import './registration.css'
 
 const RegistrationForm = () => {
@@ -8,7 +8,7 @@ const RegistrationForm = () => {
   const [lastName, setLastName] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [position, setPosition] = useState('');
-
+// @ts-ignore
   const handleSubmit = (e) => {
     e.preventDefault();
  

@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import warningImg from './../../assets/img/warningcircle.png'
 import './main.css'
 import Navbar from '../navbar/Navbar'
@@ -9,8 +8,8 @@ import ModalForm from '../modal/modalform';
 
 
 const Main = () => {
-  const activeLink = "mainpageswitcher mainpage--active"
-  const normalLink = "mainpageswitcher"
+  // const activeLink = "mainpageswitcher mainpage--active"
+  // const normalLink = "mainpageswitcher"
 
   return (
 
