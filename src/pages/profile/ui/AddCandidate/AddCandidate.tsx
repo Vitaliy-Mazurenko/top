@@ -12,6 +12,7 @@ import {
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
+  project: string;
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
@@ -26,8 +27,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           className="modalImage"
         />
         <ModalButtons>
-          <ModalButton onClick={onClose}>Скасувати</ModalButton>
-          <ModalButton primary>Додати</ModalButton>
+          <ModalButton
+            style={{ backgroundColor: "#fff", color: "#808080" }}
+            onClick={onClose}
+          >
+            Скасувати
+          </ModalButton>
+          <ModalButton style={{ backgroundColor: "#FF8C33", color: "#fff" }}>
+            Додати
+          </ModalButton>
         </ModalButtons>
       </ModalContent>
     </ModalWrapper>

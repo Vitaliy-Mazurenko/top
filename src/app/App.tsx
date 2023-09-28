@@ -16,7 +16,7 @@
 //     <div>
 //       <button onClick={openAddCandidate}>Open Add Candidate</button>
 
-//       {/* Передайте стан відкриття вікна і функції закриття в компонент AddCandidate */}
+//
 //       <AddCandidate isOpen={isAddCandidateOpen} onClose={closeAddCandidate} />
 //     </div>
 //   );
