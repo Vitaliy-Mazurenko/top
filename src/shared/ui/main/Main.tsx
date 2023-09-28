@@ -6,11 +6,9 @@ import RegistrationPage from '../registrationform/RegistrationPage';
 import PageSwitcher from '../pageswitcher/PageSwitcher'
 import ModalForm from '../modal/modalform';
 
-
 const Main = () => {
 
   return (
-
     <div className='mainPage'>
       <Navbar />
 
@@ -32,8 +30,6 @@ const Main = () => {
         </div>
       </div>
     </div>
-
-
   )
 }
 
