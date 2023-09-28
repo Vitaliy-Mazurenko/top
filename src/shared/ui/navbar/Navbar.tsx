@@ -91,7 +91,7 @@ import './Navbar.css'
         <ul className='navbarlist'>
             <li className="navbarlist-item ">
               <NavLink to="/settings" className='navbarButton settingsBtn' >
-              <img src={settingsImg}/> Налаштування
+              <img src={settingsImg}/> <span className='navbaritem-desc'>Налаштування</span>
               </NavLink>
             </li>
             </ul>
