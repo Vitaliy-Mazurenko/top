@@ -1,4 +1,6 @@
-import { useState } from "react";
+//Table.tsx
+
+import React, { useState } from "react";
 import { useTable, Column } from "react-table";
 import { FaSearch } from "react-icons/fa";
 import { SearchInputContainer, SearchInputField } from "./Table.styled";
@@ -11,11 +13,13 @@ import {
   TableRow,
   TableCell,
 } from "./Table.styled";
+
 import { CheckboxLabel } from "./Table.styled";
 import CustomSVG2 from "shared/ui/CustomSVG/CustomSVG2";
 import CustomSVG3 from "shared/ui/CustomSVG/CustomSVG3";
 import CustomSVG4 from "shared/ui/CustomSVG/CustomSVG4";
 import CloseSVG from "shared/ui/CustomSVG/CloseSVG";
+import Modal from "../AddCandidate/AddCandidate";
 
 const data = [
   {
@@ -43,7 +47,7 @@ const data = [
     people: 3,
     deadline: "01.10.23",
     status: "В розробці",
-    add: <CustomSVG4 />,
+    add: <CustomSVG3 />,
   },
   {
     project: "Проєкт 2",
@@ -52,7 +56,7 @@ const data = [
     people: 1,
     deadline: "01.10.23",
     status: "Заморожений",
-    add: <CustomSVG2 />,
+    add: <CustomSVG4 />,
   },
   {
     project: "Проєкт 6",
@@ -61,7 +65,7 @@ const data = [
     people: 13,
     deadline: "20.08.23",
     status: "Готовий",
-    add: <CustomSVG4 />,
+    add: <CustomSVG2 />,
   },
 ];
 
@@ -82,6 +86,9 @@ function Table() {
   const [showInDevelopmentProjects, setShowInDevelopmentProjects] =
     useState(false);
   const [showFrozenProjects, setShowFrozenProjects] = useState(false);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState("");
 
   const filteredData = data.filter((project) => {
     return (
@@ -121,6 +128,11 @@ function Table() {
       columns,
       data: filteredData,
     });
+
+  const openModal = (projectName: string) => {
+    setSelectedProject(projectName);
+    setIsModalOpen(true);
+  };
 
   return (
     <div>
@@ -211,7 +223,13 @@ function Table() {
                         ),
                       }}
                     >
-                      {cell.render("Cell")}
+                      {cell.column.id === "add" ? (
+                        <div onClick={() => openModal("row.original.project")}>
+                          {cell.value}
+                        </div>
+                      ) : (
+                        cell.render("Cell")
+                      )}
                     </TableCell>
                   );
                 })}
@@ -220,6 +238,14 @@ function Table() {
           })}
         </TableBody>
       </TableContainer>
+
+      {isModalOpen && (
+        <Modal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          project={selectedProject}
+        />
+      )}
     </div>
   );
 }
