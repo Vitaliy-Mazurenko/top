@@ -26,7 +26,7 @@ function ModalForm() {
         <img src={uploadphoto} alt="uploaduserphoto" />
         <span>Загрузити аватар</span>
       </button>
-      {/* @ts-ignore */}
+      {/* @ts- */}
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <h2>Клацніть або перетягніть файл у цю область, щоб <br /> завантажити його</h2>
         <p>Завантажене зображення буде використано як ваш аватар або логотип компанії.</p>

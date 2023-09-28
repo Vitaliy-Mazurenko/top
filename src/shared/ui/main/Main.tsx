@@ -8,8 +8,6 @@ import ModalForm from '../modal/modalform';
 
 
 const Main = () => {
-  // const activeLink = "mainpageswitcher mainpage--active"
-  // const normalLink = "mainpageswitcher"
 
   return (
 

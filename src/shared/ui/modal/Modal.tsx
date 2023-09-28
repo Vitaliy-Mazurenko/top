@@ -1,38 +1,41 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, PropsWithChildren } from 'react';
 import './modal.css';
 import closeBtn from '../../assets/img/Close.svg';
-// @ts-ignore
-function Modal({ isOpen, onClose, onImageUpload, children }) {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const fileInputRef = useRef(null);
-  // @ts-ignore
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
+
+interface ModalProps extends PropsWithChildren {
+  isOpen: boolean
+  onClose: () => void
+  // onImageUpload: (img: string) => void
+}
+
+function Modal({ isOpen, onClose, children }: ModalProps) {
+  const [selectedImage] = useState(null);
+  const fileInputRef = useRef<null | HTMLInputElement>(null);
+
+  const handleImageChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    const file = e.target.files?.[0];
     if (file) {
-      // @ts-ignore
-      setSelectedImage(URL.createObjectURL(file));
+
+      // setSelectedImage(URL.createObjectURL(file));
     }
   };
 
 
-  // @ts-ignore
-  const handleUploadClick = () => {
-    if (selectedImage) {
-      onImageUpload(selectedImage);
-    }
+  // const handleUploadClick = () => {
+  //   if (selectedImage) {
+  //     onImageUpload(selectedImage);
+  //   }
 
-    onClose();
-  };
-  // @ts-ignore
-  const handleCrossClick = (e) => {
-    e.preventDefault();
+  //   onClose();
+  // };
+  // const handleCrossClick = (e) => {
+  //   e.preventDefault();
 
-    onClose();
-  };
+  //   onClose();
+  // };
 
   const handleModalClick = () => {
-    // @ts-ignore
-    fileInputRef.current.click();
+    fileInputRef.current?.click();
   };
 
 
