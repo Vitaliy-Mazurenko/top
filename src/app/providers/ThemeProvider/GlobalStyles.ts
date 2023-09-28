@@ -151,9 +151,9 @@ img {
 
 
 html {
-	/* font-size: 16px;
+	font-size: 16px;
 	font-family: 'Raleway', sans-serif;
-	font-weight: 400; */
+	font-weight: 400;
 }
 
 
