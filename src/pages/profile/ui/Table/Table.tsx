@@ -47,7 +47,7 @@ const data = [
     people: 3,
     deadline: "01.10.23",
     status: "В розробці",
-    add: <CustomSVG4 />,
+    add: <CustomSVG3 />,
   },
   {
     project: "Проєкт 2",
@@ -56,7 +56,7 @@ const data = [
     people: 1,
     deadline: "01.10.23",
     status: "Заморожений",
-    add: <CustomSVG2 />,
+    add: <CustomSVG4 />,
   },
   {
     project: "Проєкт 6",
@@ -65,7 +65,7 @@ const data = [
     people: 13,
     deadline: "20.08.23",
     status: "Готовий",
-    add: <CustomSVG4 />,
+    add: <CustomSVG2 />,
   },
 ];
 

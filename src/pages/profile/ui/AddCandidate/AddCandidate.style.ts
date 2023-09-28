@@ -1,5 +1,4 @@
 // ModalStyled.tsx
-
 import styled, { css } from "styled-components";
 
 interface ModalProps {
@@ -8,8 +7,8 @@ interface ModalProps {
 
 export const ModalWrapper = styled.div<ModalProps>`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Горизонтальне вирівнювання по центру */
+  align-items: center; /* Вертикальне вирівнювання по центру */
   position: fixed;
   top: 0;
   left: 0;
@@ -70,6 +69,7 @@ export const ModalButton = styled.button<{ primary?: boolean }>`
   border: none;
   border-radius: 4px;
   cursor: pointer;
+
   ${(props) =>
     props.primary
       ? css`
