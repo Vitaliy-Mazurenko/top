@@ -12,8 +12,10 @@ interface useProjectsArgs {
 export const useProjects = (args: useProjectsArgs) => {
 	const { search, status, onFilterTouched, onFilterUntouched } = args
 	// make request to API and get projects
-	// { ... }
+	// { ... 
 	const [allProjects] = useState(mockData)
+	//  ... }
+	
 	const [filteredProjects, setFilteredProjects] = useState<ProjectCardProps[]>([])
 
 	useEffect(() => {

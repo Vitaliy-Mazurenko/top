@@ -14,8 +14,8 @@ import { useProjects } from 'shared/hooks/useProjects'
 
 export const ProjectList = () => {
 	const projectStatuses = useMemo(getProjectStatuses, [])
+	
 	const search = useInput()
-
 	const [filterType, setFilterType] = useState<null | ProjectCardProps['status']>(null)
 	const showFilter = useToggle()
 
@@ -40,8 +40,6 @@ export const ProjectList = () => {
 
 	const projectsToShow = showFilter.value ? filteredProjects : projects
 
-	console.log('projectsToShow', projectsToShow)
-	console.log('showFilter.value', showFilter.value)
 	return (
 		<Wrapper>
 			<Header>
