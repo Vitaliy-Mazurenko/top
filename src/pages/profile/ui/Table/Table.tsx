@@ -1,4 +1,6 @@
-import { useState } from "react";
+//Table.tsx
+
+import React, { useState } from "react";
 import { useTable, Column } from "react-table";
 import { FaSearch } from "react-icons/fa";
 import { SearchInputContainer, SearchInputField } from "./Table.styled";
@@ -11,11 +13,13 @@ import {
   TableRow,
   TableCell,
 } from "./Table.styled";
+
 import { CheckboxLabel } from "./Table.styled";
 import CustomSVG2 from "shared/ui/CustomSVG/CustomSVG2";
 import CustomSVG3 from "shared/ui/CustomSVG/CustomSVG3";
 import CustomSVG4 from "shared/ui/CustomSVG/CustomSVG4";
 import CloseSVG from "shared/ui/CustomSVG/CloseSVG";
+import Modal from "../AddCandidate/AddCandidate";
 
 const data = [
   {
@@ -83,6 +87,9 @@ function Table() {
     useState(false);
   const [showFrozenProjects, setShowFrozenProjects] = useState(false);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState("");
+
   const filteredData = data.filter((project) => {
     return (
       (showAllProjects ||
@@ -121,6 +128,11 @@ function Table() {
       columns,
       data: filteredData,
     });
+
+  const openModal = (projectName: string) => {
+    setSelectedProject(projectName);
+    setIsModalOpen(true);
+  };
 
   return (
     <div>
@@ -211,7 +223,13 @@ function Table() {
                         ),
                       }}
                     >
-                      {cell.render("Cell")}
+                      {cell.column.id === "add" ? (
+                        <div onClick={() => openModal("row.original.project")}>
+                          {cell.value}
+                        </div>
+                      ) : (
+                        cell.render("Cell")
+                      )}
                     </TableCell>
                   );
                 })}
@@ -220,6 +238,14 @@ function Table() {
           })}
         </TableBody>
       </TableContainer>
+
+      {isModalOpen && (
+        <Modal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          project={selectedProject}
+        />
+      )}
     </div>
   );
 }
