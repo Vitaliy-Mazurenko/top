@@ -1,10 +1,8 @@
-import React from 'react'
 import logoQuestion from '../../assets/img/question-circle.svg'
 import logoNotifications from '../../assets/img/Notification.png'
 import clientImg from './../../assets/img/custom.png'
 import arrowDown from '../../assets/img/arrowdown.png'
 import './clientmenu.css'
-
 
  function ClientMenu () {
   return (
@@ -20,4 +18,3 @@ import './clientmenu.css'
 }
 
 export default ClientMenu;
-

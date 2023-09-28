@@ -1,4 +1,3 @@
-import React from 'react'
 import logoImg from '../../assets/img/logo.png'
 import userImg from '../../assets/img/user.png'
 import teamImg from '../../assets/img/team.png'
