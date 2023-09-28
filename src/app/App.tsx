@@ -1,25 +1,29 @@
-import { useState } from "react";
-import AddCandidate from "../pages/profile/ui/AddCandidate/AddCandidate";
+import Table from "pages/profile/ui/Table/Table";
+
 
 const App = () => {
-  const [isAddCandidateOpen, setIsAddCandidateOpen] = useState(false);
+  // const [isAddCandidateOpen, setIsAddCandidateOpen] = useState(false);
 
-  const openAddCandidate = () => {
-    setIsAddCandidateOpen(true);
-  };
+  // const openAddCandidate = () => {
+  //   setIsAddCandidateOpen(true);
+  // };
 
-  const closeAddCandidate = () => {
-    setIsAddCandidateOpen(false);
-  };
+  // const closeAddCandidate = () => {
+  //   setIsAddCandidateOpen(false);
+  // };
+
+  // return (
+  //   <div>
+  //     <button onClick={openAddCandidate}>Open Add Candidate</button>
+
+
+  //     <AddCandidate isOpen={isAddCandidateOpen} onClose={closeAddCandidate} />
+  //   </div>
+  // );
 
   return (
-    <div>
-      <button onClick={openAddCandidate}>Open Add Candidate</button>
-
-
-      <AddCandidate isOpen={isAddCandidateOpen} onClose={closeAddCandidate} />
-    </div>
-  );
+    <Table />
+  )
 };
 
 
