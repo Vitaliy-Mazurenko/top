@@ -39,8 +39,8 @@
 
 .notification-badge {
     position: absolute;
-    top: 26px;
-    right: 172px; 
+    top: 20px;
+    right: 162px; 
     background-color: #FF8C33; 
     color: white; 
     border-radius: 50%; 

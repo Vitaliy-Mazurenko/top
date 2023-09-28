@@ -12,10 +12,9 @@
   
   input {
     background: #fff;
-    padding: 10px;
-    border: 1px solid #ede4b7;
     border-radius: 2px;
-    width: 300px;
+    width: 320px;
+    height: 42px;
     color: #8e8e93;
     font-size: 14px;
     font-weight: 400;
@@ -23,12 +22,21 @@
     letter-spacing: 0.28px;
     line-height: 22px;
   }
-
   
+  .inputform {
+    border: 1px solid #ede4b7;
+    padding: 5px 12px;
+    color: #8E8E93;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.42px;
+  }
   
   label {
     position: absolute;
- 
+  
     top: -20px;
     color: #48484a;
     font-size: 14px;
@@ -37,17 +45,4 @@
     line-height: 22px;
     letter-spacing: 0.28px;
     margin-bottom: 2px;
-  }
-
-  .userdatabtn {
-    width: 282px;
-    height: 51px;
-    font-family: 'Raleway', sans-serif;
-    color: #ffffff;
-    background: #ff8c33;
-    font-size: 16px;
-    font-weight: 500;
-    border: none;
-    margin-top: 24px;
-    cursor: pointer;
   }

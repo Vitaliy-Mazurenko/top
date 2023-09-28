@@ -1,0 +1,179 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+
+.mainPage {
+    display: flex;
+    flex-direction: row;
+}
+.navbar {
+    background: #fff;
+    border-right: 1px solid gray;
+    width: 225px;
+    height: 830px;
+}
+.logoImg {
+    margin: 20px 14px;
+    width: 171px;
+    height: 56px;
+}
+
+
+
+.sidebarinfo {
+    text-align: center;
+    margin-top: 40px;
+    gap: 4px;
+}
+
+.sidebarimg {
+    width: 64px;
+    height: 64px;
+}
+
+.sidebarName {
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    word-wrap: break-word;
+    margin-top: 4px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.sidebarPosition {
+    color: #8c8c8c;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    word-wrap: break-word;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 4px;
+}
+
+.navbarButton {
+    margin-left: -40px;
+    width: 198px;
+    height: 48px;
+    border: 0;
+    color: #333333;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    font-family: 'Raleway', sans-serif;
+    padding: 12px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+
+.navbarButton:hover {
+    background-color: #ff8c33;
+    color: #fff;
+} 
+
+
+
+
+
+.activeLinkNavbar {
+    background: #ff8c33;
+    color: #fff;
+}
+
+
+.navbaritem-desc{
+    padding-top: 3px; 
+}
+
+.navbarButton img:hover {
+    filter: brightness(0) invert(1);
+  }
+
+.navbarlist {
+    margin-top: 40px;
+    padding-left: 40px;
+}
+
+
+.settingsBtn {
+    margin-top: 300px;
+}
+
+
+
+.extraText {
+    padding-top: 10px;
+}
+
+
+
+.dropdown-item {
+    width: 199px;
+    height: 44px;
+    color: black;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 20px;
+    text-align: left;
+    background: rgba(255, 140, 51, 0.17);
+    margin-left: -40px;
+    padding-left: 20px;
+  }
+
+  .dropdown-item-second {
+    width: 199px;
+    height: 44px;
+    color: #333333;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 20px;
+    text-align: left;
+    background: #fff;
+    margin-left: -40px;
+    padding-left: 20px;
+    border-bottom: 1px #ff8c33 solid;
+  }
+.navbarButton.profileButton .dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+  }
+
+  .navbarButton.profileButton .dropdown-item {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+
+  .navbarButton.profileButton:hover .dropdown-content {
+    display: block;
+  }
+  
+
+  .vectorNavbar {
+    margin-top: 8px;
+    margin-left: 25px;
+    height: 8px;
+}
+  
+  .vectorNavbar:hover {
+    transform: rotate(180deg);
+  }
+ 
+
+.vector-second {
+    margin-left: 5px;
+    height: 8px;
+}
+
+ 

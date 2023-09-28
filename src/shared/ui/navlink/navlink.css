@@ -5,7 +5,9 @@
    
   }
   
-
+  .navbarmainpage {
+    margin-top: 11px;
+  }
   .mainpageswitcher {
     color: #2c4755; 
     font-size: 16px;
@@ -36,7 +38,7 @@
 .nav-list {
     display: flex;
     flex-direction: row;
-    margin-left: -11px;
+    margin-left: 25px;
 }
 ul {
     
