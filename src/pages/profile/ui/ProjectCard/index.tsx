@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
 `
 
-export const Card = styled.div`
+export const CardContainer = styled.div`
 	position: relative;
 	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
 	padding-top: 0.5rem;
@@ -55,14 +55,6 @@ const Icon = styled.img`
 	height: 1.170625rem;
 `
 
-// const Status = styled.div`
-// 	padding: 0.3125rem;
-// 	text-align: center;
-// 	font-size: 0.75rem;
-// 	margin-top: 0.625rem;
-// 	${({ theme }) => theme.typography['Heading-7']}
-// `
-
 export interface ProjectCardProps {
 	title: string
 	body: string
@@ -86,14 +78,14 @@ export const ProjectCard = (props: ProjectCardProps) => {
 
 	return (
 		<Wrapper className={className}>
-			<Card>
+			<CardContainer>
 				<Title>{title}</Title>
 				<Body>{body}</Body>
 				<Avatar src={avatarURL} />
 				<Categories>
 					{iconURLs && iconURLs.map(url => <Icon src={url} />)}
 				</Categories>
-			</Card>
+			</CardContainer>
 			{slotAfter}
 		</Wrapper>
 	)
