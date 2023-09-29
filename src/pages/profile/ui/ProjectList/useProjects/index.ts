@@ -41,8 +41,8 @@ export const useProjects = (args: useProjectsArgs) => {
 			})
 			setFilteredProjects(newFiltered)
 		}
-
-	}, [search, status])
+		// @
+	}, [search, status])  // eslint-disable-line react-hooks/exhaustive-deps
 
 	return {
 		projects: allProjects,

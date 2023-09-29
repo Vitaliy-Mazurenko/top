@@ -1,6 +1,6 @@
+import styled from 'styled-components';
 
-
-.userdatabtn {
+export const SaveButton = styled.button`
   width: 282px;
   height: 51px;
   font-family: 'Raleway', sans-serif;
@@ -11,4 +11,5 @@
   border: none;
   margin-top: 24px;
   cursor: pointer;
-}
+  margin-left: 25px;
+`;
