@@ -1,25 +1,11 @@
-import './registration.css'
-import InputBoxYellow from '../reusable input/inputBoxYellow';
+import {
+  SaveButton,
+} from './RegistrationFormStyles'
+import InputBoxYellow from '../reusable_input/InputBoxYellow';
+
 
 const RegistrationForm = () => {
-  // const [email, setEmail] = useState('');
-  // const [firstName, setFirstName] = useState('');
-  // const [lastName, setLastName] = useState('');
-  // const [companyName, setCompanyName] = useState('');
-  // const [position, setPosition] = useState('');
-  // const handleSubmit = () => {
-  //   e.preventDefault();
-  //   const userData = {
-  //     email,
-  //     firstName,
-  //     lastName,
-  //     companyName,
-  //     position,
-  //   };
-
-  //   onSave(userData);
-  // };
-
+  
   return (
     <div className='registrationforms'>
      <form>
@@ -53,7 +39,7 @@ const RegistrationForm = () => {
           required
           className='inputform'
         />
-        <button type="submit" className='userdatabtn'>Зберегти</button>
+        <SaveButton>Зберегти</SaveButton>
       </form>
     </div>
   );

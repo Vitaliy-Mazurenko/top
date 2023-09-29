@@ -1,11 +1,11 @@
 import Table from "../pages/profile/ui/Table/Table"; // Шлях до вашого компонента Table
-import Main from 'shared/ui/main/Main';
+import MainPage from 'shared/ui/MainPage/MainPage';
 const App = () => {
   return (
     <div>
       {/* <h1>Hello World</h1> */}
       {/* <Table /> Використовуйте компонент Table тут */}
-      <Main />
+      <MainPage />
     </div>
   );
 };

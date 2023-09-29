@@ -8,7 +8,24 @@ import repoImg from '../../assets/img/repo.svg'
 import sidebarImg from './../../assets/img/sidebarimg.png'
 import settingsImg from '../../assets/img/Settings.png'
 import vectorNavbar from '../../assets/img/vectornavbar.svg'
-import './Navbar.css'
+// import './Navbar.css'
+import {
+  NavbarContainer,
+  LogoImg,
+  SidebarInfo,
+  SidebarImg,
+  SidebarName,
+  SidebarPosition,
+  NavbarList,
+  NavLinkStyled,
+  VectorNavbar,
+  DropdownContent,
+  DropdownItem,
+  DropdownItemSecond,
+  ProfileButton,
+  DropdownContentSecond,
+  SettingsBtn,
+} from './NavbarStyles';
 
  function Navbar() {
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
@@ -23,84 +40,159 @@ import './Navbar.css'
   };
 
   return (
-    <div className='navbar'>
-      <img src={logoImg} className='logoImg' alt='logoimage'/>
-        <div className='sidebarinfo'>
+//     <div className='navbar'>
+//       <img src={logoImg} className='logoImg' alt='logoimage'/>
+//         <div className='sidebarinfo'>
         
-              <img src={sidebarImg} className='sidebarimg' alt='sidebarimg'/>
-              <h2 className='sidebarName'>Повне ім'я</h2>
-              <p className='sidebarPosition'>Посада</p>
-          </div>
-        <div>
-          <ul className='navbarlist'>
-            <div className="navbarButtons">
-                <button
-                  className="navbarButton profileButton"
-                  onClick={toggleProfileDropdown}
-                  id="profileDropdownButton"
+//               <img src={sidebarImg} className='sidebarimg' alt='sidebarimg'/>
+//               <h2 className='sidebarName'>Повне ім'я</h2>
+//               <p className='sidebarPosition'>Посада</p>
+//           </div>
+//         <div>
+//           <ul className='navbarlist'>
+//             <div className="navbarButtons">
+//                 <button
+//                   className="navbarButton profileButton"
+//                   onClick={toggleProfileDropdown}
+//                   id="profileDropdownButton"
                  
-                >
-                  <img src={userImg} className="userImg" /> <span className='navbaritem-desc'>Профіль</span>
-                  <img src={vectorNavbar} alt="" className='vectorNavbar'/>
-                </button>
-                {isProfileDropdownOpen && (
-                  <div className="dropdown-content">
-                    <NavLink to="/portfolio" >
-                         <button className="dropdown-item" >Портфоліо</button>
-                    </NavLink>
-                    <NavLink to="/personaldata">
-                    <button className="dropdown-item" onClick={togglePersonalDataDropdown}>Персональні дані <img src={vectorNavbar} alt="" className='vector-second'/></button> 
-                    </NavLink>
+//                 >
+//                   <img src={userImg} className="userImg" /> <span className='navbaritem-desc'>Профіль</span>
+//                   <img src={vectorNavbar} alt="" className='vectorNavbar'/>
+//                 </button>
+//                 {isProfileDropdownOpen && (
+//                   <div className="dropdown-content">
+//                     <NavLink to="/portfolio" >
+//                          <button className="dropdown-item" >Портфоліо</button>
+//                     </NavLink>
+//                     <NavLink to="/personaldata">
+//                     <button className="dropdown-item" onClick={togglePersonalDataDropdown}>Персональні дані <img src={vectorNavbar} alt="" className='vector-second'/></button> 
+//                     </NavLink>
                     
                     
-                  </div>
+//                   </div>
                   
-                )}
-                {isPersonalDataDropdownOpen && (
-                  <div className="dropdown-content-second">
-                    <NavLink to="/skills">
-                        <button className="dropdown-item-second">Навички</button>
-                    </NavLink>
-                    <NavLink to="/specialization" >
-                        <button className="dropdown-item-second">Спеціалізація</button>
-                    </NavLink>
+//                 )}
+//                 {isPersonalDataDropdownOpen && (
+//                   <div className="dropdown-content-second">
+//                     <NavLink to="/skills">
+//                         <button className="dropdown-item-second">Навички</button>
+//                     </NavLink>
+//                     <NavLink to="/specialization" >
+//                         <button className="dropdown-item-second">Спеціалізація</button>
+//                     </NavLink>
                     
                     
-                  </div>
+//                   </div>
                   
-                )}
-              </div>
-            <li className="navbarlist-item">
-              <NavLink to="/team"  className='navbarButton'>
-              <img src={teamImg}/> <span className='navbaritem-desc'>Команда</span>
-              </NavLink>
-            </li>
-            <li className="navbarlist-item">
-              <NavLink to="/projects"  className='navbarButton'>
-              <img src={lockImg}/> <span className='navbaritem-desc'>Проекти</span>
-              </NavLink>
-            </li>
-            <li className="navbarlist-item ">
-              <NavLink to="/repository" className='navbarButton'>
-              <img src={repoImg}/> <span className='navbaritem-desc'>Репозиторій</span>
-              </NavLink>
-            </li>
-          </ul>
+//                 )}
+//               </div>
+//             <li className="navbarlist-item">
+//               <NavLink to="/team"  className='navbarButton'>
+//               <img src={teamImg}/> <span className='navbaritem-desc'>Команда</span>
+//               </NavLink>
+//             </li>
+//             <li className="navbarlist-item">
+//               <NavLink to="/projects"  className='navbarButton'>
+//               <img src={lockImg}/> <span className='navbaritem-desc'>Проекти</span>
+//               </NavLink>
+//             </li>
+//             <li className="navbarlist-item ">
+//               <NavLink to="/repository" className='navbarButton'>
+//               <img src={repoImg}/> <span className='navbaritem-desc'>Репозиторій</span>
+//               </NavLink>
+//             </li>
+//           </ul>
            
-        </div>
-        <ul className='navbarlist'>
-            <li className="navbarlist-item ">
-              <NavLink to="/settings" className='navbarButton settingsBtn' >
-              <img src={settingsImg}/> <span className='navbaritem-desc'>Налаштування</span>
-              </NavLink>
-            </li>
-            </ul>
+//         </div>
+//         <ul className='navbarlist'>
+//             <li className="navbarlist-item ">
+//               <NavLink to="/settings" className='navbarButton settingsBtn' >
+//               <img src={settingsImg}/> <span className='navbaritem-desc'>Налаштування</span>
+//               </NavLink>
+//             </li>
+//             </ul>
 
-        </div>
-  )
-}
+//         </div>
+//   )
+// }
 
-
+<NavbarContainer>
+<LogoImg src={logoImg} className='logoImg' alt='logoimage' />
+<SidebarInfo>
+  <SidebarImg src={sidebarImg} className='sidebarimg' alt='sidebarimg' />
+  <SidebarName className='sidebarName'>Повне ім'я</SidebarName>
+  <SidebarPosition className='sidebarPosition'>Посада</SidebarPosition>
+</SidebarInfo>
+<div>
+  <NavbarList>
+    <div className='navbarButtons'>
+      <ProfileButton
+        className='navbarButton profileButton'
+        onClick={toggleProfileDropdown}
+        id='profileDropdownButton'
+      >
+        <img src={userImg} className='userImg' /> <span className='navbaritem-desc'>Профіль</span>
+        <VectorNavbar src={vectorNavbar} alt='' className='vectorNavbar' />
+      </ProfileButton>
+      {isProfileDropdownOpen && (
+        <DropdownContent className='dropdown-content'>
+          <NavLinkStyled to='/portfolio'>
+            <DropdownItem>Портфоліо</DropdownItem>
+          </NavLinkStyled>
+          <NavLinkStyled to='/personaldata'>
+            <DropdownItem onClick={togglePersonalDataDropdown}>
+              Персональні дані <VectorNavbar src={vectorNavbar} alt='' className='vector-second' />
+            </DropdownItem>
+          </NavLinkStyled>
+        </DropdownContent>
+      )}
+      {isPersonalDataDropdownOpen && (
+        <DropdownContentSecond className='dropdown-content-second'>
+          <NavLinkStyled to='/skills'>
+            <DropdownItemSecond>Навички</DropdownItemSecond>
+          </NavLinkStyled>
+          <NavLinkStyled to='/specialization'>
+            <DropdownItemSecond>Спеціалізація</DropdownItemSecond>
+          </NavLinkStyled>
+        </DropdownContentSecond>
+      )}
+    </div>
+    <li className='navbarlist-item'>
+      <NavLink to='/team'>
+      <ProfileButton  className='navbarButton'>
+        <img src={teamImg} /> <span className='navbaritem-desc'>Команда</span>
+      </ProfileButton>
+      </NavLink>
+    </li>
+    <li className='navbarlist-item'>
+      <NavLink to='/projects'>
+      <ProfileButton  className='navbarButton'>
+        <img src={lockImg} /> <span className='navbaritem-desc'>Проекти</span>
+      </ProfileButton>
+      </NavLink>
+    </li>
+    <li className='navbarlist-item'>
+      <NavLink to='/repository' >
+      <ProfileButton className='navbarButton'>
+        <img src={repoImg} /> <span className='navbaritem-desc'>Репозиторій</span>
+      </ProfileButton>
+      </NavLink>
+    </li>
+  </NavbarList>
+</div>
+<ul className='navbarlist'>
+  <li className='navbarlist-item '>
+    <NavLink to='/settings'>
+    <SettingsBtn  className='navbarButton settingsBtn'>
+      <img src={settingsImg} /> <span className='navbaritem-desc'>Налаштування</span>
+    </SettingsBtn>
+    </NavLink>
+  </li>
+</ul>
+</NavbarContainer>
+);
+};
 
 
 const App = () => {
