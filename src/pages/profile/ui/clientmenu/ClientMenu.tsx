@@ -9,10 +9,10 @@ import {
   NotificationBadge,
 } from './ClientMenuStyles';
 
-import logoQuestion from '../../assets/img/question-circle.svg';
-import logoNotifications from '../../assets/img/Notification.png';
-import clientImg from './../../assets/img/custom.png';
-import arrowDown from '../../assets/img/arrowdown.png';
+import logoQuestion from '../../../../shared/assets/img/question-circle.svg';
+import logoNotifications from '../../../../shared/assets/img/Notification.png';
+import clientImg from '../../../../shared/assets/img/custom.png';
+import arrowDown from '../../../../shared/assets/img/arrowdown.png';
 
 function ClientMenu() {
   return (

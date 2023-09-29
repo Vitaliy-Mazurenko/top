@@ -61,7 +61,7 @@ import {
   WarningTableText,
 } from './MainPageStyles';
 
-import warningImg from './../../assets/img/warningcircle.png';
+import warningImg from '../../../../shared/assets/img/warningcircle.png';
 import Navbar from '../navbar/Navbar';
 import NavbarMainPage from '../navlink/NavbarMainPage';
 import RegistrationPage from '../registrationform/RegistrationPage';

@@ -1,13 +1,13 @@
 import  { useState, } from 'react'
 import { NavLink, BrowserRouter as Router} from 'react-router-dom';
-import logoImg from '../../assets/img/logo.png'
-import userImg from '../../assets/img/user.png'
-import teamImg from '../../assets/img/team.png'
-import lockImg from '../../assets/img/lock.png'
-import repoImg from '../../assets/img/repo.svg'
-import sidebarImg from './../../assets/img/sidebarimg.png'
-import settingsImg from '../../assets/img/Settings.png'
-import vectorNavbar from '../../assets/img/vectornavbar.svg'
+import logoImg from '../../../../shared/assets/img/logo.png'
+import userImg from '../../../../shared/assets/img/user.png'
+import teamImg from '../../../../shared/assets/img/team.png'
+import lockImg from '../../../../shared/assets/img/lock.png'
+import repoImg from '../../../../shared/assets/img/repo.svg'
+import sidebarImg from './../../../../shared/assets/img/sidebarimg.png'
+import settingsImg from '../../../../shared/assets/img/Settings.png'
+import vectorNavbar from '../../../../shared/assets/img/vectornavbar.svg'
 // import './Navbar.css'
 import {
   NavbarContainer,

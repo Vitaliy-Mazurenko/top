@@ -59,9 +59,9 @@ import {
   UploadIcon,
   UserPhotoMain,
 } from './ModalWindowStyles';
-import userphoto from '../../assets/img/custom.png';
-import uploadphoto from '../../assets/img/upload.png';
-import uploadIcon from '../../assets/img/Group.svg';
+import userphoto from '../../../../shared/assets/img/custom.png';
+import uploadphoto from '../../../../shared/assets/img/upload.png';
+import uploadIcon from '../../../../shared/assets/img/Group.svg';
 
 function ModalForm() {
   const [isModalOpen, setModalOpen] = useState(false);

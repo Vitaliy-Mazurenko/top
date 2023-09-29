@@ -120,7 +120,7 @@ import {
   ModalBtnCancel,
   ModalBtnSave,
 } from './ModalWindowStyles';
-import closeBtn from '../../assets/img/Close.svg';
+import closeBtn from '../../../../shared/assets/img/Close.svg';
 
 interface ModalProps {
   isOpen: boolean;

@@ -1,5 +1,5 @@
 import Table from "../pages/profile/ui/Table/Table"; // Шлях до вашого компонента Table
-import MainPage from 'shared/ui/MainPage/MainPage';
+import MainPage from 'pages/profile/ui/MainPage/MainPage';
 const App = () => {
   return (
     <div>

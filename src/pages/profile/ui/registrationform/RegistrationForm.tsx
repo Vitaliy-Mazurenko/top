@@ -1,7 +1,7 @@
 import {
   SaveButton,
 } from './RegistrationFormStyles'
-import InputBoxYellow from '../reusable_input/InputBoxYellow';
+import InputBoxYellow from '../../../../shared/ui/reusable_input/InputBoxYellow';
 
 
 const RegistrationForm = () => {
