@@ -1,32 +1,33 @@
-import { useState } from 'react';
+
 import {
   PageSwitcherContainer,
   PageSwitchMain,
   ExtraText,
+
   PageSwitchLink,
 } from './PageSwitcherStyles';
 import ClientMenu from '../clientmenu/ClientMenu';
 
 const PageSwitcher = () => {
-  const [setActiveTab] = useState('home');
+//   const [setActiveTab] = useState('home');
 
-  const handleTabClick = (tab: string) => {
-    setActiveTab(tab);
-  };
+//   const handleTabClick = (tab: string) => {
+//     setActiveTab(tab);
+//   };
 
   return (
     <PageSwitcherContainer>
       <div>
         <PageSwitchMain>
           <PageSwitchLink
-            onClick={() => handleTabClick('home')}
+            // onClick={() => handleTabClick('home')}
             // className={activeTab === 'home' ? 'activelink' : 'pageswitch'}
           >
             Дім <ExtraText>q</ExtraText>
           </PageSwitchLink>
           /  
           <PageSwitchLink
-            onClick={() => handleTabClick('profile')}
+            // onClick={() => handleTabClick('')}
             // className={activeTab === 'profile' ? 'activelink' : 'pageswitch'}
           >
             <ExtraText>q</ExtraText> Профіль

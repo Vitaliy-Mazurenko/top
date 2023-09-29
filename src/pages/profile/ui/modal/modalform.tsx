@@ -1,3 +1,6 @@
+
+
+
 import { useState } from 'react';
 import Modal from './Modal';
 import {
@@ -35,7 +38,7 @@ function ModalForm() {
 
   return (
     <ModalWindow>
-      <UserPhotoMain src={selectedUserPhoto || userphoto} alt="userphoto" />
+      <UserPhotoMain src={selectedUserPhoto instanceof File ? URL.createObjectURL(selectedUserPhoto) : selectedUserPhoto || userphoto} alt="userphoto" />
       <ModalHeader>Фото</ModalHeader>
       <ModalWindowBtn onClick={openModal}>
         <img src={uploadphoto} alt="uploaduserphoto" />
