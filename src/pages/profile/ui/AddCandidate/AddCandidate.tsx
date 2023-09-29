@@ -28,7 +28,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         <ModalHeader>Додати кандидата в проєкт?</ModalHeader>
         <ModalDescription>Ім’я кандидата</ModalDescription>
         <img
-          src="/src/shared/assets/img/modalImage.jpg"
+          src="/modalImage.jpg"
           alt="Фото кандидата"
           className="modalImage"
         />

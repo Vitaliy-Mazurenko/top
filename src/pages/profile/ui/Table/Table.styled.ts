@@ -51,7 +51,7 @@ export const CheckboxLabel = styled.label`
   margin-right: 16px;
   gap: 4px;
   border: 1px solid #e8e8e8;
-
+  cursor: pointer;
   padding: 5px 12px;
   align-items: center;
   padding-top: 5px;
