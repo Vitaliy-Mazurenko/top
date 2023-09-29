@@ -11,7 +11,7 @@ import ClientMenu from '../clientmenu/ClientMenu';
 const PageSwitcher = () => {
   const [activeTab, setActiveTab] = useState('home');
 
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab: string) => {
     setActiveTab(tab);
   };
 
