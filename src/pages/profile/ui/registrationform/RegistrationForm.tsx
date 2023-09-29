@@ -1,6 +1,3 @@
-import {
-  SaveButton,
-} from './RegistrationFormStyles'
 import InputBoxYellow from 'shared/ui/reusable_input/InputBoxYellow';
 
 
@@ -12,7 +9,6 @@ const RegistrationForm = () => {
         <InputBoxYellow
           label="E-mail"
           placeholder="ceo@digitaluniverse.com"
-         
           required
         />
         <InputBoxYellow
@@ -39,7 +35,6 @@ const RegistrationForm = () => {
           required
           className='inputform'
         />
-        <SaveButton>Зберегти</SaveButton>
       </form>
     </div>
   );

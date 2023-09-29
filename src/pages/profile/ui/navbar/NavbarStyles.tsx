@@ -80,13 +80,13 @@ export const NavbarItem = styled.li`
 `;
 
 export const NavLinkStyled = styled(NavLink)`
+  display: block;
   text-decoration: none;
   color: #333333; /* Цвет неактивной ссылки */
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   font-family: 'Raleway', sans-serif;
-  padding: 12px 20px;
   cursor: pointer;
   text-transform: uppercase;
   &.activeLinkNavbar {
@@ -110,17 +110,15 @@ export const VectorSecond = styled.img`
 `;
 
 export const DropdownContent = styled.div`
-  display: none;
   position: absolute;
-  z-index: 9999;
+  z-index: 1;
   left: 0;
-  display: flex;
+  display: block;
   flex-direction: column;
-  gap: 0px;
 `;
 
 export const DropdownItem = styled.button`
-  width: 202px;
+  width: 224px;
   height: 44px;
   color: black;
   font-size: 14px;
@@ -144,7 +142,6 @@ export const DropdownItemSecond = styled.button`
   line-height: 20px;
   text-align: left;
   background: #fff;
-  margin-left: -40px;
   padding-left: 20px;
   border-bottom: 1px #ff8c33 solid;
 `;
