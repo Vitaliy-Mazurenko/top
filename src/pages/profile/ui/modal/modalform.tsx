@@ -14,9 +14,9 @@ import uploadIcon from 'shared/assets/img/Group.svg';
 
 function ModalForm() {
   const [isModalOpen, setModalOpen] = useState(false);
-  const [selectedUserPhoto, setSelectedUserPhoto] = useState<File | null>(null);
+  const [selectedUserPhoto, setSelectedUserPhoto] = useState<File | null | string>(null);
 
-  const handleImageUpload = (file: File) => {
+  const handleImageUpload = (file: File | string) => {
     setSelectedUserPhoto(file);
   };
   const openModal = () => {
@@ -35,7 +35,7 @@ function ModalForm() {
 
   return (
     <ModalWindow>
-      <UserPhotoMain src={selectedUserPhoto || userphoto} alt="userphoto" />
+      <UserPhotoMain src={selectedUserPhoto?.toString() || userphoto} alt="userphoto" />
       <ModalHeader>Фото</ModalHeader>
       <ModalWindowBtn onClick={openModal}>
         <img src={uploadphoto} alt="uploaduserphoto" />

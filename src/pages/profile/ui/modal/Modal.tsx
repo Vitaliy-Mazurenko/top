@@ -16,7 +16,7 @@ import closeBtn from 'shared/assets/img/Close.svg';
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onImageUpload: (file: File) => void;
+  onImageUpload: (file: File | string) => void;
   children: React.ReactNode;
   updateWarningData: () => void;
 }
@@ -27,7 +27,7 @@ const Modal: React.FC<ModalProps> = ({
   onImageUpload,
   children,
 }) => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<null | string>(null);
   const [imagePath, setImagePath] = useState('');
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const fileReaderRef = useRef<FileReader | null>(null);
