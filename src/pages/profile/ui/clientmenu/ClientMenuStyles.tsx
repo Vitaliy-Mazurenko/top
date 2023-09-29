@@ -57,14 +57,3 @@ export const NotificationBadge = styled.div`
 `;
 
 
-export const smallLogos = styled.div `
-    width: 24px;
-    height: 24px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    `;
-
-export const notification = styled.div `
-    margin-left: 8px;
-    position: relative;
-`;

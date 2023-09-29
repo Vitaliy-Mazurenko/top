@@ -27,17 +27,18 @@ import {
   SettingsBtn,
 } from './NavbarStyles';
 
- function Navbar() {
-  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
-  const [isPersonalDataDropdownOpen, setIsPersonalDataDropdownOpen] = useState(false);
 
-
-  const toggleProfileDropdown = () => {
-    setIsProfileDropdownOpen(!isProfileDropdownOpen);
-  };
-  const togglePersonalDataDropdown = () => {
-    setIsPersonalDataDropdownOpen(!isPersonalDataDropdownOpen);
-  };
+  const Navbar = () => {
+    const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+    const [isPersonalDataDropdownOpen, setIsPersonalDataDropdownOpen] = useState(false);
+  
+    const toggleProfileDropdown = () => {
+      setIsProfileDropdownOpen(!isProfileDropdownOpen);
+    };
+  
+    const togglePersonalDataDropdown = () => {
+      setIsPersonalDataDropdownOpen(!isPersonalDataDropdownOpen);
+    };
 
   return (
 //     <div className='navbar'>
@@ -128,8 +129,8 @@ import {
   <NavbarList>
     <div>
       <ProfileButton
-        onClick={toggleProfileDropdown}
-        id='profileDropdownButton'
+       onClick={toggleProfileDropdown} 
+       id='profileDropdownButton'
       >
         <img src={userImg}/> <span>Профіль</span>
         <VectorNavbar src={vectorNavbar} alt='vectornavbar'/>

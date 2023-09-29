@@ -3,13 +3,12 @@ import {
   PageSwitcherContainer,
   PageSwitchMain,
   ExtraText,
-  ActiveLink,
   PageSwitchLink,
 } from './PageSwitcherStyles';
 import ClientMenu from '../clientmenu/ClientMenu';
 
 const PageSwitcher = () => {
-  const [activeTab, setActiveTab] = useState('home');
+  const [setActiveTab] = useState('home');
 
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);

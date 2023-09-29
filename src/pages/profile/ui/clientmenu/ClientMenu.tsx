@@ -1,10 +1,8 @@
-import React from 'react';
 import {
   ClientName,
   ClientMenuContainer,
   Cursor,
   ClientImage,
-  SmallLogo,
   Notification,
   NotificationBadge,
 } from './ClientMenuStyles';
@@ -16,12 +14,12 @@ import arrowDown from 'shared/assets/img/arrowdown.png';
 
 function ClientMenu() {
   return (
-    <ClientMenuContainer className='clientmenu'>
+    <ClientMenuContainer>
       <Cursor>
-        <img src={logoQuestion} className='smallLogos' alt='question' />
+        <img src={logoQuestion}  alt='question' />
       </Cursor>
       <Cursor>
-        <img src={logoNotifications} className='smallLogos notification' alt='notification' />
+        <img src={logoNotifications} alt='notification' />
       </Cursor>
       <Notification>
         <NotificationBadge>1</NotificationBadge>
@@ -29,7 +27,7 @@ function ClientMenu() {
       <ClientImage src={clientImg} alt='clientimage' />
       <ClientName>User</ClientName>
       <Cursor>
-        <img src={arrowDown} className='smallLogos' alt='arrowImg' />
+        <img src={arrowDown}alt='arrowImg' />
       </Cursor>
     </ClientMenuContainer>
   );

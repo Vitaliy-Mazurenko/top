@@ -112,12 +112,15 @@ export const VectorSecond = styled.img`
 export const DropdownContent = styled.div`
   display: none;
   position: absolute;
-  z-index: 1;
+  z-index: 9999;
   left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
 `;
 
 export const DropdownItem = styled.button`
-  width: 199px;
+  width: 202px;
   height: 44px;
   color: black;
   font-size: 14px;
@@ -127,7 +130,6 @@ export const DropdownItem = styled.button`
   line-height: 20px;
   text-align: left;
   background: rgba(255, 140, 51, 0.17);
-  margin-left: -40px;
   padding-left: 20px;
 `;
 
@@ -170,10 +172,12 @@ export const ProfileButton = styled.button`
 `;
 
 export const DropdownContentSecond = styled.div`
-  display: none;
+  display: block;
   position: absolute;
   z-index: 1;
   left: 198px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const SettingsBtn = styled.button `
