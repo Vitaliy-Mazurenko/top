@@ -125,7 +125,7 @@ import closeBtn from 'shared/assets/img/Close.svg';
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onImageUpload: (file: File) => void;
+  onImageUpload: (file: string | ArrayBuffer | null) => void;
   children: React.ReactNode;
   updateWarningData: () => void;
 }
@@ -136,7 +136,7 @@ const Modal: React.FC<ModalProps> = ({
   onImageUpload,
   children,
 }) => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<string | ArrayBuffer | null>(null);
   const [imagePath, setImagePath] = useState('');
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const fileReaderRef = useRef<FileReader | null>(null);
@@ -147,7 +147,7 @@ const Modal: React.FC<ModalProps> = ({
       const reader = new FileReader();
       fileReaderRef.current = reader;
       reader.onload = () => {
-          const result = reader.result as string;
+          const result = reader.result
           setSelectedImage(result);
           setImagePath(file.name);
       };
@@ -196,7 +196,7 @@ const Modal: React.FC<ModalProps> = ({
           />
           {selectedImage ? (
             <ModalImageDesc>
-              <SelectedImg src={selectedImage} alt="Selected" />
+              <SelectedImg src={selectedImage.toString()} alt="Selected" />
               <ModalInputText
                 type="text"
                 value={imagePath}

@@ -13,5 +13,4 @@ export  const Status = styled.div<{
 	color: ${props => props.theme.palette.text};
 	${props => props.$css};
 	cursor: ${props => props.$pointer ? 'pointer' : 'default'};
-	
 `
