@@ -201,7 +201,7 @@ const Modal: React.FC<ModalProps> = ({
                 type="text"
                 value={imagePath}
                 readOnly
-                placeholder="Путь к файлу"
+                placeholder="Шлях до файлу"
               />
               <ModalBtnsContainer>
                 <ModalBtnCancel onClick={handleCancelClick}>Скасувати</ModalBtnCancel>

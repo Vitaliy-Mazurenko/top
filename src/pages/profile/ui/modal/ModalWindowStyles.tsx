@@ -112,7 +112,7 @@ export const ModalWindowBtn = styled.button`
   gap: 4px;
   width: 171px;
   height: 32px;
-  padding: 5px 16px;
+  padding: 7px 16px;
   text-align: center;
   color: #8054E3;
   background: #ffffff;
@@ -122,7 +122,6 @@ export const ModalWindowBtn = styled.button`
   font-size: 14px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  line-height: 22px;
 `;
 
 export const ModalBtnsContainer = styled.div`
