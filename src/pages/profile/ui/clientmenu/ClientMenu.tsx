@@ -11,7 +11,6 @@ import logoQuestion from 'shared/assets/img/question-circle.svg';
 import logoNotifications from 'shared/assets/img/Notification.png';
 import clientImg from 'shared/assets/img/custom.png';
 import arrowDown from 'shared/assets/img/arrowdown.png';
-
 function ClientMenu() {
   return (
     <ClientMenuContainer>
