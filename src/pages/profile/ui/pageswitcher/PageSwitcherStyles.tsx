@@ -40,4 +40,7 @@ export const PageSwitchLink = styled.a`
 export const PageSwitchMain = styled.p `
     margin-left: 25px;
     margin-top: 22px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 `;

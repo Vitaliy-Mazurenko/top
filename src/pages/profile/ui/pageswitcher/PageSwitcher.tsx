@@ -2,8 +2,6 @@
 import {
   PageSwitcherContainer,
   PageSwitchMain,
-  ExtraText,
-
   PageSwitchLink,
 } from './PageSwitcherStyles';
 import ClientMenu from '../clientmenu/ClientMenu';
@@ -23,14 +21,16 @@ const PageSwitcher = () => {
             // onClick={() => handleTabClick('home')}
             // className={activeTab === 'home' ? 'activelink' : 'pageswitch'}
           >
-            Дім <ExtraText>q</ExtraText>
+            Дім 
+            {/* <ExtraText>q</ExtraText> */}
           </PageSwitchLink>
           /  
           <PageSwitchLink
             // onClick={() => handleTabClick('')}
             // className={activeTab === 'profile' ? 'activelink' : 'pageswitch'}
           >
-            <ExtraText>q</ExtraText> Профіль
+            {/* <ExtraText>q</ExtraText>  */}
+            Профіль
           </PageSwitchLink>
         </PageSwitchMain>
       </div>
