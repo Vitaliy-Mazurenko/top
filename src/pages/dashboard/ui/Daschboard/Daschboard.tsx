@@ -1,7 +1,7 @@
 import React from "react";
-import StudentsTable from "./StudentTable/StudentsTable";
+import StudentsTable from "../StudentTable";
 
-export interface StudentInterface {
+interface StudentInterface {
   firstName: string;
   lastName: string;
   age: number;
@@ -56,7 +56,11 @@ const data: StudentInterface[] = [
 ];
 
 const Daschboard: React.FC = () => {
-  return <StudentsTable studentsData={data} />;
+  return (
+    <>
+      <StudentsTable students={data} />
+    </>
+  );
 };
 
 export default Daschboard;

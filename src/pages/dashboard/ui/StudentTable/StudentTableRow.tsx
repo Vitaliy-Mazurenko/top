@@ -1,14 +1,22 @@
 import {
   AvatarIcon,
-  CountryTD,
   NameText,
   NameWrapper,
   StyledTableRow,
 } from "./StudentTableRow.styled";
 
-import { StudentInterface } from "../Daschboard";
+export interface StudentTableRowProps {
+  firstName: string;
+  lastName: string;
+  age: number;
+  progress: number;
+  homeworkCompleteness: number;
+  rating: number;
+  attendance: number;
+  country: string;
+}
 
-const StudentTableRow = ({ data }: { data: StudentInterface }) => {
+const StudentTableRow = (props: StudentTableRowProps) => {
   const {
     firstName,
     lastName,
@@ -18,7 +26,7 @@ const StudentTableRow = ({ data }: { data: StudentInterface }) => {
     rating,
     attendance,
     country,
-  } = data;
+  } = props;
 
   return (
     <StyledTableRow>
@@ -35,7 +43,7 @@ const StudentTableRow = ({ data }: { data: StudentInterface }) => {
       <td>Зроблено %{homeworkCompleteness}</td>
       <td>{rating}</td>
       <td>{attendance}</td>
-      <CountryTD className="country-cell">{country}</CountryTD>
+      <td>{country}</td>
     </StyledTableRow>
   );
 };

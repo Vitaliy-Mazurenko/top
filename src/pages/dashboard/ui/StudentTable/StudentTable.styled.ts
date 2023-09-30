@@ -11,6 +11,12 @@ export const StyledTabledHead = styled.thead`
   text-transform: uppercase;
 `;
 
+export const StyledTabledHeadCell = styled.th`
+  height: 67px;
+  vertical-align: middle;
+  padding: 8px;
+`;
+
 export const StyledTabledBody = styled.tbody`
   text-align: center;
 `;

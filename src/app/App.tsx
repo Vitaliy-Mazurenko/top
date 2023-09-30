@@ -1,4 +1,5 @@
 import MainPage from "pages/profile/ui/MainPage/MainPage";
+
 const App = () => {
   // const [isAddCandidateOpen, setIsAddCandidateOpen] = useState(false);
 

@@ -1,8 +1,20 @@
 import styled from "styled-components";
 
 export const StyledTableRow = styled.tr`
-  &:last-child .country-cell {
-    padding-bottom: 42px;
+  height: 64px;
+
+  td {
+    padding: 8px;
+    vertical-align: middle;
+  }
+
+  &:last-child {
+    height: 85px;
+  }
+
+  &:last-child td {
+    vertical-align: baseline;
+    padding: 16px 8px;
   }
 `;
 
@@ -33,6 +45,4 @@ export const NameText = styled.p`
   font-weight: 500;
 `;
 
-export const CountryTD = styled.td`
-  padding: 14px 0;
-`;
+export const TableCell = styled.td``;
