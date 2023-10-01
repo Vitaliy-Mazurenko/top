@@ -14,7 +14,7 @@ import { useProjects } from 'pages/profile/ui/ProjectList/useProjects'
 
 export const ProjectList = () => {
 	const projectStatuses = useMemo(getProjectStatuses, [])
-	
+
 	const search = useInput()
 	const [filterType, setFilterType] = useState<null | ProjectCardProps['status']>(null)
 	const showFilter = useToggle()
@@ -45,12 +45,12 @@ export const ProjectList = () => {
 			<Header>
 				<Search value={search.value} onChange={search.onChange} />
 				<FilterContainer onClick={filterHandler}>
-					{Object.entries(projectStatuses).map(([statusName, statusCSS]) => (
+					{Object.entries(projectStatuses).map(([statusName, statusStyles]) => (
 						<Status
 							key={statusName}
-							$css={statusCSS}
-							$pointer
 							id={`project-list-status-${statusName.toLowerCase()}`}
+							$backgroundColor={statusStyles.backgroundColor}
+							$textColor={statusStyles.color}
 						>
 							{statusName}
 						</Status>
@@ -65,7 +65,8 @@ export const ProjectList = () => {
 						key={index}
 						{...project}
 						slotAfter={<Status
-							$css={projectStatuses[project.status]}
+							$textColor={projectStatuses[project.status].color} // нам нужно обратится в объект projectStatuses и добратся до нужного цвета текста. Залезаем в объект, указываем ключ в квадратных скобках. Далее обращаемся к полю color. Аналогично делаем с пропсом $backgroundColor
+							$backgroundColor={projectStatuses[project.status].backgroundColor}
 						>
 							{project.status}
 						</Status>

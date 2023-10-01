@@ -1,5 +1,5 @@
+import MainPage from "pages/profile/ui/MainPage/MainPage";
 
-import MainPage from 'pages/profile/ui/MainPage/MainPage';
 const App = () => {
   // const [isAddCandidateOpen, setIsAddCandidateOpen] = useState(false);
 
@@ -15,7 +15,6 @@ const App = () => {
   //   <div>
   //     <button onClick={openAddCandidate}>Open Add Candidate</button>
 
-
   //     <AddCandidate isOpen={isAddCandidateOpen} onClose={closeAddCandidate} />
   //   </div>
   // );
@@ -30,4 +29,3 @@ const App = () => {
 };
 
 export default App;
-

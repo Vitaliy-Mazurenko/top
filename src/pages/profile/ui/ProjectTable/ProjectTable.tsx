@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useTable, Column } from "react-table";
 import { FaSearch } from "react-icons/fa";
-import { SearchInputContainer, SearchInputField } from "./Table.styled";
+import { SearchInputContainer, SearchInputField } from "./ProjectTable.styled";
 import {
   TableContainer,
   TableHeader,
@@ -12,14 +12,14 @@ import {
   TableBody,
   TableRow,
   TableCell,
-} from "./Table.styled";
+} from "./ProjectTable.styled";
 
-import { CheckboxLabel } from "./Table.styled";
+import { CheckboxLabel } from "./ProjectTable.styled";
 import CustomSVG2 from "shared/ui/CustomSVG/CustomSVG2";
 import CustomSVG3 from "shared/ui/CustomSVG/CustomSVG3";
 import CustomSVG4 from "shared/ui/CustomSVG/CustomSVG4";
 import CloseSVG from "shared/ui/CustomSVG/CloseSVG";
-import Modal from "../AddCandidate/AddCandidate";
+import Modal from "../AddCandidate/AddCandidateModal";
 
 const data = [
   {
@@ -91,11 +91,15 @@ function Table() {
   const [selectedProject, setSelectedProject] = useState("");
 
   const filteredData = data.filter((project) => {
+    const isReady = project.status === "Готовий";
+    const isInDevelopment = project.status === "В розробці";
+    const isFrozen = project.status === "Заморожений";
+
     return (
       (showAllProjects ||
-        (showReadyProjects && project.status === "Готовий") ||
-        (showInDevelopmentProjects && project.status === "В розробці") ||
-        (showFrozenProjects && project.status === "Заморожений")) &&
+        (showReadyProjects && isReady) ||
+        (showInDevelopmentProjects && isInDevelopment) ||
+        (showFrozenProjects && isFrozen)) &&
       project.project.toLowerCase().includes(searchText.toLowerCase())
     );
   });
@@ -103,13 +107,13 @@ function Table() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case "Готовий":
-        return "green";
+        return "#52C41A";
       case "В розробці":
-        return "blue";
+        return "#95C3D5";
       case "Заморожений":
-        return "gray";
+        return "#8C8C8C";
       default:
-        return "black";
+        return "#8C8C8C";
     }
   };
 
@@ -138,10 +142,13 @@ function Table() {
     <div>
       <div style={{ display: "flex", alignItems: "baseline" }}>
         <SearchInputContainer>
-          <FaSearch className="search-icon" />
+          <FaSearch
+            className="search-icon"
+            style={{ color: "#8E8E93", marginRight: "3px" }}
+          />
           <SearchInputField
             type="text"
-            placeholder="Search candidats..."
+            placeholder="Search candidates"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
@@ -184,7 +191,10 @@ function Table() {
             type="checkbox"
             checked={showFrozenProjects}
             onChange={() => setShowFrozenProjects(!showFrozenProjects)}
-            style={{ display: "none" }}
+            style={{
+              display: "none",
+              backgroundColor: showFrozenProjects ? "#D9D9D9" : "transparent", // Змінено фон на transparent
+            }}
           />
           <CustomSVG color="#D9D9D9" />
           Заморожені проекти
@@ -194,7 +204,11 @@ function Table() {
         </button>
       </div>
       {/* Таблиця */}
-      <TableContainer {...getTableProps()} className="table">
+      <TableContainer
+        {...getTableProps()}
+        className="table"
+        style={{ width: "1035px" }}
+      >
         <TableHeader>
           {headerGroups.map((headerGroup) => (
             <TableHeaderRow {...headerGroup.getHeaderGroupProps()}>
@@ -209,6 +223,7 @@ function Table() {
         <TableBody {...getTableBodyProps()}>
           {rows.map((row) => {
             prepareRow(row);
+
             return (
               <TableRow {...row.getRowProps()}>
                 {row.cells.map((cell) => {
@@ -216,6 +231,38 @@ function Table() {
                     <TableCell
                       {...cell.getCellProps()}
                       style={{
+                        ...(cell.column.id === "status" && {
+                          border: `1px solid ${(() => {
+                            switch (cell.value) {
+                              case "Готовий":
+                                return "#B7EB8F";
+                              case "В розробці":
+                                return "#95C3D5";
+                              case "Заморожений":
+                                return "#8C8C8C";
+                              default:
+                                return "#B7EB8F";
+                            }
+                          })()}`,
+                          borderRadius: "2px",
+
+                          display: "inline-block",
+                          width: "130px",
+                          height: "34px",
+                          backgroundColor: `${(() => {
+                            switch (cell.value) {
+                              case "Готовий":
+                                return "#F6FFED";
+                              case "В розробці":
+                                return "#C6E1EC";
+                              case "Заморожений":
+                                return "#F4F4F4";
+                              default:
+                                return "#F6FFED";
+                            }
+                          })()}`,
+                        }),
+
                         color: getStatusColor(
                           cell.column.id === "status"
                             ? cell.value.toString()

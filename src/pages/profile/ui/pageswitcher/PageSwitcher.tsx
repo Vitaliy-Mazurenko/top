@@ -71,7 +71,7 @@ const PageSwitcher = () => {
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
   };
-
+  activeTab
   return (
     <PageSwitcherContainer>
       <div>

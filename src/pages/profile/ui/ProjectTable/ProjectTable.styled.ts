@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { RuleSet } from "styled-components";
 
 export const TableContainer = styled.table`
   border-collapse: collapse;
@@ -48,10 +48,15 @@ export const CheckboxContainer = styled.div`
 
 export const CheckboxLabel = styled.label`
   display: flex;
+  color: #aeaeb2;
   margin-right: 16px;
   gap: 4px;
   border: 1px solid #e8e8e8;
+  &:nth-child(2) {
+    border: 1px solid #ff8c33;
+  }
   cursor: pointer;
+  border-radius: 2px;
   padding: 5px 12px;
   align-items: center;
   padding-top: 5px;
@@ -68,9 +73,27 @@ export const TableHeader = styled.thead`
   font-size: 14px;
 `;
 
+export const StatusCell = styled.td`
+  padding: 5px;
+  border-radius: 5px;
+
+  &.status-ready {
+    border: 2px solid green;
+  }
+
+  &.status-development {
+    border: 2px solid blue;
+  }
+
+  &.status-frozen {
+    border: 2px solid gray;
+  }
+`;
+
 export const TableHeaderRow = styled.tr``;
 
 export const TableHeaderCell = styled.th`
+  color: #636366;
   padding: 28px;
   text-align: center;
   gap: 18px;
@@ -78,6 +101,13 @@ export const TableHeaderCell = styled.th`
     border-right: 1px solid #e8e8e8;
     font-size: 20px;
   }
+  &:nth-child(2) {
+    padding: 10px;
+  }
+  &:nth-child(7) {
+    padding: 10px;
+  }
+
   &:hover {
     background-color: #c6e1ec;
   }
@@ -98,6 +128,7 @@ export const TableCell = styled.td`
   align-items: center;
   width: 130px;
   height: 84px;
+
   &:nth-child(1) {
     width: 256px;
     height: 87px;
@@ -105,4 +136,25 @@ export const TableCell = styled.td`
     border-bottom: 1px solid #e8e8e8;
     color: #ff8c33 !important;
   }
+  &:nth-child(5) {
+    color: #8054e3 !important;
+  }
+  &:nth-child(6) {
+    margin: 27px;
+  }
+`;
+
+export const Status = styled.div<{
+  $css?: RuleSet;
+  $pointer?: boolean;
+}>`
+  padding: 0.3125rem;
+  text-align: center;
+  font-size: 0.75rem;
+  margin-top: 0.625rem;
+  ${({ theme }) => theme.typography["Heading-7"]}
+  /* default */
+	color: ${(props) => props.theme.palette.text};
+  ${(props) => props.$css};
+  cursor: ${(props) => (props.$pointer ? "pointer" : "default")};
 `;
