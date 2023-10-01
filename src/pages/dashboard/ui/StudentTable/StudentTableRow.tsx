@@ -6,6 +6,7 @@ import {
 } from "./StudentTableRow.styled";
 
 export interface StudentTableRowProps {
+  studentId: number;
   firstName: string;
   lastName: string;
   age: number;
