@@ -1,5 +1,4 @@
-import Table from "pages/profile/ui/Table/Table";
-
+import Table from "pages/profile/ui/ProjectTable/ProjectTable";
 
 const App = () => {
   // const [isAddCandidateOpen, setIsAddCandidateOpen] = useState(false);
@@ -16,14 +15,11 @@ const App = () => {
   //   <div>
   //     <button onClick={openAddCandidate}>Open Add Candidate</button>
 
-
   //     <AddCandidate isOpen={isAddCandidateOpen} onClose={closeAddCandidate} />
   //   </div>
   // );
 
-  return (
-    <Table />
-  )
+  return <Table />;
 };
 
 export default App;

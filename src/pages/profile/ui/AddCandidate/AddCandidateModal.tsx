@@ -7,7 +7,7 @@ import {
   ModalDescription,
   ModalButtons,
   ModalButton,
-} from "./AddCandidate.style";
+} from "./AddCandidateModal.style";
 
 interface ModalProps {
   isOpen: boolean;
