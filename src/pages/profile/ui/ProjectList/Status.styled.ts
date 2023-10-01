@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Status = styled.div<{
 	$backgroundColor?: string
 	$textColor?: string
+	// таким же образом можно добавить border
 }>`
 	padding: 0.3125rem;
 	text-align: center;
@@ -11,6 +12,10 @@ export const Status = styled.div<{
 	${({ theme }) => theme.typography['Heading-7']}
 	color: ${props => props.theme.palette.text};
 	
-	${props => props.$backgroundColor && `backgroundColor: ${props.$backgroundColor}`}
-	${props => props.$textColor && `color: ${props.$textColor}`}
+	${props => props.$backgroundColor && css`
+	background: ${props.$backgroundColor};
+	`}
+	${props => props.$textColor && css`
+	color: ${props.$textColor};
+	`}
 `
