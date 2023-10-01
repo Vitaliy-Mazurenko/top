@@ -40,6 +40,8 @@ interface InputBoxYellowProps {
   placeholder: string;
   required?: boolean;
   className?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const InputBoxYellow: React.FC<InputBoxYellowProps> = ({

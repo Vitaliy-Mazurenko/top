@@ -14,9 +14,9 @@ import uploadIcon from 'shared/assets/img/Group.svg';
 
 function ModalForm() {
   const [isModalOpen, setModalOpen] = useState(false);
-  const [selectedUserPhoto, setSelectedUserPhoto] = useState<File | null | string>(null);
+  const [selectedUserPhoto, setSelectedUserPhoto] = useState<string | ArrayBuffer | null>(null);
 
-  const handleImageUpload = (file: File | string) => {
+  const handleImageUpload = (file: string | ArrayBuffer | null) => {
     setSelectedUserPhoto(file);
   };
   const openModal = () => {
@@ -32,7 +32,7 @@ function ModalForm() {
   function updateWarningData(): void {
     throw new Error('Function not implemented.');
   }
-
+// selectedUserPhoto instanceof File ? URL.createObjectURL(selectedUserPhoto) : selectedUserPhoto || userphoto
   return (
     <ModalWindow>
       <UserPhotoMain src={selectedUserPhoto?.toString() || userphoto} alt="userphoto" />

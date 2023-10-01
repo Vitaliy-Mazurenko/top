@@ -72,17 +72,15 @@ export const SelectedImg = styled.img`
 `;
 
 export const ModalClose = styled.button`
+  top: 245px;
   position: absolute;
-  top: 3.5px;
-  right: 32px;
   background: none;
   border: none;
   cursor: pointer;
   width: 10px;
   height: 10px;
-  margin-top: 235.5px;
   z-index: 9999;
-  margin-right: 662px;
+  margin-left: 140px;
 `;
 
 export const ModalContentContainer = styled.div`
@@ -114,13 +112,16 @@ export const ModalWindowBtn = styled.button`
   gap: 4px;
   width: 171px;
   height: 32px;
-  padding: 6px 16px;
+  padding: 7px 16px;
   text-align: center;
   color: #8054E3;
   background: #ffffff;
   border: 1px #8054E3 solid;
   margin-left: 10px;
   margin-top: 18px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
 `;
 
 export const ModalBtnsContainer = styled.div`
