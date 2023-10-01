@@ -25,6 +25,6 @@ export const getProjectStatuses: () => Record<ProjectCardProps['status'], Status
 	},
 	frozen: {
 		color: 'rgba(66, 64, 73, 1)',
-		backgroundColor: 'rgba(66, 64, 73, 0.18)',
-	}
+		backgroundColor: 'rgba(223, 20, 227, 0.18)'
+	},
 })
