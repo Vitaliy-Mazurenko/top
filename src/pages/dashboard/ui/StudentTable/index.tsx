@@ -26,7 +26,7 @@ const StudentsTable = ({ students }: StudentsTableProps) => {
       </StyledTabledHead>
       <StyledTabledBody>
         {students.map((student) => (
-          <StudentTableRow {...student} />
+          <StudentTableRow key={student.studentId} {...student} />
         ))}
       </StyledTabledBody>
     </StyledTable>
