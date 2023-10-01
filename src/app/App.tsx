@@ -1,3 +1,4 @@
+
 import MainPage from "pages/profile/ui/MainPage/MainPage";
 
 const App = () => {
@@ -18,7 +19,7 @@ const App = () => {
   //     <AddCandidate isOpen={isAddCandidateOpen} onClose={closeAddCandidate} />
   //   </div>
   // );
-
+ 
   return (
     <div>
       {/* <h1>Hello World</h1> */}

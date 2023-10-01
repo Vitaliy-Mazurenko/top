@@ -14,7 +14,7 @@ const CustomSVG3: React.FC<React.SVGProps<SVGSVGElement>> = () => {
         cy="20"
         r="13"
         stroke="#FF8C33"
-        strokeWidth="4"
+        strokeWidth="2"
         fill="none"
       />
       <path

@@ -1,0 +1,34 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="256"
+  height="32"
+  viewBox="0 0 256 32"
+  fill="none"
+>
+  <rect
+    x="0.5"
+    y="0.5"
+    width="255"
+    height="31"
+    rx="3.5"
+    fill="white"
+    stroke="#E8E8E8"
+  />
+</svg>;
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="256"
+  height="32"
+  viewBox="0 0 256 32"
+  fill="none"
+>
+  <rect
+    x="0.5"
+    y="0.5"
+    width="255"
+    height="31"
+    rx="3.5"
+    fill="white"
+    stroke="#E8E8E8"
+  />
+</svg>;
