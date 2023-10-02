@@ -5,10 +5,10 @@ export const WarningTable = styled.div`
   flex-direction: row;
   border: 1px solid #8054e3;
   margin-top: 40px;
-  margin-left: 25px;
+  /* margin-left: 25px; */
   gap: 16px;
   width: 400px;
-  height: 56px;
+  /* height: 56px; */
   padding: 16px;
 `;
 

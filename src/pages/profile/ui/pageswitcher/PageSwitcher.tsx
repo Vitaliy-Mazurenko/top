@@ -40,18 +40,11 @@
 // };
 
 // export default PageSwitcher;
-
-
-
-
 import { useState } from 'react';
 import styled from 'styled-components';
 
-
-import ClientMenu from '../clientmenu/ClientMenu';
-import { PageSwitcherContainer,
-  PageSwitchMain
- } from './PageSwitcherStyles1';
+import ClientMenu from 'pages/ui/clientmenu/ClientMenu';
+import { PageSwitchMain, PageSwitcherContainer } from 'pages/ui/pageswitcher/PageSwitcherStyles1';
 
 
 interface PageSwitchLinkProps {

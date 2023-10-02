@@ -6,6 +6,7 @@ interface ModalProps extends React.PropsWithChildren {
 	location?: HTMLElement // где именно рендерить
 	className?: string // чтобы можно было применить styled-components
 	center?: boolean // чтобы быстро отцентрироать children
+	
 }
 
 export const Modal = (props: ModalProps) => {
@@ -31,5 +32,4 @@ export const Modal = (props: ModalProps) => {
  * const StyledModal = styled(Modal)`
 	 background-color: blue;
  `
- 
  */

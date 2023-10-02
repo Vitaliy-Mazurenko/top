@@ -16,7 +16,7 @@ const InputLabel = styled.label`
   line-height: 22px;
   letter-spacing: 0.28px;
   margin-bottom: 2px;
-  margin-left: 25px;
+  /* margin-left: 25px; */
 `;
 
 const InputElement = styled.input`
@@ -32,7 +32,7 @@ const InputElement = styled.input`
   line-height: 22px;
   border: 1px solid #ede4b7;
   padding: 5px 12px;
-  margin-left: 25px;
+  /* margin-left: 25px; */
 `;
 
 interface InputBoxYellowProps {
