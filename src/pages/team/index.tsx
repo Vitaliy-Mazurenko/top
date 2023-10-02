@@ -18,7 +18,12 @@ export const TeamPage = () => {
 			<PageInner>
 				<PagePath />
 				<MainPageHeader>Команда</MainPageHeader>
-				<NavbarMainPage />
+				<NavbarMainPage sublinks={[
+					{ label: 'Всі кандидати', url: '' },
+					{ label: 'Команда ЛК', url: '' },
+					{ label: 'Команда по сторінкам сайту', url: '' },
+					{ label: 'Команда по інтеграції ', url: '' },
+				]} />
 				<StyledTeamList />
 			</PageInner>
 		</MainPageContainer>

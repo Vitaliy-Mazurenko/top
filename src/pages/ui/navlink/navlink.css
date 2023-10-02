@@ -38,6 +38,7 @@
 .nav-list {
     display: flex;
     flex-direction: row;
+    gap: 1rem;
     /* margin-left: 25px; */
 }
 ul {
