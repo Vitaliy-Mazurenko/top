@@ -57,7 +57,6 @@ interface PageSwitchLinkProps {
   onClick: () => void;
 }
 
-// Создайте стилизованные компоненты для кнопок
 const PageSwitchLink = styled.a<PageSwitchLinkProps>`
   color: ${(props) => (props.active ? '#636366' : '#D6D6D6')};
   cursor: pointer;
