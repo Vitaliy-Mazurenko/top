@@ -1,8 +1,9 @@
 .calendar {
-  width: 200px;
+  width: 322px;
+  height: 305px;
   border-radius: 5px;
   text-transform: capitalize;
-  background-color: #F4F9FB;;
+  background-color: #f4f9fb;
 }
 
 .calendar__header {

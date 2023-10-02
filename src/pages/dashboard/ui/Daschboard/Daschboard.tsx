@@ -1,13 +1,13 @@
 import React from "react";
 import StudentsTable from "../StudentTable";
-import { Calendar } from '../Calendar/Calendar';
-import Navbar from '../../../profile/ui/navbar/Navbar';
-import styled from 'styled-components';
-const StyledDaschboard = styled.div`
-  display: flex;
-  max-height: 100%;
-`
+import { Calendar } from "../Calendar/Calendar";
+import Navbar from "../../../profile/ui/navbar/Navbar";
+import DashboardChart from "entities/DashboardChart/ui";
 
+import {
+  CalendarAndChartWrapper,
+  StyledDaschboard,
+} from "./StyledDaschboard.styled";
 
 interface StudentInterface {
   studentId: number;
@@ -21,7 +21,13 @@ interface StudentInterface {
   country: string;
 }
 
-const data: StudentInterface[] = [
+export interface ChartItemInterface {
+  id: number;
+  percentage: number;
+  title: string;
+}
+
+const tableData: StudentInterface[] = [
   {
     studentId: 1,
     firstName: "Ім'я",
@@ -68,17 +74,63 @@ const data: StudentInterface[] = [
   },
 ];
 
+const chartData: ChartItemInterface[] = [
+  {
+    id: 1,
+    percentage: 100,
+    title: "",
+  },
+  {
+    id: 2,
+    percentage: 40,
+    title: "",
+  },
+  {
+    id: 3,
+    percentage: 30,
+    title: "",
+  },
+  {
+    id: 4,
+    percentage: 25,
+    title: "",
+  },
+  {
+    id: 5,
+    percentage: 80,
+    title: "",
+  },
+  {
+    id: 6,
+    percentage: 23,
+    title: "",
+  },
+  {
+    id: 7,
+    percentage: 10,
+    title: "",
+  },
+];
+
 const Daschboard: React.FC = () => {
   const [selectedDate, setSelectedDay] = React.useState(new Date());
+
   return (
     <StyledDaschboard>
-    <Navbar />
-    <div>
-    <Calendar locale="uk-UA" selectedDate={selectedDate} selectDate={(date) => setSelectedDay(date)} />
-    <StudentsTable students={data} />
-    </div>
+      <Navbar />
+      <div style={{ width: "1138px" }}>
+        <CalendarAndChartWrapper>
+          <Calendar
+            locale="uk-UA"
+            selectedDate={selectedDate}
+            selectDate={(date) => setSelectedDay(date)}
+          />
+          <DashboardChart data={chartData} />
+        </CalendarAndChartWrapper>
+        <StudentsTable students={tableData} />
+      </div>
     </StyledDaschboard>
-  )
+  );
 };
 
 export default Daschboard;
