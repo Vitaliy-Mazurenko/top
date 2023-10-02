@@ -74,8 +74,9 @@ export const SelectedImg = styled.img`
 `;
 
 export const ModalClose = styled.button`
-  top: 245px;
-  position: fixed;
+  top: 0;
+  margin-top: 250px;
+  position: absolute;
   background: none;
   border: none;
   cursor: pointer;
