@@ -1,7 +1,7 @@
 import { MainPageContainer, MainPageHeader } from "pages/ui/MainPage/MainPageStyles"
 import { PageInner } from "pages/ui/PageInner/index.styled"
 import { TeamMembersList } from "pages/ui/TeamMembersList"
-import { Navbar } from "pages/ui/navbar/Navbar"
+import { Navbar } from "pages/ui/Navbar"
 import { NavbarMainPage } from "pages/ui/navlink/NavbarMainPage"
 import { PagePath } from "pages/ui/pageswitcher/PageSwitcher"
 import styled from "styled-components"

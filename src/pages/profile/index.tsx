@@ -1,8 +1,8 @@
-import { MainPageContainer, MainPageHeader } from "pages/ui/MainPage/MainPageStyles"
+import { MainPageHeader } from "pages/ui/MainPage/MainPageStyles"
 import { PageInner } from "pages/ui/PageInner/index.styled"
 import { SkillList } from "pages/ui/SkillList"
 import { WorkActivityList } from "pages/ui/WorkActivityList"
-import { Navbar } from "pages/ui/navbar/Navbar"
+import { Navbar } from "pages/ui/Navbar"
 import { NavbarMainPage } from "pages/ui/navlink/NavbarMainPage"
 import { PagePath } from "pages/ui/pageswitcher/PageSwitcher"
 import nodeJS from 'shared/assets/icons/nodejs.svg'
@@ -14,6 +14,7 @@ import { TeamMemberWideCard } from "pages/ui/TeamMemberWideCard"
 import avatarURL from 'shared/assets/img/photo.png'
 import { ProfileOptions } from "pages/ui/ProfileOptions"
 import { Button } from "shared/ui/Button"
+import { PageContainer } from "shared/ui/PageContainer/index.styled"
 
 const mockWorkActivity = [
 	{
@@ -157,14 +158,14 @@ const StyledTeamMemberWideCard = styled(TeamMemberWideCard)`
 export const ProfilePage = () => {
 
 	return (
-		<MainPageContainer>
+		<PageContainer>
 			<Navbar />
 			<PageInner>
 				<PagePath />
 				<MainPageHeader>Профiль/Emily</MainPageHeader>
 				<NavbarMainPage sublinks={[
-					{label: 'Профiль', url: ''}
-				]}/>
+					{ label: 'Профiль', url: '' }
+				]} />
 				<ProfileOptions />
 
 				<StyledTeamMemberWideCard {...mockMemberWideCard} status="online" />
@@ -177,6 +178,6 @@ export const ProfilePage = () => {
 					<StyledWorkActivityList workActivity={mockWorkActivity} />
 				</FlexWrapper>
 			</PageInner>
-		</MainPageContainer>
+		</PageContainer>
 	)
 }

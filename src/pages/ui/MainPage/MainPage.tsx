@@ -3,7 +3,7 @@ import {
   MainPageInfo,
   MainPageHeader,
 } from './MainPageStyles';
-import { Navbar } from '../navbar/Navbar';
+import { Navbar } from '../Navbar';
 import { PagePath } from '../pageswitcher/PageSwitcher';
 import { NavbarMainPage } from '../navlink/NavbarMainPage';
 import RegistrationPage from '../registrationform/RegistrationPage';

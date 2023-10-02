@@ -26,7 +26,7 @@ import {
   ProfileButton,
   DropdownContentSecond,
   SettingsBtn,
-} from 'pages/ui/navbar/NavbarStyles';
+} from 'pages/ui/Navbar/styled';
 
 const SidebarMenu = () => {
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);

@@ -8,7 +8,7 @@ import repoImg from 'shared/assets/img/repo.svg'
 import sidebarImg from 'shared/assets/img/sidebarimg.png'
 import settingsImg from 'shared/assets/img/Settings.png'
 import vectorNavbar from 'shared/assets/img/vectornavbar.svg'
-// import './Navbar.css'
+
 import {
   NavbarContainer,
   LogoImg,
@@ -25,7 +25,7 @@ import {
   ProfileButton,
   DropdownContentSecond,
   SettingsBtn,
-} from './NavbarStyles';
+} from './styled';
 
 
 export const Navbar = () => {
