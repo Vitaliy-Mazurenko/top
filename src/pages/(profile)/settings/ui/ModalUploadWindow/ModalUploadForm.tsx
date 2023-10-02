@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Modal from './ModalWindow';
+import { ModalWindow } from './ModalWindow';
 import {
-  ModalWindow,
+  ModalWindow as ModalWindowStyled,
   ModalHeader,
   ModalWindowBtn,
   TextHelper,
@@ -35,17 +35,17 @@ export function ModalUploadForm() {
   }
   // selectedUserPhoto instanceof File ? URL.createObjectURL(selectedUserPhoto) : selectedUserPhoto || userphoto
   return (
-    <ModalWindow>
+    <ModalWindowStyled>
       <UserPhotoMain src={selectedUserPhoto?.toString() || userphoto} alt="userphoto" />
       <ModalHeader>Фото</ModalHeader>
       <ModalWindowBtn onClick={openModal}>
         <img src={uploadphoto} alt="uploaduserphoto" />
         <span>Загрузити аватар</span>
       </ModalWindowBtn>
-      <Modal isOpen={isModalOpen} onClose={closeModal} onImageUpload={handleImageUpload} updateWarningData={updateWarningData}>
+      <ModalWindow isOpen={isModalOpen} onClose={closeModal} onImageUpload={handleImageUpload} updateWarningData={updateWarningData}>
         <UploadIcon src={uploadIcon} alt="uploadIcon" id="uploadIcon" />
         <TextHelper>Supported formats: JPG and PNG. <br />The recommended file size is 256x256 pixels.</TextHelper>
-      </Modal>
-    </ModalWindow>
+      </ModalWindow>
+    </ModalWindowStyled>
   );
 }

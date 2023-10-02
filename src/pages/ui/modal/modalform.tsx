@@ -9,8 +9,8 @@ import {
 import userphoto from 'shared/assets/img/custom.png';
 import uploadphoto from 'shared/assets/img/upload.png';
 import uploadIcon from 'shared/assets/img/Group.svg';
-import ModalWindow from 'pages/profile/ui/ModalUploadWindow/ModalWindow';
 import { Modal } from 'shared/ui/MODAL_';
+import { ModalWindow } from './Modal';
 function ModalUploadForm() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedUserPhoto, setSelectedUserPhoto] = useState<string | ArrayBuffer | null>(null);

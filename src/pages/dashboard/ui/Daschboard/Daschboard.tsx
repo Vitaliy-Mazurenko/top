@@ -1,13 +1,13 @@
 import React from "react";
 import StudentsTable from "../StudentTable";
 import { Calendar } from "../Calendar/Calendar";
-import Navbar from "../../../profile/ui/navbar/Navbar";
 import DashboardChart from "entities/DashboardChart/ui";
 
 import {
   CalendarAndChartWrapper,
   StyledDaschboard,
 } from "./StyledDaschboard.styled";
+import { Navbar } from "widget/Navbar";
 
 interface StudentInterface {
   studentId: number;
