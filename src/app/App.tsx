@@ -1,4 +1,4 @@
-import MainPage from "pages/profile/ui/MainPage/MainPage";
+import Daschboard from "pages/dashboard/ui/Daschboard/Daschboard";
 
 const App = () => {
   // const [isAddCandidateOpen, setIsAddCandidateOpen] = useState(false);
@@ -23,7 +23,7 @@ const App = () => {
     <div>
       {/* <h1>Hello World</h1> */}
       {/* <Table /> Використовуйте компонент Table тут */}
-      <MainPage />
+      <Daschboard />
     </div>
   );
 };

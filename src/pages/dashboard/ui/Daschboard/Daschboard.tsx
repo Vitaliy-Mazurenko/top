@@ -1,5 +1,13 @@
 import React from "react";
 import StudentsTable from "../StudentTable";
+import { Calendar } from '../Calendar/Calendar';
+import Navbar from '../../../profile/ui/navbar/Navbar';
+import styled from 'styled-components';
+const StyledDaschboard = styled.div`
+  display: flex;
+  max-height: 100%;
+`
+
 
 interface StudentInterface {
   studentId: number;
@@ -61,11 +69,16 @@ const data: StudentInterface[] = [
 ];
 
 const Daschboard: React.FC = () => {
+  const [selectedDate, setSelectedDay] = React.useState(new Date());
   return (
-    <>
-      <StudentsTable students={data} />
-    </>
-  );
+    <StyledDaschboard>
+    <Navbar />
+    <div>
+    <Calendar locale="uk-UA" selectedDate={selectedDate} selectDate={(date) => setSelectedDay(date)} />
+    <StudentsTable students={data} />
+    </div>
+    </StyledDaschboard>
+  )
 };
 
 export default Daschboard;
