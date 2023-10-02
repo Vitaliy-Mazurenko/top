@@ -10,6 +10,7 @@ export const ModalOverlay = styled.div`
   width: 480px;
   height: 402px;
   border: 1px #8054E3 solid;
+  
 `;
 
 export const ModalHeader = styled.h2`
@@ -28,6 +29,7 @@ export const HeaderWindow = styled.h2`
     font-weight: 400;
 `
 export const ModalContent = styled.div`
+  
   justify-content: center;
   p {
     margin-top: 10px;

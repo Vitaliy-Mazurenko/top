@@ -31,6 +31,7 @@ function ModalUploadForm() {
 
   function updateWarningData(): void {
     throw new Error('Function not implemented.');
+    
   }
 // selectedUserPhoto instanceof File ? URL.createObjectURL(selectedUserPhoto) : selectedUserPhoto || userphoto
   return (
