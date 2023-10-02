@@ -5,7 +5,7 @@ export const NavbarContainer = styled.div`
   background: #fff;
   border-right: 1px solid gray;
   width: 225px;
-  height: 830px;
+  height: 100vh;
 `;
 
 export const LogoImg = styled.img`
