@@ -44,20 +44,22 @@ export const Calendar: React.FC<CalendarProps> = ({
             {state.selectedYearsInterval[state.selectedYearsInterval.length - 1]}
           </div>
         )}
-          <div
+        <div className='calendar__header__arrow'>
+          <span
           aria-hidden
           className='calendar__header__arrow__left'
-          onClick={() => functions.onClickArrow('left')}
-        ><svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          onClick={() => functions.onClickArrow('left')}>
+            <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M14 17L2 9L14 1" stroke="#C6E1EC" stroke-width="2" stroke-linecap="round"/>
-        </svg></div>
-        <div
+        </svg></span>
+        <span
           aria-hidden
           className='calendar__header__arrow__right'
           onClick={() => functions.onClickArrow('right')}>
           <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1 1L13 9L1 17" stroke="#FF8C33" stroke-width="2" stroke-linecap="round"/>
 </svg>
+        </span>
         </div>
       </div>
       <div className='calendar__body'>
