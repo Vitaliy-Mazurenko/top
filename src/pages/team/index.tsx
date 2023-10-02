@@ -4,10 +4,13 @@ import { TeamMembersList } from "pages/ui/TeamMembersList"
 import { Navbar } from "pages/ui/navbar/Navbar"
 import { NavbarMainPage } from "pages/ui/navlink/NavbarMainPage"
 import { PagePath } from "pages/ui/pageswitcher/PageSwitcher"
+import styled from "styled-components"
+
+const StyledTeamList = styled(TeamMembersList)`
+	margin-top: 2rem;
+`
 
 export const TeamPage = () => {
-
-
 
 	return (
 		<MainPageContainer>
@@ -16,7 +19,7 @@ export const TeamPage = () => {
 				<PagePath />
 				<MainPageHeader>Команда</MainPageHeader>
 				<NavbarMainPage />
-				<TeamMembersList />
+				<StyledTeamList />
 			</PageInner>
 		</MainPageContainer>
 	)
