@@ -48,6 +48,7 @@ const Categories = styled.div`
 	position: absolute;
 	bottom: 0;
 	left: 0;
+	background-color: rgba(208, 188, 235, 1);
 `
 
 const Icon = styled.img`

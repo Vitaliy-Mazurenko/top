@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const PageSwitcherContainer = styled.div`
@@ -9,10 +10,10 @@ export const PageSwitcherContainer = styled.div`
 
 
 export const ExtraText = styled.span`
-  color: #fff;
+  color: black;
 `;
 
-export const ActiveLink = styled.a`
+export const ActiveLink = styled(Link)`
   color: #636366;
   font-size: 12px;
   font-family: 'Inter', sans-serif;
@@ -22,7 +23,7 @@ export const ActiveLink = styled.a`
   cursor: pointer;
 `;
 
-export const PageSwitchLink = styled.a`
+export const PageSwitchLink = styled(Link)`
   cursor: pointer;
   color: #d6d6d6;
   font-size: 12px;
@@ -35,6 +36,6 @@ export const PageSwitchLink = styled.a`
 `;
 
 export const PageSwitchMain = styled.p `
-    margin-left: 25px;
+    /* margin-left: 25px; */
     margin-top: 22px;
 `;

@@ -1,14 +1,12 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import {
   MainPageContainer,
   MainPageInfo,
   MainPageHeader,
-
-
 } from './MainPageStyles';
 
-import Navbar from '../navbar/Navbar';
-import NavbarMainPage from '../navlink/NavbarMainPage';
+import { Navbar } from '../navbar/Navbar';
+import { NavbarMainPage } from '../navlink/NavbarMainPage';
 import RegistrationPage from '../registrationform/RegistrationPage';
 import PageSwitcher from '../pageswitcher/PageSwitcher';
 import ModalForm from '../modal/modalform';
@@ -29,7 +27,7 @@ const MainPage = () => {
         <PageSwitcher />
         <MainPageHeader>Профіль</MainPageHeader>
         <NavbarMainPage />
-        <MainPageInfo> 
+        <MainPageInfo>
           <div>
             <div>
               {showWarningPageGreen ? (

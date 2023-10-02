@@ -49,7 +49,7 @@ export const MainPageHeader = styled.h1`
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.90px;
-  margin-left: 28px;
+  /* margin-left: 28px; */
 `;
 
 

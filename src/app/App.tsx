@@ -1,5 +1,7 @@
 
-import MainPage from "pages/profile/ui/MainPage/MainPage";
+import { TeamPage } from "pages/team";
+import MainPage from "pages/ui/MainPage/MainPage";
+import { Route, Routes } from "react-router-dom";
 
 const App = () => {
   // const [isAddCandidateOpen, setIsAddCandidateOpen] = useState(false);
@@ -21,11 +23,10 @@ const App = () => {
   // );
  
   return (
-    <div>
-      {/* <h1>Hello World</h1> */}
-      {/* <Table /> Використовуйте компонент Table тут */}
-      <MainPage />
-    </div>
+    <Routes>
+      <Route element={<h1>profile of any user</h1>} path="/home/profile/:userID"/>
+      <Route element={<TeamPage />} path="/home/team/"/>
+    </Routes>
   );
 };
 

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { NavLink, BrowserRouter as Router, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import './navlink.css';
 
 
-const NavbarMainPage = () => {
+export const NavbarMainPage = () => {
   const activeLink = "mainpageswitcher mainpage--active";
   const normalLink = "mainpageswitcher";
   const location = useLocation();
@@ -45,12 +45,3 @@ const NavbarMainPage = () => {
   );
 };
 
-const App = () => {
-  return (
-    <Router>
-      <NavbarMainPage />
-    </Router>
-  );
-};
-
-export default App;
