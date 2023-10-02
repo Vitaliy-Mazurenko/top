@@ -26,7 +26,12 @@ export const ProfileSettingsPage = () => {
       <div style={{marginLeft: '22px'}}>
         <PagePath />
         <MainPageHeader>Профіль</MainPageHeader>
-        <NavbarMainPage />
+        <NavbarMainPage sublinks={[
+          {label: 'Налаштування', url: ''},
+          {label: 'Сповіщення', url: ''},
+          {label: 'Проєкти', url: ''},
+          {label: 'Команда', url: ''},
+        ]}/>
         <MainPageInfo>
           <div>
             <div>

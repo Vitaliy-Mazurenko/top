@@ -162,7 +162,9 @@ export const ProfilePage = () => {
 			<PageInner>
 				<PagePath />
 				<MainPageHeader>Профiль/Emily</MainPageHeader>
-				<NavbarMainPage />
+				<NavbarMainPage sublinks={[
+					{label: 'Профiль', url: ''}
+				]}/>
 				<ProfileOptions />
 
 				<StyledTeamMemberWideCard {...mockMemberWideCard} status="online" />
