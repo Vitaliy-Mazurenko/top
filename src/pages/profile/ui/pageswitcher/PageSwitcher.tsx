@@ -50,7 +50,7 @@ import {
   PageSwitcherContainer,
   PageSwitchMain
 } from './PageSwitcherStyles';
-import ClientMenu from './../clientmenu/ClientMenu';
+import ClientMenu from '../Clientmenu/ClientMenu';
 
 interface PageSwitchLinkProps {
   active: boolean;

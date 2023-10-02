@@ -7,11 +7,11 @@ import {
 
 } from './MainPageStyles';
 
-import Navbar from '../navbar/Navbar';
-import NavbarMainPage from '../navlink/NavbarMainPage';
-import RegistrationPage from '../registrationform/RegistrationPage';
-import PageSwitcher from '../pageswitcher/PageSwitcher';
-import ModalForm from '../modal/modalform';
+import SidebarMenu from '../SidebarMenu/SidebarMenu';
+import NavbarMainPage from '../NavbarMainPage/NavbarMainPage';
+import RegistrationPage from '../RegistrationForm/RegistrationPage';
+import PageSwitcher from '../PageSwitcher/PageSwitcher';
+import ModalUploadForm from '../ModalUploadWindow/ModalUploadForm';
 
 
 const MainPage = () => {
@@ -19,7 +19,7 @@ const MainPage = () => {
 
   return (
     <MainPageContainer>
-      <Navbar />
+      <SidebarMenu />
 
       <div>
         <PageSwitcher />
@@ -31,7 +31,7 @@ const MainPage = () => {
             <RegistrationPage />
           </div>
           </div>
-          <ModalForm />
+          <ModalUploadForm />
         </MainPageInfo>
       </div>
     </MainPageContainer>

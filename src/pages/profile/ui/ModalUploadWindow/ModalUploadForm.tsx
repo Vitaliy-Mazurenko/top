@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Modal from './Modal';
+import Modal from './ModalWindow';
 import {
   ModalWindow,
   ModalHeader,
@@ -12,7 +12,7 @@ import userphoto from 'shared/assets/img/custom.png';
 import uploadphoto from 'shared/assets/img/upload.png';
 import uploadIcon from 'shared/assets/img/Group.svg';
 
-function ModalForm() {
+function ModalUploadForm() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedUserPhoto, setSelectedUserPhoto] = useState<string | ArrayBuffer | null>(null);
 
@@ -49,4 +49,4 @@ function ModalForm() {
   );
 }
 
-export default ModalForm;
+export default ModalUploadForm;

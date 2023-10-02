@@ -80,7 +80,7 @@ export const ModalClose = styled.button`
   width: 10px;
   height: 10px;
   z-index: 9999;
-  margin-left: 140px;
+  margin-left: 230px;
 `;
 
 export const ModalContentContainer = styled.div`
