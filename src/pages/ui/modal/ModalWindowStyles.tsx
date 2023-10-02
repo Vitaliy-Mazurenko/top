@@ -113,7 +113,6 @@ export const ModalWindowBtn = styled.button`
   flex-direction: row;
   gap: 4px;
   width: 171px;
-  height: 32px;
   padding: 6px 16px;
   text-align: center;
   color: #8054E3;

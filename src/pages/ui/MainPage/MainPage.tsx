@@ -8,12 +8,12 @@ import {
 import { Navbar } from '../navbar/Navbar';
 import { NavbarMainPage } from '../navlink/NavbarMainPage';
 import RegistrationPage from '../registrationform/RegistrationPage';
-import PageSwitcher from '../pageswitcher/PageSwitcher';
+import { PagePath } from '../pageswitcher/PageSwitcher';
 import ModalForm from '../modal/modalform';
 import WarningPageBlue from 'shared/ui/ReusableWarningTableBlue/WarningPageBlue';
 import WarningPageGreen from 'shared/ui/ReusableWarningTableGreen/WarningPageGreen';
 
-const MainPage = () => {
+export const ProfileSettingsPage = () => {
   const [showWarningPageGreen, setShowWarningPageGreen] = useState(false);
   const handleSaveButtonClick = () => {
     setShowWarningPageGreen(true);
@@ -23,8 +23,8 @@ const MainPage = () => {
     <MainPageContainer>
       <Navbar />
 
-      <div>
-        <PageSwitcher />
+      <div style={{marginLeft: '22px'}}>
+        <PagePath />
         <MainPageHeader>Профіль</MainPageHeader>
         <NavbarMainPage />
         <MainPageInfo>
@@ -44,5 +44,3 @@ const MainPage = () => {
     </MainPageContainer>
   );
 };
-
-export default MainPage;

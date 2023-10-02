@@ -4,14 +4,16 @@ import { Wrapper } from "./Wrapper.styled"
 
 interface SkillListProps {
 	skills: SkillItemProps[]
+	className?: string
+
 }
 
 export const SkillList = (props: SkillListProps) => {
-	const { skills } = props
+	const { skills, className } = props
 	return (
-		<Wrapper>
+		<Wrapper className={className}>
 			<Header>Basic skills</Header>
-			{skills.map(skill => (<SkillItem {...skill}/>))}
+			{skills.map(skill => (<SkillItem {...skill} />))}
 		</Wrapper>
 	)
 }

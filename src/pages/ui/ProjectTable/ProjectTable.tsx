@@ -79,7 +79,7 @@ const columns: Column[] = [
   { Header: "Додати в проєкт", accessor: "add" },
 ];
 
-function Table() {
+export function ProjectTable() {
   const [searchText, setSearchText] = useState("");
   const [showAllProjects, setShowAllProjects] = useState(true);
   const [showReadyProjects, setShowReadyProjects] = useState(false);
@@ -139,7 +139,7 @@ function Table() {
   };
 
   return (
-    <div>
+    <div style={{ background: 'white', display: 'inline-block' }}>
       <div style={{ display: "flex", alignItems: "baseline" }}>
         <SearchInputContainer>
           <FaSearch
@@ -297,4 +297,3 @@ function Table() {
   );
 }
 
-export default Table;

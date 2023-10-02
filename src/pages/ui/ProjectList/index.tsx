@@ -10,7 +10,7 @@ import { Search } from "./Search.styled"
 import useInput from "shared/hooks/useInput"
 import { ProjectCardProps } from '../ProjectCard'
 import { useToggle } from 'shared/hooks/useToggle'
-import { useProjects } from 'pages/profile/ui/ProjectList/useProjects'
+import { useProjects } from './useProjects'
 
 export const ProjectList = () => {
 	const projectStatuses = useMemo(getProjectStatuses, [])

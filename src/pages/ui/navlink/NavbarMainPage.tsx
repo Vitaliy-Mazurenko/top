@@ -24,21 +24,6 @@ export const NavbarMainPage = () => {
               Налаштування
             </NavLink>
           </li>
-          <li className="nav-list__item">
-            <NavLink to="/notifications" className={activeTab === '/notifications' ? activeLink : normalLink}>
-              Сповіщення
-            </NavLink>
-          </li>
-          <li className="nav-list__item">
-            <NavLink to="/projects" className={activeTab === '/projects' ? activeLink : normalLink}>
-              Проєкти
-            </NavLink>
-          </li>
-          <li className="nav-list__item">
-            <NavLink to="/team" className={activeTab === '/team' ? activeLink : normalLink}>
-              Команда
-            </NavLink>
-          </li>
         </ul>
       </nav>
     </div>

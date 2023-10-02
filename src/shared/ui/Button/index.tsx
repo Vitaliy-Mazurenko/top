@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
 
-	//если variant не указан вовсе, то по умолчанию он равен primary
+//если variant не указан вовсе, то по умолчанию он равен primary
 export const Button = styled.button<{ $variant?: 'primary' | 'secondary' }>`
-	min-width: 17.625rem;
-	padding: 1rem;
+	width: 100%;
+padding: 1rem;
 	
 	${({ theme, $variant = 'primary' }) => $variant === 'primary' && css`
 	background-color: ${theme.palette.primary}; // если вариант primary, то задаем такой css

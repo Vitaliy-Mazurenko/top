@@ -4,6 +4,8 @@ export const MainPageContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
+  height: 100dvh;
+  overflow: hidden;
 `;
 
 export const MainPageSwitcher = styled.div`

@@ -2,10 +2,10 @@ import RegistrationForm from './RegistrationForm';
 import { SaveButton } from './RegistrationFormStyles';
 
 const RegistrationPage = ({ onSave }: { onSave: () => void }) => {
-  
+
   return (
-    
-  <div>
+
+    <div>
       <RegistrationForm />
       <SaveButton onClick={onSave}>Зберегти</SaveButton>
     </div>

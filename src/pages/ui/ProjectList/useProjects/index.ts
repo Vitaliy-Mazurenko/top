@@ -1,6 +1,6 @@
-import { ProjectCardProps } from "pages/profile/ui/ProjectCard"
-import { mockData } from "pages/profile/ui/ProjectList/mockData"
+import { ProjectCardProps } from "pages/ui/ProjectCard"
 import { useEffect, useState } from "react"
+import { mockData } from "../mockData"
 
 interface useProjectsArgs {
 	search?: string

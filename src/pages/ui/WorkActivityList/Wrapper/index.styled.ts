@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 0.625rem;
+	overflow: auto;
 
 	position: relative;
 	&::before {
