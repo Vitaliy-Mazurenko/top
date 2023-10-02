@@ -1,8 +1,4 @@
 import {
-  IChartItemWithRating,
-  findTheHighKPI,
-} from "../lib/helpers/findTheHighKPI";
-import {
   ChartItem,
   ChartList,
   ChartTitle,
@@ -16,16 +12,14 @@ interface DashboardChartProps {
 }
 
 const DashboardChart = ({ data }: DashboardChartProps) => {
-  const filteredData: IChartItemWithRating[] = findTheHighKPI(data);
-
   return (
     <ChartWrapper>
       <ChartTitle>Порівняння Kpi</ChartTitle>
       <ChartList>
-        {filteredData.map(({ percentage, id, highKPI }) => (
+        {data.map(({ percentage, id }) => (
           <ChartItem
             $height={percentage}
-            style={highKPI ? { backgroundColor: "#FF8C33" } : {}}
+            style={percentage > 50 ? { backgroundColor: "#FF8C33" } : {}}
             key={id}
           ></ChartItem>
         ))}
