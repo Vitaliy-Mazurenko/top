@@ -1,10 +1,9 @@
-import { PageContainer } from 'shared/ui/page-layout/PageContainer/index.styled';
 import RegistrationPage from '../../ui/registrationform/RegistrationPage';
-import { ModalUploadForm } from 'pages/profile/ui/ModalUploadWindow/ModalUploadForm';
 import { Navbar } from 'widget/Navbar';
 import { PageSwitcher } from 'features/Pageswitcher';
 import { SubNavbar } from 'features/SubNavbar';
-import { PageHeader } from 'shared/ui/page-layout/PageHeader/index.styled';
+import { PageContainer, PageHeader, PageInfo } from 'shared/ui/page-layout';
+import { ModalUploadForm } from './ui/ModalUploadWindow/ModalUploadForm';
 
 
 export const ProfileSettingsPage = () => {

@@ -1,11 +1,9 @@
-import { PageHeader } from "pages/profile/settings/MainPageStyles"
-import { PageInner } from "shared/ui/page-layout/PageInner/index.styled"
 import { TeamMembersList } from "pages/ui/TeamMembersList"
 import { Navbar } from "widget/Navbar"
 import { SubNavbar } from "features/SubNavbar"
 import { PageSwitcher } from "features/Pageswitcher"
 import styled from "styled-components"
-import { PageContainer } from "shared/ui/page-layout/PageContainer/index.styled"
+import { PageContainer, PageHeader, PageInner } from "shared/ui/page-layout"
 
 const StyledTeamList = styled(TeamMembersList)`
 	margin-top: 2rem;

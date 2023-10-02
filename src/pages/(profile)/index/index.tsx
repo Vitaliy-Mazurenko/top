@@ -1,4 +1,3 @@
-import { PageInner } from "shared/ui/page-layout/PageInner/index.styled"
 import { SkillList } from "pages/ui/SkillList"
 import { WorkActivityList } from "pages/ui/WorkActivityList"
 import { Navbar } from "widget/Navbar"
@@ -13,8 +12,7 @@ import { TeamMemberWideCard } from "pages/ui/TeamMemberWideCard"
 import avatarURL from 'shared/assets/img/photo.png'
 import { ProfileOptions } from "pages/ui/ProfileOptions"
 import { Button } from "shared/ui/Button"
-import { PageContainer } from "shared/ui/page-layout/PageContainer/index.styled"
-import { PageHeader } from "shared/ui/page-layout/PageHeader/index.styled"
+import { PageContainer, PageHeader, PageInner } from "shared/ui/page-layout"
 
 const mockWorkActivity = [
 	{

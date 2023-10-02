@@ -15,7 +15,7 @@ interface ModalProps {
   project: string;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+export const AddCandidateModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -47,5 +47,3 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     </ModalWrapper>
   );
 };
-
-export default Modal;

@@ -1,4 +1,24 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+
+export const PageInner = styled.div`
+	margin-left: 1.75rem;
+`
+export const PageHeader = styled.h1`
+  color: #1c1c1e;
+  font-size: 30px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.90px;
+`;
+export const PageContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  height: 100dvh;
+  overflow: hidden;
+`;
 
 export const PageSwitcher = styled.div`
   cursor: pointer;
@@ -35,6 +55,3 @@ export const PageInfo = styled.div`
   display: flex;
   flex-direction: row;
 `;
-
-
-

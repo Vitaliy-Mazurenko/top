@@ -1,6 +1,6 @@
-import { ProfilePage } from "pages/profile";
+import { ProfilePage } from "pages/(profile)/index";
+import { ProfileSettingsPage } from "pages/(profile)/settings";
 import { TeamPage } from "pages/team";
-import { ProfileSettingsPage } from "pages/profile/settings/MainPage";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {

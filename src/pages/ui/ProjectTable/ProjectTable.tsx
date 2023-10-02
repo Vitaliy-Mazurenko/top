@@ -19,7 +19,7 @@ import CustomSVG2 from "shared/ui/CustomSVG/CustomSVG2";
 import CustomSVG3 from "shared/ui/CustomSVG/CustomSVG3";
 import CustomSVG4 from "shared/ui/CustomSVG/CustomSVG4";
 import CloseSVG from "shared/ui/CustomSVG/CloseSVG";
-import Modal from "../AddCandidate/AddCandidateModal";
+import { AddCandidateModal } from "features/AddCandidate";
 
 const data = [
   {
@@ -287,7 +287,7 @@ export function ProjectTable() {
       </TableContainer>
 
       {isModalOpen && (
-        <Modal
+        <AddCandidateModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           project={selectedProject}
