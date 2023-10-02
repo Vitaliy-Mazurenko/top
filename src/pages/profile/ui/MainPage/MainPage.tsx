@@ -13,7 +13,7 @@ import NavbarMainPage from '../NavbarMainPage/NavbarMainPage';
 
 import ModalUploadForm from '../ModalUploadWindow/ModalUploadForm';
 import PageSwitcher from '../pageswitcher/PageSwitcher';
-import RegistrationPage from '../Registrationform/RegistrationPage';
+import RegistrationPage from '../registrationform/RegistrationPage';
 import SidebarMenu from '../navbar/Navbar';
 
 

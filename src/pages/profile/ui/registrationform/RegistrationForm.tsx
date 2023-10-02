@@ -2,7 +2,21 @@ import React, { useState } from 'react';
 import InputBoxYellow from 'shared/ui/reusable_input/InputBoxYellow';
 import WarningPageGreen from 'shared/ui/ReusableWarningTableGreen/WarningPageGreen';
 import WarningPageBlue from 'shared/ui/ReusableWarningTableBlue/WarningPageBlue';
-import { SaveButton } from './RegistrationFormStyles1';
+import styled from 'styled-components';
+
+export const SaveButton = styled.button`
+  width: 282px;
+  height: 51px;
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+  background: #ff8c33;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  margin-top: 24px;
+  cursor: pointer;
+  margin-left: 25px;
+`;
 
 const RegistrationForm = () => {
   const [email, setEmail] = useState('');
