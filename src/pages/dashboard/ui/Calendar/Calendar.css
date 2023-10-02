@@ -74,7 +74,8 @@
 }
 
 .calendar__day:hover {
-  background-color: var(--color-additional7);
+  background-color: #ff8c33;
+  color: white;
 }
 
 .calendar__additional__day {
@@ -102,11 +103,12 @@
 }
 
 .calendar__selected__item {
-  color: var(--color-text);
-  background-color: var(--color-additional);
+  background-color: #ff8c33;
+  color: white;
 }
 .calendar__selected__item:hover {
-  background-color: var(--color-additional);
+  background-color: #ff8c33;
+  color: white;
 }
 
 .calendar__pick__items__container {
