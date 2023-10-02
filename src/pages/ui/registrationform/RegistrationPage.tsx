@@ -1,6 +1,6 @@
 import RegistrationForm from "./RegistrationForm";
 
-const RegistrationPage = ({ onSave }: { onSave: () => void }) => {
+const RegistrationPage = () => {
 
   return (
 

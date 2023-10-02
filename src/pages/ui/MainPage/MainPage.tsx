@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   MainPageContainer,
   MainPageInfo,
@@ -12,11 +11,6 @@ import ModalUploadForm from 'pages/profile/ui/ModalUploadWindow/ModalUploadForm'
 
 
 export const ProfileSettingsPage = () => {
-  const [showWarningPageGreen, setShowWarningPageGreen] = useState(false);
-  const handleSaveButtonClick = () => {
-    setShowWarningPageGreen(true);
-    // Другие действия после сохранения
-  };
 
   return (
     <MainPageContainer>
