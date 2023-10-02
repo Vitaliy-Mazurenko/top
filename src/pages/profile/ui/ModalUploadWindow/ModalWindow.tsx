@@ -21,7 +21,7 @@ interface ModalProps {
   updateWarningData: () => void;
 }
 
-export const ModalWindow: React.FC<ModalProps> = ({
+const ModalWindow: React.FC<ModalProps> = ({
   isOpen,
   onClose,
   onImageUpload,
@@ -113,3 +113,4 @@ export const ModalWindow: React.FC<ModalProps> = ({
   );
 };
 
+export default ModalWindow;

@@ -5,7 +5,7 @@ export const NavbarContainer = styled.div`
   background: #fff;
   border-right: 1px solid gray;
   width: 225px;
-  height: 100%;
+  height: 100vh;
 `;
 
 export const LogoImg = styled.img`
@@ -110,7 +110,6 @@ export const VectorSecond = styled.img`
 `;
 
 export const DropdownContent = styled.div`
-  position: absolute;
   z-index: 1;
   left: 0;
   display: block;
@@ -170,8 +169,7 @@ export const ProfileButton = styled.button`
 
 export const DropdownContentSecond = styled.div`
   display: block;
-  position: absolute;
-  z-index: 1;
+    z-index: 1;
   left: 198px;
   display: flex;
   flex-direction: column;

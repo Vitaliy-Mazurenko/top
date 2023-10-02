@@ -1,5 +1,4 @@
-import RegistrationForm from './RegistrationForm';
-import { SaveButton } from './RegistrationFormStyles';
+import RegistrationForm from "./RegistrationForm";
 
 const RegistrationPage = ({ onSave }: { onSave: () => void }) => {
 
@@ -7,7 +6,6 @@ const RegistrationPage = ({ onSave }: { onSave: () => void }) => {
 
     <div>
       <RegistrationForm />
-      <SaveButton onClick={onSave}>Зберегти</SaveButton>
     </div>
   );
 };

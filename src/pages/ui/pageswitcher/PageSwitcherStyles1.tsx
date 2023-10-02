@@ -21,6 +21,7 @@ export const ActiveLink = styled(Link)`
   line-height: 20px;
   letter-spacing: 0.36px;
   cursor: pointer;
+  
 `;
 
 export const PageSwitchLink = styled(Link)`

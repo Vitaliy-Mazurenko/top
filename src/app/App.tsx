@@ -1,4 +1,3 @@
-
 import { ProfilePage } from "pages/profile";
 import { TeamPage } from "pages/team";
 import { ProfileSettingsPage } from "pages/ui/MainPage/MainPage";

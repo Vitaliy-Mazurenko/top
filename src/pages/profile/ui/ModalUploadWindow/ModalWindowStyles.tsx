@@ -114,9 +114,12 @@ export const ModalWindowBtn = styled.button`
   flex-direction: row;
   gap: 4px;
   width: 171px;
+<<<<<<<< HEAD:src/pages/ui/modal/ModalWindowStyles.tsx
   padding: 6px 16px;
+========
   height: 32px;
   padding: 7px 16px;
+>>>>>>>> main:src/pages/profile/ui/ModalUploadWindow/ModalWindowStyles.tsx
   text-align: center;
   color: #8054E3;
   background: #ffffff;
