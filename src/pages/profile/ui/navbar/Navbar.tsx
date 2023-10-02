@@ -1,4 +1,4 @@
-import  { useState, } from 'react'
+import  { useState, useRef, useEffect } from 'react'
 import { NavLink, BrowserRouter as Router} from 'react-router-dom';
 import logoImg from 'shared/assets/img/logo.png'
 import userImg from 'shared/assets/img/user.png'
@@ -8,7 +8,6 @@ import repoImg from 'shared/assets/img/repo.svg'
 import sidebarImg from 'shared/assets/img/sidebarimg.png'
 import settingsImg from 'shared/assets/img/Settings.png'
 import vectorNavbar from 'shared/assets/img/vectornavbar.svg'
-// import './Navbar.css'
 import {
   NavbarContainer,
   LogoImg,
@@ -28,9 +27,10 @@ import {
 } from './NavbarStyles';
 
 
-  const Navbar = () => {
+  const SidebarMenu = () => {
     const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
     const [isPersonalDataDropdownOpen, setIsPersonalDataDropdownOpen] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
   
     const toggleProfileDropdown = () => {
       setIsProfileDropdownOpen(!isProfileDropdownOpen);
@@ -39,7 +39,22 @@ import {
     const togglePersonalDataDropdown = () => {
       setIsPersonalDataDropdownOpen(!isPersonalDataDropdownOpen);
     };
-    
+
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsProfileDropdownOpen(false);
+        setIsPersonalDataDropdownOpen(false);
+      }
+    };
+    useEffect(() => {
+      document.addEventListener('mousedown', handleClickOutside);
+  
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, []);
+  
   return (
 
 <NavbarContainer>
@@ -51,7 +66,7 @@ import {
 </SidebarInfo>
 <div>
   <NavbarList>
-    <div>
+    <div ref={dropdownRef}>
       <ProfileButton
        onClick={toggleProfileDropdown} 
        id='profileDropdownButton'
@@ -60,7 +75,7 @@ import {
         <VectorNavbar src={vectorNavbar} alt='vectornavbar'/>
       </ProfileButton>
       {isProfileDropdownOpen && (
-        <DropdownContent>
+        <DropdownContent >
           <NavLinkStyled to='/portfolio'>
             <DropdownItem>Портфоліо</DropdownItem>
           </NavLinkStyled>
@@ -122,7 +137,7 @@ import {
 const App = () => {
   return (
     <Router>
-      <Navbar />
+      <SidebarMenu />
     </Router>
   );
 };

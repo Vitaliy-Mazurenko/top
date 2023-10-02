@@ -10,6 +10,7 @@ export const ModalOverlay = styled.div`
   width: 480px;
   height: 402px;
   border: 1px #8054E3 solid;
+  
 `;
 
 export const ModalHeader = styled.h2`
@@ -28,6 +29,7 @@ export const HeaderWindow = styled.h2`
     font-weight: 400;
 `
 export const ModalContent = styled.div`
+  
   justify-content: center;
   p {
     margin-top: 10px;
@@ -72,7 +74,8 @@ export const SelectedImg = styled.img`
 `;
 
 export const ModalClose = styled.button`
-  top: 245px;
+  top: 0;
+  margin-top: 250px;
   position: absolute;
   background: none;
   border: none;
@@ -80,7 +83,7 @@ export const ModalClose = styled.button`
   width: 10px;
   height: 10px;
   z-index: 9999;
-  margin-left: 140px;
+  margin-left: 230px;
 `;
 
 export const ModalContentContainer = styled.div`

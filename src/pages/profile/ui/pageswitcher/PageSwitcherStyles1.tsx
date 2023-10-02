@@ -25,15 +25,6 @@ export const PageSwitchLink = styled.a`
   line-height: 20px;
   letter-spacing: 0.36px;
   text-align: center;
-  &:active {
-    color: #636366;
-    font-size: 12px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0.36px;
-    cursor: pointer;
-  }
   
 `;
 

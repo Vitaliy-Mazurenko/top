@@ -46,18 +46,19 @@
 
 import { useState } from 'react';
 import styled from 'styled-components';
-import {
-  PageSwitcherContainer,
+
+
+import ClientMenu from '../clientmenu/ClientMenu';
+import { PageSwitcherContainer,
   PageSwitchMain
-} from './PageSwitcherStyles';
-import ClientMenu from './../clientmenu/ClientMenu';
+ } from './PageSwitcherStyles1';
+
 
 interface PageSwitchLinkProps {
   active: boolean;
   onClick: () => void;
 }
 
-// Создайте стилизованные компоненты для кнопок
 const PageSwitchLink = styled.a<PageSwitchLinkProps>`
   color: ${(props) => (props.active ? '#636366' : '#D6D6D6')};
   cursor: pointer;
