@@ -1,10 +1,9 @@
-import { MainPageHeader } from "pages/ui/MainPage/MainPageStyles"
-import { PageInner } from "pages/ui/PageInner/index.styled"
+import { PageInner } from "shared/ui/page-layout/PageInner/index.styled"
 import { SkillList } from "pages/ui/SkillList"
 import { WorkActivityList } from "pages/ui/WorkActivityList"
-import { Navbar } from "pages/ui/Navbar"
-import { NavbarMainPage } from "pages/ui/navlink/NavbarMainPage"
-import { PagePath } from "pages/ui/pageswitcher/PageSwitcher"
+import { Navbar } from "widget/Navbar"
+import { SubNavbar } from "features/SubNavbar"
+import { PageSwitcher } from "features/Pageswitcher"
 import nodeJS from 'shared/assets/icons/nodejs.svg'
 import java from 'shared/assets/icons/java.png'
 import python from 'shared/assets/icons/python.svg'
@@ -14,7 +13,8 @@ import { TeamMemberWideCard } from "pages/ui/TeamMemberWideCard"
 import avatarURL from 'shared/assets/img/photo.png'
 import { ProfileOptions } from "pages/ui/ProfileOptions"
 import { Button } from "shared/ui/Button"
-import { PageContainer } from "shared/ui/PageContainer/index.styled"
+import { PageContainer } from "shared/ui/page-layout/PageContainer/index.styled"
+import { PageHeader } from "shared/ui/page-layout/PageHeader/index.styled"
 
 const mockWorkActivity = [
 	{
@@ -161,9 +161,9 @@ export const ProfilePage = () => {
 		<PageContainer>
 			<Navbar />
 			<PageInner>
-				<PagePath />
-				<MainPageHeader>Профiль/Emily</MainPageHeader>
-				<NavbarMainPage sublinks={[
+				<PageSwitcher />
+				<PageHeader>Профiль/Emily</PageHeader>
+				<SubNavbar sublinks={[
 					{ label: 'Профiль', url: '' }
 				]} />
 				<ProfileOptions />

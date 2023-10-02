@@ -10,7 +10,7 @@ import {
   ModalBtnsContainer,
   ModalBtnCancel,
   ModalBtnSave,
-} from './ModalWindowStyles';
+} from './styled';
 import closeBtn from 'shared/assets/img/Close.svg';
 
 interface ModalProps {
@@ -38,9 +38,9 @@ const ModalWindow: React.FC<ModalProps> = ({
       const reader = new FileReader();
       fileReaderRef.current = reader;
       reader.onload = () => {
-          const result = reader.result
-          setSelectedImage(result);
-          setImagePath(file.name);
+        const result = reader.result
+        setSelectedImage(result);
+        setImagePath(file.name);
       };
       reader.readAsDataURL(file);
     } else {

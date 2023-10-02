@@ -7,12 +7,12 @@ import {
   TextHelper,
   UploadIcon,
   UserPhotoMain,
-} from './ModalWindowStyles';
+} from './styled';
 import userphoto from 'shared/assets/img/custom.png';
 import uploadphoto from 'shared/assets/img/upload.png';
 import uploadIcon from 'shared/assets/img/Group.svg';
 
-function ModalUploadForm() {
+export function ModalUploadForm() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedUserPhoto, setSelectedUserPhoto] = useState<string | ArrayBuffer | null>(null);
 
@@ -31,9 +31,9 @@ function ModalUploadForm() {
 
   function updateWarningData(): void {
     throw new Error('Function not implemented.');
-    
+
   }
-// selectedUserPhoto instanceof File ? URL.createObjectURL(selectedUserPhoto) : selectedUserPhoto || userphoto
+  // selectedUserPhoto instanceof File ? URL.createObjectURL(selectedUserPhoto) : selectedUserPhoto || userphoto
   return (
     <ModalWindow>
       <UserPhotoMain src={selectedUserPhoto?.toString() || userphoto} alt="userphoto" />
@@ -49,5 +49,3 @@ function ModalUploadForm() {
     </ModalWindow>
   );
 }
-
-export default ModalUploadForm;

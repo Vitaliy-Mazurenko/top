@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-
-
-export const MainPageSwitcher = styled.div`
+export const PageSwitcher = styled.div`
   cursor: pointer;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -21,31 +19,22 @@ export const Second = styled.div`
   margin-left: 10px;
 `;
 
-export const MainPageSwitch = styled.div`
+export const PageSwitch = styled.div`
   display: flex;
   flex-direction: row;
   margin-left: 25px;
 `;
 
-export const MainPageHelperBar = styled.div`
+export const PageHelperBar = styled.div`
   display: flex;
   flex-direction: row;
   gap: 952px;
 `;
 
-export const MainPageInfo = styled.div`
+export const PageInfo = styled.div`
   display: flex;
   flex-direction: row;
 `;
 
-export const MainPageHeader = styled.h1`
-  color: #1c1c1e;
-  font-size: 30px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  line-height: 40px;
-  letter-spacing: 0.90px;
-  /* margin-left: 28px; */
-`;
 
 

@@ -1,3 +1,4 @@
+import { ClientMenu } from 'features/Clientmenu';
 import {
   PageSwitcherContainer,
   PageSwitchMain,
@@ -5,13 +6,12 @@ import {
   PageSwitchLink,
   ActiveLink,
 } from './PageSwitcherStyles';
-import ClientMenu from '../clientmenu/ClientMenu';
 import { useLocation } from 'react-router-dom';
 import { capitalizeFirstLetter } from 'shared/helpers/capitalizeFirstLetter';
 
-export const PagePath = () => {
+export const PageSwitcher = () => {
   const path = useLocation()
-  console.log(path)
+
   const segments = path.pathname
     .split('/') //разделить на сегменты
     .filter(Boolean) // убрать пустой элемент в начале

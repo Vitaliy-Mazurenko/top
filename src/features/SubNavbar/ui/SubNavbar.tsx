@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import './navlink.css';
+import './SubNavbar.css';
 
-interface NavbarMainPageProps {
+interface SubNavbarProps {
   sublinks: Array<{
     label: string
     url: string
   }>
 }
 
-export const NavbarMainPage = (props: NavbarMainPageProps) => {
+export const SubNavbar = (props: SubNavbarProps) => {
   const { sublinks } = props
 
   const location = useLocation();
