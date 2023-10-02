@@ -7,9 +7,9 @@ import {
 
 } from './MainPageStyles';
 
-import SidebarMenu from '../SidebarMenu/SidebarMenu';
+import SidebarMenu from '../Sidebarmenu/SidebarMenu';
 import NavbarMainPage from '../NavbarMainPage/NavbarMainPage';
-import RegistrationPage from '../RegistrationForm/RegistrationPage';
+import RegistrationPage from '../Registrationform/RegistrationPage';
 import PageSwitcher from '../PageSwitcher/PageSwitcher';
 import ModalUploadForm from '../ModalUploadWindow/ModalUploadForm';
 

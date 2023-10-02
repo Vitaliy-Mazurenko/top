@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import InputBoxYellow from 'shared/ui/reusable_input/InputBoxYellow';
-import { SaveButton } from './RegistrationFormStyles';
 import WarningPageGreen from 'shared/ui/ReusableWarningTableGreen/WarningPageGreen';
 import WarningPageBlue from 'shared/ui/ReusableWarningTableBlue/WarningPageBlue';
+import { SaveButton } from './RegistrationFormStyles';
 
 const RegistrationForm = () => {
   const [email, setEmail] = useState('');
