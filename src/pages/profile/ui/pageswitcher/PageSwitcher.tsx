@@ -51,7 +51,7 @@ import styled from 'styled-components';
 import ClientMenu from '../clientmenu/ClientMenu';
 import { PageSwitcherContainer,
   PageSwitchMain
- } from './PageSwitcherStyles';
+ } from './PageSwitcherStyles1';
 
 
 interface PageSwitchLinkProps {

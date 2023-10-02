@@ -7,11 +7,14 @@ import {
 
 } from './MainPageStyles';
 
-import SidebarMenu from '../Sidebarmenu/SidebarMenu';
+
 import NavbarMainPage from '../NavbarMainPage/NavbarMainPage';
-import RegistrationPage from '../Registrationform/RegistrationPage';
-import PageSwitcher from '../PageSwitcher/PageSwitcher';
+
+
 import ModalUploadForm from '../ModalUploadWindow/ModalUploadForm';
+import PageSwitcher from '../pageswitcher/PageSwitcher';
+import RegistrationPage from '../Registrationform/RegistrationPage';
+import SidebarMenu from '../SidebarMenu/SidebarMenu';
 
 
 const MainPage = () => {

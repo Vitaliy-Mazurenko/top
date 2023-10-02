@@ -24,7 +24,7 @@ import {
   ProfileButton,
   DropdownContentSecond,
   SettingsBtn,
-} from './SidebarMenuStyles';
+} from './SidebarMenuStyles1';
 
 
   const SidebarMenu = () => {
