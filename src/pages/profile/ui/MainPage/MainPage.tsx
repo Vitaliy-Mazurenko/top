@@ -14,7 +14,7 @@ import NavbarMainPage from '../NavbarMainPage/NavbarMainPage';
 import ModalUploadForm from '../ModalUploadWindow/ModalUploadForm';
 import PageSwitcher from '../pageswitcher/PageSwitcher';
 import RegistrationPage from '../Registrationform/RegistrationPage';
-import SidebarMenu from '../SidebarMenu/SidebarMenu';
+import SidebarMenu from '../navbar/Navbar';
 
 
 const MainPage = () => {
