@@ -4,18 +4,18 @@ import WarningPageGreen from 'shared/ui/ReusableWarningTableGreen/WarningPageGre
 import WarningPageBlue from 'shared/ui/ReusableWarningTableBlue/WarningPageBlue';
 import styled from 'styled-components';
 
+
 export const SaveButton = styled.button`
-  width: 282px;
-  height: 51px;
+  width: 17.625rem; /* 282px */
+  height: 3.1875rem; /* 51px */
   font-family: 'Raleway', sans-serif;
   color: #ffffff;
   background: #ff8c33;
-  font-size: 16px;
+  font-size: 1rem; /* 16px */
   font-weight: 500;
   border: none;
-  margin-top: 24px;
+  margin-top: 1.5rem; /* 24px */
   cursor: pointer;
-  margin-left: 25px;
 `;
 
 const RegistrationForm = () => {

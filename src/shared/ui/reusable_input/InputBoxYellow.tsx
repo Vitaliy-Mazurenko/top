@@ -22,18 +22,18 @@ const InputLabel = styled.label`
 const InputElement = styled.input`
   background: #fff;
   border-radius: 2px;
-  width: 320px;
-  height: 42px;
+  width: 20rem; /* 320px */
+  height: 2.625rem; /* 42px */
   color: #8e8e93;
-  font-size: 14px;
+  font-size: 0.875rem; /* 14px */
   font-weight: 400;
   font-family: 'Raleway', sans-serif;
   letter-spacing: 0.28px;
-  line-height: 22px;
+  line-height: 1.375rem; /* 22px */
   border: 1px solid #ede4b7;
-  padding: 5px 12px;
-  /* margin-left: 25px; */
+  padding: 0.3125rem 0.75rem; /* 5px 12px */
 `;
+
 
 interface InputBoxYellowProps {
   label: string;
