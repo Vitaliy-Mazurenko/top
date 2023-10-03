@@ -7,7 +7,8 @@ import {
   CalendarAndChartWrapper,
   StyledDaschboard,
 } from "./StyledDaschboard.styled";
-import { Navbar } from "widget/Navbar";
+
+import { TabsPanel } from "../TabsPanel/TabsPanel";
 import StatisticBlocksSection from "../PetcentageStatistics/StatisticBlocksSection";
 
 interface StudentInterface {
@@ -119,7 +120,7 @@ const Daschboard: React.FC = () => {
   return (
     <StyledDaschboard>
       <div style={{ flexBasis: "14.6%" }}>
-        <Navbar />
+        <TabsPanel />
       </div>
       <div style={{ flexBasis: "83.4%" }}>
         <StatisticBlocksSection />
