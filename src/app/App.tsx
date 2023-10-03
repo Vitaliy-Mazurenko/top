@@ -10,7 +10,7 @@ const App = () => {
       <Route element={<ProfilePage />} path="/profile" />
       <Route element={<ProfileSettingsPage />} path="/profile/settings" />
     </Routes>
-  )
-}
+  );
+};
 
 export default App;

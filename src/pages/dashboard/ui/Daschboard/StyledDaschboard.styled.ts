@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 export const StyledDaschboard = styled.div`
-  display: flex;
   max-height: 100%;
+  display: flex;
+  padding-right: 5.3%;
   gap: 27px;
+  justify-content: space-between;
 `;
 
 export const CalendarAndChartWrapper = styled.div`

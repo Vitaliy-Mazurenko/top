@@ -117,8 +117,10 @@ const Daschboard: React.FC = () => {
 
   return (
     <StyledDaschboard>
-      <Navbar />
-      <div style={{ width: "1138px" }}>
+      <div style={{ flexBasis: "14.6%" }}>
+        <Navbar />
+      </div>
+      <div style={{ flexBasis: "83.4%" }}>
         <CalendarAndChartWrapper>
           <Calendar
             locale="uk-UA"
