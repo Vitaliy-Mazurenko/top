@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ClientName = styled.p`
   font-size: 16px;
@@ -11,9 +11,12 @@ export const ClientName = styled.p`
 
 export const ClientMenuContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  gap: 8px;
-  margin-right: 20px;
+  align-items: center;
+  padding-right: 20px;
+`;
+
+export const QuestionButton = styled.button`
+  margin-right: 17px;
 `;
 
 export const Cursor = styled.a`
@@ -34,26 +37,3 @@ export const SmallLogo = styled.img`
   margin-top: 20px;
   margin-bottom: 20px;
 `;
-
-export const Notification = styled.div`
-  margin-left: 8px;
-  position: relative;
-`;
-
-export const NotificationBadge = styled.div`
-  position: absolute;
-  top: 20px;
-  right: 16px;
-  background-color: #FF8C33;
-  color: white;
-  border-radius: 50%;
-  width: 11px;
-  height: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0px;
-  cursor: pointer;
-`;
-
-

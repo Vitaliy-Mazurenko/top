@@ -5,11 +5,13 @@ import DashboardChart from "entities/DashboardChart/ui";
 
 import {
   CalendarAndChartWrapper,
+  LeftNavBar,
   StyledDaschboard,
 } from "./StyledDaschboard.styled";
 
 import { TabsPanel } from "../TabsPanel/TabsPanel";
 import StatisticBlocksSection from "../PetcentageStatistics/StatisticBlocksSection";
+import { DashboardHeader } from "widget/DashboardHeader";
 
 interface StudentInterface {
   studentId: number;
@@ -119,10 +121,12 @@ const Daschboard: React.FC = () => {
 
   return (
     <StyledDaschboard>
-      <div style={{ flexBasis: "14.6%" }}>
+      <LeftNavBar>
         <TabsPanel />
-      </div>
-      <div style={{ flexBasis: "83.4%" }}>
+      </LeftNavBar>
+
+      <div style={{ marginLeft: "auto", flexBasis: "83.4%" }}>
+        <DashboardHeader />
         <StatisticBlocksSection />
         <CalendarAndChartWrapper>
           <Calendar

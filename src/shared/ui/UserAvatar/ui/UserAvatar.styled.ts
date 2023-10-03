@@ -1,0 +1,18 @@
+import styled from "styled-components";
+
+export const UserImageWrapper = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 32px;
+  height: 32px;
+  border: 2px solid #ff8c33;
+  overflow: hidden;
+  background-color: #d6d6d6;
+  border-radius: 50%;
+
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+`;
