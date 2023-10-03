@@ -14,21 +14,20 @@ export const getBreakpointsStyles = (args: getBreakpointsStylesArgs) => {
 	const { extraLarge, extraSmall, large, medium, small } = args
 
 	return css`
-		@media (min-width: ${sizes.extraSmall}px) {
+		@media (max-width: ${sizes.extraSmall}px) {
     	${extraSmall}
   	}
-		@media (min-width: ${sizes.small}px) {
+		@media (max-width: ${sizes.small}px) {
     	${small}
   	}
-		@media (min-width: ${sizes.medium}px) {
+		@media (max-width: ${sizes.medium}px) {
     	${medium}
   	}
-		@media (min-width: ${sizes.large}px) {
+		@media (max-width: ${sizes.large}px) {
     	${large}
   	}
-		@media (min-width: ${sizes.extraLarge}px) {
+		@media (maxg-width: ${sizes.extraLarge}px) {
     	${extraLarge}
   	}
 `
 }
-
