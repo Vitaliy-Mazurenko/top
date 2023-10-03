@@ -1,4 +1,4 @@
-import { useState, } from 'react'
+import  { useState, useRef, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 import logoImg from 'shared/assets/img/logo.png'
 import userImg from 'shared/assets/img/user.png'
@@ -31,6 +31,7 @@ import {
 export const Navbar = () => {
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const [isPersonalDataDropdownOpen, setIsPersonalDataDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleProfileDropdown = () => {
     setIsProfileDropdownOpen(!isProfileDropdownOpen);
@@ -40,83 +41,22 @@ export const Navbar = () => {
     setIsPersonalDataDropdownOpen(!isPersonalDataDropdownOpen);
   };
 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      setIsProfileDropdownOpen(false);
+      setIsPersonalDataDropdownOpen(false);
+    }
+  };
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    //     <div className='navbar'>
-    //       <img src={logoImg} className='logoImg' alt='logoimage'/>
-    //         <div className='sidebarinfo'>
-
-    //               <img src={sidebarImg} className='sidebarimg' alt='sidebarimg'/>
-    //               <h2 className='sidebarName'>Повне ім'я</h2>
-    //               <p className='sidebarPosition'>Посада</p>
-    //           </div>
-    //         <div>
-    //           <ul className='navbarlist'>
-    //             <div className="navbarButtons">
-    //                 <button
-    //                   className="navbarButton profileButton"
-    //                   onClick={toggleProfileDropdown}
-    //                   id="profileDropdownButton"
-
-    //                 >
-    //                   <img src={userImg} className="userImg" /> <span className='navbaritem-desc'>Профіль</span>
-    //                   <img src={vectorNavbar} alt="" className='vectorNavbar'/>
-    //                 </button>
-    //                 {isProfileDropdownOpen && (
-    //                   <div className="dropdown-content">
-    //                     <NavLink to="/portfolio" >
-    //                          <button className="dropdown-item" >Портфоліо</button>
-    //                     </NavLink>
-    //                     <NavLink to="/personaldata">
-    //                     <button className="dropdown-item" onClick={togglePersonalDataDropdown}>Персональні дані <img src={vectorNavbar} alt="" className='vector-second'/></button> 
-    //                     </NavLink>
-
-
-    //                   </div>
-
-    //                 )}
-    //                 {isPersonalDataDropdownOpen && (
-    //                   <div className="dropdown-content-second">
-    //                     <NavLink to="/skills">
-    //                         <button className="dropdown-item-second">Навички</button>
-    //                     </NavLink>
-    //                     <NavLink to="/specialization" >
-    //                         <button className="dropdown-item-second">Спеціалізація</button>
-    //                     </NavLink>
-
-
-    //                   </div>
-
-    //                 )}
-    //               </div>
-    //             <li className="navbarlist-item">
-    //               <NavLink to="/team"  className='navbarButton'>
-    //               <img src={teamImg}/> <span className='navbaritem-desc'>Команда</span>
-    //               </NavLink>
-    //             </li>
-    //             <li className="navbarlist-item">
-    //               <NavLink to="/projects"  className='navbarButton'>
-    //               <img src={lockImg}/> <span className='navbaritem-desc'>Проекти</span>
-    //               </NavLink>
-    //             </li>
-    //             <li className="navbarlist-item ">
-    //               <NavLink to="/repository" className='navbarButton'>
-    //               <img src={repoImg}/> <span className='navbaritem-desc'>Репозиторій</span>
-    //               </NavLink>
-    //             </li>
-    //           </ul>
-
-    //         </div>
-    //         <ul className='navbarlist'>
-    //             <li className="navbarlist-item ">
-    //               <NavLink to="/settings" className='navbarButton settingsBtn' >
-    //               <img src={settingsImg}/> <span className='navbaritem-desc'>Налаштування</span>
-    //               </NavLink>
-    //             </li>
-    //             </ul>
-
-    //         </div>
-    //   )
-    // }
+   
 
     <NavbarContainer>
       <LogoImg src={logoImg} alt='logoimage' />
@@ -126,60 +66,60 @@ export const Navbar = () => {
         <SidebarPosition>Посада</SidebarPosition>
       </SidebarInfo>
       <div>
-        <NavbarList>
-          <div>
-            <ProfileButton
-              onClick={toggleProfileDropdown}
-              id='profileDropdownButton'
-            >
-              <img src={userImg} /> <span>Профіль</span>
-              <VectorNavbar src={vectorNavbar} alt='vectornavbar' />
-            </ProfileButton>
-            {isProfileDropdownOpen && (
-              <DropdownContent>
-                <NavLinkStyled to='/portfolio'>
-                  <DropdownItem>Портфоліо</DropdownItem>
-                </NavLinkStyled>
-                <NavLinkStyled to='/personaldata'>
-                  <DropdownItem onClick={togglePersonalDataDropdown}>
-                    Персональні дані <VectorNavbar src={vectorNavbar} alt='' />
-                  </DropdownItem>
-                </NavLinkStyled>
-              </DropdownContent>
-            )}
-            {isPersonalDataDropdownOpen && (
-              <DropdownContentSecond >
-                <NavLinkStyled to='/skills'>
-                  <DropdownItemSecond>Навички</DropdownItemSecond>
-                </NavLinkStyled>
-                <NavLinkStyled to='/specialization'>
-                  <DropdownItemSecond>Спеціалізація</DropdownItemSecond>
-                </NavLinkStyled>
-              </DropdownContentSecond>
-            )}
-          </div>
-          <li >
-            <NavLink to='/team'>
-              <ProfileButton >
-                <img src={teamImg} /> <span>Команда</span>
-              </ProfileButton>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/projects'>
-              <ProfileButton >
-                <img src={lockImg} /> <span>Проекти</span>
-              </ProfileButton>
-            </NavLink>
-          </li>
-          <li >
-            <NavLink to='/repository' >
-              <ProfileButton>
-                <img src={repoImg} /> <span>Репозиторій</span>
-              </ProfileButton>
-            </NavLink>
-          </li>
-        </NavbarList>
+      <NavbarList>
+    <div ref={dropdownRef}>
+      <ProfileButton
+       onClick={toggleProfileDropdown} 
+       id='profileDropdownButton'
+      >
+        <img src={userImg}/> <span>Профіль</span>
+        <VectorNavbar src={vectorNavbar} alt='vectornavbar'/>
+      </ProfileButton>
+      {isProfileDropdownOpen && (
+        <DropdownContent >
+          <NavLinkStyled to='/portfolio'>
+            <DropdownItem>Портфоліо</DropdownItem>
+          </NavLinkStyled>
+          <NavLinkStyled to='/personaldata'>
+            <DropdownItem onClick={togglePersonalDataDropdown}>
+              Персональні дані <VectorNavbar src={vectorNavbar} alt=''/>
+            </DropdownItem>
+          </NavLinkStyled>
+        </DropdownContent>
+      )}
+      {isPersonalDataDropdownOpen && (
+        <DropdownContentSecond >
+          <NavLinkStyled to='/skills'>
+            <DropdownItemSecond>Навички</DropdownItemSecond>
+          </NavLinkStyled>
+          <NavLinkStyled to='/specialization'>
+            <DropdownItemSecond>Спеціалізація</DropdownItemSecond>
+          </NavLinkStyled>
+        </DropdownContentSecond>
+      )}
+    </div>
+    <li >
+      <NavLink to='/team'>
+      <ProfileButton >
+        <img src={teamImg} /> <span>Команда</span>
+      </ProfileButton>
+      </NavLink>
+    </li>
+    <li>
+      <NavLink to='/projects'>
+      <ProfileButton >
+        <img src={lockImg} /> <span>Проекти</span>
+      </ProfileButton>
+      </NavLink>
+    </li>
+    <li >
+      <NavLink to='/repository' >
+      <ProfileButton>
+        <img src={repoImg} /> <span>Репозиторій</span>
+      </ProfileButton>
+      </NavLink>
+    </li>
+  </NavbarList>
       </div>
       <ul >
         <li >
