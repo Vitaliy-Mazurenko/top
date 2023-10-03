@@ -5,7 +5,6 @@ export const PageSwitcherContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 85vw;
 `;
 
 

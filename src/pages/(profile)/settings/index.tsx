@@ -11,7 +11,7 @@ export const ProfileSettingsPage = () => {
   return (
     <PageContainer>
       <Navbar />
-      <div style={{ marginLeft: '22px' }}>
+      <div style={{ marginLeft: '22px', flexGrow: '1'}}>
         <PageSwitcher />
         <PageHeader>Профіль</PageHeader>
         <SubNavbar sublinks={[

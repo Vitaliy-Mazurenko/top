@@ -62,6 +62,7 @@
 
 import styled from 'styled-components';
 
+
 export const ClientName = styled.p`
   font-size: 1rem;
   font-weight: 500;
@@ -115,4 +116,5 @@ export const NotificationBadge = styled.div`
   align-items: center;
   font-size: 0px;
   cursor: pointer;
+ 
 `;

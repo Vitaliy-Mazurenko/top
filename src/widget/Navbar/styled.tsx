@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+
+
 export const NavbarContainer = styled.div`
   background: #fff;
   border-right: 1px solid gray;
@@ -176,7 +178,7 @@ export const DropdownContentSecond = styled.div`
 `;
 
 export const SettingsBtn = styled.button`
-  margin-top: 18.75rem; /* 300px */
+  margin-top: 14rem; /* 300px */
   text-align: center;
   width: 14rem; /* 224px */
   height: 3rem; /* 48px */
