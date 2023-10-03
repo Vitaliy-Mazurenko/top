@@ -121,7 +121,7 @@ export const Navbar = () => {
     </li>
   </NavbarList>
       </div>
-      <ul >
+      <ul style={{marginTop: 'auto'}}>
         <li >
           <NavLink to='/settings'>
             <SettingsBtn >

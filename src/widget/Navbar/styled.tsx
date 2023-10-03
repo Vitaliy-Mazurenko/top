@@ -6,13 +6,15 @@ import { NavLink } from 'react-router-dom';
 export const NavbarContainer = styled.div`
   background: #fff;
   border-right: 1px solid gray;
-  width: 14.0625rem; /* 225px */
+  flex-basis: 14.0625rem; /* 225px */
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const LogoImg = styled.img`
   margin: 1.25rem 0.875rem; /* 20px 14px */
-  width: 10.6875rem; /* 171px */
+  max-width: 10.6875rem; /* 171px */
   height: 3.5rem; /* 56px */
 `;
 
@@ -148,8 +150,7 @@ export const DropdownItemSecond = styled.button`
 `;
 
 export const ProfileButton = styled.button`
-  width: 14rem; /* 224px */
-  height: 3rem; /* 48px */
+  width: 100%;
   border: 0;
   color: #333333;
   background-color: #fff;
@@ -178,10 +179,10 @@ export const DropdownContentSecond = styled.div`
 `;
 
 export const SettingsBtn = styled.button`
-  margin-top: 14rem; /* 300px */
   text-align: center;
-  width: 14rem; /* 224px */
-  height: 3rem; /* 48px */
+  /* width: 14rem;  */
+  /* height: 3rem;  */
+  width: 100%;
   border: 0;
   color: #333333;
   background-color: #fff;

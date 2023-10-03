@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const PageInner = styled.div`
-	margin-left: 1.75rem;
+  flex-grow: 1;
+  overflow: auto;
 `
 export const PageHeader = styled.h1`
   color: #1c1c1e;
@@ -18,6 +19,7 @@ export const PageContainer = styled.div`
   flex-direction: row;
   height: 100dvh;
   overflow: hidden;
+  gap: 1.75rem;
 `;
 
 export const PageSwitcher = styled.div`
