@@ -1,4 +1,3 @@
-import { getBreakpointsStyles } from "shared/helpers/getBreakpointsStyles";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
