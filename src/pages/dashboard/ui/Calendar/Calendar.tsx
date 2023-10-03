@@ -30,7 +30,7 @@ export const Calendar: React.FC<CalendarProps> = ({
 
         {state.mode === 'days' && (
           <div aria-hidden onClick={() => functions.setMode('monthes')}>
-            {state.monthesNames[state.selectedMonth.monthIndex].month} {state.selectedYear}
+            {state.monthesNames[state.selectedMonth.monthIndex].month}
           </div>
         )}
         {state.mode === 'monthes' && (
