@@ -81,7 +81,8 @@ export const Navbar = () => {
                 </NavLinkStyled>
                 <NavLinkStyled to='/personaldata'>
                   <DropdownItem onClick={togglePersonalDataDropdown}>
-                    Персональні дані <VectorNavbar src={vectorNavbar} alt='' />
+                    Персональні дані 
+                    {/* <VectorNavbar src={vectorNavbar} alt='' /> */}
                   </DropdownItem>
                 </NavLinkStyled>
               </DropdownContent>

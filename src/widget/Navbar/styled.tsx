@@ -121,7 +121,8 @@ export const DropdownContent = styled.div`
 `;
 
 export const DropdownItem = styled.button`
-  width: 14rem; /* 224px */
+  /* width: 14rem; */
+  width: 100%;
   height: 2.75rem; /* 44px */
   color: black;
   font-size: 0.875rem; /* 14px */
