@@ -8,6 +8,7 @@ import {
   StyledDaschboard,
 } from "./StyledDaschboard.styled";
 import { Navbar } from "widget/Navbar";
+import StatisticBlocksSection from "../PetcentageStatistics/StatisticBlocksSection";
 
 interface StudentInterface {
   studentId: number;
@@ -121,6 +122,7 @@ const Daschboard: React.FC = () => {
         <Navbar />
       </div>
       <div style={{ flexBasis: "83.4%" }}>
+        <StatisticBlocksSection />
         <CalendarAndChartWrapper>
           <Calendar
             locale="uk-UA"

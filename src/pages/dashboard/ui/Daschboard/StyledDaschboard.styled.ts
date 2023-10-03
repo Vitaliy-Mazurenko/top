@@ -12,5 +12,5 @@ export const CalendarAndChartWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 
-  margin-bottom: 40px;
+  margin: 40px 0;
 `;

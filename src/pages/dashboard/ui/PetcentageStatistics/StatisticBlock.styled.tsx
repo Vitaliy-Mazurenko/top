@@ -1,13 +1,16 @@
 import styled from "styled-components";
 
 export const StyledStatisticBlock = styled.div`
-  min-width: 194px;
-  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 20%;
+  height: 120px;
   border-radius: 8px;
   background-color: ${({ color }) => color || "#F4F9FB"};
 `;
+
 export const StyledBlockContent = styled.div`
-  heigth: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

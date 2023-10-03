@@ -5,6 +5,4 @@ export const StyledBlockRow = styled.div`
   gap: 1.5rem;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row;
-  max-width: 800px;
 `;
