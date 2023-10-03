@@ -1,26 +1,27 @@
-import styled, { RuleSet } from "styled-components";
+import styled from "styled-components";
 
 export const TableContainer = styled.table`
   border-collapse: collapse;
   border: 1px solid #ccc;
-  margin-left: 144px;
-  margin-right: 100px;
+  margin-left: 9rem;
+  margin-right: 6.25rem;
+  width: 100%;
 `;
 
 export const SearchContainer = styled.div`
   border: 1px solid;
   display: flex;
   align-items: center;
-  width: 256px;
-  height: 32px;
+  width: 16rem;
+  height: 2rem;
 `;
 
 export const SearchInputField = styled.input`
   border: none;
   outline: none;
   flex-grow: 1;
-  width: 256px;
-  height: 54px;
+  width: 16rem;
+  height: 3.37rem;
 `;
 
 export const SearchInputContainer = styled.div`
@@ -29,27 +30,27 @@ export const SearchInputContainer = styled.div`
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
-  padding: 8px;
-  width: 256px;
-  height: 32px;
-  margin-bottom: 96px;
-  margin-top: 46px;
-  margin-right: 147px;
-  margin-left: 40px;
+  padding: 0.5rem;
+  width: 16rem;
+  height: 2rem;
+  margin-bottom: 6rem;
+  margin-top: 2.87rem;
+  margin-right: 8.75rem;
+  margin-left: 2.5rem;
 `;
 
 export const CheckboxContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 300px;
+  margin-left: 18.75rem;
   width: auto;
-  height: 32px;
+  height: 2rem;
 `;
 
 export const CheckboxLabel = styled.label`
   display: flex;
   color: #aeaeb2;
-  margin-right: 16px;
+  margin-right: 1rem;
   gap: 4px;
   border: 1px solid #e8e8e8;
   &:nth-child(2) {
@@ -61,20 +62,23 @@ export const CheckboxLabel = styled.label`
   align-items: center;
   padding-top: 5px;
   padding-bottom: 5px;
+  /* input[type="checkbox"]:not(:checked) + svg {
+    background: red;
+  } */
 `;
 
 export const TableHeader = styled.thead`
   background-color: #fff;
   border-bottom: 1px solid #e8e8e8;
   &:nth-child(1) {
-    width: 248px;
+    width: 15.5rem;
   }
   font-family: "Inter Regular";
-  font-size: 14px;
+  font-size: 0.87rem;
 `;
 
 export const StatusCell = styled.td`
-  padding: 5px;
+  padding: 0.31rem;
   border-radius: 5px;
 
   &.status-ready {
@@ -94,18 +98,19 @@ export const TableHeaderRow = styled.tr``;
 
 export const TableHeaderCell = styled.th`
   color: #636366;
-  padding: 28px;
+  padding: 1.75rem;
   text-align: center;
-  gap: 18px;
+  gap: 1.12rem;
+
   &:nth-child(1) {
     border-right: 1px solid #e8e8e8;
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   &:nth-child(2) {
-    padding: 10px;
+    padding: 0.62rem;
   }
   &:nth-child(7) {
-    padding: 10px;
+    padding: 0.62rem;
   }
 
   &:hover {
@@ -122,16 +127,16 @@ export const TableRow = styled.tr`
 `;
 
 export const TableCell = styled.td`
-  padding: 8px;
+  padding: 0.5rem;
   vertical-align: middle;
   text-align: center;
   align-items: center;
-  width: 130px;
-  height: 84px;
+  width: 8.12rem;
+  height: 5.25rem;
 
   &:nth-child(1) {
-    width: 256px;
-    height: 87px;
+    width: 16rem;
+    height: 5.43rem;
     border-right: 1px solid #e8e8e8;
     border-bottom: 1px solid #e8e8e8;
     color: #ff8c33 !important;
@@ -140,21 +145,9 @@ export const TableCell = styled.td`
     color: #8054e3 !important;
   }
   &:nth-child(6) {
-    margin: 27px;
+    margin: 1.68rem;
   }
-`;
-
-export const Status = styled.div<{
-  $css?: RuleSet;
-  $pointer?: boolean;
-}>`
-  padding: 0.3125rem;
-  text-align: center;
-  font-size: 0.75rem;
-  margin-top: 0.625rem;
-  ${({ theme }) => theme.typography["Heading-7"]}
-  /* default */
-	color: ${(props) => props.theme.palette.text};
-  ${(props) => props.$css};
-  cursor: ${(props) => (props.$pointer ? "pointer" : "default")};
+  &:nth-child(7) {
+    cursor: pointer;
+  }
 `;
