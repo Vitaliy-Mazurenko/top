@@ -11,7 +11,7 @@ export const StyledDaschboard = styled.div`
 
 export const LeftNavBar = styled.aside`
   position: fixed;
-  width: 14%;
+  width: 199px;
 `;
 
 export const CalendarAndChartWrapper = styled.div`

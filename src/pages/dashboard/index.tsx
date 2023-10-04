@@ -3,7 +3,7 @@ import React from "react";
 import { ManagerNavbar } from "widget/Navbars";
 import { DashboardHeader } from "widget/DashboardHeader";
 
-import { Calendar } from "features/Calendar/Calendar";
+import { Calendar } from "./ui/Calendar/Calendar";
 
 import { StatisticBlocksSection } from "entities/PetcentageStatistics/StatisticBlocksSection";
 import { DashboardChart } from "entities/DashboardChart";
