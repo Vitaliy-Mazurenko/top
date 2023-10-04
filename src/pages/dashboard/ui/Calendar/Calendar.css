@@ -1,17 +1,14 @@
 .calendar {
-  width: 322px;
-  height: 305px;
+  flex-basis: 28.3%;
   border-radius: 5px;
   text-transform: uppercase;
-  background-color: #F4F9FB;;
+  background-color: #f4f9fb;
 }
 
 .calendar__header {
   position: relative;
   border-radius: 5px 5px 0 0;
-  background-color: var(--background-color-calendar-header);
-  color: var(--color-text);
-  padding: 15px 9px;
+  padding: 15px 9px 5px 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,10 +18,10 @@
   width: 5px;
   height: 10px;
   cursor: pointer;
-  margin-right: 25px;
+  margin-right: 20px;
 }
 
-.calendar__header__arrow__left:hover svg{
+.calendar__header__arrow__left:hover svg {
   filter: invert(0.5) sepia(5) saturate(9);
 }
 
@@ -36,14 +33,14 @@
 
 .calendar__body {
   border-radius: 0 0 5px 5px;
-  padding: 5px;
+  padding: 10px 15px;
 }
 
 .calendar__week__names {
   height: 17px;
   font-weight: 400;
   font-size: 12px;
-  color: var(--color-additional);
+  color: #6e7781;
   text-align: center;
   align-items: center;
   display: grid;
@@ -56,7 +53,7 @@
 .calendar__days {
   font-size: 14px;
   font-weight: 400;
-  color: var(--color-text);
+  color: black;
   text-align: center;
   display: grid;
   text-align: center;
@@ -82,7 +79,7 @@
   padding: 5.5px;
   font-weight: 300;
   cursor: pointer;
-  color: #d9d9d9;
+  color: #6e7781;
 }
 
 .calendar__pick__item {
@@ -95,11 +92,13 @@
 }
 
 .calendar__pick__item:hover {
-  background-color: var(--color-additional7);
+  background-color: #ff8c33;
+  border-radius: 10px;
 }
 
 .calendar__today__item {
-  background-color: var(--background-color-calendar-header);
+  background-color: #ff8c33;
+  color: white;
 }
 
 .calendar__selected__item {
@@ -113,7 +112,7 @@
 
 .calendar__pick__items__container {
   font-weight: 400;
-  color: var(--color-text);
+  color: black;
   text-align: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -125,5 +124,5 @@
 .calendar__unchoosable__year {
   font-weight: 300;
   padding: 9px 16px;
-  color: var(--color-placeholder);
+  color: black;
 }

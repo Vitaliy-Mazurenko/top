@@ -5,9 +5,13 @@ import DashboardChart from "entities/DashboardChart/ui";
 
 import {
   CalendarAndChartWrapper,
+  LeftNavBar,
   StyledDaschboard,
 } from "./StyledDaschboard.styled";
-import { Navbar } from "widget/Navbar";
+
+import StatisticBlocksSection from "../PetcentageStatistics/StatisticBlocksSection";
+import { DashboardHeader } from "widget/DashboardHeader";
+import { ManagerNavbar } from 'widget/Navbars'
 
 interface StudentInterface {
   studentId: number;
@@ -112,13 +116,18 @@ const chartData: ChartItemInterface[] = [
   },
 ];
 
-const Daschboard: React.FC = () => {
+export const DaschboardPage: React.FC = () => {
   const [selectedDate, setSelectedDay] = React.useState(new Date());
 
   return (
     <StyledDaschboard>
-      <Navbar />
-      <div style={{ width: "1138px" }}>
+      <LeftNavBar>
+        <ManagerNavbar />
+      </LeftNavBar>
+
+      <div style={{ marginLeft: "auto", flexBasis: "83.4%" }}>
+        <DashboardHeader />
+        <StatisticBlocksSection />
         <CalendarAndChartWrapper>
           <Calendar
             locale="uk-UA"
@@ -132,5 +141,3 @@ const Daschboard: React.FC = () => {
     </StyledDaschboard>
   );
 };
-
-export default Daschboard;

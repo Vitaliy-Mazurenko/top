@@ -1,12 +1,12 @@
-import { useState, useRef, useEffect } from 'react'
-import { NavLink } from 'react-router-dom';
+import { useState, } from 'react'
+// import { NavLink } from 'react-router-dom';
 import logoImg from 'shared/assets/img/logo.png'
 import userImg from 'shared/assets/img/user.png'
-import teamImg from 'shared/assets/img/team.png'
-import lockImg from 'shared/assets/img/lock.png'
-import repoImg from 'shared/assets/img/repo.svg'
+// import teamImg from 'shared/assets/img/team.png'
+// import lockImg from 'shared/assets/img/lock.png'
+// import repoImg from 'shared/assets/img/repo.svg'
 import sidebarImg from 'shared/assets/img/sidebarimg.png'
-import settingsImg from 'shared/assets/img/Settings.png'
+// import settingsImg from 'shared/assets/img/Settings.png'
 import vectorNavbar from 'shared/assets/img/vectornavbar.svg'
 
 import {
@@ -24,13 +24,13 @@ import {
   DropdownItemSecond,
   ProfileButton,
   DropdownContentSecond,
-  SettingsBtn,
+  // SettingsBtn,
 } from './styled';
+
 
 export const Navbar = () => {
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const [isPersonalDataDropdownOpen, setIsPersonalDataDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleProfileDropdown = () => {
     setIsProfileDropdownOpen(!isProfileDropdownOpen);
@@ -40,23 +40,7 @@ export const Navbar = () => {
     setIsPersonalDataDropdownOpen(!isPersonalDataDropdownOpen);
   };
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-      setIsProfileDropdownOpen(false);
-      setIsPersonalDataDropdownOpen(false);
-    }
-  };
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
   return (
-
-
     <NavbarContainer>
       <LogoImg src={logoImg} alt='logoimage' />
       <SidebarInfo>
@@ -66,7 +50,7 @@ export const Navbar = () => {
       </SidebarInfo>
       <div>
         <NavbarList>
-          <div ref={dropdownRef}>
+          <div>
             <ProfileButton
               onClick={toggleProfileDropdown}
               id='profileDropdownButton'
@@ -75,14 +59,13 @@ export const Navbar = () => {
               <VectorNavbar src={vectorNavbar} alt='vectornavbar' />
             </ProfileButton>
             {isProfileDropdownOpen && (
-              <DropdownContent >
+              <DropdownContent>
                 <NavLinkStyled to='/portfolio'>
                   <DropdownItem>Портфоліо</DropdownItem>
                 </NavLinkStyled>
                 <NavLinkStyled to='/personaldata'>
                   <DropdownItem onClick={togglePersonalDataDropdown}>
-                    Персональні дані 
-                    {/* <VectorNavbar src={vectorNavbar} alt='' /> */}
+                    Персональні дані <VectorNavbar src={vectorNavbar} alt='' />
                   </DropdownItem>
                 </NavLinkStyled>
               </DropdownContent>
@@ -98,38 +81,8 @@ export const Navbar = () => {
               </DropdownContentSecond>
             )}
           </div>
-          <li >
-            <NavLink to='/team'>
-              <ProfileButton >
-                <img src={teamImg} /> <span>Команда</span>
-              </ProfileButton>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/projects'>
-              <ProfileButton >
-                <img src={lockImg} /> <span>Проекти</span>
-              </ProfileButton>
-            </NavLink>
-          </li>
-          <li >
-            <NavLink to='/repository' >
-              <ProfileButton>
-                <img src={repoImg} /> <span>Репозиторій</span>
-              </ProfileButton>
-            </NavLink>
-          </li>
         </NavbarList>
       </div>
-      <ul style={{ marginTop: 'auto' }}>
-        <li >
-          <NavLink to='/settings'>
-            <SettingsBtn >
-              <img src={settingsImg} /> <span>Налаштування</span>
-            </SettingsBtn>
-          </NavLink>
-        </li>
-      </ul>
     </NavbarContainer>
   );
 };

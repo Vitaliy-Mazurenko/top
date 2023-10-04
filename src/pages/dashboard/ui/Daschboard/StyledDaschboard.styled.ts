@@ -1,14 +1,22 @@
 import styled from "styled-components";
 
 export const StyledDaschboard = styled.div`
-  display: flex;
   max-height: 100%;
+  display: flex;
+  padding-right: 5.3%;
   gap: 27px;
+  justify-content: space-between;
+  font-family: Arial;
+`;
+
+export const LeftNavBar = styled.aside`
+  position: fixed;
+  width: 14%;
 `;
 
 export const CalendarAndChartWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 
-  margin-bottom: 40px;
+  margin: 40px 0;
 `;
