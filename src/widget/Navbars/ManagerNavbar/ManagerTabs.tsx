@@ -2,7 +2,7 @@ import { Tab } from "../Tabs/Tab";
 import { TabsWrap } from "../Tabs/Tabs.styled";
 import userImg from "shared/assets/img/user.png";
 import efficientImg from "shared/assets/img/Vector-1.png";
-import walletImg from "shared/assets/img/wallet.png";
+import walletImg from "shared/assets/icons/wallet.svg";
 
 export const ManagerTabs = () => {
   return (
@@ -13,5 +13,5 @@ export const ManagerTabs = () => {
       <Tab text="Порівняння крі" leftIcon={userImg} to="/" />
       <Tab text="Курси та тренінги" leftIcon={walletImg} to="/" />
     </TabsWrap>
-  )
-}
+  );
+};
