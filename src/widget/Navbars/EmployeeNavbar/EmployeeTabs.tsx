@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Tab } from "../Tabs/Tab";
 import { TabsWrap } from "../Tabs/Tabs.styled";
-import userImg from "shared/assets/img/user.png";
-import efficientImg from "shared/assets/img/Vector-1.png";
-import walletImg from "shared/assets/img/wallet.png";
 import arrowIcon from 'shared/assets/img/arrowdown.png'
+import userImg from 'shared/assets/img/user.png'
+import teamImg from 'shared/assets/img/team.png'
+import lockImg from 'shared/assets/img/lock.png'
+import repoImg from 'shared/assets/img/repo.svg'
 
 export const EmployeeTabs = () => {
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
@@ -31,9 +32,9 @@ export const EmployeeTabs = () => {
       </>
       }
 
-      <Tab text="команда" leftIcon={walletImg} to="/" />
-      <Tab text="проекти" leftIcon={efficientImg} to="/" />
-      <Tab text="репозиторій" leftIcon={userImg}  to="/" />
+      <Tab text="команда" leftIcon={teamImg} to="/" />
+      <Tab text="проекти" leftIcon={lockImg} to="/" />
+      <Tab text="репозиторій" leftIcon={repoImg}  to="/" />
     </TabsWrap>
   )
 }

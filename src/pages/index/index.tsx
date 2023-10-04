@@ -6,6 +6,7 @@ export const IndexPage = () => {
 		<PageContainer>
 			<EmployeeNavbar />
 			<PageInner>
+				<h1></h1>
 			</PageInner>
 		</PageContainer>
 	)

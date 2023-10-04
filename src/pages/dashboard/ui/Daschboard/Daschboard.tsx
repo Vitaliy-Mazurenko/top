@@ -5,7 +5,6 @@ import DashboardChart from "entities/DashboardChart/ui";
 
 import {
   CalendarAndChartWrapper,
-  LeftNavBar,
   StyledDaschboard,
 } from "./StyledDaschboard.styled";
 
@@ -121,9 +120,9 @@ export const DaschboardPage: React.FC = () => {
 
   return (
     <StyledDaschboard>
-      <LeftNavBar>
+      {/* <LeftNavBar> */}
         <ManagerNavbar />
-      </LeftNavBar>
+      {/* </LeftNavBar> */}
 
       <div style={{ marginLeft: "auto", flexBasis: "83.4%" }}>
         <DashboardHeader />
