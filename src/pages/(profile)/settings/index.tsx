@@ -1,5 +1,5 @@
 import RegistrationPage from '../../ui/registrationform/RegistrationPage';
-import { Navbar } from 'widget/Navbar';
+import { EmployeeNavbar } from 'widget/Navbars';
 import { PageSwitcher } from 'features/Pageswitcher';
 import { SubNavbar } from 'features/SubNavbar';
 import { PageContainer, PageHeader, PageInfo } from 'shared/ui/page-layout';
@@ -10,7 +10,7 @@ export const ProfileSettingsPage = () => {
 
   return (
     <PageContainer>
-      <Navbar />
+      <EmployeeNavbar />
       <div style={{ marginLeft: '22px' }}>
         <PageSwitcher />
         <PageHeader>Профіль</PageHeader>

@@ -25,8 +25,8 @@ export const Cursor = styled.a`
 `;
 
 export const ClientImage = styled.img`
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   margin-top: 18px;
   margin-left: 24px;
 `;

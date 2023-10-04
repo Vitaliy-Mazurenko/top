@@ -9,9 +9,9 @@ import {
   StyledDaschboard,
 } from "./StyledDaschboard.styled";
 
-import { TabsPanel } from "../TabsPanel/TabsPanel";
 import StatisticBlocksSection from "../PetcentageStatistics/StatisticBlocksSection";
 import { DashboardHeader } from "widget/DashboardHeader";
+import { EmployeeNavbar, ManagerNavbar } from 'widget/Navbars'
 
 interface StudentInterface {
   studentId: number;
@@ -116,13 +116,14 @@ const chartData: ChartItemInterface[] = [
   },
 ];
 
-const Daschboard: React.FC = () => {
+export const DaschboardPage: React.FC = () => {
   const [selectedDate, setSelectedDay] = React.useState(new Date());
 
   return (
     <StyledDaschboard>
       <LeftNavBar>
-        <TabsPanel />
+        {/* <TabsPanel /> */}
+        <EmployeeNavbar />
       </LeftNavBar>
 
       <div style={{ marginLeft: "auto", flexBasis: "83.4%" }}>
@@ -141,5 +142,3 @@ const Daschboard: React.FC = () => {
     </StyledDaschboard>
   );
 };
-
-export default Daschboard;

@@ -5,8 +5,8 @@ export const UserImageWrapper = styled.span`
   justify-content: center;
   align-items: center;
 
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   border: 2px solid #ff8c33;
   overflow: hidden;
   background-color: #d6d6d6;
