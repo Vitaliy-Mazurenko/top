@@ -173,6 +173,7 @@ const RegistrationForm = () => {
   const [position, setPosition] = useState('');
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [isDataSubmitted] = useState(false);
+  const [isSaveButtonDisabled, setIsSaveButtonDisabled] = useState(true);
 
 
   const isEmailValidRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -181,6 +182,7 @@ const RegistrationForm = () => {
     const newEmail = e.target.value;
     setEmail(newEmail);
     setIsEmailValid(isEmailValidRegex.test(newEmail));
+    setIsSaveButtonDisabled(!isEmailValidRegex.test(newEmail));
   };
 
   const handleSaveButtonClick = async () => {
@@ -230,7 +232,7 @@ const RegistrationForm = () => {
           onChange={(e) => setPosition(e.target.value)}
           className="inputform"
         />
-        <SaveButton onClick={handleSaveButtonClick}>Зберегти</SaveButton>
+        <SaveButton onClick={handleSaveButtonClick} disabled={isSaveButtonDisabled}>Зберегти</SaveButton>
       </form>
     </div>
   );
