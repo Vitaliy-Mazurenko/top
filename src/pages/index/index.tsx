@@ -1,10 +1,10 @@
 import { PageContainer, PageInner } from "shared/ui/page-layout"
-import { Navbar } from "widget/Navbar"
+import { EmployeeNavbar } from "widget/Navbars"
 
 export const IndexPage = () => {
 	return (
 		<PageContainer>
-			<Navbar />
+			<EmployeeNavbar />
 			<PageInner>
 			</PageInner>
 		</PageContainer>

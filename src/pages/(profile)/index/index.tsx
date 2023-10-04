@@ -1,6 +1,6 @@
 import { SkillList } from "pages/ui/SkillList"
 import { WorkActivityList } from "pages/ui/WorkActivityList"
-import { Navbar } from "widget/Navbar"
+import { EmployeeNavbar } from "widget/Navbars"
 import { SubNavbar } from "features/SubNavbar"
 import { PageSwitcher } from "features/Pageswitcher"
 import nodeJS from 'shared/assets/icons/nodejs.svg'
@@ -157,7 +157,7 @@ export const ProfilePage = () => {
 
 	return (
 		<PageContainer>
-			<Navbar />
+			<EmployeeNavbar />
 			<PageInner>
 				<PageSwitcher />
 				<PageHeader>Профiль/Emily</PageHeader>
