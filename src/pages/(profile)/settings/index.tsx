@@ -2,7 +2,7 @@ import RegistrationPage from '../../ui/registrationform/RegistrationPage';
 import { EmployeeNavbar } from 'widget/Navbars';
 import { PageSwitcher } from 'features/Pageswitcher';
 import { SubNavbar } from 'features/SubNavbar';
-import { PageContainer, PageHeader, PageInfo } from 'shared/ui/page-layout';
+import { PageContainer, PageHeader, PageInfo, PageInner } from 'shared/ui/page-layout';
 import { ModalUploadForm } from './ui/ModalUploadWindow/ModalUploadForm';
 
 

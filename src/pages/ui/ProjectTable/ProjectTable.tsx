@@ -139,7 +139,13 @@ export function ProjectTable() {
   };
 
   return (
-    <div style={{ background: 'white', display: 'inline-block' }}>
+    <div
+      style={{
+        background: "white",
+        display: "inline-block",
+        height: "43.75rem",
+      }}
+    >
       <div style={{ display: "flex", alignItems: "baseline" }}>
         <SearchInputContainer>
           <FaSearch
@@ -193,7 +199,7 @@ export function ProjectTable() {
             onChange={() => setShowFrozenProjects(!showFrozenProjects)}
             style={{
               display: "none",
-              backgroundColor: showFrozenProjects ? "#D9D9D9" : "transparent", // Змінено фон на transparent
+              backgroundColor: showFrozenProjects ? "#D9D9D9" : "transparent",
             }}
           />
           <CustomSVG color="#D9D9D9" />
@@ -296,4 +302,3 @@ export function ProjectTable() {
     </div>
   );
 }
-
