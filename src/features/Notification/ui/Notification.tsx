@@ -4,12 +4,12 @@ import { NotificationWrapper, NotificationBadge } from "./Notification.styled";
 import NotificationBell from "shared/assets/icons/notification-bell.svg";
 
 interface INotificationProps {
-  style?: object;
+  className?: string;
 }
 
-export const Notification: FC<INotificationProps> = ({ style }) => {
+export const Notification: FC<INotificationProps> = ({ className }) => {
   return (
-    <NotificationWrapper style={style}>
+    <NotificationWrapper className={className}>
       <img src={NotificationBell} alt="Notifications" />
       <NotificationBadge>1</NotificationBadge>
     </NotificationWrapper>

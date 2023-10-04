@@ -1,11 +1,14 @@
-import { ClientMenuContainer, QuestionButton } from "./ClientMenuStyles";
+import {
+  ClientMenuContainer,
+  QuestionButton,
+  StyledDropdownButton,
+  StyledNotification,
+} from "./ClientMenuStyles";
 
 import logoQuestion from "shared/assets/img/question-circle.svg";
 import clientImg from "shared/assets/img/custom.png";
 
-import { Notification } from "features/Notification";
 import { UserCredentials } from "features/UserCredentials";
-import { DropdownButton } from "features/DropdownButton";
 
 export function ClientMenu() {
   return (
@@ -14,9 +17,9 @@ export function ClientMenu() {
         <img src={logoQuestion} alt="question" />
       </QuestionButton>
 
-      <Notification style={{ marginRight: "25px" }} />
+      <StyledNotification />
       <UserCredentials src={clientImg} firstName="Ім'я" lastName="Прізвище" />
-      <DropdownButton style={{ marginLeft: "4px" }} />
+      <StyledDropdownButton />
     </ClientMenuContainer>
   );
 }

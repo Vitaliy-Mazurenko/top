@@ -1,3 +1,5 @@
+import { ChartItemInterface } from "pages/dashboard";
+
 import {
   ChartItem,
   ChartList,
@@ -5,13 +7,11 @@ import {
   ChartWrapper,
 } from "./DashboardChart.styled";
 
-import { ChartItemInterface } from "pages/dashboard/ui/Daschboard/Daschboard";
-
 interface DashboardChartProps {
   data: ChartItemInterface[];
 }
 
-const DashboardChart = ({ data }: DashboardChartProps) => {
+export const DashboardChart = ({ data }: DashboardChartProps) => {
   return (
     <ChartWrapper>
       <ChartTitle>Порівняння Kpi</ChartTitle>
@@ -27,5 +27,3 @@ const DashboardChart = ({ data }: DashboardChartProps) => {
     </ChartWrapper>
   );
 };
-
-export default DashboardChart;

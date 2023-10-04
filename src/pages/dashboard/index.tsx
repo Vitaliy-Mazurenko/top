@@ -1,17 +1,19 @@
 import React from "react";
-import StudentsTable from "../StudentTable";
-import { Calendar } from "../Calendar/Calendar";
-import DashboardChart from "entities/DashboardChart/ui";
+
+import { ManagerNavbar } from "widget/Navbars";
+import { DashboardHeader } from "widget/DashboardHeader";
+
+import { Calendar } from "features/Calendar/Calendar";
+
+import { StatisticBlocksSection } from "entities/PetcentageStatistics/StatisticBlocksSection";
+import { DashboardChart } from "entities/DashboardChart";
+import { StudentsTable } from "entities/StudentTable";
 
 import {
   CalendarAndChartWrapper,
   LeftNavBar,
   StyledDaschboard,
-} from "./StyledDaschboard.styled";
-
-import StatisticBlocksSection from "../PetcentageStatistics/StatisticBlocksSection";
-import { DashboardHeader } from "widget/DashboardHeader";
-import { ManagerNavbar } from 'widget/Navbars'
+} from "./ui/StyledDaschboard.styled";
 
 interface StudentInterface {
   studentId: number;

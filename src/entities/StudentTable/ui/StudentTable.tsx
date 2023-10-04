@@ -10,7 +10,7 @@ interface StudentsTableProps {
   students: StudentTableRowProps[];
 }
 
-const StudentsTable = ({ students }: StudentsTableProps) => {
+export const StudentsTable = ({ students }: StudentsTableProps) => {
   return (
     <StyledTable>
       <StyledTabledHead>
@@ -32,5 +32,3 @@ const StudentsTable = ({ students }: StudentsTableProps) => {
     </StyledTable>
   );
 };
-
-export default StudentsTable;

@@ -1,8 +1,6 @@
 import {
-  AvatarIcon,
-  NameText,
-  NameWrapper,
   StyledTableRow,
+  StyledUserCredentials,
 } from "./StudentTableRow.styled";
 
 export interface StudentTableRowProps {
@@ -32,12 +30,7 @@ const StudentTableRow = (props: StudentTableRowProps) => {
   return (
     <StyledTableRow>
       <td>
-        <NameWrapper>
-          <AvatarIcon>{`${firstName[0]}${lastName[0]}`}</AvatarIcon>
-          <NameText>
-            {firstName} {lastName}
-          </NameText>
-        </NameWrapper>
+        <StyledUserCredentials firstName={firstName} lastName={lastName} />
       </td>
       <td>{age}</td>
       <td>%{progress}</td>
