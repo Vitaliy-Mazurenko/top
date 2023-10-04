@@ -42,12 +42,16 @@ interface InputBoxYellowProps {
   className?: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  isEmailValid?: boolean;
 }
 
 const InputBoxYellow: React.FC<InputBoxYellowProps> = ({
   label,
   placeholder,
   required = false,
+  value,
+  onChange,
+  isEmailValid,
 }) => {
   return (
     <InputBoxContainer>
@@ -55,8 +59,10 @@ const InputBoxYellow: React.FC<InputBoxYellowProps> = ({
       <InputElement
         type="text"
         placeholder={placeholder}
-        required={required}
-        className='inputform' 
+        required={required} 
+        value={value}
+        onChange={onChange}
+        className={!isEmailValid ? 'invalid' : ''}
       />
     </InputBoxContainer>
   );
