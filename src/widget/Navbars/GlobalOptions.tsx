@@ -7,9 +7,9 @@ import helpImg from "shared/assets/img/help-img.png"
 export const PublicOptions: React.FC = () => {
   return (
     <OptionsWrap>
-      <Tab to="/" text="Допомога" imgSrc={helpImg} />
-      <Tab to="/" text="Налаштування" imgSrc={settingsImg} />
-      <Tab to="/" text="Вийти" imgSrc={userImg} />
+      <Tab to="/" text="Допомога" leftIcon={helpImg} />
+      <Tab to="/" text="Налаштування" leftIcon={settingsImg} />
+      <Tab to="/" text="Вийти" leftIcon={userImg} />
     </OptionsWrap>
   );
 };

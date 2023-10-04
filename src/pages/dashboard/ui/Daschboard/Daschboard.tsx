@@ -11,7 +11,7 @@ import {
 
 import StatisticBlocksSection from "../PetcentageStatistics/StatisticBlocksSection";
 import { DashboardHeader } from "widget/DashboardHeader";
-import { EmployeeNavbar, ManagerNavbar } from 'widget/Navbars'
+import { ManagerNavbar } from 'widget/Navbars'
 
 interface StudentInterface {
   studentId: number;
@@ -122,8 +122,7 @@ export const DaschboardPage: React.FC = () => {
   return (
     <StyledDaschboard>
       <LeftNavBar>
-        {/* <TabsPanel /> */}
-        <EmployeeNavbar />
+        <ManagerNavbar />
       </LeftNavBar>
 
       <div style={{ marginLeft: "auto", flexBasis: "83.4%" }}>
