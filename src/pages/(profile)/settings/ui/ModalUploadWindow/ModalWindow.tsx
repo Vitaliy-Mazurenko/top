@@ -38,7 +38,7 @@ export const ModalWindow: React.FC<ModalProps> = ({
       const reader = new FileReader();
       fileReaderRef.current = reader;
       reader.onload = () => {
-        const result = reader.result
+        const result = reader.result;
         setSelectedImage(result);
         setImagePath(file.name);
       };
@@ -70,11 +70,31 @@ export const ModalWindow: React.FC<ModalProps> = ({
     }
   };
 
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    const file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const result = e.target?.result;
+        if (result) {
+          setSelectedImage(result);
+          setImagePath(file.name);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
     <div>
-      <ModalOverlay onClick={handleModalClick}>
+      <ModalOverlay 
+      // onClick={handleModalClick}
+      onDragOver={(e) => e.preventDefault()}
+      onDrop={(e) => handleDrop(e)}>
+        <div onClick={handleModalClick}>
         <ModalContent>
           <HeaderWindow>Клацніть або перетягніть файл у цю область, щоб завантажити його</HeaderWindow>
           <p>Завантажене зображення буде використано як ваш аватар або логотип компанії.</p>
@@ -105,10 +125,12 @@ export const ModalWindow: React.FC<ModalProps> = ({
             </>
           )}
         </ModalContent>
-      </ModalOverlay>
+      
+      </div>
       <ModalClose onClick={onClose}>
         <img src={closeBtn} alt="closebutton" id="closeBtn" />
       </ModalClose>
+      </ModalOverlay>
     </div>
   );
 };
