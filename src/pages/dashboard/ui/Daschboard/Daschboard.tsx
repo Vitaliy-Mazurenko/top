@@ -5,7 +5,6 @@ import DashboardChart from "entities/DashboardChart/ui";
 
 import {
   CalendarAndChartWrapper,
-  LeftNavBar,
   StyledDaschboard,
 } from "./StyledDaschboard.styled";
 
