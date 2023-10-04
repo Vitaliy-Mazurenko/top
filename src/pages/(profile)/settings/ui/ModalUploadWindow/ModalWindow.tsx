@@ -77,8 +77,10 @@ export const ModalWindow: React.FC<ModalProps> = ({
       const reader = new FileReader();
       reader.onload = (e) => {
         const result = e.target?.result;
-        setSelectedImage(result);
-        setImagePath(file.name);
+        if (result) {
+          setSelectedImage(result);
+          setImagePath(file.name);
+        }
       };
       reader.readAsDataURL(file);
     }
