@@ -42,12 +42,16 @@ interface InputBoxProps {
   className?: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  isEmailValid?: boolean;
 }
 
 export const InputBox: React.FC<InputBoxProps> = ({
   label,
   placeholder,
   required = false,
+  value,
+  onChange,
+  isEmailValid,
 }) => {
   return (
     <InputBoxContainer>
@@ -55,8 +59,10 @@ export const InputBox: React.FC<InputBoxProps> = ({
       <InputElement
         type="text"
         placeholder={placeholder}
-        required={required}
-        className='inputform' 
+        required={required} 
+        value={value}
+        onChange={onChange}
+        className={!isEmailValid ? 'invalid' : ''}
       />
     </InputBoxContainer>
   );
