@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import styled, { CSSProperties } from "styled-components";
 import { useTable, Column } from "react-table";
 
-import green from "../CustomSVG/green.svg";
-import yellow from "../CustomSVG/yellow.svg";
-import red from "../CustomSVG/red.svg";
-import orange from "../CustomSVG/orange.svg";
+import green from "shared/ui/CustomSVG/green.svg";
+import yellow from "shared/ui/CustomSVG/yellow.svg";
+import red from "shared/ui/CustomSVG/red.svg";
+import orange from "shared/ui/CustomSVG/orange.svg";
 
 type Data = {
   Задача: string;
