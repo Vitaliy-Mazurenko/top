@@ -13,6 +13,7 @@ export const LogoWrap = styled.img`
 `;
 
 export const OptionsWrap = styled.div``;
+
 export const LogoAndTabsWrap = styled.div`
   display: flex;
   margin: 2rem 0;

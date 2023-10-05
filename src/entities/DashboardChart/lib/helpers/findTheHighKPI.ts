@@ -1,4 +1,4 @@
-import { ChartItemInterface } from "pages/dashboard/ui/Daschboard/Daschboard";
+import { ChartItemInterface } from "pages/dashboard";
 
 export interface IChartItemWithRating extends ChartItemInterface {
   highKPI: boolean;

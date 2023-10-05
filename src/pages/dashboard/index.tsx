@@ -127,7 +127,7 @@ export const DaschboardPage: React.FC = () => {
         <ManagerNavbar />
       </LeftNavBar>
 
-      <div style={{ marginLeft: "auto", flexBasis: "83.4%" }}>
+      <div style={{ marginLeft: "227px", flexBasis: "83.4%" }}>
         <DashboardHeader />
         <StatisticBlocksSection />
         <CalendarAndChartWrapper>
