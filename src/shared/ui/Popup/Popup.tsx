@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { CSSProperties } from "styled-components";
 import { useTable, Column } from "react-table";
 
 import green from "../CustomSVG/green.svg";
@@ -20,7 +20,7 @@ const columns: Column<Data>[] = [
     Header: <div style={{ display: "flex", marginBottom: "20px" }}>Задача</div>,
 
     accessor: "Задача",
-    Cell: ({ row }: any) => (
+    Cell: ({ row }) => (
       <div style={{ marginRight: "1.56rem", fontSize: "0.87rem" }}>
         {row.original.Задача}
       </div>
@@ -32,7 +32,7 @@ const columns: Column<Data>[] = [
       <div style={{ display: "flex", marginBottom: "1.25rem" }}>Виконавець</div>
     ),
     accessor: "Виконавець",
-    Cell: ({ row }: any) => {
+    Cell: ({ row }) => {
       return (
         <div
           style={{
@@ -67,7 +67,7 @@ const columns: Column<Data>[] = [
       <div style={{ display: "flex", marginBottom: "1.25" }}>Дедлайн</div>
     ),
     accessor: "Дедлайн",
-    Cell: ({ row }: any) => (
+    Cell: ({ row }) => (
       <div style={{ marginRight: "1.93rem", fontSize: "0.875rem" }}>
         {row.original.Дедлайн}
       </div>
@@ -78,7 +78,7 @@ const columns: Column<Data>[] = [
       <div style={{ display: "flex", marginBottom: "1.25rem" }}>Статус</div>
     ),
     accessor: "Статус",
-    Cell: ({ row }: any) => {
+    Cell: ({ row }) => {
       let textColor = "black";
       let backgroundColor = "white";
       let borderColor = "purple";
@@ -101,7 +101,7 @@ const columns: Column<Data>[] = [
         borderColor = "transparent";
       }
 
-      const statusTextStyle = {
+      const statusTextStyle: CSSProperties = {
         fontSize: "0.75rem",
         fontWeight: 400,
         color: textColor,
@@ -109,7 +109,7 @@ const columns: Column<Data>[] = [
         textAlign: "center",
       };
 
-      const statusBorderStyle = {
+      const statusBorderStyle: CSSProperties = {
         border: `0.125rem solid ${borderColor}`,
         backgroundColor: backgroundColor,
         padding: "0.25rem 0.5rem",
@@ -132,7 +132,7 @@ const columns: Column<Data>[] = [
       <div style={{ display: "flex", marginBottom: "1.25rem" }}>Прогрес</div>
     ),
     accessor: "Прогрес",
-    Cell: ({ row }: any) => {
+    Cell: ({ row }) => {
       const svgWidth = 32;
       const svgHeight = 32;
       let iconSrc = green;
