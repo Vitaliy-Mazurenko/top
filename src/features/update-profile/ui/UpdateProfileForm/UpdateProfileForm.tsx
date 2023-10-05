@@ -147,10 +147,10 @@
 
 
 import React, { useState } from 'react';
-import InputBoxYellow from 'shared/ui/reusable_input/InputBoxYellow';
-import WarningPageGreen from 'shared/ui/ReusableWarningTableGreen/WarningPageGreen';
-import WarningPageBlue from 'shared/ui/ReusableWarningTableBlue/WarningPageBlue';
+import { InputBox } from 'features/update-profile/ui/Input/Input';
 import styled from 'styled-components';
+import { MissingDataWarning } from '../MissingDataWarning/MissingDataWarning';
+import { SuccessWarning } from '../SuccessWarning/SuccessWarning';
 
 export const SaveButton = styled.button`
   width: 17.625rem; /* 282px */
@@ -163,9 +163,9 @@ export const SaveButton = styled.button`
   border: none;
   margin-top: 1.5rem; /* 24px */
   cursor: pointer;
-`;
+`
 
-const RegistrationForm = () => {
+export const UpdateProfileForm = () => {
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [secondName, setSecondName] = useState('');
@@ -188,13 +188,11 @@ const RegistrationForm = () => {
   const handleSaveButtonClick = async () => {
      
     };
-
   return (
     <div>
-      {isDataSubmitted ? <WarningPageGreen /> : <WarningPageBlue />}
-
+      {isDataSubmitted ? <MissingDataWarning /> : <SuccessWarning />}
       <form>
-        <InputBoxYellow
+        <InputBox
           label="E-mail"
           placeholder="ceo@digitaluniverse.com"
           required
@@ -203,28 +201,28 @@ const RegistrationForm = () => {
           className={!isEmailValid ? 'InvalidInput' : ''}
         />
          {!isEmailValid && <p style={{color: 'red', fontSize: '12px', marginTop: '5px'}}>Введіть коректну e-mail адресу</p>}
-        <InputBoxYellow
+         <InputBox
           label="First Name"
           placeholder="Enter Your First Name"
           required
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
         />
-        <InputBoxYellow
+        <InputBox
           label="Second Name"
           placeholder="Enter Your Full Name"
           required
           value={secondName}
           onChange={(e) => setSecondName(e.target.value)}
         />
-        <InputBoxYellow
+        <InputBox
           label="Company Name"
           placeholder="Enter Company Name"
           required
           value={companyName}
           onChange={(e) => setCompanyName(e.target.value)}
         />
-        <InputBoxYellow
+        <InputBox
           label="Position"
           placeholder="Enter Your Position"
           required
@@ -237,5 +235,3 @@ const RegistrationForm = () => {
     </div>
   );
 };
-
-export default RegistrationForm;

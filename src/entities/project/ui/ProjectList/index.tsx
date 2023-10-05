@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react'
 import { ListContainer } from "./ListContainer.styled"
 import { StyledProjectCard } from "./ProjectCard.styled"
-import { Status } from "./Status.styled"
-import { getProjectStatuses } from "./helpers/getProjectStatuses"
+import { Status } from "../Status/Status.styled"
+import { getProjectStatuses } from "../../helpers/getProjectStatuses"
 import { Header } from "./Header.styled"
 import { Wrapper } from "./Wrapper.styled"
 import { FilterContainer } from "./FilterList.styled"
@@ -10,7 +10,7 @@ import { Search } from "./Search.styled"
 import useInput from "shared/hooks/useInput"
 import { ProjectCardProps } from '../ProjectCard'
 import { useToggle } from 'shared/hooks/useToggle'
-import { useProjects } from './useProjects'
+import { useProjects } from '../../model/useProjects'
 
 export const ProjectList = () => {
 	const projectStatuses = useMemo(getProjectStatuses, [])

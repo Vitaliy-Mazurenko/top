@@ -6,7 +6,8 @@ interface ModalProps extends React.PropsWithChildren {
 	location?: HTMLElement // где именно рендерить
 	className?: string // чтобы можно было применить styled-components
 	center?: boolean // чтобы быстро отцентрироать children
-	
+	isOpen: boolean
+	onClose: () => void
 }
 
 export const Modal = (props: ModalProps) => {
@@ -14,16 +15,20 @@ export const Modal = (props: ModalProps) => {
 		children,
 		location = document.body,
 		className,
-		center
+		center,
+		isOpen,
+		onClose
 	} = props
 
 	const component = (
-		<ModalWrapper className={className} $center={center}>
-			{children}
+		<ModalWrapper className={className} $center={center} onClick={onClose}>
+			<div onClick={e => e.stopPropagation()}>
+				{children}
+			</div>
 		</ModalWrapper>
 	)
 
-	return createPortal(component, location)
+	return isOpen ? createPortal(component, location) : null
 }
 
 /**
