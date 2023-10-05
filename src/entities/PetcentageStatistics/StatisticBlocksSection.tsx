@@ -2,7 +2,7 @@ import React from "react";
 import { StyledBlockRow } from "./StatisticBlowRow.styled";
 import StatisticBlock from "./StatisticBlock";
 
-const StatisticBlocksSection: React.FC = () => {
+export const StatisticBlocksSection: React.FC = () => {
   return (
     <StyledBlockRow>
       <StatisticBlock
@@ -33,5 +33,3 @@ const StatisticBlocksSection: React.FC = () => {
     </StyledBlockRow>
   );
 };
-
-export default StatisticBlocksSection;

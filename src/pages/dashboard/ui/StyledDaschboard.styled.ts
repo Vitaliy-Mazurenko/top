@@ -6,12 +6,12 @@ export const StyledDaschboard = styled.div`
   padding-right: 5.3%;
   gap: 27px;
   justify-content: space-between;
-  font-family: Arial;
+  font-family: "Inter", sans-serif;
 `;
 
 export const LeftNavBar = styled.aside`
   position: fixed;
-  width: 14%;
+  width: 200px;
 `;
 
 export const CalendarAndChartWrapper = styled.div`

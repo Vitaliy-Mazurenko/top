@@ -1,16 +1,18 @@
 import React from "react";
-import StudentsTable from "../StudentTable";
-import { Calendar } from "../Calendar/Calendar";
-import DashboardChart from "entities/DashboardChart/ui";
+
+import { ManagerNavbar } from "widget/Navbars";
+import { DashboardHeader } from "widget/DashboardHeader";
+
+import { Calendar } from "features/Calendar/Calendar";
+
+import { StatisticBlocksSection } from "entities/PetcentageStatistics/StatisticBlocksSection";
+import { DashboardChart } from "entities/DashboardChart";
+import { StudentsTable } from "entities/StudentTable";
 
 import {
   CalendarAndChartWrapper,
   StyledDaschboard,
-} from "./StyledDaschboard.styled";
-
-import StatisticBlocksSection from "../PetcentageStatistics/StatisticBlocksSection";
-import { DashboardHeader } from "widget/DashboardHeader";
-import { ManagerNavbar } from 'widget/Navbars'
+} from "./ui/StyledDaschboard.styled";
 
 interface StudentInterface {
   studentId: number;
@@ -124,7 +126,7 @@ export const DaschboardPage: React.FC = () => {
         <ManagerNavbar />
       {/* </LeftNavBar> */}
 
-      <div style={{ marginLeft: "auto", flexBasis: "83.4%" }}>
+      <div style={{ marginLeft: "227px", flexBasis: "83.4%" }}>
         <DashboardHeader />
         <StatisticBlocksSection />
         <CalendarAndChartWrapper>

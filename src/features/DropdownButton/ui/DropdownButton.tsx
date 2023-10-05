@@ -1,15 +1,14 @@
 import { FC } from "react";
 
 import arrowDown from "shared/assets/img/arrowdown.png";
-import { CSSProperties } from "styled-components";
 
 interface IDropdownButtonProps {
-  style?: CSSProperties;
+  className?: string;
 }
 
-export const DropdownButton: FC<IDropdownButtonProps> = ({ style }) => {
+export const DropdownButton: FC<IDropdownButtonProps> = ({ className }) => {
   return (
-    <button style={style}>
+    <button className={className}>
       <img src={arrowDown} alt="arrowImg" />
     </button>
   );
