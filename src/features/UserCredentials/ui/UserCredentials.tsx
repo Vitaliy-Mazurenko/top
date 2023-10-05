@@ -1,8 +1,6 @@
 import { FC } from "react";
-
-import { UserAvatar } from "shared/ui/UserAvatar";
-
 import { UserName, UserWrapper } from "./UserCredentials.styled";
+import { UserAvatar } from "entities/user";
 
 interface IUserCredentials {
   firstName: string;

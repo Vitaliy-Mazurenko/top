@@ -1,6 +1,6 @@
-import { ProjectCardProps } from "pages/ui/ProjectCard"
 import { useEffect, useState } from "react"
-import { mockData } from "../mockData"
+import { ProjectCardProps } from "../../ui/ProjectCard"
+import { mockProjectList } from "../../mock/mockProjectList"
 
 interface useProjectsArgs {
 	search?: string
@@ -13,9 +13,9 @@ export const useProjects = (args: useProjectsArgs) => {
 	const { search, status, onFilterTouched, onFilterUntouched } = args
 	// make request to API and get projects
 	// { ... 
-	const [allProjects] = useState(mockData)
+	const [allProjects] = useState(mockProjectList)
 	//  ... }
-	
+
 	const [filteredProjects, setFilteredProjects] = useState<ProjectCardProps[]>([])
 
 	useEffect(() => {

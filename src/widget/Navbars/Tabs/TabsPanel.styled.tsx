@@ -6,6 +6,9 @@ export const SideMenuWrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  flex-shrink: 0;
+  flex-basis: 200px;
+  
 `;
 
 export const LogoWrap = styled.img`

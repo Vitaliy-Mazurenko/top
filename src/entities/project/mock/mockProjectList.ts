@@ -1,6 +1,6 @@
-import { ProjectCardProps } from "../ProjectCard";
+import { ProjectCardProps } from "../ui/ProjectCard";
 
-export const mockData: ProjectCardProps[] = [
+export const mockProjectList: ProjectCardProps[] = [
 	{
 		title: 'Title text',
 		body: 'Body text lorem ipsum',

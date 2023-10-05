@@ -7,12 +7,13 @@ import { Route, Routes } from "react-router-dom";
 const App = () => {
   return (
     <Routes>
+      <Route element={<DaschboardPage />} path="/" />
+
       <Route element={<TeamPage />} path="/team" />
       <Route element={<ProfilePage />} path="/profile" />
       <Route element={<ProfileSettingsPage />} path="/profile/settings" />
-      <Route element={<DaschboardPage />} path="/" />
     </Routes>
-  );
-};
+  )
+}
 
 export default App;

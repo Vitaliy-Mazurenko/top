@@ -11,7 +11,6 @@ import { StudentsTable } from "entities/StudentTable";
 
 import {
   CalendarAndChartWrapper,
-  LeftNavBar,
   StyledDaschboard,
 } from "./ui/StyledDaschboard.styled";
 
@@ -123,9 +122,9 @@ export const DaschboardPage: React.FC = () => {
 
   return (
     <StyledDaschboard>
-      <LeftNavBar>
+      {/* <LeftNavBar> */}
         <ManagerNavbar />
-      </LeftNavBar>
+      {/* </LeftNavBar> */}
 
       <div style={{ marginLeft: "auto", flexBasis: "83.4%" }}>
         <DashboardHeader />

@@ -1,5 +1,3 @@
-import { SkillList } from "pages/ui/SkillList"
-import { WorkActivityList } from "pages/ui/WorkActivityList"
 import { EmployeeNavbar } from "widget/Navbars"
 import { SubNavbar } from "features/SubNavbar"
 import { PageSwitcher } from "features/Pageswitcher"
@@ -8,11 +6,13 @@ import java from 'shared/assets/icons/java.png'
 import python from 'shared/assets/icons/python.svg'
 import docker from 'shared/assets/icons/docker.svg'
 import styled from "styled-components"
-import { TeamMemberWideCard } from "pages/ui/TeamMemberWideCard"
 import avatarURL from 'shared/assets/img/photo.png'
-import { ProfileOptions } from "pages/ui/ProfileOptions"
 import { Button } from "shared/ui/Button"
 import { PageContainer, PageHeader, PageInner } from "shared/ui/page-layout"
+import { WorkActivityList } from "entities/work-activity/ui/WorkActivityList"
+import { SkillList } from "entities/skill/ui/SkillList"
+import { TeamMemberWideCard } from "entities/team/ui/TeamMemberWideCard"
+import { ProfileOptions } from "entities/user/ui/ProfileOptions"
 
 const mockWorkActivity = [
 	{
