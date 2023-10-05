@@ -35,7 +35,7 @@ const InputElement = styled.input`
 `;
 
 
-interface InputBoxYellowProps {
+interface InputBoxProps {
   label: string;
   placeholder: string;
   required?: boolean;
@@ -44,7 +44,7 @@ interface InputBoxYellowProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const InputBoxYellow: React.FC<InputBoxYellowProps> = ({
+export const InputBox: React.FC<InputBoxProps> = ({
   label,
   placeholder,
   required = false,
@@ -61,5 +61,3 @@ const InputBoxYellow: React.FC<InputBoxYellowProps> = ({
     </InputBoxContainer>
   );
 };
-
-export default InputBoxYellow;

@@ -1,4 +1,4 @@
-import { ProjectCardProps } from "../../ProjectCard";
+import { ProjectCardProps } from "../ui/ProjectCard";
 
 type StatusStyle = Pick<React.CSSProperties, 'backgroundColor' | 'color'>
 

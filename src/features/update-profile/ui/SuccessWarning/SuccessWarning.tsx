@@ -2,12 +2,12 @@ import {
     WarningTable,
     WarningTableImage,
     WarningTableText
-} from './WarningPageGreenStyles';
+} from './SuccessWarning.styled';
 
 import checkCircle from 'shared/assets/img/check.png'
 
 
-function WarningPageGreen () {
+export function SuccessWarning () {
   return (
     <div>
         <WarningTable className='warningtable'>
@@ -19,5 +19,3 @@ function WarningPageGreen () {
     </div>
   )
 }
-
-export default WarningPageGreen;

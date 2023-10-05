@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import InputBoxYellow from 'shared/ui/reusable_input/InputBoxYellow';
-import WarningPageGreen from 'shared/ui/ReusableWarningTableGreen/WarningPageGreen';
-import WarningPageBlue from 'shared/ui/ReusableWarningTableBlue/WarningPageBlue';
+import { InputBox } from 'features/update-profile/ui/Input/Input';
 import styled from 'styled-components';
-
+import { MissingDataWarning } from '../MissingDataWarning/MissingDataWarning';
+import { SuccessWarning } from '../SuccessWarning/SuccessWarning';
 
 export const SaveButton = styled.button`
   width: 17.625rem; /* 282px */
@@ -16,9 +15,9 @@ export const SaveButton = styled.button`
   border: none;
   margin-top: 1.5rem; /* 24px */
   cursor: pointer;
-`;
+`
 
-const RegistrationForm = () => {
+export const UpdateProfileForm = () => {
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [secondName, setSecondName] = useState('');
@@ -45,22 +44,22 @@ const RegistrationForm = () => {
     setEmail(e.target.value);
     updateFormState();
   };
-  
+
   const handleFirstNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFirstName(e.target.value);
     updateFormState();
   };
-  
+
   const handleSecondNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSecondName(e.target.value);
     updateFormState();
   };
-  
+
   const handleCompanyNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCompanyName(e.target.value);
     updateFormState();
   };
-  
+
   const handlePositionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPosition(e.target.value);
     updateFormState();
@@ -70,43 +69,42 @@ const RegistrationForm = () => {
   const handleSaveButtonClick = () => {
     setShowWarningPage(!isFormFilled);
     console.log('Форма ' + (showWarningPage ? 'не ' : '') + 'заполнена');
-  };
-
+  }
 
   return (
     <div>
-      {showWarningPage ? <WarningPageBlue /> : <WarningPageGreen />}
+      {showWarningPage ? <MissingDataWarning /> : <SuccessWarning />}
 
       <form>
-        <InputBoxYellow
+        <InputBox
           label="E-mail"
           placeholder="ceo@digitaluniverse.com"
           required
           value={email}
           onChange={handleEmailChange}
         />
-        <InputBoxYellow
+        <InputBox
           label="First Name"
           placeholder="Enter Your First Name"
           required
           value={firstName}
           onChange={handleFirstNameChange}
         />
-        <InputBoxYellow
+        <InputBox
           label="Second Name"
           placeholder="Enter Your Full Name"
           required
           value={secondName}
           onChange={handleSecondNameChange}
         />
-        <InputBoxYellow
+        <InputBox
           label="Company Name"
           placeholder="Enter Company Name"
           required
           value={companyName}
           onChange={handleCompanyNameChange}
         />
-        <InputBoxYellow
+        <InputBox
           label="Position"
           placeholder="Enter Your Position"
           required
@@ -123,5 +121,3 @@ const RegistrationForm = () => {
     </div>
   );
 };
-
-export default RegistrationForm;

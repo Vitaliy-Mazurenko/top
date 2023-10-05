@@ -2,12 +2,12 @@ import {
     WarningTable,
     WarningTableImage,
     WarningTableText
-} from './WarningPageBlueStyles';
+} from './MissingDataWarning.styled';
 
 import warningImg from 'shared/assets/img/warningcircle.png'
 
 
-function WarningPageBlue () {
+export function MissingDataWarning () {
   return (
     <div>
         <WarningTable className='warningtable'>
@@ -19,5 +19,3 @@ function WarningPageBlue () {
     </div>
   )
 }
-
-export default WarningPageBlue;
