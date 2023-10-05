@@ -1,5 +1,4 @@
-import { TabLink, TabImgWrap, TabTextWrap } from "./Tab.styled";
-import { TabIcon } from "../Image";
+import { TabLink, TabImgWrap, TabTextWrap, TabIcon } from "./Tab.styled";
 
 type tabInfo = {
   text: string;

@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+import { Link } from "react-router-dom";
 
 export const TabLink = styled(Link)`
   color: ${(props) => props.theme.palette.text};
@@ -15,7 +16,17 @@ export const TabLink = styled(Link)`
   }
 `;
 
-export const TabImgWrap = styled.div``;
+export const TabImgWrap = styled.div`
+  /* width: 1.5rem;
+  height: 1.5rem; */
+`;
+
+export const TabIcon = styled.img`
+  display: block;
+  max-width: unset;
+  width: 1.5rem;
+  height: 1.5rem;
+`;
 
 export const TabTextWrap = styled.div`
   font-size: 14px;
