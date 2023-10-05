@@ -59,7 +59,9 @@ export const Navbar = () => {
    
 
     <NavbarContainer>
-      <LogoImg src={logoImg} alt='logoimage' />
+      <NavLink to="/">
+          <LogoImg src={logoImg} alt="logoimage" />
+      </NavLink>
       <SidebarInfo>
         <SidebarImg src={sidebarImg} alt='sidebarimg' />
         <SidebarName>Повне ім'я</SidebarName>

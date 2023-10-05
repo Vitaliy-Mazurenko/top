@@ -13,7 +13,7 @@ function WarningPageBlue () {
         <WarningTable className='warningtable'>
         <WarningTableImage src={warningImg} />
         <WarningTableText>
-        To continue work add the missing data
+        Для продовження  вкажіть відсутні дані
         </WarningTableText>
         </WarningTable>
     </div>

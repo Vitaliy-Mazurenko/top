@@ -29,15 +29,21 @@ export const PageSwitcher = () => {
 
               {
                 index !== segments.length - 1 && <>
-                  <PageSwitchLink to={pathSegment.url}>
+                  {/* <PageSwitchLink to={pathSegment.url}>
                     {pathSegment.label}
+                  </PageSwitchLink> */}
+                  <PageSwitchLink to={pathSegment.url}>
+                    Дім
                   </PageSwitchLink>
+                  
+                  
                   <ExtraText> / </ExtraText>
                 </>
               }
               {
                 index === segments.length - 1 &&
-                <ActiveLink to={pathSegment.url}>{pathSegment.label}</ActiveLink>
+              // <ActiveLink to={pathSegment.url}>{pathSegment.label}</ActiveLink>
+              <ActiveLink to={pathSegment.url}>Профіль</ActiveLink>
               }
             </>)
           }
