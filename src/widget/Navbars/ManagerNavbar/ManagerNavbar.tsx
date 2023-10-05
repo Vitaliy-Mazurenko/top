@@ -6,12 +6,15 @@ import {
 import { ManagerTabs } from "./ManagerTabs";
 import logoURL from "shared/assets/img/logo.svg";
 import { PublicOptions } from "../GlobalOptions";
+import { NavLink } from "react-router-dom";
 
 export const ManagerNavbar = () => {
   return (
     <SideMenuWrap>
       <LogoAndTabsWrap>
-        <LogoWrap src={logoURL} />
+        <NavLink to="/">
+          <LogoWrap src={logoURL} alt="logo" />
+        </NavLink>
         <ManagerTabs />
       </LogoAndTabsWrap>
       <PublicOptions />

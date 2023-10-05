@@ -8,12 +8,16 @@ import { PublicOptions } from "../GlobalOptions";
 import { EmployeeTabs } from "./EmployeeTabs";
 import { ProfileCard } from "entities/user";
 import defaultAvatar from 'shared/assets/img/sidebarimg.png'
+import { NavLink } from "react-router-dom";
 
 export const EmployeeNavbar = () => {
   return (
     <SideMenuWrap>
       <LogoAndTabsWrap>
-        <LogoWrap src={logoImg} />
+        <NavLink to="/">
+          <LogoWrap src={logoImg} alt="logo" />
+        </NavLink>
+
         <ProfileCard name="Повне ім'я" position="Посада" imgURL={defaultAvatar} />
         <EmployeeTabs />
       </LogoAndTabsWrap>
