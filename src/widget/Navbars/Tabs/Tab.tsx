@@ -1,32 +1,25 @@
-import { TabLink, TabImgWrap, TabTextWrap } from "./Tab.styled";
-import { TabIcon } from "../Image";
+import { TabLink, TabImgWrap, TabTextWrap, TabIcon } from "./Tab.styled";
 
 type tabInfo = {
   text: string;
   leftIcon?: string;
   rightIcon?: string;
-  to?: string
-  onClick?: () => void
-}
+  to?: string;
+  onClick?: () => void;
+};
 
 export const Tab: React.FC<tabInfo> = (props) => {
-  const {
-    to = '',
-    text,
-    onClick,
-    leftIcon,
-    rightIcon
-  } = props
+  const { to = "", text, onClick, leftIcon, rightIcon } = props;
 
   return (
     <TabLink to={to} onClick={onClick}>
-      <TabImgWrap>
-        {leftIcon && <TabIcon src={leftIcon} />}
-      </TabImgWrap>
+      <TabImgWrap>{leftIcon && <TabIcon src={leftIcon} />}</TabImgWrap>
       <TabTextWrap>{text}</TabTextWrap>
-      <TabImgWrap style={{ marginLeft: 'auto' }}>
-        {rightIcon && <TabIcon src={rightIcon} />}
-      </TabImgWrap>
+      {rightIcon && (
+        <TabImgWrap style={{ marginLeft: "auto" }}>
+          <TabIcon src={rightIcon} />
+        </TabImgWrap>
+      )}
     </TabLink>
-  )
-}
+  );
+};

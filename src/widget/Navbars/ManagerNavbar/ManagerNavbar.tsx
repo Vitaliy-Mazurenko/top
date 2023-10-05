@@ -4,7 +4,7 @@ import {
   SideMenuWrap,
 } from "../Tabs/TabsPanel.styled";
 import { ManagerTabs } from "./ManagerTabs";
-import logoURL from 'shared/assets/img/logo.png'
+import logoURL from "shared/assets/img/logo.svg";
 import { PublicOptions } from "../GlobalOptions";
 
 export const ManagerNavbar = () => {

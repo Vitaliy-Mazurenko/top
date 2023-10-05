@@ -6,15 +6,17 @@ export const SideMenuWrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  flex-shrink: 0;
+  flex-basis: 200px;
+  
 `;
 
 export const LogoWrap = styled.img`
-  max-width: 171px;
-  max-height: 56px;
   margin: 0 auto;
 `;
 
 export const OptionsWrap = styled.div``;
+
 export const LogoAndTabsWrap = styled.div`
   display: flex;
   margin: 2rem 0;

@@ -5,7 +5,7 @@ export const StyledStatisticBlock = styled.div`
   align-items: center;
   justify-content: center;
   flex-basis: 20%;
-  height: 120px;
+  height: 134px;
   border-radius: 8px;
   background-color: ${({ color }) => color || "#F4F9FB"};
 `;
@@ -16,7 +16,7 @@ export const StyledBlockContent = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
 `;
 export const PercentageText = styled.p`
   font-size: 48px;
