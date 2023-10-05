@@ -9,8 +9,6 @@ export const SideMenuWrap = styled.div`
 `;
 
 export const LogoWrap = styled.img`
-  max-width: 171px;
-  max-height: 56px;
   margin: 0 auto;
 `;
 

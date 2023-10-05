@@ -1,8 +1,8 @@
 import { Tab } from "./Tabs/Tab";
 import { OptionsWrap } from "./Tabs/TabsPanel.styled";
-import userImg from "shared/assets/img/user.png"
-import settingsImg from "shared/assets/img/Settings.png"
-import helpImg from "shared/assets/img/help-img.png"
+import userImg from "shared/assets/icons/user.svg"
+import settingsImg from "shared/assets/icons/settings.svg"
+import helpImg from "shared/assets/icons/orange-question-mark.svg"
 
 export const PublicOptions: React.FC = () => {
   return (
