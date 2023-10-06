@@ -11,16 +11,21 @@ export const StyledDaschboard = styled.div`
 
 export const LeftNavBar = styled.aside`
   position: fixed;
-<<<<<<< HEAD
-  width: 199px;
-=======
-  width: 200px;
->>>>>>> daschboard
+  width: 14%;
+  min-width: 200px;
+`;
+
+export const RightSideContent = styled.div`
+  margin-left: 227px;
+  flex-basis: 83.4%;
+
+  @media screen and (min-width: 1450px) {
+    margin-left: auto;
+  }
 `;
 
 export const CalendarAndChartWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-
   margin: 40px 0;
 `;
