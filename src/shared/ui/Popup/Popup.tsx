@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useTable, Column } from "react-table";
 
@@ -64,11 +64,24 @@ const columns: Column<Data>[] = [
   },
   {
     Header: (
-      <div style={{ display: "flex", marginBottom: "1.25" }}>Дедлайн</div>
+      <div
+        style={{
+          display: "flex",
+          marginBottom: "1.25rem",
+        }}
+      >
+        Дедлайн
+      </div>
     ),
     accessor: "Дедлайн",
     Cell: ({ row }: any) => (
-      <div style={{ marginRight: "1.93rem", fontSize: "0.875rem" }}>
+      <div
+        style={{
+          marginRight: "1.93rem",
+
+          fontSize: "0.875rem",
+        }}
+      >
         {row.original.Дедлайн}
       </div>
     ),
@@ -105,8 +118,8 @@ const columns: Column<Data>[] = [
         fontSize: "0.75rem",
         fontWeight: 400,
         color: textColor,
-        fontFamily: "Osnova Pro",
         textAlign: "center",
+        fontFamily: "Osnova Pro",
       };
 
       const statusBorderStyle = {
@@ -216,6 +229,28 @@ const DropdownButtonIcon = styled.svg`
 const Popup: React.FC = () => {
   const [showDropdown1, setShowDropdown1] = useState(false);
   const [showDropdown2, setShowDropdown2] = useState(false);
+  const [showDropdown3, setShowDropdown3] = useState(false);
+
+  useEffect(() => {
+    const handleDocumentClick = (e: MouseEvent) => {
+      if (
+        !e.target ||
+        !(e.target instanceof Element) ||
+        (!e.target.closest(".dropdown-button") &&
+          !e.target.closest(".dropdown-list"))
+      ) {
+        setShowDropdown1(false);
+        setShowDropdown2(false);
+        setShowDropdown3(false);
+      }
+    };
+
+    document.addEventListener("click", handleDocumentClick);
+
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
+    };
+  }, []);
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable<Data>({
@@ -229,6 +264,7 @@ const Popup: React.FC = () => {
         <TableContainer>
           <DropdownButton
             onClick={() => setShowDropdown1(!showDropdown1)}
+            className="dropdown-button"
             style={{
               background: "#E9E9E9",
               border: "0.125rem solid #8C8C8C",
@@ -249,8 +285,15 @@ const Popup: React.FC = () => {
                 fill="#060606"
               />
             </DropdownButtonIcon>
-            {showDropdown1 && <DropdownList>{/* Список */}</DropdownList>}
+            {showDropdown1 && (
+              <DropdownList className="dropdown-list">
+                <DropdownListItem>Johnny</DropdownListItem>
+                <DropdownListItem>Helen</DropdownListItem>
+                <DropdownListItem>Victorio</DropdownListItem>
+              </DropdownList>
+            )}
           </DropdownButton>
+
           <ImageContainer>
             <img
               src="./src/shared/assets/img/team1.svg"
@@ -302,8 +345,8 @@ const Popup: React.FC = () => {
           </ImageContainer>
           <DropdownButton
             onClick={() => setShowDropdown2(!showDropdown2)}
+            className="dropdown-button"
             style={{
-              display: "flex",
               alignItems: "center",
               width: "auto",
               height: "2.125rem",
@@ -327,10 +370,18 @@ const Popup: React.FC = () => {
                 fill="#060606"
               />
             </DropdownButtonIcon>
+            {showDropdown2 && (
+              <DropdownList className="dropdown-button">
+                <DropdownListItem>Manager 1</DropdownListItem>
+                <DropdownListItem>Manager 2</DropdownListItem>
+                <DropdownListItem>Manager 3</DropdownListItem>
+              </DropdownList>
+            )}
           </DropdownButton>
 
           <DropdownButton
-            onClick={() => setShowDropdown2(!showDropdown2)}
+            onClick={() => setShowDropdown3(!showDropdown3)}
+            className="dropdown-button"
             style={{
               background: "#E9E9E9",
               border: "0.125rem solid #8C8C8C",
@@ -351,8 +402,12 @@ const Popup: React.FC = () => {
                 fill="#060606"
               />
             </DropdownButtonIcon>
-            {showDropdown2 && (
-              <DropdownList>{/* Список елементів */}</DropdownList>
+            {showDropdown3 && (
+              <DropdownList className="dropdown-button">
+                <DropdownListItem>Active</DropdownListItem>
+                <DropdownListItem>Inactive</DropdownListItem>
+                <DropdownListItem>Interactive</DropdownListItem>
+              </DropdownList>
             )}
           </DropdownButton>
         </TableContainer>
@@ -424,6 +479,7 @@ const ImageContainer = styled.div`
   display: flex;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+
   > img {
     margin-left: -0.375rem;
   }
@@ -453,6 +509,28 @@ const DropdownButton = styled.button`
   margin-right: 0.5rem;
 `;
 
-const DropdownList = styled.ul``;
+const DropdownListItem = styled.div`
+  padding: 0.625rem;
+  cursor: pointer;
+  color: #333;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+`;
+const DropdownList = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  z-index: 1;
+  min-width: 10rem;
+`;
 
 export default Popup;
