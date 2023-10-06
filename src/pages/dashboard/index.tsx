@@ -11,6 +11,7 @@ import { StudentsTable } from "entities/StudentTable";
 
 import {
   CalendarAndChartWrapper,
+  DashboardContainer,
   LeftNavBar,
   RightSideContent,
   StyledDaschboard,
@@ -123,24 +124,24 @@ export const DaschboardPage: React.FC = () => {
   const [selectedDate, setSelectedDay] = React.useState(new Date());
 
   return (
-    <StyledDaschboard>
-      <LeftNavBar>
-        <ManagerNavbar />
-      </LeftNavBar>
+    <DashboardContainer>
+      <StyledDaschboard>
+        <LeftNavBar>{/* <ManagerNavbar /> */}</LeftNavBar>
 
-      <RightSideContent>
-        <DashboardHeader />
-        <StatisticBlocksSection />
-        <CalendarAndChartWrapper>
-          <Calendar
-            locale="uk-UA"
-            selectedDate={selectedDate}
-            selectDate={(date) => setSelectedDay(date)}
-          />
-          <DashboardChart data={chartData} />
-        </CalendarAndChartWrapper>
-        <StudentsTable students={tableData} />
-      </RightSideContent>
-    </StyledDaschboard>
+        <RightSideContent>
+          <DashboardHeader />
+          <StatisticBlocksSection />
+          <CalendarAndChartWrapper>
+            <Calendar
+              locale="uk-UA"
+              selectedDate={selectedDate}
+              selectDate={(date) => setSelectedDay(date)}
+            />
+            <DashboardChart data={chartData} />
+          </CalendarAndChartWrapper>
+          <StudentsTable students={tableData} />
+        </RightSideContent>
+      </StyledDaschboard>
+    </DashboardContainer>
   );
 };
