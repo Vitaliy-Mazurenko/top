@@ -3,6 +3,7 @@ import React from "react";
 import { ManagerNavbar } from "widget/Navbars";
 // import { ManagerNavbarTablet } from "widget/Navbars";
 import { DashboardHeader } from "widget/DashboardHeader";
+import { DashboardHeaderTablet } from "widget/DashboardHeaderTablet";
 
 import { Calendar } from "./ui/Calendar/Calendar";
 
@@ -14,7 +15,8 @@ import {
   CalendarAndChartWrapper,
   DashboardContainer,
   LeftNavBar,
-  DashboardHeaderWrap,
+  DashboardHeaderDesktop,
+  HeaderTabletWrap,
   RightSideContent,
   StyledDaschboard,
 } from "./ui/StyledDaschboard.styled";
@@ -131,9 +133,12 @@ export const DaschboardPage: React.FC = () => {
         <LeftNavBar>{ <ManagerNavbar /> /*<ManagerNavbarTablet/>*/ }</LeftNavBar>
 
         <RightSideContent>
-        <DashboardHeaderWrap>
+        <DashboardHeaderDesktop>
           <DashboardHeader />
-        </DashboardHeaderWrap>
+        </DashboardHeaderDesktop>
+        <HeaderTabletWrap>
+          <DashboardHeaderTablet/>
+        </HeaderTabletWrap>
           <StatisticBlocksSection />
           <CalendarAndChartWrapper>
             <Calendar

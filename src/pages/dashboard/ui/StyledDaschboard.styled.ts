@@ -30,10 +30,16 @@ export const DashboardContainer = styled.div`
   }
 `;
 
-export const DashboardHeaderWrap =  styled.div`
+export const DashboardHeaderDesktop =  styled.div`
   @media screen and (max-width: 1080px) {
-    display: none;
+    visibility: hidden;
   }
+`;
+
+export const HeaderTabletWrap = styled.div`
+@media screen and (min-width: 1080px) {
+  visibility: hidden;
+}
 `;
 
 export const LeftNavBar = styled.aside`
