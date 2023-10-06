@@ -8,6 +8,14 @@ export const SideMenuWrap = styled.div`
   height: 100vh;
 `;
 
+export const SideMenuTabletWrap = styled.div`
+  background-color: #f4f9fb;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
+`;
+
 export const LogoWrap = styled.img`
   margin: 0 auto;
 `;

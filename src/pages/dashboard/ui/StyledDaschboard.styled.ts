@@ -30,10 +30,19 @@ export const DashboardContainer = styled.div`
   }
 `;
 
+export const DashboardHeaderWrap =  styled.div`
+  @media screen and (max-width: 1080px) {
+    display: none;
+  }
+`;
+
 export const LeftNavBar = styled.aside`
   position: fixed;
   width: 14%;
   min-width: 200px;
+  @media screen and (max-width: 1080px) {
+    display: none;
+  }
 `;
 
 export const RightSideContent = styled.div`
