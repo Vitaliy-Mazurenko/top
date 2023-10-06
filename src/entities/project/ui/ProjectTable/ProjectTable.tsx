@@ -1,5 +1,3 @@
-//Table.tsx
-
 import React, { useState } from "react";
 import { useTable, Column } from "react-table";
 import { FaSearch } from "react-icons/fa";
@@ -13,13 +11,14 @@ import {
   TableRow,
   TableCell,
 } from "./ProjectTable.styled";
-
 import { CheckboxLabel } from "./ProjectTable.styled";
 import CustomSVG2 from "shared/ui/CustomSVG/CustomSVG2";
 import CustomSVG3 from "shared/ui/CustomSVG/CustomSVG3";
 import CustomSVG4 from "shared/ui/CustomSVG/CustomSVG4";
 import CloseSVG from "shared/ui/CustomSVG/CloseSVG";
 import { AddCandidateModal } from "features/AddCandidate";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 
 const data = [
   {
