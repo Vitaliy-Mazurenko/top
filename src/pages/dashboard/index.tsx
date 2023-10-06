@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ManagerNavbar } from "widget/Navbars";
+// import { ManagerNavbar } from "widget/Navbars";
 import { DashboardHeader } from "widget/DashboardHeader";
 
 import { Calendar } from "./ui/Calendar/Calendar";
