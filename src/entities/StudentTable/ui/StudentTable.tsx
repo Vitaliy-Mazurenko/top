@@ -1,3 +1,5 @@
+import { useMediaQuery } from "usehooks-ts";
+
 import StudentTableRow, { StudentTableRowProps } from "./StudentTableRow";
 import {
   StyledTable,
@@ -11,6 +13,8 @@ interface StudentsTableProps {
 }
 
 export const StudentsTable = ({ students }: StudentsTableProps) => {
+  const isPCScreenSize = useMediaQuery("(min-width: 1080px)");
+
   return (
     <StyledTable>
       <StyledTabledHead>
@@ -18,9 +22,13 @@ export const StudentsTable = ({ students }: StudentsTableProps) => {
           <StyledTabledHeadCell>Студенти</StyledTabledHeadCell>
           <StyledTabledHeadCell>Вік</StyledTabledHeadCell>
           <StyledTabledHeadCell>Прогрес</StyledTabledHeadCell>
-          <StyledTabledHeadCell>Домашні завдання</StyledTabledHeadCell>
+          <StyledTabledHeadCell>
+            {isPCScreenSize ? "Домашні завдання" : "дз"}
+          </StyledTabledHeadCell>
           <StyledTabledHeadCell>Оцінки</StyledTabledHeadCell>
-          <StyledTabledHeadCell>Кількість входів</StyledTabledHeadCell>
+          <StyledTabledHeadCell>
+            {isPCScreenSize ? "Кількість входів" : "Входи"}
+          </StyledTabledHeadCell>
           <StyledTabledHeadCell>Країна</StyledTabledHeadCell>
         </tr>
       </StyledTabledHead>
