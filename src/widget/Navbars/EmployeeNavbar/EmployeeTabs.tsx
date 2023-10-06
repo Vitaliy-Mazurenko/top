@@ -21,19 +21,21 @@ export const EmployeeTabs = () => {
 
   return (
     <TabsWrap>
+      
       <Tab rightIcon={arrowIcon} onClick={toggleProfileDropdown} text="профіль" leftIcon={userImg} />
       {isProfileDropdownOpen && <>
+        <Tab text="портфоліо" to='/' />
         <Tab rightIcon={arrowIcon} onClick={togglePersonalDataDropdown} text="Персональні дані" />
         {isPersonalDataDropdownOpen && <>
           <Tab text="Навички" to="/" />
           <Tab text="спеціалізація" to="/" />
         </>}
-        <Tab text="портфоліо" to='/' />
+       
       </>
       }
 
       <Tab text="команда" leftIcon={teamImg} to="/" />
-      <Tab text="проекти" leftIcon={lockImg} to="/" />
+      <Tab text="проєкти" leftIcon={lockImg} to="/" />
       <Tab text="репозиторій" leftIcon={repoImg}  to="/" />
     </TabsWrap>
   )
