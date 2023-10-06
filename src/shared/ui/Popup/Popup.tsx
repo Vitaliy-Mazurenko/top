@@ -118,7 +118,7 @@ const columns: Column<Data>[] = [
         fontSize: "0.75rem",
         fontWeight: 400,
         color: textColor,
-        textAlign: "center",
+        // textAlign: "center",
         fontFamily: "Osnova Pro",
       };
 
@@ -128,7 +128,7 @@ const columns: Column<Data>[] = [
         padding: "0.25rem 0.5rem",
         color: textColor,
         fontFamily: "Osnova Pro",
-        textAlign: "center",
+        // textAlign: "center",
         marginRight: "2.125rem",
       };
 
