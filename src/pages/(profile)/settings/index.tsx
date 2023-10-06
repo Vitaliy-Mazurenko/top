@@ -1,16 +1,17 @@
-import RegistrationPage from '../../ui/registrationform/RegistrationPage';
-import { Navbar } from 'widget/Navbar';
+import { EmployeeNavbar } from 'widget/Navbars';
 import { PageSwitcher } from 'features/Pageswitcher';
 import { SubNavbar } from 'features/SubNavbar';
 import { PageContainer, PageHeader, PageInfo, PageInner } from 'shared/ui/page-layout';
 import { ModalUploadForm } from './ui/ModalUploadWindow/ModalUploadForm';
+import { UpdateProfileForm } from 'features/update-profile';
 
 
 export const ProfileSettingsPage = () => {
 
   return (
     <PageContainer>
-      <Navbar />
+      <EmployeeNavbar />
+
       <PageInner>
         <PageSwitcher />
         <PageHeader>Профіль</PageHeader>
@@ -23,12 +24,12 @@ export const ProfileSettingsPage = () => {
         <PageInfo>
           <div>
             <div>
-              <RegistrationPage />
+              <UpdateProfileForm />
             </div>
           </div>
           <ModalUploadForm />
         </PageInfo>
-      </PageInner>
+      </PageInner >
     </PageContainer>
   );
 };
