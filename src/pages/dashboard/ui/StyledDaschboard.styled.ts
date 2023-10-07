@@ -20,7 +20,7 @@ export const DashboardContainer = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    width: 724px;
+    width: 100%;
   }
 
   @media screen and (min-width: 1080px) {

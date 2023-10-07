@@ -9,7 +9,7 @@ export const SideMenuWrap = styled.div`
 `;
 
 export const SideMenuTabletWrap = styled.div`
-  background-color: #f4f9fb;
+  background-color: #DDEDF4;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

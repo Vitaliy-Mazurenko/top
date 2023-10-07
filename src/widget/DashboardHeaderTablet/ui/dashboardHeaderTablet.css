@@ -139,7 +139,7 @@ img {
 }
 
 .Header {
-  /* background: #002395; */
+  background: #F4F9FB;
   padding-top: 20px;
   padding-bottom: 20px;
   height: 85px;
@@ -174,7 +174,7 @@ img {
   width: 50px;
   height: 50px;
   position: relative;
-  margin-right: 150px;
+  margin-right: 110px;
 }
 
 .Hamburger-menu span {
