@@ -227,9 +227,7 @@ const DropdownButtonIcon = styled.svg`
 `;
 
 const Popup: React.FC = () => {
-  const [showDropdown1, setShowDropdown1] = useState(false);
-  const [showDropdown2, setShowDropdown2] = useState(false);
-  const [showDropdown3, setShowDropdown3] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
 
   useEffect(() => {
     const handleDocumentClick = (e: MouseEvent) => {
@@ -239,9 +237,7 @@ const Popup: React.FC = () => {
         (!e.target.closest(".dropdown-button") &&
           !e.target.closest(".dropdown-list"))
       ) {
-        setShowDropdown1(false);
-        setShowDropdown2(false);
-        setShowDropdown3(false);
+        setActiveDropdown(null);
       }
     };
 
@@ -251,6 +247,12 @@ const Popup: React.FC = () => {
       document.removeEventListener("click", handleDocumentClick);
     };
   }, []);
+
+  const toggleDropdown = (dropdownIndex: number) => {
+    setActiveDropdown((prevActiveDropdown) =>
+      prevActiveDropdown === dropdownIndex ? null : dropdownIndex
+    );
+  };
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable<Data>({
@@ -263,7 +265,7 @@ const Popup: React.FC = () => {
       <Header>
         <TableContainer>
           <DropdownButton
-            onClick={() => setShowDropdown1(!showDropdown1)}
+            onClick={() => toggleDropdown(1)}
             className="dropdown-button"
             style={{
               background: "#E9E9E9",
@@ -285,7 +287,7 @@ const Popup: React.FC = () => {
                 fill="#060606"
               />
             </DropdownButtonIcon>
-            {showDropdown1 && (
+            {activeDropdown === 1 && (
               <DropdownList className="dropdown-list">
                 <DropdownListItem>Johnny</DropdownListItem>
                 <DropdownListItem>Helen</DropdownListItem>
@@ -344,7 +346,7 @@ const Popup: React.FC = () => {
             />
           </ImageContainer>
           <DropdownButton
-            onClick={() => setShowDropdown2(!showDropdown2)}
+            onClick={() => toggleDropdown(2)}
             className="dropdown-button"
             style={{
               alignItems: "center",
@@ -370,7 +372,7 @@ const Popup: React.FC = () => {
                 fill="#060606"
               />
             </DropdownButtonIcon>
-            {showDropdown2 && (
+            {activeDropdown === 2 && (
               <DropdownList className="dropdown-button">
                 <DropdownListItem>Manager 1</DropdownListItem>
                 <DropdownListItem>Manager 2</DropdownListItem>
@@ -380,7 +382,7 @@ const Popup: React.FC = () => {
           </DropdownButton>
 
           <DropdownButton
-            onClick={() => setShowDropdown3(!showDropdown3)}
+            onClick={() => toggleDropdown(3)}
             className="dropdown-button"
             style={{
               background: "#E9E9E9",
@@ -402,7 +404,7 @@ const Popup: React.FC = () => {
                 fill="#060606"
               />
             </DropdownButtonIcon>
-            {showDropdown3 && (
+            {activeDropdown === 3 && (
               <DropdownList className="dropdown-button">
                 <DropdownListItem>Active</DropdownListItem>
                 <DropdownListItem>Inactive</DropdownListItem>
