@@ -1,21 +1,21 @@
 import {
-    WarningTable,
-    WarningTableImage,
-    WarningTableText
+  WarningTable,
+  WarningTableImage,
+  WarningTableText
 } from './MissingDataWarning.styled';
 
 import warningImg from 'shared/assets/img/warningcircle.png'
 
 
-export function MissingDataWarning () {
+export function MissingDataWarning() {
   return (
     <div>
-        <WarningTable className='warningtable'>
+      <WarningTable className='warningtable'>
         <WarningTableImage src={warningImg} />
         <WarningTableText>
-        To continue work add the missing data
+          Для продовження  вкажіть відсутні дані
         </WarningTableText>
-        </WarningTable>
+      </WarningTable>
     </div>
   )
 }

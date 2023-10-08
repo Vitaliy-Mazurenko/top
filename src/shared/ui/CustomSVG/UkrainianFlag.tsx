@@ -1,4 +1,8 @@
-export const UkrainianFlag: React.FC = () => {
+interface IUkrainianFlagProps {
+  className?: string;
+}
+
+export const UkrainianFlag: React.FC<IUkrainianFlagProps> = ({ className }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +10,7 @@ export const UkrainianFlag: React.FC = () => {
       height="36"
       viewBox="0 0 36 36"
       fill="none"
+      className={className}
     >
       <g clipPath="url(#clip0_452_3686)">
         <path

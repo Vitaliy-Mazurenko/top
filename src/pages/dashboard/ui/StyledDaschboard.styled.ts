@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { DashboardNavBar } from "widget/DashboardNavBar";
+
 export const StyledDaschboard = styled.div`
   font-family: "Inter", sans-serif;
 
@@ -9,35 +11,23 @@ export const StyledDaschboard = styled.div`
   }
 `;
 
-export const DashboardContainer = styled.div`
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 10px;
+export const StyledDashboardNavBar = styled(DashboardNavBar)<{
+  $visible: boolean;
+}>`
+  transform: ${(props) =>
+    props.$visible ? "translateX(0)" : "translateX(-100%)"};
+  transition: transform 0.25s ease-in-out;
+`;
 
-  @media screen and (min-width: 480px) {
-    width: 468px;
-  }
+export const Content = styled.div`
+  padding-top: 88px;
 
   @media screen and (min-width: 768px) {
-    width: 724px;
+    padding-top: 117px;
   }
 
   @media screen and (min-width: 1080px) {
-    width: auto;
-    margin: 0;
-    padding: 0;
-  }
-`;
-
-export const LeftNavBar = styled.aside`
-  position: fixed;
-  width: 14%;
-  min-width: 200px;
-`;
-
-export const RightSideContent = styled.div`
-  @media screen and (min-width: 1080px) {
+    padding-top: unset;
     margin-left: 227px;
     flex-basis: 83.4%;
   }

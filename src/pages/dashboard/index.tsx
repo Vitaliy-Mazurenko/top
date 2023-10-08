@@ -1,6 +1,5 @@
-import React from "react";
+import { useState, FC } from "react";
 
-import { ManagerNavbar } from "widget/Navbars";
 import { DashboardHeader } from "widget/DashboardHeader";
 
 import { Calendar } from "features/Calendar/Calendar";
@@ -9,12 +8,14 @@ import { StatisticBlocksSection } from "entities/PetcentageStatistics/StatisticB
 import { DashboardChart } from "entities/DashboardChart";
 import { StudentsTable } from "entities/StudentTable";
 
+import { Container } from "shared/ui/Container";
+import { useMobileMenu } from "shared/hooks/useMobileMenu";
+
 import {
   CalendarAndChartWrapper,
-  DashboardContainer,
-  LeftNavBar,
-  RightSideContent,
+  Content,
   StyledDaschboard,
+  StyledDashboardNavBar,
 } from "./ui/StyledDaschboard.styled";
 
 interface StudentInterface {
@@ -42,7 +43,7 @@ const tableData: StudentInterface[] = [
     lastName: "Прізвище",
     age: 25,
     progress: 75,
-    homeworkCompleteness: 23,
+    homeworkCompleteness: 68,
     rating: 100,
     attendance: 4,
     country: "Ukraine",
@@ -53,7 +54,7 @@ const tableData: StudentInterface[] = [
     lastName: "Прізвище",
     age: 25,
     progress: 75,
-    homeworkCompleteness: 45,
+    homeworkCompleteness: 68,
     rating: 100,
     attendance: 4,
     country: "Ukraine",
@@ -75,7 +76,7 @@ const tableData: StudentInterface[] = [
     lastName: "Прізвище",
     age: 25,
     progress: 75,
-    homeworkCompleteness: 91,
+    homeworkCompleteness: 68,
     rating: 100,
     attendance: 4,
     country: "Ukraine",
@@ -120,28 +121,40 @@ const chartData: ChartItemInterface[] = [
   },
 ];
 
-export const DaschboardPage: React.FC = () => {
-  const [selectedDate, setSelectedDay] = React.useState(new Date());
+export const DaschboardPage: FC = () => {
+  const { isMenuShown: isNavBarShown, setIsMenuShown: setIsNavBarShown } =
+    useMobileMenu({
+      buttonId: "#dashboard-burger-btn",
+      mobileMenuId: "#dashboard-mobile-menu",
+    });
+  const [selectedDate, setSelectedDay] = useState(new Date());
+
+  const toggleNavBar = () => {
+    setIsNavBarShown((s) => !s);
+  };
 
   return (
-    <DashboardContainer>
-      <StyledDaschboard>
-        <LeftNavBar>{/* <ManagerNavbar /> */}</LeftNavBar>
+    <StyledDaschboard>
+      <StyledDashboardNavBar $visible={isNavBarShown} />
 
-        <RightSideContent>
-          <DashboardHeader />
-          <StatisticBlocksSection />
-          <CalendarAndChartWrapper>
-            <Calendar
-              locale="uk-UA"
-              selectedDate={selectedDate}
-              selectDate={(date) => setSelectedDay(date)}
-            />
-            <DashboardChart data={chartData} />
-          </CalendarAndChartWrapper>
-          <StudentsTable students={tableData} />
-        </RightSideContent>
-      </StyledDaschboard>
-    </DashboardContainer>
+      <div>
+        <DashboardHeader onMenuBtnClick={toggleNavBar} />
+
+        <Content>
+          <Container>
+            <StatisticBlocksSection />
+            <CalendarAndChartWrapper>
+              <Calendar
+                locale="uk-UA"
+                selectedDate={selectedDate}
+                selectDate={(date) => setSelectedDay(date)}
+              />
+              <DashboardChart data={chartData} />
+            </CalendarAndChartWrapper>
+            <StudentsTable students={tableData} />
+          </Container>
+        </Content>
+      </div>
+    </StyledDaschboard>
   );
 };

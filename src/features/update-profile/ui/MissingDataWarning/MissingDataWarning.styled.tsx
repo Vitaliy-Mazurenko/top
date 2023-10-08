@@ -5,9 +5,9 @@ export const WarningTable = styled.div`
   flex-direction: row;
   border: 1px solid #8054e3;
   margin-top: 2.5rem; /* 40px */
-  gap: 1rem; /* 16px */
+  gap: 0.7rem; /* 16px */
   width: 25rem; /* 400px */
-  padding: 1rem; /* 16px */
+  padding: 1rem; 
 `;
 
 export const WarningTableImage = styled.img`

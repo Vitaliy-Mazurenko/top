@@ -190,7 +190,7 @@ export const UpdateProfileForm = () => {
     };
   return (
     <div>
-      {isDataSubmitted ? <MissingDataWarning /> : <SuccessWarning />}
+      {isDataSubmitted ? <SuccessWarning />:<MissingDataWarning /> }
       <form>
         <InputBox
           label="E-mail"
