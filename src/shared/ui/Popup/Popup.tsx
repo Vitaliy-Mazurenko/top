@@ -29,9 +29,8 @@ const columns: Column<Data>[] = [
         Задача
       </div>
     ),
-
     accessor: "Задача",
-    Cell: ({ row }: any) => (
+    Cell: ({ row }) => (
       <div
         style={{
           marginRight: "1.56rem",
@@ -43,7 +42,6 @@ const columns: Column<Data>[] = [
       </div>
     ),
   },
-
   {
     Header: (
       <div
@@ -58,36 +56,34 @@ const columns: Column<Data>[] = [
       </div>
     ),
     accessor: "Виконавець",
-    Cell: ({ row }: any) => {
-      return (
-        <div
+    Cell: ({ row }) => (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <img
+          src={`/src/shared/assets/img/${row.original.Виконавець}.svg`}
+          alt={row.original.Виконавець}
           style={{
-            display: "flex",
-            alignItems: "center",
+            width: "2.5rem",
+            height: "2.5rem",
+            borderRadius: "50%",
+          }}
+        />
+        <span
+          style={{
+            marginLeft: "0.5rem",
+            marginRight: "2.75rem",
+            fontSize: "0.87rem",
+            width: "5rem",
           }}
         >
-          <img
-            src={`./src/shared/assets/img/${row.original.Виконавець}.svg`}
-            alt={row.original.Виконавець}
-            style={{
-              width: "2.5rem",
-              height: "2.5rem",
-              borderRadius: "50%",
-            }}
-          />
-          <span
-            style={{
-              marginLeft: "0.5rem",
-              marginRight: "2.75rem",
-              fontSize: "0.87rem",
-              width: "5rem",
-            }}
-          >
-            {row.original.Виконавець}
-          </span>
-        </div>
-      );
-    },
+          {row.original.Виконавець}
+        </span>
+      </div>
+    ),
   },
   {
     Header: (
@@ -103,11 +99,10 @@ const columns: Column<Data>[] = [
       </div>
     ),
     accessor: "Дедлайн",
-    Cell: ({ row }: any) => (
+    Cell: ({ row }) => (
       <div
         style={{
           marginRight: "1.93rem",
-
           width: "5rem",
         }}
       >
@@ -130,7 +125,7 @@ const columns: Column<Data>[] = [
       </div>
     ),
     accessor: "Статус",
-    Cell: ({ row }: any) => {
+    Cell: ({ row }) => {
       let textColor = "black";
       let backgroundColor = "white";
       let borderColor = "purple";
@@ -157,7 +152,6 @@ const columns: Column<Data>[] = [
         fontSize: "0.75rem",
         fontWeight: 400,
         color: textColor,
-        // textAlign: "center",
         fontFamily: "Osnova Pro",
       };
 
@@ -167,7 +161,6 @@ const columns: Column<Data>[] = [
         padding: "0.25rem 0.5rem",
         color: textColor,
         fontFamily: "Osnova Pro",
-        // textAlign: "center",
         marginRight: "2.125rem",
       };
 
@@ -178,7 +171,6 @@ const columns: Column<Data>[] = [
       );
     },
   },
-
   {
     Header: (
       <div
@@ -194,7 +186,7 @@ const columns: Column<Data>[] = [
       </div>
     ),
     accessor: "Прогрес",
-    Cell: ({ row }: any) => {
+    Cell: ({ row }) => {
       const svgWidth = 32;
       const svgHeight = 32;
       let iconSrc = green;
@@ -230,7 +222,6 @@ const columns: Column<Data>[] = [
     },
   },
 ];
-
 const data: Data[] = [
   {
     Задача: "Marketplace",
@@ -357,7 +348,7 @@ const Popup: React.FC = () => {
 
           <ImageContainer>
             <img
-              src="./src/shared/assets/img/team1.svg"
+              src="/src/shared/assets/img/team1.svg"
               alt="Team 1"
               style={{
                 width: "2.5rem",
@@ -381,7 +372,7 @@ const Popup: React.FC = () => {
             />
 
             <img
-              src="./src/shared/assets/img/team3.svg"
+              src="/src/shared/assets/img/team3.svg"
               alt="Team 3"
               style={{
                 width: "2.5rem",
@@ -471,7 +462,7 @@ const Popup: React.FC = () => {
                 >
                   В розробці
                   <img
-                    src="./src/shared/ui/CustomSVG/BluePlusSVG.svg"
+                    src="/src/shared/ui/CustomSVG/BluePlusSVG.svg"
                     alt="PlusSVG"
                   />
                 </DropdownListItem>
@@ -481,7 +472,7 @@ const Popup: React.FC = () => {
                 >
                   Тестування
                   <img
-                    src="./src/shared/ui/CustomSVG/BluePlusSVG.svg"
+                    src="/src/shared/ui/CustomSVG/BluePlusSVG.svg"
                     alt="PlusSVG"
                   />
                 </DropdownListItem>
@@ -491,7 +482,7 @@ const Popup: React.FC = () => {
                 >
                   Завершено
                   <img
-                    src="./src/shared/ui/CustomSVG/BluePlusSVG.svg"
+                    src="/src/shared/ui/CustomSVG/BluePlusSVG.svg"
                     alt="PlusSVG"
                   />
                 </DropdownListItem>
@@ -501,7 +492,7 @@ const Popup: React.FC = () => {
                 >
                   Заморожено
                   <img
-                    src="./src/shared/ui/CustomSVG/BluePlusSVG.svg"
+                    src="/src/shared/ui/CustomSVG/BluePlusSVG.svg"
                     alt="PlusSVG"
                   />
                 </DropdownListItem>
@@ -512,7 +503,7 @@ const Popup: React.FC = () => {
                 >
                   Відмінено
                   <img
-                    src="./src/shared/ui/CustomSVG/BluePlusSVG.svg"
+                    src="/src/shared/ui/CustomSVG/BluePlusSVG.svg"
                     alt="PlusSVG"
                   />
                 </DropdownListItem>
@@ -522,7 +513,7 @@ const Popup: React.FC = () => {
                 >
                   Заплановано
                   <img
-                    src="./src/shared/ui/CustomSVG/BluePlusSVG.svg"
+                    src="/src/shared/ui/CustomSVG/BluePlusSVG.svg"
                     alt="PlusSVG"
                   />
                 </DropdownListItem>
