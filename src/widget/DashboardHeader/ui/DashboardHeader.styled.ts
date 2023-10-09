@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Notification } from "features/Notification";
 import { UserCredentials } from "features/UserCredentials";
 import { DropdownButton } from "features/DropdownButton";
+import { Link } from "react-router-dom";
 
 export const StyledHeader = styled.header`
   position: fixed;
@@ -56,7 +57,7 @@ export const StyledDropdownButton = styled(DropdownButton)`
   margin-left: 0.625rem;
 `;
 
-export const StyledLogo = styled.img`
+export const LogoLink = styled(Link)`
   display: block;
   padding: 0.25rem 0;
 
@@ -65,12 +66,17 @@ export const StyledLogo = styled.img`
   }
 `;
 
-export const ControlsWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-`;
-
 export const ControlButton = styled.button`
   padding: 0.5rem;
+
+  @media screen and (min-width: 768px) {
+    order: 1;
+  }
+`;
+
+export const BurgerButton = styled(ControlButton)`
+  @media screen and (min-width: 768px) {
+    margin-left: auto;
+    margin-right: 0.5rem;
+  }
 `;

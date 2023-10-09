@@ -19,6 +19,17 @@ export const StyledDashboardNavBar = styled(DashboardNavBar)<{
   transition: transform 0.25s ease-in-out;
 `;
 
+export const RightSideContent = styled.div`
+  @media screen and (min-width: 1080px) {
+    margin-left: 227px;
+    flex-basis: 83.4%;
+  }
+
+  @media screen and (min-width: 1450px) {
+    margin-left: auto;
+  }
+`;
+
 export const Content = styled.div`
   padding-top: 88px;
 
@@ -28,12 +39,6 @@ export const Content = styled.div`
 
   @media screen and (min-width: 1080px) {
     padding-top: unset;
-    margin-left: 227px;
-    flex-basis: 83.4%;
-  }
-
-  @media screen and (min-width: 1450px) {
-    margin-left: auto;
   }
 `;
 

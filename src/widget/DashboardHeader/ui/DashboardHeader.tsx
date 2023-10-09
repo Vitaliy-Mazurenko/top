@@ -1,20 +1,19 @@
-import { FC } from "react";
-import { Link } from "react-router-dom";
+import { FC, RefObject } from "react";
 
 import { Container } from "shared/ui/Container";
 import { UkrainianFlag } from "shared/ui/CustomSVG/UkrainianFlag";
 
 import {
   ControlButton,
-  ControlsWrapper,
   StyledDropdownButton,
   StyledHeader,
-  StyledLogo,
   StyledNotification,
   StyledUserCredentials,
   HeaderInner,
   MobileContent,
   DesktopContent,
+  LogoLink,
+  BurgerButton,
 } from "./DashboardHeader.styled";
 
 import logoImage from "shared/assets/img/logo.svg";
@@ -23,10 +22,12 @@ import userIcon from "shared/assets/icons/user.svg";
 
 interface IDashboardHeaderProps {
   onMenuBtnClick: () => void;
+  burgerButtonRef: RefObject<HTMLButtonElement>;
 }
 
 export const DashboardHeader: FC<IDashboardHeaderProps> = ({
   onMenuBtnClick,
+  burgerButtonRef,
 }) => {
   return (
     <StyledHeader>
@@ -46,18 +47,19 @@ export const DashboardHeader: FC<IDashboardHeaderProps> = ({
 
         <MobileContent>
           <HeaderInner>
-            <Link to="/">
-              <StyledLogo src={logoImage} alt="logo" />
-            </Link>
-
-            <ControlsWrapper>
-              <ControlButton onClick={onMenuBtnClick} id="dashboard-burger-btn">
-                <img src={burgerIcon} alt="burger menu icon" />
-              </ControlButton>
-              <ControlButton>
-                <img src={userIcon} alt="user" />
-              </ControlButton>
-            </ControlsWrapper>
+            <BurgerButton
+              ref={burgerButtonRef}
+              onClick={onMenuBtnClick}
+              id="dashboard-burger-btn"
+            >
+              <img src={burgerIcon} alt="burger menu icon" />
+            </BurgerButton>
+            <LogoLink to="/">
+              <img src={logoImage} alt="logo" />
+            </LogoLink>
+            <ControlButton>
+              <img src={userIcon} alt="user" />
+            </ControlButton>
           </HeaderInner>
         </MobileContent>
       </Container>

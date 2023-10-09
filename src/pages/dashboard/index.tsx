@@ -1,4 +1,4 @@
-import { useState, FC } from "react";
+import { useState, FC, useRef } from "react";
 
 import { DashboardHeader } from "widget/DashboardHeader";
 
@@ -14,6 +14,7 @@ import { useMobileMenu } from "shared/hooks/useMobileMenu";
 import {
   CalendarAndChartWrapper,
   Content,
+  RightSideContent,
   StyledDaschboard,
   StyledDashboardNavBar,
 } from "./ui/StyledDaschboard.styled";
@@ -122,10 +123,12 @@ const chartData: ChartItemInterface[] = [
 ];
 
 export const DaschboardPage: FC = () => {
+  const burgerButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileMenuRef = useRef<HTMLElement>(null);
   const { isMenuShown: isNavBarShown, setIsMenuShown: setIsNavBarShown } =
     useMobileMenu({
-      buttonId: "#dashboard-burger-btn",
-      mobileMenuId: "#dashboard-mobile-menu",
+      buttonElementRef: burgerButtonRef,
+      mobileMenuElementRef: mobileMenuRef,
     });
   const [selectedDate, setSelectedDay] = useState(new Date());
 
@@ -135,10 +138,16 @@ export const DaschboardPage: FC = () => {
 
   return (
     <StyledDaschboard>
-      <StyledDashboardNavBar $visible={isNavBarShown} />
+      <StyledDashboardNavBar
+        mobileMenuRef={mobileMenuRef}
+        $visible={isNavBarShown}
+      />
 
-      <div>
-        <DashboardHeader onMenuBtnClick={toggleNavBar} />
+      <RightSideContent>
+        <DashboardHeader
+          burgerButtonRef={burgerButtonRef}
+          onMenuBtnClick={toggleNavBar}
+        />
 
         <Content>
           <Container>
@@ -154,7 +163,7 @@ export const DaschboardPage: FC = () => {
             <StudentsTable students={tableData} />
           </Container>
         </Content>
-      </div>
+      </RightSideContent>
     </StyledDaschboard>
   );
 };

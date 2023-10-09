@@ -1,25 +1,29 @@
-import { useState } from "react";
+import { useState, RefObject } from "react";
 import { useEffectOnce, useMediaQuery } from "usehooks-ts";
 
 interface IUseMobileMenuProps {
-  buttonId: string;
-  mobileMenuId: string;
+  buttonElementRef: RefObject<HTMLButtonElement>;
+  mobileMenuElementRef: RefObject<HTMLElement>;
 }
 
 export const useMobileMenu = ({
-  buttonId,
-  mobileMenuId,
+  buttonElementRef,
+  mobileMenuElementRef,
 }: IUseMobileMenuProps) => {
   const [isMenuShown, setIsMenuShown] = useState(false);
   const isPCScreenSize = useMediaQuery("(min-width: 1080px)");
 
   useEffectOnce(() => {
     const onClick = (e: MouseEvent) => {
-      const element = e.target as HTMLElement;
+      const buttonContainer = buttonElementRef.current;
+      const mobileMenuContainer = mobileMenuElementRef.current;
 
-      if (element.closest(buttonId) || element.closest(mobileMenuId)) {
-        return;
-      } else {
+      if (
+        buttonContainer &&
+        mobileMenuContainer &&
+        !buttonContainer.contains(e.target as Node) &&
+        !mobileMenuContainer.contains(e.target as Node)
+      ) {
         setIsMenuShown(false);
       }
     };
