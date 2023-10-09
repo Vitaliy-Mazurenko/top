@@ -360,7 +360,7 @@ const Popup: React.FC = () => {
             />
 
             <img
-              src="./src/shared/assets/img/team2.svg"
+              src="/src/shared/assets/img/team2.svg"
               alt="Team 2"
               style={{
                 width: "2.5rem",
@@ -384,7 +384,7 @@ const Popup: React.FC = () => {
             />
 
             <img
-              src="./src/shared/assets/img/team4.png"
+              src="/src/shared/assets/img/team4.png"
               alt="Team 4"
               style={{
                 width: "2.5rem",
