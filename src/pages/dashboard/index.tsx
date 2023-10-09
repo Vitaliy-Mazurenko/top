@@ -2,8 +2,6 @@ import { useState, FC, useRef } from "react";
 
 import { DashboardHeader } from "widget/DashboardHeader";
 
-import { Calendar } from "features/Calendar/Calendar";
-
 import { StatisticBlocksSection } from "entities/PetcentageStatistics/StatisticBlocksSection";
 import { DashboardChart } from "entities/DashboardChart";
 import { StudentsTable } from "entities/StudentTable";
@@ -15,7 +13,9 @@ import {
   CalendarAndChartWrapper,
   Content,
   RightSideContent,
+  StyledCalendar,
   StyledDaschboard,
+  StyledDashboardChart,
   StyledDashboardNavBar,
 } from "./ui/StyledDaschboard.styled";
 
@@ -88,37 +88,37 @@ const chartData: ChartItemInterface[] = [
   {
     id: 1,
     percentage: 100,
-    title: "",
+    title: "нд",
   },
   {
     id: 2,
     percentage: 40,
-    title: "",
+    title: "пн",
   },
   {
     id: 3,
     percentage: 30,
-    title: "",
+    title: "вт",
   },
   {
     id: 4,
     percentage: 25,
-    title: "",
+    title: "ср",
   },
   {
     id: 5,
     percentage: 80,
-    title: "",
+    title: "чт",
   },
   {
     id: 6,
     percentage: 23,
-    title: "",
+    title: "пт",
   },
   {
     id: 7,
     percentage: 10,
-    title: "",
+    title: "сб",
   },
 ];
 
@@ -153,12 +153,12 @@ export const DaschboardPage: FC = () => {
           <Container>
             <StatisticBlocksSection />
             <CalendarAndChartWrapper>
-              <Calendar
+              <StyledCalendar
                 locale="uk-UA"
                 selectedDate={selectedDate}
                 selectDate={(date) => setSelectedDay(date)}
               />
-              <DashboardChart data={chartData} />
+              <StyledDashboardChart data={chartData} />
             </CalendarAndChartWrapper>
             <StudentsTable students={tableData} />
           </Container>

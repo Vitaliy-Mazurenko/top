@@ -10,6 +10,7 @@ interface CalendarProps {
   selectedDate: Date;
   selectDate: (date: Date) => void;
   firstWeekDayNumber?: number;
+  className?: string;
 }
 
 export const Calendar: React.FC<CalendarProps> = ({
@@ -17,6 +18,7 @@ export const Calendar: React.FC<CalendarProps> = ({
   selectedDate: date,
   selectDate,
   firstWeekDayNumber = 2,
+  className,
 }) => {
   const { functions, state } = useCalendar({
     locale,
@@ -25,7 +27,7 @@ export const Calendar: React.FC<CalendarProps> = ({
   });
 
   return (
-    <div className="calendar">
+    <div className={`calendar ${className}`}>
       <div className="calendar__header">
         {state.mode === "days" && (
           <div aria-hidden onClick={() => functions.setMode("monthes")}>

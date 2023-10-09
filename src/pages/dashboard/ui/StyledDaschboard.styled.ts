@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 import { DashboardNavBar } from "widget/DashboardNavBar";
+import { Calendar } from "features/Calendar/Calendar";
+import { DashboardChart } from "entities/DashboardChart";
 
 export const StyledDaschboard = styled.div`
   font-family: "Inter", sans-serif;
@@ -43,7 +45,43 @@ export const Content = styled.div`
 `;
 
 export const CalendarAndChartWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 40px 0;
+  margin: 48px 0 24px;
+
+  @media screen and (min-width: 480px) {
+    margin: 40px 0 24px;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    gap: 32px;
+    margin: 58px 0 32px;
+  }
+
+  @media screen and (min-width: 1080px) {
+    justify-content: space-between;
+    margin: 40px 0;
+  }
+`;
+
+export const StyledCalendar = styled(Calendar)`
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    flex: 1;
+  }
+
+  @media screen and (min-width: 1080px) {
+    flex-basis: 28.3%;
+  }
+`;
+
+export const StyledDashboardChart = styled(DashboardChart)`
+  @media screen and (min-width: 768px) {
+    flex: 1;
+  }
+
+  @media screen and (min-width: 1080px) {
+    flex-basis: 64.8%;
+  }
 `;
