@@ -64,7 +64,7 @@ const columns: Column<Data>[] = [
         }}
       >
         <img
-          src={`./src/shared/assets/img/${row.original.Виконавець}.svg`}
+          src={`/src/shared/assets/img/${row.original.Виконавець}.svg`}
           alt={row.original.Виконавець}
           style={{
             width: "2.5rem",
@@ -348,7 +348,7 @@ const Popup: React.FC = () => {
 
           <ImageContainer>
             <img
-              src="./src/shared/assets/img/team1.svg"
+              src="/src/shared/assets/img/team1.svg"
               alt="Team 1"
               style={{
                 width: "2.5rem",
@@ -372,7 +372,7 @@ const Popup: React.FC = () => {
             />
 
             <img
-              src="./src/shared/assets/img/team3.svg"
+              src="/src/shared/assets/img/team3.svg"
               alt="Team 3"
               style={{
                 width: "2.5rem",
