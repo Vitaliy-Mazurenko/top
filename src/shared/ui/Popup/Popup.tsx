@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import styled from "styled-components";
 import { useTable, Column } from "react-table";
 
@@ -17,11 +17,28 @@ type Data = {
 
 const columns: Column<Data>[] = [
   {
-    Header: <div style={{ display: "flex", marginBottom: "20px" }}>Задача</div>,
+    Header: (
+      <div
+        style={{
+          display: "flex",
+          marginBottom: "1.25rem",
+          fontSize: "14px",
+          fontWeight: "bold",
+        }}
+      >
+        Задача
+      </div>
+    ),
 
     accessor: "Задача",
     Cell: ({ row }: any) => (
-      <div style={{ marginRight: "1.56rem", fontSize: "0.87rem" }}>
+      <div
+        style={{
+          marginRight: "1.56rem",
+          fontSize: "0.87rem",
+          width: "12.2rem",
+        }}
+      >
         {row.original.Задача}
       </div>
     ),
@@ -29,7 +46,16 @@ const columns: Column<Data>[] = [
 
   {
     Header: (
-      <div style={{ display: "flex", marginBottom: "1.25rem" }}>Виконавець</div>
+      <div
+        style={{
+          display: "flex",
+          marginBottom: "1.25rem",
+          fontSize: "0.875rem",
+          fontWeight: "bold",
+        }}
+      >
+        Виконавець
+      </div>
     ),
     accessor: "Виконавець",
     Cell: ({ row }: any) => {
@@ -54,6 +80,7 @@ const columns: Column<Data>[] = [
               marginLeft: "0.5rem",
               marginRight: "2.75rem",
               fontSize: "0.87rem",
+              width: "5rem",
             }}
           >
             {row.original.Виконавець}
@@ -68,6 +95,8 @@ const columns: Column<Data>[] = [
         style={{
           display: "flex",
           marginBottom: "1.25rem",
+          fontSize: "0.875rem",
+          fontWeight: "bold",
         }}
       >
         Дедлайн
@@ -79,7 +108,7 @@ const columns: Column<Data>[] = [
         style={{
           marginRight: "1.93rem",
 
-          fontSize: "0.875rem",
+          width: "5rem",
         }}
       >
         {row.original.Дедлайн}
@@ -88,7 +117,17 @@ const columns: Column<Data>[] = [
   },
   {
     Header: (
-      <div style={{ display: "flex", marginBottom: "1.25rem" }}>Статус</div>
+      <div
+        style={{
+          display: "flex",
+          marginBottom: "1.25rem",
+          width: "4rem",
+          fontSize: "0.875rem",
+          fontWeight: "bold",
+        }}
+      >
+        Статус
+      </div>
     ),
     accessor: "Статус",
     Cell: ({ row }: any) => {
@@ -104,7 +143,7 @@ const columns: Column<Data>[] = [
         textColor = "#424049";
         backgroundColor = "#4240492E";
         borderColor = "transparent";
-      } else if (row.original.Статус === "Тестувуння") {
+      } else if (row.original.Статус === "Тестування") {
         textColor = "#DF14E3";
         backgroundColor = "#DF14E32E";
         borderColor = "transparent";
@@ -142,7 +181,17 @@ const columns: Column<Data>[] = [
 
   {
     Header: (
-      <div style={{ display: "flex", marginBottom: "1.25rem" }}>Прогрес</div>
+      <div
+        style={{
+          display: "flex",
+          marginBottom: "1.25rem",
+          width: "3rem",
+          fontSize: "0.875rem",
+          fontWeight: "bold",
+        }}
+      >
+        Прогрес
+      </div>
     ),
     accessor: "Прогрес",
     Cell: ({ row }: any) => {
@@ -154,7 +203,7 @@ const columns: Column<Data>[] = [
         iconSrc = green;
       } else if (row.original.Статус === "Заморожено") {
         iconSrc = yellow;
-      } else if (row.original.Статус === "Тестувуння") {
+      } else if (row.original.Статус === "Тестування") {
         iconSrc = orange;
       } else if (row.original.Статус === "Відмінено") {
         iconSrc = red;
@@ -201,7 +250,7 @@ const data: Data[] = [
     Задача: "Media Channel branding",
     Виконавець: "Irma Carr",
     Дедлайн: "20.10.2023",
-    Статус: "Тестувуння",
+    Статус: "Тестування",
     Прогрес: "68%",
   },
   {
@@ -254,10 +303,20 @@ const Popup: React.FC = () => {
     );
   };
 
+  const [selectedStatus, setSelectedStatus] = useState<string | null>(null);
+
+  const filteredData = useMemo(() => {
+    if (!selectedStatus) {
+      return data;
+    }
+
+    return data.filter((item) => item.Статус === selectedStatus);
+  }, [selectedStatus, data]);
+
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable<Data>({
       columns,
-      data,
+      data: filteredData,
     });
 
   return (
@@ -301,8 +360,8 @@ const Popup: React.FC = () => {
               src="./src/shared/assets/img/team1.svg"
               alt="Team 1"
               style={{
-                width: "40px",
-                height: "40px",
+                width: "2.5rem",
+                height: "2.5rem",
                 borderRadius: "50%",
                 border: "0.0625rem solid var(--white, #FFF)",
                 boxShadow: "0px 1.02041px 16.32653px 0px rgba(0, 0, 0, 0.08)",
@@ -374,9 +433,9 @@ const Popup: React.FC = () => {
             </DropdownButtonIcon>
             {activeDropdown === 2 && (
               <DropdownList className="dropdown-button">
-                <DropdownListItem>Manager 1</DropdownListItem>
-                <DropdownListItem>Manager 2</DropdownListItem>
-                <DropdownListItem>Manager 3</DropdownListItem>
+                <DropdownListItem>Manager</DropdownListItem>
+                <DropdownListItem>Manager</DropdownListItem>
+                <DropdownListItem>Manager</DropdownListItem>
               </DropdownList>
             )}
           </DropdownButton>
@@ -389,7 +448,7 @@ const Popup: React.FC = () => {
               border: "0.125rem solid #8C8C8C",
             }}
           >
-            Status
+            Статус
             <DropdownButtonIcon
               xmlns="http://www.w3.org/2000/svg"
               width="15"
@@ -406,9 +465,67 @@ const Popup: React.FC = () => {
             </DropdownButtonIcon>
             {activeDropdown === 3 && (
               <DropdownList className="dropdown-button">
-                <DropdownListItem>Active</DropdownListItem>
-                <DropdownListItem>Inactive</DropdownListItem>
-                <DropdownListItem>Interactive</DropdownListItem>
+                <DropdownListItem
+                  onClick={() => setSelectedStatus("В розробці")}
+                  className="development"
+                >
+                  В розробці
+                  <img
+                    src="./src/shared/ui/CustomSVG/BluePlusSVG.svg"
+                    alt="PlusSVG"
+                  />
+                </DropdownListItem>
+                <DropdownListItem
+                  onClick={() => setSelectedStatus("Тестування")}
+                  className="testing"
+                >
+                  Тестування
+                  <img
+                    src="./src/shared/ui/CustomSVG/BluePlusSVG.svg"
+                    alt="PlusSVG"
+                  />
+                </DropdownListItem>
+                <DropdownListItem
+                  onClick={() => setSelectedStatus("Завершено")}
+                  className="completed"
+                >
+                  Завершено
+                  <img
+                    src="./src/shared/ui/CustomSVG/BluePlusSVG.svg"
+                    alt="PlusSVG"
+                  />
+                </DropdownListItem>
+                <DropdownListItem
+                  onClick={() => setSelectedStatus("Заморожено")}
+                  className="frozen"
+                >
+                  Заморожено
+                  <img
+                    src="./src/shared/ui/CustomSVG/BluePlusSVG.svg"
+                    alt="PlusSVG"
+                  />
+                </DropdownListItem>
+
+                <DropdownListItem
+                  onClick={() => setSelectedStatus("Відмінено")}
+                  className="cancelled"
+                >
+                  Відмінено
+                  <img
+                    src="./src/shared/ui/CustomSVG/BluePlusSVG.svg"
+                    alt="PlusSVG"
+                  />
+                </DropdownListItem>
+                <DropdownListItem
+                  onClick={() => setSelectedStatus("Заплановано")}
+                  className="planned"
+                >
+                  Заплановано
+                  <img
+                    src="./src/shared/ui/CustomSVG/BluePlusSVG.svg"
+                    alt="PlusSVG"
+                  />
+                </DropdownListItem>
               </DropdownList>
             )}
           </DropdownButton>
@@ -462,6 +579,7 @@ const Popup: React.FC = () => {
 const PopupContainer = styled.div`
   width: 43.375rem;
   height: 20.187rem;
+
   tr {
     margin-bottom: 1.25rem;
   }
@@ -512,6 +630,8 @@ const DropdownButton = styled.button`
 `;
 
 const DropdownListItem = styled.div`
+  height: 1.05rem;
+  width: 6rem;
   padding: 0.625rem;
   cursor: pointer;
   color: #333;
@@ -521,15 +641,87 @@ const DropdownListItem = styled.div`
   &:hover {
     background-color: #f0f0f0;
   }
+  &.completed {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.5rem;
+    width: 6.75rem;
+    color: #406504;
+    background-color: #4065042e;
+    border-color: transparent;
+    margin: 8px 18px 5px 18px;
+  }
+
+  &.frozen {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.5rem;
+    width: 6.75rem;
+    color: #424049;
+    background-color: #4240492e;
+    border-color: transparent;
+    margin: 5px 18px 5px 18px;
+  }
+
+  &.testing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.5rem;
+    width: 6.75rem;
+    color: #df14e3;
+    background-color: #df14e32e;
+    border-color: transparent;
+    margin: 5px 18px 5px 18px;
+  }
+
+  &.cancelled {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.5rem;
+    width: 6.75rem;
+    color: #df2209;
+    background-color: #df22092e;
+    border-color: transparent;
+    margin: 5px 18px 5px 18px;
+  }
+  &.planned {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.5rem;
+    width: 6.75rem;
+    color: #ff8c33;
+    background-color: #ffe8d6;
+    border-color: transparent;
+    margin: 5px 18px 5px 18px;
+  }
+
+  &.development {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.5rem;
+    width: 6.75rem;
+    color: #0076b3;
+    background-color: #9fccde;
+    border-color: transparent;
+    margin: 5px 18px 5px 18px;
+  }
 `;
+
 const DropdownList = styled.ul`
   list-style: none;
   margin: 0;
+  margin-top: 0.75rem;
   padding: 0;
   position: absolute;
   background-color: #fff;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12.205400466918945px);
   border-radius: 0.25rem;
   z-index: 1;
   min-width: 10rem;
