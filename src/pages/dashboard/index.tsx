@@ -3,7 +3,7 @@ import React from "react";
 import { ManagerNavbar } from "widget/Navbars";
 // import { ManagerNavbarTablet } from "widget/Navbars";
 import { DashboardHeader } from "widget/DashboardHeader";
-import { DashboardHeaderTablet } from "widget/DashboardHeaderTablet";
+import { DashboardHeaderBurger } from "widget/DashboardHeaderBurger";
 
 import { Calendar } from "./ui/Calendar/Calendar";
 
@@ -137,7 +137,7 @@ export const DaschboardPage: React.FC = () => {
           <DashboardHeader />
         </DashboardHeaderDesktop>
         <HeaderTabletWrap>
-          <DashboardHeaderTablet/>
+          <DashboardHeaderBurger/>
         </HeaderTabletWrap>
           <StatisticBlocksSection />
           <CalendarAndChartWrapper>
