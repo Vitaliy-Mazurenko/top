@@ -3,7 +3,7 @@ import React from "react";
 import { ManagerNavbar } from "widget/Navbars";
 // import { ManagerNavbarTablet } from "widget/Navbars";
 import { DashboardHeader } from "widget/DashboardHeader";
-import { DashboardHeaderBurger } from "widget/DashboardHeaderBurger";
+import { DashboardHeaderBurger } from "../../widget/DashboardHeaderBurger/ui/DashboardHeaderBurger.jsx";
 
 import { Calendar } from "./ui/Calendar/Calendar";
 

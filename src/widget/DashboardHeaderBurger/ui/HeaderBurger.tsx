@@ -2,21 +2,18 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import LeftNav from "./LeftNav";
 
-// import {
-//   StyledHeader,
-// } from "./Dashboard.styled";
 
-// export interface isOpen {
-//   open: boolean;
-//   onClick: () => void; 
-// }
+export interface isOpen {
+  open?: boolean,
+  onClick: (event: React.MouseEvent) => void,
+}
 
 
-const StyledBurger = styled.div`
+const StyledBurger = styled.div.attrs<{ open?: boolean }>({ open: false })`
   width: 2rem;
-  height: 2rem;
+  height: 1.5rem;
   position: fixed;
-  top: 15px;
+  top: 25px;
   right: 20px;
   z-index: 20;
   display: none;
@@ -28,8 +25,8 @@ const StyledBurger = styled.div`
   }
 
   div {
-    width: 2rem;
-    height: 0.25rem;
+    width: 1.5rem;
+    height: 0.15rem;
     background-color: ${({ open }) => open ? '#ccc' : '#333'};
     transform-origin: 1px;
     transition: all 0.3s linear;
@@ -37,9 +34,9 @@ const StyledBurger = styled.div`
   }
 `;
 
-const HeaderBurger = () => {
+const HeaderBurger: React.FC<isOpen> = () => {
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
   
   return (
     <>
