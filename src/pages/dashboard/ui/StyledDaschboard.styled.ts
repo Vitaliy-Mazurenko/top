@@ -87,7 +87,7 @@ export const StyledDashboardChart = styled(DashboardChart)`
 `;
 
 export const DashboardHeaderDesktop =  styled.div`
-  @media screen and (max-width: 1080px) {
+  @media screen and (max-width: 1079px) {
     visibility: hidden;
   }
 `;
