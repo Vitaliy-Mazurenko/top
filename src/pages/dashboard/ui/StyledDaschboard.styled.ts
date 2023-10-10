@@ -85,3 +85,10 @@ export const StyledDashboardChart = styled(DashboardChart)`
     flex-basis: 64.8%;
   }
 `;
+
+export const DashboardHeaderDesktop =  styled.div`
+  @media screen and (max-width: 1080px) {
+    visibility: hidden;
+  }
+`;
+
