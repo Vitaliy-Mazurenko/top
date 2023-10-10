@@ -163,6 +163,19 @@ export const SaveButton = styled.button`
   border: none;
   margin-top: 1.5rem; /* 24px */
   cursor: pointer;
+  @media (max-width: 480px) {
+    width: 93%;
+    height: 3.1875rem;;
+    margin-left: 16px;
+    flex-grow: 1;
+  }
+
+`
+
+export const MobileDiv = styled.div `
+  @media (max-width: 480px) {
+    display: none;
+  }
 `
 
 export const UpdateProfileForm = () => {
@@ -190,7 +203,9 @@ export const UpdateProfileForm = () => {
     };
   return (
     <div>
-      {isDataSubmitted ? <SuccessWarning />:<MissingDataWarning /> }
+      <MobileDiv>
+        {isDataSubmitted ? <SuccessWarning />:<MissingDataWarning /> }
+      </MobileDiv>
       <form>
         <InputBox
           label="E-mail"

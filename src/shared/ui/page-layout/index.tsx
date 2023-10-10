@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import vector from 'shared/assets/img/vectormobile.svg'
 
 export const PageInner = styled.div`
   flex-grow: 1;
@@ -11,6 +12,10 @@ export const PageHeader = styled.h1`
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0.90px;
+
+  @media (max-width: 480px) {
+    margin-left: 16px;
+  }
 `;
 export const PageContainer = styled.div`
   width: 100%;
@@ -20,6 +25,10 @@ export const PageContainer = styled.div`
   height: 100dvh;
   overflow: hidden;
   gap: 1.75rem;
+
+  @media (max-width: 480px) {
+    display: grid;
+  }
 `;
 
 export const PageSwitcher = styled.div`
@@ -56,4 +65,9 @@ export const PageHelperBar = styled.div`
 export const PageInfo = styled.div`
   display: flex;
   flex-direction: row;
+  @media (max-width: 480px) {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-grow: 1;
+  }
 `;

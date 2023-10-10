@@ -4,6 +4,9 @@ export const SidebarInfo = styled.div`
   text-align: center;
   margin-top: 2.5rem; /* 40px */
   gap: 1rem; /* 16px */
+  @media (max-width: 480px) {
+    margin-top: 1rem; 
+  }
 `;
 
 export const SidebarImg = styled.img`
