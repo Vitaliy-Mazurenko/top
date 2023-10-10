@@ -8,6 +8,11 @@ export const WarningTable = styled.div`
   gap: 0.7rem; /* 16px */
   width: 25rem; /* 400px */
   padding: 1rem; 
+
+  @media (max-width: 480px) {
+    margin-left: 16px;
+    width: 446px;
+  }
 `;
 
 export const WarningTableImage = styled.img`

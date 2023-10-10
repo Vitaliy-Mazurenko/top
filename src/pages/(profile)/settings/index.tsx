@@ -4,12 +4,14 @@ import { SubNavbar } from 'features/SubNavbar';
 import { PageContainer, PageHeader, PageInfo, PageInner } from 'shared/ui/page-layout';
 import { ModalUploadForm } from './ui/ModalUploadWindow/ModalUploadForm';
 import { UpdateProfileForm } from 'features/update-profile';
+import MobileHeader from './MobileHeader/MobileHeader';
 
 
 export const ProfileSettingsPage = () => {
 
   return (
     <PageContainer>
+      <MobileHeader />
       <EmployeeNavbar />
 
       <PageInner>

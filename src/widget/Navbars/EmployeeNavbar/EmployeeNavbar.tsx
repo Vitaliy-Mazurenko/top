@@ -10,7 +10,9 @@ import { ProfileCard } from "entities/user";
 import defaultAvatar from 'shared/assets/img/sidebarimg.png'
 import { NavLink } from "react-router-dom";
 
+
 export const EmployeeNavbar = () => {
+ 
   return (
     <SideMenuWrap>
       <LogoAndTabsWrap>
@@ -25,3 +27,8 @@ export const EmployeeNavbar = () => {
     </SideMenuWrap>
   );
 };
+
+
+
+
+

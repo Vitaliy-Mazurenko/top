@@ -67,6 +67,9 @@ a {
 
 .navbarmainpage {
   margin-top: 0.6875rem; 
+  @media (max-width: 480px) {
+    width: 93%;
+  }
 }
 
 .mainpageswitcher {
@@ -75,7 +78,11 @@ a {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   line-height: 1.375rem; 
-  letter-spacing: 0.03rem; 
+  letter-spacing: 0.03rem;
+
+  @media (max-width: 480px) {
+    margin-left: 16px;
+  }
 }
 
 .mainpage--active {
@@ -94,16 +101,36 @@ a {
   background-color: #ff8c33;
 }
 
-.nav-list {
+/* .nav-list {
   display: flex;
   flex-direction: row;
   gap: 1rem; 
- 
+  @media (max-width: 480px) {
+    
+  }
+} */
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem; /* Расстояние между элементами */
 }
 
+@media (max-width: 480px) {
+  .nav-list {
+    flex-direction: row; /* Изменяем направление на вертикальное при сужении экрана */
+    align-items: center; /* Добавляем выравнивание по левому краю */
+  }
+}
+@media (max-width: 465px) {
+  .nav-list {
+    flex-direction: column; /* Изменяем направление на вертикальное при сужении экрана */
+    align-items: center; /* Добавляем выравнивание по левому краю */
+  }
+}
 ul {
   list-style: none;
   gap: 2rem; 
+
 }
 
 li {
@@ -111,9 +138,13 @@ li {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   line-height: 1.375rem; 
-  letter-spacing: 0.03rem; 
+  letter-spacing: 0.03rem;  
+  padding: 0 1rem;
 }
 
 a {
   text-decoration: none;
 }
+
+
+

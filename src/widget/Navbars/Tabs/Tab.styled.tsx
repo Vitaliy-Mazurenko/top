@@ -14,6 +14,10 @@ export const TabLink = styled(Link)`
     background-color: #ff8c33;
     color: #fff;
   }
+
+  @media (max-width: 480px) {
+    padding : 0.7rem;
+  }
 `;
 
 export const TabImgWrap = styled.div`

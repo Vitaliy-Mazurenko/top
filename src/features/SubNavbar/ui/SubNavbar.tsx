@@ -24,7 +24,7 @@ export const SubNavbar = (props: SubNavbarProps) => {
   }, [location.pathname]);
 
   return (
-    <div>
+    <div className='mainnavbardiv'>
       <nav className='navbarmainpage'>
         <ul className="nav-list">
 
