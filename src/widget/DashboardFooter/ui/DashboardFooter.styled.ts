@@ -8,7 +8,7 @@ export const StyledFooter = styled.footer`
     position: fixed;
     bottom: 0px;
     height: 84px;
-    padding: 40px 10px;
+    padding: 20px 10px;
     background-color: #f4f9fb;
   }
 `;
@@ -19,7 +19,7 @@ export const FooterInner = styled.div`
   align-items: center;
 
   @media screen and (min-width: 1080px) {
-    justify-content: flex-end;
+    display: none;
   }
 `;
 

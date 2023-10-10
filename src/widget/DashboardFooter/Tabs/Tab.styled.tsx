@@ -5,20 +5,23 @@ import { Link } from "react-router-dom";
 export const TabLink = styled(Link)`
   color: ${(props) => props.theme.palette.text};
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 1rem 1rem;
   gap: 1rem;
 
   transition: background-color 0.05s, color 0.01s;
-  &:hover {
+  &:hover div{
     background-color: #ff8c33;
     color: #fff;
   }
 `;
 
 export const TabImgWrap = styled.div`
-  /* width: 1.5rem;
-  height: 1.5rem; */
+  /* &:hover{
+    background-color: #ff8c33;
+    color: #fff;
+  } */
 `;
 
 export const TabIcon = styled.img`
@@ -33,4 +36,7 @@ export const TabTextWrap = styled.div`
   font-weight: 600;
   text-transform: uppercase;
   text-align: left;
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
 `;
