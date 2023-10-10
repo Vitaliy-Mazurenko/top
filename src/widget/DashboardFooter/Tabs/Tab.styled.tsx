@@ -11,17 +11,19 @@ export const TabLink = styled(Link)`
   gap: 1rem;
 
   transition: background-color 0.05s, color 0.01s;
-  &:hover div{
+
+  &:hover span {
     background-color: #ff8c33;
-    color: #fff;
   }
 `;
 
-export const TabImgWrap = styled.div`
-  /* &:hover{
-    background-color: #ff8c33;
-    color: #fff;
-  } */
+export const TabImgWrap = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  width: 64px;
+  height: 32px;
 `;
 
 export const TabIcon = styled.img`
@@ -36,6 +38,7 @@ export const TabTextWrap = styled.div`
   font-weight: 600;
   text-transform: uppercase;
   text-align: left;
+
   @media screen and (max-width: 480px) {
     display: none;
   }

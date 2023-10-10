@@ -164,7 +164,7 @@ export const DaschboardPage: FC = () => {
           </Container>
         </Content>
       </RightSideContent>
-      <DashboardFooter/>
+      <DashboardFooter />
     </StyledDaschboard>
   );
 };

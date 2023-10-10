@@ -22,9 +22,20 @@ export const StyledDashboardNavBar = styled(DashboardNavBar)<{
 `;
 
 export const RightSideContent = styled.div`
+  padding-bottom: 100px;
+
+  @media screen and (min-width: 480px) {
+    padding-bottom: 110px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 115px;
+  }
+
   @media screen and (min-width: 1080px) {
     margin-left: 227px;
     flex-basis: 83.4%;
+    padding-bottom: 0;
   }
 
   @media screen and (min-width: 1450px) {
@@ -86,9 +97,8 @@ export const StyledDashboardChart = styled(DashboardChart)`
   }
 `;
 
-export const DashboardHeaderDesktop =  styled.div`
+export const DashboardHeaderDesktop = styled.div`
   @media screen and (max-width: 1079px) {
     visibility: hidden;
   }
 `;
-

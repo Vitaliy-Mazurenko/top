@@ -1,24 +1,19 @@
-import { useMediaQuery } from "usehooks-ts";
-
-import userImg from "shared/assets/icons/user.svg";
-import settingsImg from "shared/assets/icons/settings.svg";
-import helpImg from "shared/assets/icons/orange-question-mark.svg";
-
 import { Tab } from "./Tabs/Tab";
 import { OptionsWrap } from "./Tabs/TabsPanel.styled";
+import { IOptionLink } from "./ManagerNavbar/ManagerNavbar";
 
-export const PublicOptions: React.FC = () => {
-  const isSmallPhone = useMediaQuery("(max-width: 480px)");
+interface IPublicOptionsProps {
+  optionsData: IOptionLink[];
+}
 
+export const PublicOptions: React.FC<IPublicOptionsProps> = ({
+  optionsData,
+}) => {
   return (
     <OptionsWrap>
-      <Tab to="/" text="Допомога" leftIcon={helpImg} />
-      <Tab
-        to="/"
-        text={isSmallPhone ? "Налаштунок" : "Налаштування"}
-        leftIcon={settingsImg}
-      />
-      <Tab to="/" text="Вийти" leftIcon={userImg} />
+      {optionsData.map(({ to, text, icon }) => (
+        <Tab to={to} text={text} leftIcon={icon} />
+      ))}
     </OptionsWrap>
   );
 };
