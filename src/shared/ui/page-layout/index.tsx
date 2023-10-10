@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import vector from 'shared/assets/img/vectormobile.svg'
+
 
 export const PageInner = styled.div`
   flex-grow: 1;

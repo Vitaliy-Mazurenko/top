@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from "styled-components";
 import logoHeader from 'shared/assets/img/logo.svg'
 import menuIcon from 'shared/assets/img/leading-icon.svg'
