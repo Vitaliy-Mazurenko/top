@@ -3,7 +3,6 @@ import { useState, FC, useRef } from "react";
 import { DashboardHeader } from "widget/DashboardHeader";
 
 import { StatisticBlocksSection } from "entities/PetcentageStatistics/StatisticBlocksSection";
-import { DashboardChart } from "entities/DashboardChart";
 import { StudentsTable } from "entities/StudentTable";
 
 import { Container } from "shared/ui/Container";
@@ -150,8 +149,8 @@ export const DaschboardPage: FC = () => {
         />
 
         <Content>
+          <StatisticBlocksSection />
           <Container>
-            <StatisticBlocksSection />
             <CalendarAndChartWrapper>
               <StyledCalendar
                 locale="uk-UA"

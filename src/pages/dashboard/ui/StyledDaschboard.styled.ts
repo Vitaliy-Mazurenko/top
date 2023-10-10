@@ -45,16 +45,16 @@ export const Content = styled.div`
 `;
 
 export const CalendarAndChartWrapper = styled.div`
-  margin: 48px 0 24px;
+  margin: 24px 0;
 
   @media screen and (min-width: 480px) {
-    margin: 40px 0 24px;
+    margin: 15px 0 24px;
   }
 
   @media screen and (min-width: 768px) {
     display: flex;
     gap: 32px;
-    margin: 58px 0 32px;
+    margin: 30px 0 32px;
   }
 
   @media screen and (min-width: 1080px) {

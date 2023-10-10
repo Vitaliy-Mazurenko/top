@@ -5,9 +5,14 @@ export const StyledStatisticBlock = styled.div`
   align-items: center;
   justify-content: center;
   flex-basis: 20%;
+  width: 152px;
   height: 134px;
   border-radius: 8px;
   background-color: ${({ color }) => color || "#F4F9FB"};
+
+  @media screen and (min-width: 1080px) {
+    width: unset;
+  }
 `;
 
 export const StyledBlockContent = styled.div`
