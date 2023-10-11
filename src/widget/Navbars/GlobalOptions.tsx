@@ -1,5 +1,4 @@
-import { Tab } from "./Tabs/Tab";
-import { OptionsWrap } from "./Tabs/TabsPanel.styled";
+import { Tab } from "widget/DashboardFooter/Tabs/Tab";
 import { IOptionLink } from "./ManagerNavbar/ManagerNavbar";
 
 interface IPublicOptionsProps {
@@ -10,10 +9,10 @@ export const PublicOptions: React.FC<IPublicOptionsProps> = ({
   optionsData,
 }) => {
   return (
-    <OptionsWrap>
+    <div>
       {optionsData.map(({ to, text, icon }) => (
         <Tab to={to} text={text} leftIcon={icon} />
       ))}
-    </OptionsWrap>
+    </div>
   );
 };

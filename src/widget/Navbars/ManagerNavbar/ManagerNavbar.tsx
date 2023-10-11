@@ -1,9 +1,3 @@
-import {
-  LogoAndTabsWrap,
-  LogoLink,
-  LogoWrap,
-  SideMenuWrap,
-} from "../Tabs/TabsPanel.styled";
 import { ManagerTabs } from "./ManagerTabs";
 import { PublicOptions } from "../GlobalOptions";
 
@@ -12,6 +6,12 @@ import userImg from "shared/assets/icons/user.svg";
 import settingsImg from "shared/assets/icons/settings.svg";
 import helpImg from "shared/assets/icons/orange-question-mark.svg";
 import { useMediaQuery } from "usehooks-ts";
+import {
+  LogoAndTabsWrap,
+  LogoLink,
+  LogoWrap,
+  SideMenuWrap,
+} from "../NavBar.styled";
 
 interface IManagerNavBarProps {
   className?: string;
@@ -50,7 +50,7 @@ export const ManagerNavbar: React.FC<IManagerNavBarProps> = ({ className }) => {
         <LogoLink to="/">
           <LogoWrap src={logoURL} alt="logo" />
         </LogoLink>
-        <ManagerTabs />
+        {/* <ManagerTabs /> */}
       </LogoAndTabsWrap>
       <PublicOptions optionsData={optionsLinksData} />
     </SideMenuWrap>

@@ -33,5 +33,3 @@ export const LogoWrap = styled.img`
   display: block;
   margin: 0 auto;
 `;
-
-export const OptionsWrap = styled.div``;

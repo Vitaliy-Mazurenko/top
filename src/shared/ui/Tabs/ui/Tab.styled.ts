@@ -16,11 +16,6 @@ export const TabLink = styled(Link)`
   }
 `;
 
-export const TabImgWrap = styled.div`
-  /* width: 1.5rem;
-  height: 1.5rem; */
-`;
-
 export const TabIcon = styled.img`
   display: block;
   max-width: unset;

@@ -1,9 +1,9 @@
-import { Tab } from "../Tabs/Tab";
-import { TabsWrap } from "../Tabs/Tabs.styled";
+import { Tab } from "../../../shared/ui/Tabs/Tab";
+import { TabsWrap } from "../../../shared/ui/Tabs/ui/TabList.styled";
 import userImg from "shared/assets/icons/user.svg";
 import efficientImg from "shared/assets/icons/arrow-up.svg";
 import walletImg from "shared/assets/icons/wallet.svg";
-import coursesImg from "shared/assets/icons/courses.svg"
+import coursesImg from "shared/assets/icons/courses.svg";
 
 export const ManagerTabs = () => {
   return (

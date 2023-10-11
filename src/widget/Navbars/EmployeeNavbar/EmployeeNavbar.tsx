@@ -1,8 +1,5 @@
-import {
-  LogoAndTabsWrap,
-  LogoWrap,
-  SideMenuWrap,
-} from "../Tabs/TabsPanel.styled";
+import { LogoAndTabsWrap, LogoWrap, SideMenuWrap } from "../NavBar.styled";
+
 import logoImg from "shared/assets/img/logo.svg";
 import { PublicOptions } from "../GlobalOptions";
 import { EmployeeTabs } from "./EmployeeTabs";
