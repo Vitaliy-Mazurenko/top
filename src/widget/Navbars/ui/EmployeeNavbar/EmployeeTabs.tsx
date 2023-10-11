@@ -1,11 +1,13 @@
 import { useState } from "react";
+
+import { ITabInfo } from "shared/ui/Tabs/types/Tab";
+import { TabList } from "shared/ui/Tabs";
+
 import arrowIcon from "shared/assets/img/arrowdown.png";
 import userImg from "shared/assets/img/user.png";
 import teamImg from "shared/assets/img/team.png";
 import lockImg from "shared/assets/img/lock.png";
 import repoImg from "shared/assets/img/repo.svg";
-import { ITabInfo } from "shared/ui/Tabs/types/Tab";
-import { TabList } from "shared/ui/Tabs";
 
 export const EmployeeTabs = () => {
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
@@ -18,6 +20,35 @@ export const EmployeeTabs = () => {
 
   const togglePersonalDataDropdown = () => {
     setIsPersonalDataDropdownOpen(!isPersonalDataDropdownOpen);
+  };
+
+  const checkIsPersonalDataDropdownOpen = (data: ITabInfo[]) => {
+    if (isPersonalDataDropdownOpen) {
+      return data;
+    }
+
+    return data.filter((i) => {
+      const loweredText = i.text.toLowerCase();
+
+      return loweredText !== "навички" && loweredText !== "спеціалізація";
+    });
+  };
+
+  const checkIsProfileDropdownOpen = (data: ITabInfo[]) => {
+    if (isProfileDropdownOpen) {
+      return checkIsPersonalDataDropdownOpen(data);
+    }
+
+    return data.filter((i) => {
+      const loweredText = i.text.toLowerCase();
+
+      return (
+        loweredText !== "портфоліо" &&
+        loweredText !== "персональні дані" &&
+        loweredText !== "навички" &&
+        loweredText !== "спеціалізація"
+      );
+    });
   };
 
   const employeeTabsData: ITabInfo[] = [
@@ -60,30 +91,6 @@ export const EmployeeTabs = () => {
       to: "/",
     },
   ];
-
-  const checkIsPersonalDataDropdownOpen = (data: ITabInfo[]) => {
-    if (isPersonalDataDropdownOpen) {
-      return data;
-    }
-
-    return data.filter(
-      (i) => i.text !== "Навички" && i.text !== "спеціалізація"
-    );
-  };
-
-  const checkIsProfileDropdownOpen = (data: ITabInfo[]) => {
-    if (isProfileDropdownOpen) {
-      return checkIsPersonalDataDropdownOpen(data);
-    }
-
-    return data.filter(
-      (i) =>
-        i.text !== "портфоліо" &&
-        i.text !== "Персональні дані" &&
-        i.text !== "Навички" &&
-        i.text !== "спеціалізація"
-    );
-  };
 
   const visibleTabsData = checkIsProfileDropdownOpen(employeeTabsData);
 

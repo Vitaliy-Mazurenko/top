@@ -19,11 +19,11 @@ export const TabLink = styled(Link)`
 export const TabIcon = styled.img`
   display: block;
   max-width: unset;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
 `;
 
-export const TabTextWrap = styled.div`
+export const TabTextWrap = styled.p`
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;

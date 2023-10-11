@@ -13,17 +13,23 @@ export const Tab: FC<ITabInfo> = ({
 }) => {
   return (
     <TabLink to={to} onClick={onClick}>
-      {leftIcon && (
-        <div>
-          <TabIcon src={leftIcon} />
-        </div>
-      )}
+      {leftIcon &&
+        (typeof leftIcon === "string" ? (
+          <div>
+            <TabIcon src={leftIcon} />
+          </div>
+        ) : (
+          <div>{leftIcon}</div>
+        ))}
       <TabTextWrap>{text}</TabTextWrap>
-      {rightIcon && (
-        <div style={{ marginLeft: "auto" }}>
-          <TabIcon src={rightIcon} />
-        </div>
-      )}
+      {rightIcon &&
+        (typeof rightIcon === "string" ? (
+          <div style={{ marginLeft: "auto" }}>
+            <TabIcon src={rightIcon} />
+          </div>
+        ) : (
+          <div>{rightIcon}</div>
+        ))}
     </TabLink>
   );
 };

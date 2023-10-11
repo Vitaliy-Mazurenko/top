@@ -1,7 +1,7 @@
 import { useState, FC, useRef } from "react";
 
 import { DashboardHeader } from "widget/DashboardHeader";
-import { DashboardFooter } from "widget/DashboardFooter";
+import { ManagerFooter } from "widget/Footers";
 
 import { StatisticBlocksSection } from "entities/PetcentageStatistics/StatisticBlocksSection";
 import { StudentsTable } from "entities/StudentTable";
@@ -164,7 +164,7 @@ export const DaschboardPage: FC = () => {
           </Container>
         </Content>
       </RightSideContent>
-      <DashboardFooter />
+      <ManagerFooter />
     </StyledDaschboard>
   );
 };

@@ -1,2 +1,2 @@
-export { EmployeeNavbar } from './EmployeeNavbar/EmployeeNavbar'
-export { ManagerNavbar } from './ManagerNavbar/ManagerNavbar'
+export { EmployeeNavbar } from "./ui/EmployeeNavbar/EmployeeNavbar";
+export { ManagerNavbar } from "./ui/ManagerNavbar/ManagerNavbar";
