@@ -25,6 +25,7 @@ interface IManagerNavBarProps {
 
 export const ManagerNavbar: React.FC<IManagerNavBarProps> = ({ className }) => {
   const isScreenWidthLessThan_480 = useMediaQuery("(max-width: 480px)");
+  const isScreenWidthLessThan_767 = useMediaQuery("(max-width: 767px)");
 
   const optionsTabsData: ITabInfo[] = [
     {
@@ -43,9 +44,9 @@ export const ManagerNavbar: React.FC<IManagerNavBarProps> = ({ className }) => {
       leftIcon: userImg,
     },
     {
-      to: "/calendar",
-      text: "Календар",
-      leftIcon: calendar,
+      to: isScreenWidthLessThan_767 ? "/calendar" : "/",
+      text: isScreenWidthLessThan_767 ? "Календар" : "",
+      leftIcon: isScreenWidthLessThan_767 ? calendar : null,
     },
   ];
 

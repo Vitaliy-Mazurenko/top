@@ -1,7 +1,7 @@
 import { ITabInfo } from "shared/ui/Tabs/types/Tab";
 import {
   StyledFooter,
-  StyledTabList,
+  StyledTabListCalendar,
 } from "./ManagerFooter.styled";
 
 import home from "shared/assets/icons/octicon_home.svg";
@@ -21,7 +21,7 @@ export const ManagerFooterCalendar: React.FC<IManagerFooterProps> = ({ className
 
   return (
     <StyledFooter>
-      <StyledTabList className={className} tabsInfo={tabsInfo} />
+      <StyledTabListCalendar className={className} tabsInfo={tabsInfo} />
     </StyledFooter>
   );
 };

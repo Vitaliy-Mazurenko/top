@@ -101,6 +101,82 @@ export const StyledTabList = styled(TabList)`
   }
 `;
 
+export const StyledTabListCalendar = styled(TabList)`
+  height: 100%;
+  padding: 0 8px;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+
+  & a {
+    gap: 4px;
+    padding: 0;
+    flex-direction: column;
+
+    &:hover {
+      background-color: unset;
+      color: unset;
+
+      & div {
+        background-color: #ff8c33;
+      }
+    }
+  }
+
+  & p {
+    display: none;
+  }
+
+  & div {
+    width: 48px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+  }
+
+  @media screen and (min-width: 360px) {
+    & div {
+      width: 64px;
+    }
+  }
+
+  @media screen and (min-width: 480px) {
+    & a {
+      padding: 0;
+    }
+
+    & p {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.33;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  @media screen and (min-width: 510px) {
+    & a {
+      padding: 0.5rem;
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    & a {
+      padding: 1rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    & p {
+      font-size: 16px;
+      line-height: 1;
+    }
+  }
+`;
+
 export const StyledNotification = styled(Notification)`
   & img {
     display: block;

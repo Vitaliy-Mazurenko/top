@@ -4,9 +4,9 @@ export const TabsWrap = styled.ul`
   display: flex;
   flex-direction: column;
 
-  @media screen and (min-width: 768px) {
     & li:last-child {
-      display: none;
-    }
+      /* @media screen and (min-width: 768px) {
+        display: none;
+    } */
   }
 `;
