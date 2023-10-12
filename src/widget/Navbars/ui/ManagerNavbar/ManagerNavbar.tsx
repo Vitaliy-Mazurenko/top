@@ -17,11 +17,39 @@ import userImg from "shared/assets/icons/user.svg";
 import efficientImg from "shared/assets/icons/arrow-up.svg";
 import walletImg from "shared/assets/icons/wallet.svg";
 import coursesImg from "shared/assets/icons/courses.svg";
-import calendar from "shared/assets/icons/calendar.svg"
+import calendar from "shared/assets/icons/calendar.svg";
 
 interface IManagerNavBarProps {
   className?: string;
 }
+
+const managerTabsData: ITabInfo[] = [
+  {
+    to: "/",
+    text: "Панель",
+    leftIcon: userImg,
+  },
+  {
+    to: "/",
+    text: "Витрати",
+    leftIcon: walletImg,
+  },
+  {
+    to: "/",
+    text: "Ефективність компаній",
+    leftIcon: efficientImg,
+  },
+  {
+    to: "/",
+    text: "Порівняння крі",
+    leftIcon: userImg,
+  },
+  {
+    to: "/",
+    text: "Курси та тренінги",
+    leftIcon: coursesImg,
+  },
+];
 
 export const ManagerNavbar: React.FC<IManagerNavBarProps> = ({ className }) => {
   const isScreenWidthLessThan_480 = useMediaQuery("(max-width: 480px)");
@@ -43,40 +71,14 @@ export const ManagerNavbar: React.FC<IManagerNavBarProps> = ({ className }) => {
       text: "Вийти",
       leftIcon: userImg,
     },
-    {
-      to: isScreenWidthLessThan_767 ? "/calendar" : "/",
-      text: isScreenWidthLessThan_767 ? "Календар" : "",
-      leftIcon: isScreenWidthLessThan_767 ? calendar : null,
-    },
   ];
 
-  const managerTabsData: ITabInfo[] = [
-    {
-      to: "/",
-      text: "Панель",
-      leftIcon: userImg,
-    },
-    {
-      to: "/",
-      text: "Витрати",
-      leftIcon: walletImg,
-    },
-    {
-      to: "/",
-      text: "Ефективність компаній",
-      leftIcon: efficientImg,
-    },
-    {
-      to: "/",
-      text: "Порівняння крі",
-      leftIcon: userImg,
-    },
-    {
-      to: "/",
-      text: "Курси та тренінги",
-      leftIcon: coursesImg,
-    },
-  ];
+  isScreenWidthLessThan_767 &&
+    optionsTabsData.push({
+      to: "/calendar",
+      text: "Календар",
+      leftIcon: calendar,
+    });
 
   return (
     <SideMenuWrap className={className}>
