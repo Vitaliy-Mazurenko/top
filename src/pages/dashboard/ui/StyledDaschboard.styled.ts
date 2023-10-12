@@ -87,6 +87,15 @@ export const StyledCalendar = styled(Calendar)`
   }
 `;
 
+export const StyledCalendarMobile = styled(Calendar)`
+  display: none;
+
+  @media screen and (max-width: 767px) {
+    display: block;
+    flex: 1;
+  }
+`;
+
 export const StyledDashboardChart = styled(DashboardChart)`
   @media screen and (min-width: 768px) {
     flex: 1;

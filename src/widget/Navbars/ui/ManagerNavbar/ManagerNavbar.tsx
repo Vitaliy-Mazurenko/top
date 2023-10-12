@@ -17,6 +17,7 @@ import userImg from "shared/assets/icons/user.svg";
 import efficientImg from "shared/assets/icons/arrow-up.svg";
 import walletImg from "shared/assets/icons/wallet.svg";
 import coursesImg from "shared/assets/icons/courses.svg";
+import calendar from "shared/assets/icons/calendar.svg"
 
 interface IManagerNavBarProps {
   className?: string;
@@ -40,6 +41,11 @@ export const ManagerNavbar: React.FC<IManagerNavBarProps> = ({ className }) => {
       to: "/",
       text: "Вийти",
       leftIcon: userImg,
+    },
+    {
+      to: "/calendar",
+      text: "Календар",
+      leftIcon: calendar,
     },
   ];
 

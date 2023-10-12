@@ -5,7 +5,7 @@ export const TabsWrap = styled.ul`
   flex-direction: column;
 
   @media screen and (min-width: 768px) {
-    & li#calendar {
+    & li:last-child {
       display: none;
     }
   }
