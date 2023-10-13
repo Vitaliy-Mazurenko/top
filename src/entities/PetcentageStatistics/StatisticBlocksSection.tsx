@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { Pagination, A11y } from "swiper/modules";
+import { SwiperSlide } from "swiper/react";
 
 import { Container } from "shared/ui/Container";
 
@@ -14,7 +15,6 @@ import StatisticBlock from "./StatisticBlock";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import { SwiperSlide } from "swiper/react";
 
 export const StatisticBlocksSection: FC = () => {
   const isPCScreenSize = useMediaQuery("(min-width: 1080px)");
