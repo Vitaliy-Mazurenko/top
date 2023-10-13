@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { Swiper } from "swiper/react";
+
 export const StyledTable = styled.table`
   width: 100%;
   border-radius: 8px;
@@ -48,4 +50,16 @@ export const StyledTabledHeadCell = styled.th`
 
 export const StyledTabledBody = styled.tbody`
   text-align: center;
+`;
+
+export const TableSwiper = styled(Swiper)`
+  padding-bottom: 24px;
+
+  & .swiper-pagination {
+    bottom: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 28px;
+  }
 `;

@@ -38,11 +38,20 @@ export const StyledTabList = styled(TabList)`
     padding: 0;
     flex-direction: column;
 
+    & > div {
+      width: 48px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 16px;
+    }
+
     &:hover {
       background-color: unset;
       color: unset;
 
-      & div {
+      & > div {
         background-color: #ff8c33;
       }
     }
@@ -52,18 +61,11 @@ export const StyledTabList = styled(TabList)`
     display: none;
   }
 
-  & div {
-    width: 48px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 16px;
-  }
-
   @media screen and (min-width: 360px) {
-    & div {
-      width: 64px;
+    & a {
+      & > div {
+        width: 64px;
+      }
     }
   }
 
@@ -118,7 +120,7 @@ export const StyledTabListCalendar = styled(TabList)`
       background-color: unset;
       color: unset;
 
-      & div {
+      & > div {
         background-color: #ff8c33;
       }
     }
@@ -128,7 +130,7 @@ export const StyledTabListCalendar = styled(TabList)`
     display: none;
   }
 
-  & div {
+  & > div {
     width: 48px;
     height: 32px;
     display: flex;
@@ -138,7 +140,7 @@ export const StyledTabListCalendar = styled(TabList)`
   }
 
   @media screen and (min-width: 360px) {
-    & div {
+    & > div {
       width: 64px;
     }
   }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const NotificationWrapper = styled.button`
+export const NotificationWrapper = styled.div`
   position: relative;
   display: block;
 `;
@@ -17,7 +17,7 @@ export const NotificationBadge = styled.span`
   align-items: center;
 
   border-radius: 110px;
-  background-color: #ff8c33;
+  background-color: #df2209;
   color: white;
   font-size: 12px;
   line-height: 1.57;
