@@ -6,7 +6,6 @@ import { Container } from "shared/ui/Container";
 
 import {
   StyledContainer,
-  StyledSwiperSlide,
   SwiperWrapper,
   Wrapper,
 } from "./StatisticBlowRow.styled";
@@ -14,7 +13,7 @@ import StatisticBlock from "./StatisticBlock";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import { Swiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export const StatisticBlocksSection: FC = () => {
   const isPCScreenSize = useMediaQuery("(min-width: 1080px)");
@@ -61,41 +60,41 @@ export const StatisticBlocksSection: FC = () => {
             slidesPerView="auto"
             pagination={{ clickable: true }}
           >
-            <StyledSwiperSlide>
+            <SwiperSlide>
               <StatisticBlock
                 text="Випускників, які отримали роботу "
                 percentage={2}
                 color="#faeffa"
               />
-            </StyledSwiperSlide>
-            <StyledSwiperSlide>
+            </SwiperSlide>
+            <SwiperSlide>
               <StatisticBlock
                 text="Прогрес успішності студентів"
                 percentage={78}
                 color="#f4f9fb"
               />
-            </StyledSwiperSlide>
-            <StyledSwiperSlide>
+            </SwiperSlide>
+            <SwiperSlide>
               <StatisticBlock
                 text="Активність на платформі"
                 percentage={67}
                 color="#f0fcf9"
               />
-            </StyledSwiperSlide>
-            <StyledSwiperSlide>
+            </SwiperSlide>
+            <SwiperSlide>
               <StatisticBlock
                 text="Статистика за завданнями "
                 percentage={87}
                 color="#fcfaee"
               />
-            </StyledSwiperSlide>
-            <StyledSwiperSlide>
+            </SwiperSlide>
+            <SwiperSlide>
               <StatisticBlock
                 text="Оцінки та зворотний зв'язок від студентів"
                 percentage={87}
                 color="#eae2fa"
               />
-            </StyledSwiperSlide>
+            </SwiperSlide>
           </Swiper>
         </SwiperWrapper>
       </StyledContainer>
