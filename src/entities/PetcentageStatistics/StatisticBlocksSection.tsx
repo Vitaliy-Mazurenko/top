@@ -6,7 +6,6 @@ import { Container } from "shared/ui/Container";
 
 import {
   StyledContainer,
-  StyledSwiper,
   StyledSwiperSlide,
   SwiperWrapper,
   Wrapper,
@@ -15,6 +14,7 @@ import StatisticBlock from "./StatisticBlock";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import { Swiper } from "swiper/react";
 
 export const StatisticBlocksSection: FC = () => {
   const isPCScreenSize = useMediaQuery("(min-width: 1080px)");
@@ -55,7 +55,7 @@ export const StatisticBlocksSection: FC = () => {
     return (
       <StyledContainer>
         <SwiperWrapper>
-          <StyledSwiper
+          <Swiper
             modules={[Pagination, A11y]}
             spaceBetween={24}
             slidesPerView="auto"
@@ -96,7 +96,7 @@ export const StatisticBlocksSection: FC = () => {
                 color="#eae2fa"
               />
             </StyledSwiperSlide>
-          </StyledSwiper>
+          </Swiper>
         </SwiperWrapper>
       </StyledContainer>
     );

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import { Container } from "shared/ui/Container";
 
 export const StyledContainer = styled(Container)`
