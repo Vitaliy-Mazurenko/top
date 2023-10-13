@@ -42,6 +42,10 @@ export const StyledSwiper = styled(Swiper)`
   & .swiper-pagination {
     bottom: 0px;
   }
+
+  & .swiper-slide {
+    width: unset;
+  }
 `;
 
 export const StyledSwiperSlide = styled(SwiperSlide)`
