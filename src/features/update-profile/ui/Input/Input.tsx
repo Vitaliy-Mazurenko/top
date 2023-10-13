@@ -17,6 +17,10 @@ const InputLabel = styled.label`
   letter-spacing: 0.28px;
   margin-bottom: 2px;
   /* margin-left: 25px; */
+  @media (max-width: 480px) {
+    margin-left: 16px;
+    flex-grow: 1;
+  }
 `;
 
 const InputElement = styled.input`
@@ -32,6 +36,12 @@ const InputElement = styled.input`
   line-height: 1.375rem; /* 22px */
   border: 1px solid #ede4b7;
   padding: 0.3125rem 0.75rem; /* 5px 12px */
+  @media (max-width: 480px) {
+    margin-left: 16px;
+    width: 93%;
+    height: 32px;
+    flex-grow: 1;
+  }
 `;
 
 

@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { ModalWindow } from './ModalWindow';
 import {
   ModalWindow as ModalWindowStyled,
-  ModalHeader,
   ModalWindowBtn,
   TextHelper,
   UploadIcon,
   UserPhotoMain,
+  ModalDiv,
+  HeaderModal,
 } from './styled';
 import userphoto from 'shared/assets/img/custom.png';
 import uploadphoto from 'shared/assets/img/upload.png';
@@ -36,12 +37,14 @@ export function ModalUploadForm() {
   // selectedUserPhoto instanceof File ? URL.createObjectURL(selectedUserPhoto) : selectedUserPhoto || userphoto
   return (
     <ModalWindowStyled>
-      <UserPhotoMain src={selectedUserPhoto?.toString() || userphoto} alt="userphoto" />
-      <ModalHeader>Фото</ModalHeader>
-      <ModalWindowBtn onClick={openModal}>
-        <img src={uploadphoto} alt="uploaduserphoto" />
-        <span>Загрузити аватар</span>
-      </ModalWindowBtn>
+      <ModalDiv>
+          <UserPhotoMain src={selectedUserPhoto?.toString() || userphoto} alt="userphoto" />
+          <HeaderModal>Фото</HeaderModal>
+          <ModalWindowBtn onClick={openModal}>
+              <img src={uploadphoto} alt="uploaduserphoto" />
+              <span>Загрузити аватар</span>
+          </ModalWindowBtn>
+      </ModalDiv>
       <ModalWindow isOpen={isModalOpen} onClose={closeModal} onImageUpload={handleImageUpload} updateWarningData={updateWarningData}>
         <UploadIcon src={uploadIcon} alt="uploadIcon" id="uploadIcon" />
         <TextHelper>Supported formats: JPG and PNG. <br />The recommended file size is 256x256 pixels.</TextHelper>

@@ -6,6 +6,10 @@ export const PageSwitcherContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media (max-width: 480px) {
+    margin-left: 16px;
+  }
 `;
 
 export const ExtraText = styled.span`

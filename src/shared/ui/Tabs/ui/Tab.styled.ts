@@ -14,13 +14,17 @@ export const TabLink = styled(Link)`
     background-color: #ff8c33;
     color: #fff;
   }
+
+  @media (max-width: 480px) {
+    padding : 0.7rem;
+  }
 `;
 
 export const TabIcon = styled.img`
   display: block;
   max-width: unset;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
 `;
 
 export const TabTextWrap = styled.p`
