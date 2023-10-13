@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
+
 import { Container } from "shared/ui/Container";
 
 export const StyledContainer = styled(Container)`
@@ -41,8 +42,8 @@ export const StyledSwiper = styled(Swiper)`
   & .swiper-pagination {
     bottom: 0px;
   }
-`;
 
-export const StyledSwiperSlide = styled(SwiperSlide)`
-  width: unset;
+  & .swiper-slide {
+    width: unset;
+  }
 `;

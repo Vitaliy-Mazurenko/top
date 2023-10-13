@@ -3,14 +3,14 @@ import styled from "styled-components";
 export const PageInner = styled.div`
   flex-grow: 1;
   overflow: auto;
-`
+`;
 export const PageHeader = styled.h1`
   color: #1c1c1e;
   font-size: 30px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 400;
   line-height: 40px;
-  letter-spacing: 0.90px;
+  letter-spacing: 0.9px;
 `;
 export const PageContainer = styled.div`
   width: 100%;
@@ -24,7 +24,7 @@ export const PageContainer = styled.div`
 
 export const PageSwitcher = styled.div`
   cursor: pointer;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
