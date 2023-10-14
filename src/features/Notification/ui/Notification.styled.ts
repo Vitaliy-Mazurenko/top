@@ -12,6 +12,7 @@ export const NotificationBadge = styled.span`
 
   width: 19px;
   height: 12px;
+  padding-top: 1px;
   display: flex;
   justify-content: center;
   align-items: center;
