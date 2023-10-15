@@ -7,14 +7,15 @@ export const Wrapper = styled.div`
   padding: 0 10px;
 
   @media screen and (min-width: 480px) {
-    width: 468px;
+    max-width: 468px;
   }
 
   @media screen and (min-width: 768px) {
-    width: 724px;
+    max-width: 724px;
   }
 
   @media screen and (min-width: 1080px) {
+    max-width: unset;
     width: auto;
     margin: 0;
     padding: 0;
