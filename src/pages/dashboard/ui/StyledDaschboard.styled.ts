@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-import { DashboardNavBar } from "widget/DashboardNavBar";
 import { Calendar } from "features/Calendar/Calendar";
 import { DashboardChart } from "entities/DashboardChart";
+import { DashboardNavBar } from "widget/Navbars";
 
 export const StyledDaschboard = styled.div`
   font-family: "Inter", sans-serif;
