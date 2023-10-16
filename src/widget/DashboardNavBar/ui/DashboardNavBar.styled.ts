@@ -4,7 +4,7 @@ import { ManagerNavbar } from "widget/Navbars";
 export const Wrapper = styled.aside`
   position: fixed;
   width: 167px;
-  z-index: 2;
+  z-index: 50;
 
   @media screen and (min-width: 480px) {
     width: 228px;

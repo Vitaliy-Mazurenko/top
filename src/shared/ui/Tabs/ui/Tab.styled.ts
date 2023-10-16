@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const TabLink = styled(Link)`
+  height: 51px;
   color: ${(props) => props.theme.palette.text};
   display: flex;
   align-items: center;
@@ -16,7 +17,7 @@ export const TabLink = styled(Link)`
   }
 
   @media (max-width: 480px) {
-    padding : 0.7rem;
+    padding: 0.7rem;
   }
 `;
 

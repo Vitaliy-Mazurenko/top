@@ -5,3 +5,7 @@ export const TabsWrap = styled.ul`
   gap: 0;
   flex-direction: column;
 `;
+
+export const TabItem = styled.li`
+  height: 51px;
+`;
