@@ -60,6 +60,7 @@ export const StyledUserCredentials = styled(UserCredentials)`
   & p {
     font-size: 6px;
     line-height: 2.5;
+    color: #000;
   }
 
   span {

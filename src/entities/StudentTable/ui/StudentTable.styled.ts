@@ -14,8 +14,11 @@ export const StyledTable = styled.table`
 `;
 
 export const StyledTabledHead = styled.thead`
-  text-transform: uppercase;
   font-size: 8px;
+
+  & th {
+    text-transform: capitalize;
+  }
 
   @media screen and (min-width: 480px) {
     font-size: 10px;
