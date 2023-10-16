@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Tab } from "../Tabs/Tab";
-import { TabsWrap } from "../Tabs/Tabs.styled";
+// import { Tab } from "../../../Tabs/Tab";
+import { Tab } from "shared/ui/Tabs/ui/Tab";
+import { TabsWrap } from "shared/ui/Tabs/ui/TabList.styled";
 import arrowIcon from 'shared/assets/img/arrowdown.png'
 import userImg from 'shared/assets/img/user.png'
 import teamImg from 'shared/assets/img/team.png'

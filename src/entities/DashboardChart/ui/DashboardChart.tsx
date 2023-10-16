@@ -6,22 +6,22 @@ import {
   ChartTitle,
   ChartWrapper,
 } from "./DashboardChart.styled";
+import { DashboardChartItem } from "./DashboardChartItem";
 
 interface DashboardChartProps {
   data: ChartItemInterface[];
+  className?: string;
 }
 
-export const DashboardChart = ({ data }: DashboardChartProps) => {
+export const DashboardChart = ({ data, className }: DashboardChartProps) => {
   return (
-    <ChartWrapper>
+    <ChartWrapper className={className}>
       <ChartTitle>Порівняння Kpi</ChartTitle>
       <ChartList>
-        {data.map(({ percentage, id }) => (
-          <ChartItem
-            $height={percentage}
-            style={percentage > 50 ? { backgroundColor: "#FF8C33" } : {}}
-            key={id}
-          ></ChartItem>
+        {data.map((item) => (
+          <ChartItem key={item.id}>
+            <DashboardChartItem {...item} />
+          </ChartItem>
         ))}
       </ChartList>
     </ChartWrapper>

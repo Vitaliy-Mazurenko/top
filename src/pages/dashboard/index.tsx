@@ -1,17 +1,21 @@
-import React from "react";
+import { useState, FC, useRef } from "react";
 
-import { ManagerNavbar } from "widget/Navbars";
 import { DashboardHeader } from "widget/DashboardHeader";
 
-import { Calendar } from "features/Calendar/Calendar";
-
 import { StatisticBlocksSection } from "entities/PetcentageStatistics/StatisticBlocksSection";
-import { DashboardChart } from "entities/DashboardChart";
 import { StudentsTable } from "entities/StudentTable";
+
+import { Container } from "shared/ui/Container";
+import { useMobileMenu } from "shared/hooks/useMobileMenu";
 
 import {
   CalendarAndChartWrapper,
+  Content,
+  RightSideContent,
+  StyledCalendar,
   StyledDaschboard,
+  StyledDashboardChart,
+  StyledDashboardNavBar,
 } from "./ui/StyledDaschboard.styled";
 
 interface StudentInterface {
@@ -83,62 +87,83 @@ const chartData: ChartItemInterface[] = [
   {
     id: 1,
     percentage: 100,
-    title: "",
+    title: "нд",
   },
   {
     id: 2,
     percentage: 40,
-    title: "",
+    title: "пн",
   },
   {
     id: 3,
     percentage: 30,
-    title: "",
+    title: "вт",
   },
   {
     id: 4,
     percentage: 25,
-    title: "",
+    title: "ср",
   },
   {
     id: 5,
     percentage: 80,
-    title: "",
+    title: "чт",
   },
   {
     id: 6,
     percentage: 23,
-    title: "",
+    title: "пт",
   },
   {
     id: 7,
     percentage: 10,
-    title: "",
+    title: "сб",
   },
 ];
 
-export const DaschboardPage: React.FC = () => {
-  const [selectedDate, setSelectedDay] = React.useState(new Date());
+export const DaschboardPage: FC = () => {
+  const burgerButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileMenuRef = useRef<HTMLElement>(null);
+  const { isMenuShown: isNavBarShown, setIsMenuShown: setIsNavBarShown } =
+    useMobileMenu({
+      buttonElementRef: burgerButtonRef,
+      mobileMenuElementRef: mobileMenuRef,
+    });
+  const [selectedDate, setSelectedDay] = useState(new Date());
+
+  const toggleNavBar = () => {
+    setIsNavBarShown((s) => !s);
+  };
 
   return (
     <StyledDaschboard>
-      {/* <LeftNavBar> */}
-        <ManagerNavbar />
-      {/* </LeftNavBar> */}
+      <StyledDashboardNavBar
+        mobileMenuRef={mobileMenuRef}
+        $visible={isNavBarShown}
+      />
 
-      <div style={{ marginLeft: "227px", flexBasis: "83.4%" }}>
-        <DashboardHeader />
-        <StatisticBlocksSection />
-        <CalendarAndChartWrapper>
-          <Calendar
-            locale="uk-UA"
-            selectedDate={selectedDate}
-            selectDate={(date) => setSelectedDay(date)}
-          />
-          <DashboardChart data={chartData} />
-        </CalendarAndChartWrapper>
-        <StudentsTable students={tableData} />
-      </div>
+      <RightSideContent>
+        <DashboardHeader
+          burgerButtonRef={burgerButtonRef}
+          onMenuBtnClick={toggleNavBar}
+        />
+
+        <Content>
+          <StatisticBlocksSection />
+          <Container>
+            <CalendarAndChartWrapper>
+              <StyledCalendar
+                locale="uk-UA"
+                selectedDate={selectedDate}
+                selectDate={(date) => setSelectedDay(date)}
+              />
+              <StyledDashboardChart data={chartData} />
+            </CalendarAndChartWrapper>
+            <StudentsTable students={tableData} />
+          </Container>
+        </Content>
+      </RightSideContent>
+      {/* <ManagerFooter /> */}
     </StyledDaschboard>
   );
 };

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const TabLink = styled(Link)`
+  height: 51px;
   color: ${(props) => props.theme.palette.text};
   display: flex;
   align-items: center;
@@ -16,13 +17,8 @@ export const TabLink = styled(Link)`
   }
 
   @media (max-width: 480px) {
-    padding : 0.7rem;
+    padding: 0.7rem;
   }
-`;
-
-export const TabImgWrap = styled.div`
-  /* width: 1.5rem;
-  height: 1.5rem; */
 `;
 
 export const TabIcon = styled.img`
@@ -32,7 +28,7 @@ export const TabIcon = styled.img`
   height: 1.2rem;
 `;
 
-export const TabTextWrap = styled.div`
+export const TabTextWrap = styled.p`
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;

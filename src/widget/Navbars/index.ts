@@ -1,3 +1,3 @@
-export { EmployeeNavbar } from './EmployeeNavbar/EmployeeNavbar'
-export { ManagerNavbar } from './ManagerNavbar/ManagerNavbar'
-export { PersonalNavbar } from './PersonalNavbar/PersonalNavbar'
+export { EmployeeNavbar } from "./ui/EmployeeNavbar/EmployeeNavbar";
+export { ManagerNavbar } from "./ui/ManagerNavbar/ManagerNavbar";
+export { PersonalNavbar } from "./ui/PersonalNavbar/PersonalNavbar";

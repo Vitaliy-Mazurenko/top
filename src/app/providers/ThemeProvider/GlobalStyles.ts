@@ -149,12 +149,13 @@ img {
 /* font-family: 'Inter', sans-serif; */
 /* font-family: 'Raleway', sans-serif; */
 
+:root{
+  --swiper-theme-color: #FF8C33
+}
 
 html {
 	font-size: 16px;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
 }
-
-
 `;

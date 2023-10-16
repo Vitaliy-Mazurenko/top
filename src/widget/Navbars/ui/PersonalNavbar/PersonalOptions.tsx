@@ -1,5 +1,5 @@
-import { Tab } from "./Tabs/Tab";
-import { OptionsWrap } from "./Tabs/TabsPanel.styled";
+import { Tab } from "shared/ui/Tabs/ui/Tab";
+import { OptionsWrap } from "../../Tabs/TabsPanel.styled";
 import settingsImg from "shared/assets/icons/settings.svg"
 
 export const PersonalOptions: React.FC = () => {

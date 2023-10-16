@@ -2,9 +2,9 @@ import {
   LogoAndTabsWrap,
   LogoWrap,
   SideMenuWrap,
-} from "../Tabs/TabsPanel.styled";
+} from "../../Tabs/TabsPanel.styled";
 import logoImg from "shared/assets/img/logo.svg";
-import { PersonalOptions } from "../PersonalOptions";
+import { PersonalOptions } from "./PersonalOptions";
 import { PersonalTabs } from "./PersonalTabs";
 import { ProfileCard } from "entities/user";
 import defaultAvatar from 'shared/assets/img/sidebarimg.png'

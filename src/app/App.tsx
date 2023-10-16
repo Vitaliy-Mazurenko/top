@@ -1,6 +1,7 @@
 import { ProfilePage } from "pages/(profile)/index";
 import { ProfileSettingsPage } from "pages/(profile)/settings";
 import { DaschboardPage } from "pages/dashboard";
+import { CalendarPage } from "pages/dashboard/calendar/ui";
 import { TeamPage } from "pages/team";
 import { PersonalPage } from "pages/personal";
 import { Route, Routes } from "react-router-dom";
@@ -9,6 +10,7 @@ const App = () => {
   return (
     <Routes>
       <Route element={<DaschboardPage />} path="/" />
+      <Route element={<CalendarPage />} path="/calendar" />
 
       <Route element={<PersonalPage />} path="/personal" />
       <Route element={<TeamPage />} path="/team" />

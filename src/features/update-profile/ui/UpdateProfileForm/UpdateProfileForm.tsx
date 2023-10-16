@@ -4,7 +4,6 @@
 // import WarningPageBlue from 'shared/ui/ReusableWarningTableBlue/WarningPageBlue';
 // import styled from 'styled-components';
 
-
 // export const SaveButton = styled.button`
 //   width: 17.625rem; /* 282px */
 //   height: 3.1875rem; /* 51px */
@@ -27,7 +26,6 @@
 //   const [isFormFilled, setIsFormFilled] = useState(false);
 //   const [showWarningPage, setShowWarningPage] = useState(true);
 //   const [isEmailValid, setIsEmailValid] = useState(true);
-
 
 //   const updateFormState = () => {
 //     const isFilled =
@@ -52,28 +50,25 @@
 //     updateFormState();
 //   };
 
-
-  
 //   const handleFirstNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 //     setFirstName(e.target.value);
 //     updateFormState();
 //   };
-  
+
 //   const handleSecondNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 //     setSecondName(e.target.value);
 //     updateFormState();
 //   };
-  
+
 //   const handleCompanyNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 //     setCompanyName(e.target.value);
 //     updateFormState();
 //   };
-  
+
 //   const handlePositionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 //     setPosition(e.target.value);
 //     updateFormState();
 //   };
-
 
 //   const handleSaveButtonClick = () => {
 //     if (isFormFilled) {
@@ -86,7 +81,6 @@
 //       console.log('Данные не отправлены. Пожалуйста, заполните все поля.');
 //     }
 //   };
-
 
 //   return (
 //     <div>
@@ -144,18 +138,16 @@
 
 // export default RegistrationForm;
 
-
-
-import React, { useState } from 'react';
-import { InputBox } from 'features/update-profile/ui/Input/Input';
-import styled from 'styled-components';
-import { MissingDataWarning } from '../MissingDataWarning/MissingDataWarning';
-import { SuccessWarning } from '../SuccessWarning/SuccessWarning';
+import React, { useState } from "react";
+import { InputBox } from "features/update-profile/ui/Input/Input";
+import styled from "styled-components";
+import { MissingDataWarning } from "../MissingDataWarning/MissingDataWarning";
+import { SuccessWarning } from "../SuccessWarning/SuccessWarning";
 
 export const SaveButton = styled.button`
   width: 17.625rem; /* 282px */
   height: 3.1875rem; /* 51px */
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   color: #ffffff;
   background: #ff8c33;
   font-size: 1rem; /* 16px */
@@ -165,29 +157,27 @@ export const SaveButton = styled.button`
   cursor: pointer;
   @media (max-width: 480px) {
     width: 93%;
-    height: 3.1875rem;;
+    height: 3.1875rem;
     margin-left: 16px;
     flex-grow: 1;
   }
+`;
 
-`
-
-export const MobileDiv = styled.div `
+export const MobileDiv = styled.div`
   @media (max-width: 480px) {
     display: none;
   }
-`
+`;
 
 export const UpdateProfileForm = () => {
-  const [email, setEmail] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [secondName, setSecondName] = useState('');
-  const [companyName, setCompanyName] = useState('');
-  const [position, setPosition] = useState('');
+  const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [secondName, setSecondName] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [position, setPosition] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [isDataSubmitted] = useState(false);
   const [isSaveButtonDisabled, setIsSaveButtonDisabled] = useState(true);
-
 
   const isEmailValidRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
@@ -198,13 +188,11 @@ export const UpdateProfileForm = () => {
     setIsSaveButtonDisabled(!isEmailValidRegex.test(newEmail));
   };
 
-  const handleSaveButtonClick = async () => {
-     
-    };
+  const handleSaveButtonClick = async () => {};
   return (
     <div>
       <MobileDiv>
-        {isDataSubmitted ? <SuccessWarning />:<MissingDataWarning /> }
+        {isDataSubmitted ? <SuccessWarning /> : <MissingDataWarning />}
       </MobileDiv>
       <form>
         <InputBox
@@ -213,10 +201,14 @@ export const UpdateProfileForm = () => {
           required
           value={email}
           onChange={handleEmailChange}
-          className={!isEmailValid ? 'InvalidInput' : ''}
+          className={!isEmailValid ? "InvalidInput" : ""}
         />
-         {!isEmailValid && <p style={{color: 'red', fontSize: '12px', marginTop: '5px'}}>Введіть коректну e-mail адресу</p>}
-         <InputBox
+        {!isEmailValid && (
+          <p style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>
+            Введіть коректну e-mail адресу
+          </p>
+        )}
+        <InputBox
           label="First Name"
           placeholder="Enter Your First Name"
           required
@@ -245,7 +237,12 @@ export const UpdateProfileForm = () => {
           onChange={(e) => setPosition(e.target.value)}
           className="inputform"
         />
-        <SaveButton onClick={handleSaveButtonClick} disabled={isSaveButtonDisabled}>Зберегти</SaveButton>
+        <SaveButton
+          onClick={handleSaveButtonClick}
+          disabled={isSaveButtonDisabled}
+        >
+          Зберегти
+        </SaveButton>
       </form>
     </div>
   );
