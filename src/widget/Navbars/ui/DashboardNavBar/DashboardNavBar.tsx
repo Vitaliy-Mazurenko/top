@@ -1,13 +1,15 @@
 import { useMediaQuery } from "usehooks-ts";
+import { RefObject } from "react";
 
 import { TabList } from "shared/ui/Tabs";
 import { ITabInfo } from "shared/ui/Tabs/types/Tab";
 
 import {
+  AsideWrapper,
+  DashboardContent,
   LogoAndTabsWrap,
   LogoLink,
   LogoWrap,
-  SideMenuWrap,
 } from "../NavBar.styled";
 
 import logoURL from "shared/assets/img/logo.svg";
@@ -21,9 +23,13 @@ import calendar from "shared/assets/icons/calendar.svg";
 
 interface IManagerNavBarProps {
   className?: string;
+  mobileMenuRef?: RefObject<HTMLElement>;
 }
 
-export const ManagerNavbar: React.FC<IManagerNavBarProps> = ({ className }) => {
+export const DashboardNavBar: React.FC<IManagerNavBarProps> = ({
+  className,
+  mobileMenuRef,
+}) => {
   const isScreenWidthLessThan_480 = useMediaQuery("(max-width: 480px)");
   const isScreenWidthLessThan_767 = useMediaQuery("(max-width: 767px)");
 
@@ -81,14 +87,16 @@ export const ManagerNavbar: React.FC<IManagerNavBarProps> = ({ className }) => {
     });
 
   return (
-    <SideMenuWrap className={className}>
-      <LogoAndTabsWrap>
-        <LogoLink to="/">
-          <LogoWrap src={logoURL} alt="logo" />
-        </LogoLink>
-        <TabList tabsInfo={managerTabsData} />
-      </LogoAndTabsWrap>
-      <TabList tabsInfo={optionsTabsData} />
-    </SideMenuWrap>
+    <AsideWrapper ref={mobileMenuRef} className={className}>
+      <DashboardContent>
+        <LogoAndTabsWrap>
+          <LogoLink to="/">
+            <LogoWrap src={logoURL} alt="logo" />
+          </LogoLink>
+          <TabList tabsInfo={managerTabsData} />
+        </LogoAndTabsWrap>
+        <TabList tabsInfo={optionsTabsData} />
+      </DashboardContent>
+    </AsideWrapper>
   );
 };

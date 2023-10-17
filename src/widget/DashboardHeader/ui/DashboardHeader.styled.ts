@@ -49,9 +49,7 @@ export const StyledNotification = styled(Notification)`
   margin-right: 1.5rem;
 `;
 
-export const StyledUserCredentials = styled(UserCredentials)`
-  margin-right: 1.25rem;
-`;
+export const StyledUserCredentials = styled(UserCredentials)``;
 
 export const StyledDropdownButton = styled(DropdownButton)`
   margin-left: 0.625rem;

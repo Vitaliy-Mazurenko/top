@@ -30,7 +30,7 @@ export const TabIcon = styled.img`
 
 export const TabTextWrap = styled.p`
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
   text-transform: uppercase;
   text-align: left;
 `;
