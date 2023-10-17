@@ -23,37 +23,37 @@ interface IManagerNavBarProps {
   className?: string;
 }
 
-const managerTabsData: ITabInfo[] = [
-  {
-    to: "/",
-    text: "Панель",
-    leftIcon: userImg,
-  },
-  {
-    to: "/",
-    text: "Витрати",
-    leftIcon: walletImg,
-  },
-  {
-    to: "/",
-    text: "Ефективність компаній",
-    leftIcon: efficientImg,
-  },
-  {
-    to: "/",
-    text: "Порівняння крі",
-    leftIcon: userImg,
-  },
-  {
-    to: "/",
-    text: "Курси та тренінги",
-    leftIcon: coursesImg,
-  },
-];
-
 export const ManagerNavbar: React.FC<IManagerNavBarProps> = ({ className }) => {
   const isScreenWidthLessThan_480 = useMediaQuery("(max-width: 480px)");
   const isScreenWidthLessThan_767 = useMediaQuery("(max-width: 767px)");
+
+  const managerTabsData: ITabInfo[] = [
+    {
+      to: "/",
+      text: "Панель",
+      leftIcon: userImg,
+    },
+    {
+      to: "/",
+      text: "Витрати",
+      leftIcon: walletImg,
+    },
+    {
+      to: "/",
+      text: "Ефективність компаній",
+      leftIcon: efficientImg,
+    },
+    {
+      to: "/",
+      text: "Порівняння крі",
+      leftIcon: userImg,
+    },
+    {
+      to: "/",
+      text: "Курси та тренінги",
+      leftIcon: coursesImg,
+    },
+  ];
 
   const optionsTabsData: ITabInfo[] = [
     {
@@ -74,7 +74,7 @@ export const ManagerNavbar: React.FC<IManagerNavBarProps> = ({ className }) => {
   ];
 
   isScreenWidthLessThan_767 &&
-    optionsTabsData.push({
+    managerTabsData.push({
       to: "/calendar",
       text: "Календар",
       leftIcon: calendar,
