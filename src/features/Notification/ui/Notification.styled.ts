@@ -3,15 +3,15 @@ import styled from "styled-components";
 export const NotificationWrapper = styled.div`
   position: relative;
   display: block;
+  cursor: pointer;
 `;
 
 export const NotificationBadge = styled.span`
   position: absolute;
-  top: -2px;
-  right: -11px;
+  top: -3px;
+  left: 50%;
+  padding: 0 7px;
 
-  width: 19px;
-  height: 12px;
   display: flex;
   justify-content: center;
   align-items: center;

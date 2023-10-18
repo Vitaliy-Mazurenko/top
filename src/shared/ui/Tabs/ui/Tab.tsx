@@ -19,7 +19,7 @@ export const Tab: FC<ITabInfo> = ({
             <TabIcon src={leftIcon} />
           </div>
         ) : (
-          <div>{leftIcon}</div>
+          <>{leftIcon}</>
         ))}
       <TabTextWrap>{text}</TabTextWrap>
       {rightIcon &&
@@ -28,7 +28,7 @@ export const Tab: FC<ITabInfo> = ({
             <TabIcon src={rightIcon} />
           </div>
         ) : (
-          <div>{rightIcon}</div>
+          <>{rightIcon}</>
         ))}
     </TabLink>
   );

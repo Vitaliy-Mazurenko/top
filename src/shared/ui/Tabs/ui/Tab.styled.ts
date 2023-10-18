@@ -9,11 +9,16 @@ export const TabLink = styled(Link)`
   align-items: center;
   padding: 1rem 1rem;
   gap: 1rem;
+  color: #ff8c33;
 
   transition: background-color 0.05s, color 0.01s;
   &:hover {
     background-color: #ff8c33;
-    color: #fff;
+    color: #000;
+
+    & > p {
+      color: #fff;
+    }
   }
 
   @media (max-width: 480px) {
@@ -24,8 +29,8 @@ export const TabLink = styled(Link)`
 export const TabIcon = styled.img`
   display: block;
   max-width: unset;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
 `;
 
 export const TabTextWrap = styled.p`
@@ -33,4 +38,5 @@ export const TabTextWrap = styled.p`
   font-weight: 400;
   text-transform: uppercase;
   text-align: left;
+  color: #000;
 `;

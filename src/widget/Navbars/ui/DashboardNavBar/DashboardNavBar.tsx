@@ -14,12 +14,12 @@ import {
 
 import logoURL from "shared/assets/img/logo.svg";
 import settingsImg from "shared/assets/icons/settings.svg";
-import helpImg from "shared/assets/icons/orange-question-mark.svg";
 import userImg from "shared/assets/icons/user.svg";
 import efficientImg from "shared/assets/icons/arrow-up.svg";
 import walletImg from "shared/assets/icons/wallet.svg";
 import coursesImg from "shared/assets/icons/courses.svg";
 import calendar from "shared/assets/icons/calendar.svg";
+import { OrangeQuestion } from "shared/ui/CustomSVG/OrangeQuestion";
 
 interface IManagerNavBarProps {
   className?: string;
@@ -65,7 +65,7 @@ export const DashboardNavBar: React.FC<IManagerNavBarProps> = ({
     {
       to: "/",
       text: "Допомога",
-      leftIcon: helpImg,
+      leftIcon: <OrangeQuestion />,
     },
     {
       to: "/",
