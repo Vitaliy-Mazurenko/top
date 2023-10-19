@@ -1,7 +1,6 @@
 import { useState, FC, useRef } from "react";
 
 import { DashboardHeader } from "widget/DashboardHeader";
-// import { ManagerFooterCalendar } from "widget/Footers";
 
 import { Container } from "shared/ui/Container";
 import { useMobileMenu } from "shared/hooks/useMobileMenu";
@@ -61,7 +60,6 @@ export const CalendarPage: FC = () => {
           </Container>
         </Content>
       </RightSideContent>
-      {/* <ManagerFooterCalendar /> */}
     </StyledDaschboard>
   );
 };
