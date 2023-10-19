@@ -91,7 +91,7 @@ export const DashboardNavBar: React.FC<IManagerNavBarProps> = ({
       <DashboardContent>
         <LogoAndTabsWrap>
           <LogoLink to="/">
-            <LogoWrap src={logoURL} alt="logo" />
+            <LogoWrap src={logoURL} alt="logo" width='171px' height='56px' />
           </LogoLink>
           <TabList tabsInfo={managerTabsData} />
         </LogoAndTabsWrap>

@@ -50,13 +50,13 @@ export const DashboardHeader: FC<IDashboardHeaderProps> = ({
               onClick={onMenuBtnClick}
               id="dashboard-burger-btn"
             >
-              <img src={burgerIcon} alt="burger menu icon" />
+              <img src={burgerIcon} alt="burger menu icon" width='24px' height='24px' />
             </BurgerButton>
             <LogoLink to="/">
-              <img src={logoImage} alt="logo" />
+              <img src={logoImage} alt="logo" width='171px' height='56px'/>
             </LogoLink>
             <ControlButton>
-              <img src={userIcon} alt="user" />
+              <img src={userIcon} alt="user" width='20px' height='20px'/>
             </ControlButton>
           </HeaderInner>
         </MobileContent>

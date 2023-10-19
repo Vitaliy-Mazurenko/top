@@ -13,6 +13,10 @@
   align-items: center;
 }
 
+.calendar__header div:first-of-type{
+  cursor: pointer;
+}
+
 .calendar__header__arrow__left {
   width: 5px;
   height: 10px;
