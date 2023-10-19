@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+
 
 const Wrapper = styled.div`
 background-color: #fff;
@@ -66,6 +68,7 @@ background: #FFF1F0;
 `;
 
 export interface ProjectCardProps {
+	id: number
 	title: string
 	body: string
 	avatarURL?: string
@@ -75,6 +78,7 @@ export interface ProjectCardProps {
 
 export const PersonalProjectCard = (props: ProjectCardProps) => {
 	const {
+		id,
 		title,
 		body,
 		avatarURL,
@@ -82,13 +86,15 @@ export const PersonalProjectCard = (props: ProjectCardProps) => {
 	} = props
 
 	return (
+		<Link to={`id/${id}`}>
 		<Wrapper>
 			<CardContainer>
-			<Avatar src={avatarURL} />
+				<Avatar src={avatarURL} />
 				<Title>{title}</Title>
 				<Body>{body}</Body>
 				<StatusBtn>{status}</StatusBtn>
 			</CardContainer>
 		</Wrapper>
+		</Link>
 	)
 }
