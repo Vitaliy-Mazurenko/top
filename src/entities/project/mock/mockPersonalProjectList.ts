@@ -1,76 +1,80 @@
 import { ProjectCardProps } from "../ui/PersonalProjectList/PersonalProjectCard";
+import avatarBiz from "shared/assets/img/defaultCadImg.svg";
+import avatarSubTitle from "shared/assets/img/masterCardImg.png";
+import avatarDropify from "shared/assets/img/dropifyCardImg.png";
+import avatarSalesClone from "shared/assets/img/salesCardImg.png";
 
 export const mockPersonalProjectList: ProjectCardProps[] = [
 	{
 		title: 'BizConnect',
 		body: 'Додаток для успішного бізнесу',
 		status: 'Пошук PM',
-		avatarURL: '/src/shared/assets/img/defaultCadImg.svg',
+		avatarURL: avatarBiz,
 	},
 	{
 		title: 'SubTitleMaster',
 		body: 'Дивіться фільми українською!',
 		status: 'Haбip команди',
-		avatarURL: '/src/shared/assets/img/masterCardImg.png',
+		avatarURL: avatarSubTitle,
 	},
 	{
 		title: 'DropifyPro',
 		body: 'Зручний інструмент для дропшиперів!',
 		status: 'В розробці',
-		avatarURL: '/src/shared/assets/img/dropifyCardImg.png',
+		avatarURL: avatarDropify,
 	},
 	{
 		title: 'SalesClone Pro',
 		body: 'Інноваційне рішення y продажах!',
 		status: 'Завершено',
-		avatarURL: '/src/shared/assets/img/salesCardImg.png',
+		avatarURL: avatarSalesClone,
 	},
 	{
 		title: 'SubTitleMaster',
 		body: 'Дивіться фільми українською!',
 		status: 'Haбip команди',
-		avatarURL: '/src/shared/assets/img/masterCardImg.png',
+		avatarURL: avatarSubTitle,
 	},
 	{
 		title: 'BizConnect',
 		body: 'Додаток для успішного бізнесу!',
 		status: 'Пошук PM',
-		avatarURL: '/src/shared/assets/img/defaultCadImg.svg',
+		avatarURL: avatarBiz,
 	},
 	{
 		title: 'DropifyPro',
 		body: 'Зручний інструмент для дропшиперів!',
 		status: 'В розробці',
-		avatarURL: '/src/shared/assets/img/dropifyCardImg.png',
+		avatarURL: avatarDropify,
 	},
 	{
 		title: 'SalesClone Pro',
 		body: 'Інноваційне рішення y продажах!',
 		status: 'Завершено',
-		avatarURL: '/src/shared/assets/img/salesCardImg.png',
+		avatarURL: avatarSalesClone,
 	},
 	{
 		title: 'SubTitleMaster',
 		body: 'Дивіться фільми українською!',
 		status: 'Haбip команди',
-		avatarURL: '/src/shared/assets/img/masterCardImg.png',
+		avatarURL: avatarSubTitle,
 	},
 	{
 		title: 'DropifyPro',
 		body: 'Зручний інструмент для дропшиперів!',
 		status: 'В розробці',
-		avatarURL: '/src/shared/assets/img/dropifyCardImg.png',
+		avatarURL: avatarDropify,
 	},
 	{
 		title: 'SalesClone Pro',
 		body: 'Інноваційне рішення y продажах!',
 		status: 'Завершено',
-		avatarURL: '/src/shared/assets/img/salesCardImg.png',
+		avatarURL: avatarSalesClone,
 	},
 	{
 		title: 'BizConnect',
 		body: 'Додаток для успішного бізнесу',
 		status: 'Пошук PM',
-		avatarURL: '/src/shared/assets/img/defaultCadImg.svg',
+		avatarURL: avatarBiz,
 	},
 ]
