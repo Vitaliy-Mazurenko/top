@@ -15,14 +15,36 @@ import {
   BurgerButton,
 } from "./DashboardHeader.styled";
 
+import { ITabInfo } from "shared/ui/Tabs/types/Tab";
+
 import logoImage from "shared/assets/img/logo.svg";
 import burgerIcon from "shared/assets/icons/burger.svg";
 import userIcon from "shared/assets/icons/user.svg";
+import settingsImg from "shared/assets/icons/settings.svg";
+import helpImg from "shared/assets/icons/orange-question-mark.svg";
 
 interface IDashboardHeaderProps {
   onMenuBtnClick: () => void;
   burgerButtonRef: RefObject<HTMLButtonElement>;
 }
+
+const optionsTabsData: ITabInfo[] = [
+  {
+    to: "/",
+    text: "Допомога",
+    leftIcon: helpImg,
+  },
+  {
+    to: "/",
+    text: "Налаштування",
+    leftIcon: settingsImg,
+  },
+  {
+    to: "/",
+    text: "Вийти",
+    leftIcon: userIcon,
+  },
+];
 
 export const DashboardHeader: FC<IDashboardHeaderProps> = ({
   onMenuBtnClick,
@@ -37,7 +59,7 @@ export const DashboardHeader: FC<IDashboardHeaderProps> = ({
           <HeaderInner>
             <StyledNotification />
             <StyledUserCredentials firstName="Ім'я" lastName="Прізвище" />
-            <StyledDropdownButton />
+            <StyledDropdownButton content={optionsTabsData} />
           </HeaderInner>
         </DesktopContent>
 

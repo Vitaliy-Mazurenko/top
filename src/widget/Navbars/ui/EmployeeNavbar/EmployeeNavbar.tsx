@@ -5,7 +5,7 @@ import { ProfileCard } from "entities/user";
 import { TabList } from "shared/ui/Tabs";
 import { ITabInfo } from "shared/ui/Tabs/types/Tab";
 
-import { LogoAndTabsWrap, LogoWrap, SideMenuWrap } from "../NavBar.styled";
+import { LogoWrap, SideMenuWrap } from "../NavBar.styled";
 import { EmployeeTabs } from "./EmployeeTabs";
 
 import logoImg from "shared/assets/img/logo.svg";
@@ -35,7 +35,7 @@ const optionsTabsData: ITabInfo[] = [
 export const EmployeeNavbar = () => {
   return (
     <SideMenuWrap>
-      <LogoAndTabsWrap>
+      <div>
         <Link to="/">
           <LogoWrap src={logoImg} alt="logo" />
         </Link>
@@ -46,7 +46,7 @@ export const EmployeeNavbar = () => {
           imgURL={defaultAvatar}
         />
         <EmployeeTabs />
-      </LogoAndTabsWrap>
+      </div>
       <TabList tabsInfo={optionsTabsData} />
     </SideMenuWrap>
   );

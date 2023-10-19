@@ -3,12 +3,7 @@ import { useMediaQuery } from "usehooks-ts";
 import { TabList } from "shared/ui/Tabs";
 import { ITabInfo } from "shared/ui/Tabs/types/Tab";
 
-import {
-  LogoAndTabsWrap,
-  LogoLink,
-  LogoWrap,
-  SideMenuWrap,
-} from "../NavBar.styled";
+import { LogoLink, LogoWrap, SideMenuWrap } from "../NavBar.styled";
 
 import logoURL from "shared/assets/img/logo.svg";
 import settingsImg from "shared/assets/icons/settings.svg";
@@ -82,12 +77,12 @@ export const ManagerNavbar: React.FC<IManagerNavBarProps> = ({ className }) => {
 
   return (
     <SideMenuWrap className={className}>
-      <LogoAndTabsWrap>
+      <div>
         <LogoLink to="/">
           <LogoWrap src={logoURL} alt="logo" />
         </LogoLink>
         <TabList tabsInfo={managerTabsData} />
-      </LogoAndTabsWrap>
+      </div>
       <TabList tabsInfo={optionsTabsData} />
     </SideMenuWrap>
   );

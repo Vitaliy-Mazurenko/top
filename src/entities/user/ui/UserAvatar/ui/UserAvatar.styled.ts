@@ -7,7 +7,6 @@ export const UserImageWrapper = styled.span`
 
   width: 2rem;
   height: 2rem;
-  border: 2px solid #ff8c33;
   overflow: hidden;
   background-color: #d6d6d6;
   border-radius: 50%;

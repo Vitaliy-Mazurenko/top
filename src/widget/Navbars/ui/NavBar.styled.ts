@@ -26,7 +26,7 @@ export const SideMenuWrap = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 40px;
 
   @media screen and (min-width: 1080px) {
     background-color: #f4f9fb;
@@ -44,8 +44,6 @@ export const DashboardContent = styled(SideMenuWrap)`
     padding-top: 20px;
   }
 `;
-
-export const LogoAndTabsWrap = styled.div``;
 
 export const LogoLink = styled(Link)`
   display: none;
