@@ -8,7 +8,8 @@ background-color: #fff;
 
 export const CardContainer = styled.div`
 	position: relative;
-	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 3px 4px 0px rgba(51, 51, 51, 0.2);
+	color: #333;
 	padding: 0.25rem 0;
 	height: 256px;
 	width: 272px;
@@ -45,56 +46,36 @@ const Avatar = styled.img`
 	margin: 0 auto;
     display: flex;
 `
-export const StatusBtn = styled.span`
-  cursor: pointer;
-  padding: 0.475rem 1rem; /* 6px 16px */
-  height: 2rem; /* 32px */
-  text-align: center;
-  color: #E96057;
-  margin: 0.625rem; /* 10px */
-  font-size: 0.875rem; /* 14px */
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  border-radius: 2px;
-  border: 1px solid #E96057;
-  max-width: max-content;
-  align-self: center;
 
-background: #FFF1F0;
-
-  @media (max-width: 480px) {
-    margin: 0.5rem;
-  }
-`;
-
-export interface ProjectCardProps {
+export interface PersonalProjectCardProps {
 	id: number
 	title: string
 	body: string
 	avatarURL?: string
-	status: string
+	status: 'Пошук PM' | 'Haбip команди' | 'В розробці' | 'Завершено'
+	slotStatus?: React.ReactNode
 
 }
 
-export const PersonalProjectCard = (props: ProjectCardProps) => {
+export const PersonalProjectCard = (props: PersonalProjectCardProps) => {
 	const {
 		id,
 		title,
 		body,
 		avatarURL,
-		status
+		slotStatus,
 	} = props
 
 	return (
-		<Link to={`id/${id}`}>
 		<Wrapper>
+		<Link to={`id/${id}`}>
 			<CardContainer>
 				<Avatar src={avatarURL} />
 				<Title>{title}</Title>
 				<Body>{body}</Body>
-				<StatusBtn>{status}</StatusBtn>
+				{slotStatus}
 			</CardContainer>
+			</Link>
 		</Wrapper>
-		</Link>
 	)
 }

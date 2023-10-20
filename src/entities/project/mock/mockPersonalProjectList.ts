@@ -1,10 +1,10 @@
-import { ProjectCardProps } from "../ui/PersonalProjectList/PersonalProjectCard";
+import { PersonalProjectCardProps } from "../ui/PersonalProjectList/PersonalProjectCard";
 import avatarBiz from "shared/assets/img/defaultCadImg.svg";
 import avatarSubTitle from "shared/assets/img/masterCardImg.png";
 import avatarDropify from "shared/assets/img/dropifyCardImg.png";
 import avatarSalesClone from "shared/assets/img/salesCardImg.png";
 
-export const mockPersonalProjectList: ProjectCardProps[] = [
+export const mockPersonalProjectList: PersonalProjectCardProps[] = [
 	{
 		id: 1,
 		title: 'BizConnect',
