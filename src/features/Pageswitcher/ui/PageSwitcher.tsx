@@ -43,7 +43,8 @@ export const PageSwitcher = () => {
               {
                 index === segments.length - 1 &&
               // <ActiveLink to={pathSegment.url}>{pathSegment.label}</ActiveLink>
-              <ActiveLink to={pathSegment.url}>Профіль</ActiveLink>
+              // <ActiveLink to={pathSegment.url}>Профіль</ActiveLink>
+              <ActiveLink to={pathSegment.url}>{pathSegment.label === 'Projects' ? 'Проекти' : (pathSegment.label === 'Settings') ? 'Профіль':''}</ActiveLink>
               }
             </>)
           }

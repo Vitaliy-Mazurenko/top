@@ -2,15 +2,16 @@ import { PersonalNavbar } from 'widget/Navbars';
 import { PageSwitcher } from 'features/Pageswitcher';
 import { SubNavbar } from 'features/SubNavbar';
 import { PageContainer, PageHeader, PageInner } from 'shared/ui/page-layout';
+import { PersonalProjectList } from 'entities/project/ui/PersonalProjectList';
 
-import MobileHeader from './MobileHeader/MobileHeader';
+// import MobileHeader from './MobileHeader/MobileHeader';
 
 
 export const PersonalPage = () => {
 
   return (
     <PageContainer>
-      <MobileHeader />
+      {/* <MobileHeader /> */}
       <PersonalNavbar />
 
       <PageInner>
@@ -22,9 +23,7 @@ export const PersonalPage = () => {
           { label: 'Проєкти', url: '' },
           { label: 'Команда', url: '' },
         ]} />
-        {/* <PageInfo>
-
-        </PageInfo> */}
+        <PersonalProjectList />
       </PageInner >
     </PageContainer>
   );
