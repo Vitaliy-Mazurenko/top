@@ -163,7 +163,6 @@ export const DaschboardPage: FC = () => {
           </Container>
         </Content>
       </RightSideContent>
-      {/* <ManagerFooter /> */}
     </StyledDaschboard>
   );
 };

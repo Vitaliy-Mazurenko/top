@@ -6,10 +6,11 @@ import { TeamPage } from "pages/team";
 import { PersonalPage } from "pages/personal";
 import { Route, Routes } from "react-router-dom";
 import PopupTable from "shared/ui/Popup/Popup";
+import { ManagerLayout } from "widget/Layouts";
 const App = () => {
   return (
     <Routes>
-      <Route element={<DaschboardPage />} path="/" />
+      <Route element={<DaschboardPage />} path="/dashboard" />
       <Route element={<CalendarPage />} path="/calendar" />
 
       <Route element={<PersonalPage />} path="/personal" />
@@ -17,6 +18,17 @@ const App = () => {
       <Route element={<PopupTable />} path="/popup" />
       <Route element={<ProfilePage />} path="/profile" />
       <Route element={<ProfileSettingsPage />} path="/profile/settings" />
+
+      <Route element={<ManagerLayout />} path="/">
+        <Route index element={<></>} />
+        {/* <Route index element={<HomePage />} /> */}
+        <Route element={<></>} path="profile" />
+        <Route element={<></>} path="projects" />
+        <Route element={<></>} path="projects/:id" />
+        <Route element={<></>} path="notifications" />
+        <Route element={<></>} path="team" />
+        <Route element={<></>} path="team/:id" />
+      </Route>
     </Routes>
   );
 };

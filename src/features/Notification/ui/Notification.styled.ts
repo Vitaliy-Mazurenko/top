@@ -12,7 +12,6 @@ export const NotificationBadge = styled.span`
 
   width: 19px;
   height: 12px;
-  padding-top: 1px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,6 +19,6 @@ export const NotificationBadge = styled.span`
   border-radius: 110px;
   background-color: #df2209;
   color: white;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.57;
 `;

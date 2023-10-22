@@ -1,13 +1,14 @@
 import { useMediaQuery } from "usehooks-ts";
+import { RefObject } from "react";
 
 import { TabList } from "shared/ui/Tabs";
 import { ITabInfo } from "shared/ui/Tabs/types/Tab";
 
 import {
-  LogoAndTabsWrap,
+  AsideWrapper,
+  DashboardContent,
   LogoLink,
   LogoWrap,
-  SideMenuWrap,
 } from "../NavBar.styled";
 
 import logoURL from "shared/assets/img/logo.svg";
@@ -21,39 +22,43 @@ import calendar from "shared/assets/icons/calendar.svg";
 
 interface IManagerNavBarProps {
   className?: string;
+  mobileMenuRef?: RefObject<HTMLElement>;
 }
 
-const managerTabsData: ITabInfo[] = [
-  {
-    to: "/",
-    text: "Панель",
-    leftIcon: userImg,
-  },
-  {
-    to: "/",
-    text: "Витрати",
-    leftIcon: walletImg,
-  },
-  {
-    to: "/",
-    text: "Ефективність компаній",
-    leftIcon: efficientImg,
-  },
-  {
-    to: "/",
-    text: "Порівняння крі",
-    leftIcon: userImg,
-  },
-  {
-    to: "/",
-    text: "Курси та тренінги",
-    leftIcon: coursesImg,
-  },
-];
-
-export const ManagerNavbar: React.FC<IManagerNavBarProps> = ({ className }) => {
+export const DashboardNavBar: React.FC<IManagerNavBarProps> = ({
+  className,
+  mobileMenuRef,
+}) => {
   const isScreenWidthLessThan_480 = useMediaQuery("(max-width: 480px)");
   const isScreenWidthLessThan_767 = useMediaQuery("(max-width: 767px)");
+
+  const managerTabsData: ITabInfo[] = [
+    {
+      to: "/",
+      text: "Панель",
+      leftIcon: userImg,
+    },
+    {
+      to: "/",
+      text: "Витрати",
+      leftIcon: walletImg,
+    },
+    {
+      to: "/",
+      text: "Ефективність компаній",
+      leftIcon: efficientImg,
+    },
+    {
+      to: "/",
+      text: "Порівняння крі",
+      leftIcon: userImg,
+    },
+    {
+      to: "/",
+      text: "Курси та тренінги",
+      leftIcon: coursesImg,
+    },
+  ];
 
   const optionsTabsData: ITabInfo[] = [
     {
@@ -74,21 +79,23 @@ export const ManagerNavbar: React.FC<IManagerNavBarProps> = ({ className }) => {
   ];
 
   isScreenWidthLessThan_767 &&
-    optionsTabsData.push({
+    managerTabsData.push({
       to: "/calendar",
       text: "Календар",
       leftIcon: calendar,
     });
 
   return (
-    <SideMenuWrap className={className}>
-      <LogoAndTabsWrap>
-        <LogoLink to="/">
-          <LogoWrap src={logoURL} alt="logo" />
-        </LogoLink>
-        <TabList tabsInfo={managerTabsData} />
-      </LogoAndTabsWrap>
-      <TabList tabsInfo={optionsTabsData} />
-    </SideMenuWrap>
+    <AsideWrapper ref={mobileMenuRef} className={className}>
+      <DashboardContent>
+        <div>
+          <LogoLink to="/">
+            <LogoWrap src={logoURL} alt="logo" />
+          </LogoLink>
+          <TabList tabsInfo={managerTabsData} />
+        </div>
+        <TabList tabsInfo={optionsTabsData} />
+      </DashboardContent>
+    </AsideWrapper>
   );
 };

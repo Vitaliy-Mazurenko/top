@@ -6,7 +6,6 @@ import { DropdownButton } from "features/DropdownButton";
 export const ClientMenuContainer = styled.div`
   display: flex;
   align-items: center;
-  padding-right: 20px;
   @media (max-width: 480px) {
     display: none;
   }

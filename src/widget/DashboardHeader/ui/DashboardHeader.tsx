@@ -1,7 +1,6 @@
 import { FC, RefObject } from "react";
 
 import { Container } from "shared/ui/Container";
-import { UkrainianFlag } from "shared/ui/CustomSVG/UkrainianFlag";
 
 import {
   ControlButton,
@@ -38,7 +37,6 @@ export const DashboardHeader: FC<IDashboardHeaderProps> = ({
           <HeaderInner>
             <StyledNotification />
             <StyledUserCredentials firstName="Ім'я" lastName="Прізвище" />
-            <UkrainianFlag />
             <StyledDropdownButton />
           </HeaderInner>
         </DesktopContent>
