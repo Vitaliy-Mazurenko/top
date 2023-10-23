@@ -21,12 +21,12 @@ const App = () => {
       <Route element={<ManagerLayout />} path="/">
         <Route index element={<></>} />
         {/* <Route index element={<HomePage />} /> */}
-        <Route element={<></>} path="profile_admin" />
+        {/* <Route element={<></>} path="profile_admin" /> */}
         <Route element={<PersonalPage />} path="projects" />
         <Route element={<ProjectItemPage />} path="projects/:id" />
-        <Route element={<></>} path="notifications" />
+        {/* <Route element={<></>} path="notifications" /> */}
         <Route element={<TeamPage />} path="team" />
-        <Route element={<></>} path="team/:id" />
+        {/* <Route element={<></>} path="team/:id" /> */}
       </Route>
     </Routes>
   );
