@@ -8,6 +8,7 @@ interface IStatuses {
   [index: string]: {
     color?: string;
     backgroundColor?: string;
+    borderColor?: string
   };
 }
 
@@ -26,6 +27,7 @@ export const PersonalProjectList = () => {
             <Status
               $textColor={projectStatuses[project.status].color} // нам нужно обратится в объект projectStatuses и добратся до нужного цвета текста. Залезаем в объект, указываем ключ в квадратных скобках. Далее обращаемся к полю color. Аналогично делаем с пропсом $backgroundColor
               $backgroundColor={projectStatuses[project.status].backgroundColor}
+              $borderColor={projectStatuses[project.status].color}
             >
               {project.status}
             </Status>

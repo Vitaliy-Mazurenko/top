@@ -23,15 +23,11 @@ interface IManagerNavBarProps {
   className?: string;
 }
 
-// HEAD:src/widget/Navbars/DashboardNavBar/DashboardNavBar.tsx
-
 
 export const DashboardNavBar: React.FC<IManagerNavBarProps> = ({
   className,
 }) => {
 
-//export const ManagerNavbar: React.FC<IManagerNavBarProps> = ({ className }) => {
-// personal:src/widget/Navbars/ui/ManagerNavbar/ManagerNavbar.tsx
   const isScreenWidthLessThan_480 = useMediaQuery("(max-width: 480px)");
   const isScreenWidthLessThan_767 = useMediaQuery("(max-width: 767px)");
 

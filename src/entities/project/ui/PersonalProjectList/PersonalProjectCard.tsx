@@ -20,12 +20,12 @@ const Title = styled.h6`
   ${({ theme }) => theme.typography["Heading-6"]};
   margin-top: 0.5rem;
   text-align: center;
-  &::before {
+  /* &::before {
     content: " ";
     width: 1rem;
     height: 1px;
     background-color: rgba(31, 36, 40, 0.5);
-  }
+  } */
 `;
 
 const Body = styled.p`
@@ -45,6 +45,13 @@ const Avatar = styled.img`
   display: flex;
 `;
 
+interface IProject {
+  id: number;
+  title: string;
+  body: string;
+  avatarURL?: string;
+  status: "Пошук PM" | "Haбip команди" | "В розробці" | "Завершено";
+}
 export interface PersonalProjectCardProps {
   id: number;
   title: string;
@@ -52,6 +59,7 @@ export interface PersonalProjectCardProps {
   avatarURL?: string;
   status: "Пошук PM" | "Haбip команди" | "В розробці" | "Завершено";
   slotStatus?: React.ReactNode;
+  filter?(arg0: (project: IProject) => boolean): import("react").ReactNode;
 }
 
 export const PersonalProjectCard = (props: PersonalProjectCardProps) => {

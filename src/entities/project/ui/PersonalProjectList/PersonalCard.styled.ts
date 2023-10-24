@@ -9,19 +9,18 @@ cursor: pointer;
 export const Status = styled.div<{
 	$backgroundColor?: string
 	$textColor?: string
-	// таким же образом можно добавить border
+  $borderColor?: string 	//  добавить border
 }>`
   cursor: pointer;
   padding: 0.475rem 1rem; /* 6px 16px */
   text-align: center;
-  color: #E96057;
   margin: 0.625rem; /* 10px */
-  font-size: 0.875rem; /* 14px */
-  font-size: 14px;
+  font-size: 14px; /* 0.875rem; */
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   border-radius: 2px;
-  border: 1px solid #ECB23F;
+  border-width: 1px;
+  border-style: solid;
   max-width: max-content;
   align-self: center;
 
@@ -34,5 +33,8 @@ export const Status = styled.div<{
 	`}
 	${props => props.$textColor && css`
 	color: ${props.$textColor};
+	`}
+  ${props => props.$borderColor && css`
+	border-color: ${props.$borderColor};
 	`}
 `
