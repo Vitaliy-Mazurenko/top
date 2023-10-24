@@ -4,7 +4,7 @@ import { TabList } from "shared/ui/Tabs";
 import { ITabInfo } from "shared/ui/Tabs/types/Tab";
 
 import {
-  LogoAndTabsWrap,
+  // LogoAndTabsWrap,
   LogoLink,
   LogoWrap,
   SideMenuWrap,
@@ -23,41 +23,15 @@ interface IManagerNavBarProps {
   className?: string;
 }
 
-<<<<<<< HEAD:src/widget/Navbars/DashboardNavBar/DashboardNavBar.tsx
-const managerTabsData: ITabInfo[] = [
-  {
-    to: "/",
-    text: "Панель",
-    leftIcon: userImg,
-  },
-  {
-    to: "/",
-    text: "Витрати",
-    leftIcon: walletImg,
-  },
-  {
-    to: "/",
-    text: "Ефективність компаній",
-    leftIcon: efficientImg,
-  },
-  {
-    to: "/",
-    text: "Порівняння крі",
-    leftIcon: userImg,
-  },
-  {
-    to: "/",
-    text: "Курси та тренінги",
-    leftIcon: coursesImg,
-  },
-];
+// HEAD:src/widget/Navbars/DashboardNavBar/DashboardNavBar.tsx
+
 
 export const DashboardNavBar: React.FC<IManagerNavBarProps> = ({
   className,
 }) => {
-=======
-export const ManagerNavbar: React.FC<IManagerNavBarProps> = ({ className }) => {
->>>>>>> personal:src/widget/Navbars/ui/ManagerNavbar/ManagerNavbar.tsx
+
+//export const ManagerNavbar: React.FC<IManagerNavBarProps> = ({ className }) => {
+// personal:src/widget/Navbars/ui/ManagerNavbar/ManagerNavbar.tsx
   const isScreenWidthLessThan_480 = useMediaQuery("(max-width: 480px)");
   const isScreenWidthLessThan_767 = useMediaQuery("(max-width: 767px)");
 
@@ -117,12 +91,12 @@ export const ManagerNavbar: React.FC<IManagerNavBarProps> = ({ className }) => {
   return (
     <aside className={className}>
       <SideMenuWrap>
-        <LogoAndTabsWrap>
+        {/* <LogoAndTabsWrap> */}
           <LogoLink to="/">
             <LogoWrap src={logoURL} alt="logo" />
           </LogoLink>
           <TabList tabsInfo={managerTabsData} />
-        </LogoAndTabsWrap>
+        {/* </LogoAndTabsWrap> */}
         <TabList tabsInfo={optionsTabsData} />
       </SideMenuWrap>
     </aside>
