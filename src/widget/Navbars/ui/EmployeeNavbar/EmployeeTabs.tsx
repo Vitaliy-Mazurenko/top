@@ -78,7 +78,7 @@ export const EmployeeTabs = () => {
     {
       text: "команда",
       leftIcon: teamImg,
-      to: "/",
+      to: "/team",
     },
     {
       text: "проєкти",
