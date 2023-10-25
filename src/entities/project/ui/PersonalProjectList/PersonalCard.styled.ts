@@ -5,6 +5,9 @@ export const StyledPersonalProjectCard = styled(PersonalProjectCard) <{ $backgro
 flex-basis: 15rem;
 cursor: pointer;
 `
+export const StyledPersonalProjectItem = styled(PersonalProjectCard) <{ $background?: string }>`
+background-color: #F4F9FB;
+`
 
 export const Status = styled.div<{
 	$backgroundColor?: string

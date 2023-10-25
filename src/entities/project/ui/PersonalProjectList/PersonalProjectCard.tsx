@@ -45,13 +45,13 @@ const Avatar = styled.img`
   display: flex;
 `;
 
-interface IProject {
-  id: number;
-  title: string;
-  body: string;
-  avatarURL?: string;
-  status: "Пошук PM" | "Haбip команди" | "В розробці" | "Завершено";
-}
+// interface IProject {
+//   id: number;
+//   title: string;
+//   body: string;
+//   avatarURL?: string;
+//   status: "Пошук PM" | "Haбip команди" | "В розробці" | "Завершено";
+// }
 export interface PersonalProjectCardProps {
   id: number;
   title: string;
@@ -59,7 +59,7 @@ export interface PersonalProjectCardProps {
   avatarURL?: string;
   status: "Пошук PM" | "Haбip команди" | "В розробці" | "Завершено";
   slotStatus?: React.ReactNode;
-  filter?(arg0: (project: IProject) => boolean): import("react").ReactNode;
+  // filter?(arg0: (project: IProject) => boolean): import("react").ReactNode;
 }
 
 export const PersonalProjectCard = (props: PersonalProjectCardProps) => {
