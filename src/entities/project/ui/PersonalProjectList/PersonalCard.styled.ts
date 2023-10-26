@@ -5,7 +5,7 @@ export const StyledPersonalProjectCard = styled(PersonalProjectCard) <{ $backgro
 flex-basis: 15rem;
 cursor: pointer;
 `
-export const StyledPersonalProjectItem = styled(PersonalProjectCard) <{ $background?: string }>`
+export const StyledPersonalProjectItem = styled.div`
 background-color: #F4F9FB;
 `
 
