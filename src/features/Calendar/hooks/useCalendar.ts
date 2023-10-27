@@ -90,7 +90,9 @@ export const useCalendar = ({
 
   const onClickArrow = (direction: 'right' | 'left') => {
     if (mode === 'years' && direction === 'left') {
-      return setSelectedYearsInterval(getYearsInterval(selectedYearsInterval[0] - 10));
+      if (selectedYearsInterval[0] > 1970) {
+        return setSelectedYearsInterval(getYearsInterval(selectedYearsInterval[0] - 10));
+      }
     }
 
     if (mode === 'years' && direction === 'right') {

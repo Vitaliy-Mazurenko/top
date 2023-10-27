@@ -49,6 +49,27 @@
   margin-bottom: 9px;
 }
 
+.calendar__week__names > div::selection{
+  background-color: transparent;
+}
+
+.calendar__header div:first-of-type{
+  cursor: pointer;
+}
+
+.calendar__header div:first-of-type::after{
+  content: '';
+  position: absolute;
+  bottom: 13px;
+  width: 7px;
+  height: 7px;
+  border: 4px solid #6e7781;
+  border-width: 2px 0 0 2px;
+  transform: rotate(225deg);
+  margin-left: 7px;
+  cursor: pointer;
+}
+
 .calendar__days {
   font-size: 14px;
   font-weight: 400;
