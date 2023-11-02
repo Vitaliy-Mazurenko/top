@@ -22,7 +22,7 @@ const getYearsInterval = (year: number) => {
 };
 
 export const useCalendar = ({
-  locale = 'default',
+  locale = 'uk-UA',
   selectedDate: date,
   firstWeekDayNumber = 2
 }: UseCalendarParams) => {
@@ -101,8 +101,10 @@ export const useCalendar = ({
 
     if (mode === 'monthes' && direction === 'left') {
       const year = selectedYear - 1;
+      if (year > 1969) {
       if (!selectedYearsInterval.includes(year)) setSelectedYearsInterval(getYearsInterval(year));
       return setSelectedYear(selectedYear - 1);
+      }
     }
 
     if (mode === 'monthes' && direction === 'right') {

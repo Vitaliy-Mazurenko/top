@@ -53,6 +53,10 @@
   background-color: transparent;
 }
 
+.calendar__pick__item::selection{
+  background-color: transparent;
+}
+
 .calendar__header div:first-of-type{
   cursor: pointer;
 }
