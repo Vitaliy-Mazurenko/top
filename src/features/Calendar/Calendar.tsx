@@ -30,23 +30,8 @@ export const Calendar: React.FC<CalendarProps> = ({
     <div className={`calendar ${className}`}>
       <div className="calendar__header">
         {state.mode === "days" && (
-          <div aria-hidden onClick={() => functions.setMode("monthes")}>
-            {state.monthesNames[state.selectedMonth.monthIndex].month}
-          </div>
-        )}
-        {state.mode === "monthes" && (
-          <div aria-hidden onClick={() => functions.setMode("years")}>
-            {state.selectedYear}
-          </div>
-        )}
-        {state.mode === "years" && (
-          <div>
-            {state.selectedYearsInterval[0]} -{" "}
-            {
-              state.selectedYearsInterval[
-                state.selectedYearsInterval.length - 1
-              ]
-            }
+          <div aria-hidden>
+            {state.monthesNames[state.selectedMonth.monthIndex].month} {state.selectedYear}
           </div>
         )}
         <div className="calendar__header__arrow">
@@ -131,71 +116,6 @@ export const Calendar: React.FC<CalendarProps> = ({
               })}
             </div>
           </>
-        )}
-
-        {state.mode === "monthes" && (
-          <div className="calendar__pick__items__container">
-            {state.monthesNames.map((monthesName) => {
-              const isCurrentMonth =
-                new Date().getMonth() === monthesName.monthIndex &&
-                state.selectedYear === new Date().getFullYear();
-              const isSelectedMonth =
-                monthesName.monthIndex === state.selectedMonth.monthIndex;
-
-              return (
-                <div
-                  key={monthesName.month}
-                  aria-hidden
-                  onClick={() => {
-                    functions.setSelectedMonthByIndex(monthesName.monthIndex);
-                    functions.setMode("days");
-                  }}
-                  className={[
-                    "calendar__pick__item",
-                    isSelectedMonth ? "calendar__selected__item" : "",
-                    isCurrentMonth ? "calendar__today__item" : "",
-                  ].join(" ")}
-                >
-                  {monthesName.monthShort}
-                </div>
-              );
-            })}
-          </div>
-        )}
-
-        {state.mode === "years" && (
-          <div className="calendar__pick__items__container">
-            <div className="calendar__unchoosable__year">
-              {state.selectedYearsInterval[0] - 1}
-            </div>
-            {state.selectedYearsInterval.map((year) => {
-              const isCurrentYear = new Date().getFullYear() === year;
-              const isSelectedYear = year === state.selectedYear;
-
-              return (
-                <div
-                  key={year}
-                  aria-hidden
-                  onClick={() => {
-                    functions.setSelectedYear(year);
-                    functions.setMode("monthes");
-                  }}
-                  className={[
-                    "calendar__pick__item",
-                    isCurrentYear ? "calendar__today__item" : "",
-                    isSelectedYear ? "calendar__selected__item" : "",
-                  ].join(" ")}
-                >
-                  {year}
-                </div>
-              );
-            })}
-            <div className="calendar__unchoosable__year">
-              {state.selectedYearsInterval[
-                state.selectedYearsInterval.length - 1
-              ] + 1}
-            </div>
-          </div>
         )}
       </div>
     </div>
