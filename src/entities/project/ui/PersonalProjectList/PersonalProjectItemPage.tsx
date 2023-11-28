@@ -91,7 +91,7 @@ cursor: pointer;
 `;
 
 interface PersonalProjectIdProps {
-  id: number | string;
+  id: number | string | undefined;
 }
 
 interface IProject {
