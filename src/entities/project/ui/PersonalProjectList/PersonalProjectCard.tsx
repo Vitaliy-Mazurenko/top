@@ -43,14 +43,17 @@ export interface PersonalProjectCardProps {
   id: number;
   title: string;
   body: string;
-  avatarURL?: string;
+  avatarURL: string;
   status: "Пошук PM" | "Haбip команди" | "В розробці" | "Завершено";
-  slotStatus?: React.ReactNode;
-  description?: string;
+  description: string;
   btnItem?: string;
 }
 
-export const PersonalProjectCard = (props: PersonalProjectCardProps) => {
+interface ExtendedPersonalProjectCardProps extends PersonalProjectCardProps { 
+  slotStatus: React.ReactNode;
+}
+
+export const PersonalProjectCard = (props: ExtendedPersonalProjectCardProps) => {
   const { id, title, body, avatarURL, slotStatus } = props;
 
   return (

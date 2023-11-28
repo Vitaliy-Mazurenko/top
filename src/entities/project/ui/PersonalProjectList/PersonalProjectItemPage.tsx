@@ -1,9 +1,17 @@
 import styled from "styled-components";
-// import { Link } from "react-router-dom";
+import { useMemo } from "react";
 import { mockPersonalProjectList } from "../../mock/mockPersonalProjectList";
-// import { FC } from "react";
 import { Status } from "./PersonalCard.styled";
 // import { StyledPersonalProjectItem } from "./PersonalCard.styled";
+import { getPersonalProjectStatuses } from "../../helpers/getPersonalProjectStatuses";
+
+// interface IStatuses {
+//   [index: string]: {
+//     color: string;
+//     backgroundColor: string;
+//     borderColor: string
+//   };
+// }
 
 const Wrapper = styled.div`
   background-color: #F4F9FB;
@@ -23,6 +31,10 @@ const Content = styled.div`
 const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1080px) {
+    flex-direction: column;
+  }
 `;
 
 const Avatar = styled.img`
@@ -40,6 +52,9 @@ const Title = styled.h6`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  @media (max-width: 1080px) {
+    font-size: 32px;
+  }
 `;
 
 const Subtitle = styled.p`
@@ -51,10 +66,6 @@ line-height: normal;
 width: 99%;
 `;
 
-const StatusItem = styled(Status)`
-margin-left: auto;
-  
-`
 const Description = styled.p`
 color: #333;
 font-family: Raleway;
@@ -79,24 +90,25 @@ margin-top: 30px;
 cursor: pointer;
 `;
 
-export interface PersonalProjectIdProps {
-  id?: number | string | undefined;
+interface PersonalProjectIdProps {
+  id: number | string;
 }
 
-export interface IProjects {
+interface IProject {
   id: number | string;
   title: string;
   body: string;
-  avatarURL?: string;
+  avatarURL: string;
   status: "Пошук PM" | "Haбip команди" | "В розробці" | "Завершено";
-  slotStatus?: React.ReactNode;
-  description?: string;
+  description: string;
   btnItem?: string;
 }
 
 export const PersonalProjectItemPage = (props: PersonalProjectIdProps) => {
-  const { id  } = props;
-  const projectsId = mockPersonalProjectList;
+  const projectStatuses = useMemo(getPersonalProjectStatuses, []);
+
+  const { id } = props;
+  const projectsId: IProject[] = mockPersonalProjectList;
 
   const projectFind = projectsId.find(
     (project) => (project.id == id)
@@ -111,7 +123,13 @@ export const PersonalProjectItemPage = (props: PersonalProjectIdProps) => {
           <Title>
             {projectFind?.title}
           </Title>
-          <StatusItem>{projectFind?.status}</StatusItem>
+          <Status
+              $textColor={projectStatuses[projectFind!.status].color} // нам нужно обратится в объект projectStatuses и добратся до нужного цвета текста. Залезаем в объект, указываем ключ в квадратных скобках. Далее обращаемся к полю color. Аналогично делаем с пропсом $backgroundColor
+              $backgroundColor={projectStatuses[projectFind!.status].backgroundColor}
+              $borderColor={projectStatuses[projectFind!.status].color}
+            >
+              {projectFind?.status}
+            </Status>
         </HeaderContent>
         <Subtitle>
           {projectFind?.body}
@@ -119,7 +137,7 @@ export const PersonalProjectItemPage = (props: PersonalProjectIdProps) => {
         <Description>
           {projectFind?.description}
         </Description>
-        {projectFind?.btnItem && <BtnItem>{projectFind?.btnItem}</BtnItem>}       
+        {projectFind?.btnItem && <BtnItem>{projectFind.btnItem}</BtnItem>}       
       </Content>
         
 
