@@ -1,6 +1,6 @@
-import { useMemo } from "react";
-import { StyledPersonalProjectCard, Status } from "./PersonalCard.styled";
-import { Wrapper } from "./Wrapper.styled";
+import { useMemo, useState } from "react";
+import { StyledPersonalProjectCard, Status, StyledPagination } from "./PersonalCard.styled";
+import { WrapperCards, WrapperContent } from "./Wrapper.styled";
 import { mockPersonalProjectList } from "../../mock/mockPersonalProjectList";
 import { getPersonalProjectStatuses } from "../../helpers/getPersonalProjectStatuses";
 
@@ -14,12 +14,22 @@ interface IStatuses {
 
 export const PersonalProjectList = () => {
   const projectStatuses: IStatuses = useMemo(getPersonalProjectStatuses, []);
-
   const projectsToShow = mockPersonalProjectList;
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [projectsPerPage] = useState<number>(12);
+  const lastProjectIndex = currentPage * projectsPerPage;
+  const firstProjectIndex = lastProjectIndex - projectsPerPage;
+  const currentProject = projectsToShow.slice(firstProjectIndex, lastProjectIndex);
+
+  const paginate = (pageNumbers:number) => setCurrentPage(pageNumbers);
+  console.log(currentPage);
+
+
 
   return (
-    <Wrapper>
-      {projectsToShow.map((project, index) => (
+    <WrapperContent>
+      <WrapperCards>
+      {currentProject.map((project, index) => (
         <StyledPersonalProjectCard
           key={index}
           {...project}
@@ -34,6 +44,13 @@ export const PersonalProjectList = () => {
           }
         />
       ))}
-    </Wrapper>
+      </WrapperCards>
+    <StyledPagination
+       projectsPerPage={projectsPerPage}
+       totalProjects={projectsToShow.length}
+       currentPage={currentPage}
+       paginate={paginate}
+       />
+    </WrapperContent>
   );
 };

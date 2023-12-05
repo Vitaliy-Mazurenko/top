@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { PersonalProjectCard } from "./PersonalProjectCard";
+import { Pagination } from "./Pagination";
 
 export const StyledPersonalProjectCard = styled(PersonalProjectCard) <{ $background?: string }>`
 flex-basis: 15rem;
@@ -40,4 +41,7 @@ export const Status = styled.div<{
   ${props => props.$borderColor && css`
 	border-color: ${props.$borderColor};
 	`}
+`
+export const StyledPagination = styled(Pagination) <{ projectsPerPage: number; totalProjects: number; currentPage: number; paginate: (page: number) => void }>`
+cursor: pointer;
 `

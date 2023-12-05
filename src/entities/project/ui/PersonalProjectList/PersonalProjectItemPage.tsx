@@ -98,7 +98,7 @@ interface IProject {
   id: number | string;
   title: string;
   body: string;
-  avatarURL: string;
+  avatarURL?: string;
   status: "Пошук PM" | "Haбip команди" | "В розробці" | "Завершено";
   description: string;
   btnItem?: string;

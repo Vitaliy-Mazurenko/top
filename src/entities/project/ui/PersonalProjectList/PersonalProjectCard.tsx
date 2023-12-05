@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Wrapper = styled.div`
+const CardCWrapper = styled.div`
   background-color: #fff;
 `;
 
-export const CardContainer = styled.div`
+export const Card = styled.div`
   position: relative;
   box-shadow: 0px 3px 4px 0px rgba(51, 51, 51, 0.2);
   color: #333;
@@ -57,15 +57,15 @@ export const PersonalProjectCard = (props: ExtendedPersonalProjectCardProps) => 
   const { id, title, body, avatarURL, slotStatus } = props;
 
   return (
-    <Wrapper>
+    <CardCWrapper>
       <Link to={`${id}`}>
-        <CardContainer>
+        <Card>
           <Avatar src={avatarURL} />
           <Title>{title}</Title>
           <Body>{body}</Body>
           {slotStatus}
-        </CardContainer>
+        </Card>
       </Link>
-    </Wrapper>
+    </CardCWrapper>
   );
 };
