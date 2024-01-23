@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const PageSwitcherContainer = styled.div`
-  padding: 16px 0;
+  padding: 12px 0 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -18,7 +18,7 @@ export const ExtraText = styled.span`
 
 export const ActiveLink = styled(Link)`
   color: #636366;
-  font-size: 12px;
+  font-size: 20px;
   font-family: "Inter", sans-serif;
   font-weight: 400;
   line-height: 20px;

@@ -13,8 +13,8 @@ export const DesktopHeader = styled(StyledHeader)`
 
   @media screen and (min-width: 1080px) {
     display: block;
-    margin-bottom: 40px;
-    padding: 20px 0;
+    margin-bottom: 0px; //- 40px
+    padding: 15px 0 0;
   }
 `;
 

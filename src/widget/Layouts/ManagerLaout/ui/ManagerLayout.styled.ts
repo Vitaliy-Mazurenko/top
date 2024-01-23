@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
 
   @media screen and (min-width: 1080px) {
     display: flex;
-    padding-right: 5.3%;
+    padding-right: 1.0%;
   }
 `;
 
@@ -23,7 +23,6 @@ export const RightSideContent = styled.div`
   @media screen and (min-width: 1080px) {
     margin-left: 227px;
     flex-basis: 83.4%;
-    padding-bottom: 40px;
   }
 
   @media screen and (min-width: 1450px) {
