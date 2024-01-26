@@ -22,8 +22,6 @@ export const PersonalProjectList = () => {
   const currentProject = projectsToShow.slice(firstProjectIndex, lastProjectIndex);
 
   const paginate = (pageNumbers:number) => setCurrentPage(pageNumbers);
-  console.log(currentPage);
-
 
 
   return (
