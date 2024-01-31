@@ -20,7 +20,6 @@ const PaginationLi = styled.li<{
   margin-top: 0.5rem;
   font-size: 0.8rem;
   text-align: center;
-  cursor: pointer;
   border-radius: 4px;
   border: 1px solid #E9E9E9;
   border-color: ${(props) =>
@@ -33,6 +32,7 @@ const PaginationLink = styled.a<{ onClick: (page: number) => void }>` //  () => 
   display: inline-block;
   height: 31px;
   width: 31px;
+  cursor: pointer;
 `;
 
 const PrevPage = styled.span`
