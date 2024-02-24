@@ -23,6 +23,12 @@ export const PersonalProjectList = () => {
 
   const paginate = (pageNumbers:number) => setCurrentPage(pageNumbers);
 
+  const lastPage = Math.ceil(projectsToShow.length / projectsPerPage);
+  const arrOfPages: (number)[] = [];
+  for(let i = 1; i <= lastPage; i++){
+    arrOfPages.push(i);
+  }
+
 
   return (
     <WrapperContent>
@@ -44,8 +50,8 @@ export const PersonalProjectList = () => {
       ))}
       </WrapperCards>
     <StyledPagination
-       projectsPerPage={projectsPerPage}
-       totalProjects={projectsToShow.length}
+       arrOfPages={arrOfPages}
+       lastPage={lastPage}
        currentPage={currentPage}
        paginate={paginate}
        />

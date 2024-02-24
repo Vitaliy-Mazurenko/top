@@ -13,8 +13,8 @@ export const PersonalPage = () => {
         sublinks={[
           { label: "Налаштування", url: "" },
           { label: "Сповіщення", url: "" },
-          { label: "Проєкти", url: "" },
-          { label: "Команда", url: "" },
+          { label: "Проєкти", url: "/projects" },
+          { label: "Команда", url: "/team" },
         ]}
       />
       <PersonalProjectList />

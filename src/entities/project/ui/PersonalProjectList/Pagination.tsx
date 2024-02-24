@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,6 +16,7 @@ export const PaginationUl = styled.ul`
 
 const PaginationLi = styled.li<{
   $active: boolean;
+  $pasive: boolean;
 }>`
   margin-top: 0.5rem;
   font-size: 0.8rem;
@@ -23,7 +24,7 @@ const PaginationLi = styled.li<{
   border-radius: 4px;
   border: 1px solid #E9E9E9;
   border-color: ${(props) =>
-    props.$active ? "#956CE6" : "#E9E9E9"};
+    props.$pasive ? "transparent" : props.$active ? "#956CE6" : "#E9E9E9"};
 `;
 
 const PaginationLink = styled.a<{ onClick: (page: number) => void }>` //  () => number
@@ -61,37 +62,50 @@ const NextPage = styled.span`
 
 
 interface childrenProps {
-  projectsPerPage: number,
-  totalProjects: number,
+  arrOfPages: number[],
+  lastPage: number,
   currentPage: number,
   paginate: (page: number) => void,// setCurrentPage: (page: number) => void;    () => number,
 }
 
 
-export const Pagination: React.FC<childrenProps> = ({projectsPerPage, totalProjects, currentPage, paginate}): JSX.Element => {
-  const pageNumbers = [];
-
-  for(let i = 1; i <= Math.ceil(totalProjects / projectsPerPage); i++){
-    pageNumbers.push(i);
-  }
+export const Pagination: React.FC<childrenProps> = ({arrOfPages, lastPage, currentPage, paginate}): JSX.Element => {
 
   const prevPageHandler = () => {
     if(currentPage !== 1) {
        paginate(currentPage - 1)}    
   }
   const nextPageHandler = () => {
-    if(currentPage !== Math.ceil(totalProjects / projectsPerPage)) {
+    if(currentPage !== lastPage) {
        paginate(currentPage + 1)}    
   }
+
+  const [arrOfCcurrentPage, setArrOfCurrentPage] = useState<Array<number>>([])
+
+  useEffect (() => {
+    let temparrOfPages: number[] = [...arrOfPages];
+    temparrOfPages = [...temparrOfPages.slice(0, 4), lastPage];
+    if(currentPage === 3){
+      temparrOfPages = [2, 3, 4, 5, lastPage];
+    }
+    if(currentPage === 4){
+      temparrOfPages = [3, 4, 5, 6, lastPage];
+    }
+    if(currentPage === 5 || currentPage === 6 || currentPage === 7){
+      temparrOfPages = [3, 4, 5, 6, lastPage];
+    }
+    setArrOfCurrentPage(temparrOfPages);
+
+  },[currentPage, arrOfPages, lastPage])
 
   return (
     <Wrapper>
         <PaginationUl>
         <PrevPage onClick={prevPageHandler}>&lt;</PrevPage>
           {           
-            pageNumbers.map(number => (
-              <PaginationLi key={number} $active={currentPage === number}>
-                <PaginationLink  onClick={() => paginate(number)}>{number === (Math.ceil(totalProjects / projectsPerPage) - 1) ? "..." : number}</PaginationLink> {/* href="!#" */}
+            arrOfCcurrentPage.map((page, index) => (
+              <PaginationLi key={index} $active={currentPage === page} $pasive={index === (3)}>
+                <PaginationLink  onClick={() => paginate(page)}>{index === (3) ? "..." : page}</PaginationLink> {/* href="!#" */}
               </PaginationLi>
             ))
           }

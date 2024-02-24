@@ -57,6 +57,7 @@ export const EmployeeTabs = () => {
       onClick: toggleProfileDropdown,
       text: "профіль",
       leftIcon: userImg,
+      to: "/profile",
     },
     {
       text: "портфоліо",
@@ -83,7 +84,7 @@ export const EmployeeTabs = () => {
     {
       text: "проєкти",
       leftIcon: lockImg,
-      to: "/",
+      to: "/projects",
     },
     {
       text: "репозиторій",
