@@ -88,11 +88,11 @@ export const Pagination: React.FC<childrenProps> = ({arrOfPages, lastPage, curre
     if(currentPage === 3){
       temparrOfPages = [2, 3, 4, 5, lastPage];
     }
-    if(currentPage === 4){
+    if(currentPage === 4 || currentPage === 5){
       temparrOfPages = [3, 4, 5, 6, lastPage];
     }
-    if(currentPage === 5 || currentPage === 6 || currentPage === 7){
-      temparrOfPages = [3, 4, 5, 6, lastPage];
+    if(currentPage > 5 ){
+      temparrOfPages = [1, 2, 5, 6, lastPage];
     }
     setArrOfCurrentPage(temparrOfPages);
 
@@ -104,8 +104,8 @@ export const Pagination: React.FC<childrenProps> = ({arrOfPages, lastPage, curre
         <PrevPage onClick={prevPageHandler}>&lt;</PrevPage>
           {           
             arrOfCcurrentPage.map((page, index) => (
-              <PaginationLi key={index} $active={currentPage === page} $pasive={index === (3)}>
-                <PaginationLink  onClick={() => paginate(page)}>{index === (3) ? "..." : page}</PaginationLink> {/* href="!#" */}
+              <PaginationLi key={index} $active={currentPage === page} $pasive={(index === 3 && currentPage < 6) || (index === 1 && currentPage > 5)}>
+                <PaginationLink  onClick={() => paginate(page)}>{(index === 3 && currentPage < 6) ? "..." : (index === 1 && currentPage > 5) ? "..." : page}</PaginationLink> {/* href="!#" */}
               </PaginationLi>
             ))
           }

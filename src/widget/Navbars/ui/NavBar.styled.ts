@@ -13,7 +13,8 @@ export const AsideWrapper = styled.aside`
   }
 
   @media screen and (min-width: 768px) {
-    width: 245px;
+    width: 200px;
+    /* width: 14%; */
   }
 
   @media screen and (min-width: 1080px) {
@@ -49,7 +50,7 @@ export const DashboardContent = styled(SideMenuWrap)`
 export const EmployeeContent = styled(SideMenuWrap)`
   @media screen and (min-width: 1080px) {
     padding-top: 20px;
-    padding-bottom: 80px;
+    padding-bottom: 30px;
   }
 `;
 

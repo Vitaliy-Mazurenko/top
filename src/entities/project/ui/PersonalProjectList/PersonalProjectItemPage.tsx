@@ -2,25 +2,24 @@ import styled from "styled-components";
 import { useMemo } from "react";
 import { mockPersonalProjectList } from "../../mock/mockPersonalProjectList";
 import { Status } from "./PersonalCard.styled";
+import { PersonalTeams } from "./PersonalTeams";
 // import { StyledPersonalProjectItem } from "./PersonalCard.styled";
 import { getPersonalProjectStatuses } from "../../helpers/getPersonalProjectStatuses";
 
-// interface IStatuses {
-//   [index: string]: {
-//     color: string;
-//     backgroundColor: string;
-//     borderColor: string
-//   };
-// }
+const BackgroundWrap = styled.div`
+  background-color: #F4F9FB;
+  display: flex;
+  flex-direction: column;
+`;
 
 const Wrapper = styled.div`
   background-color: #F4F9FB;
   font-family: 'Raleway',sans-serif;
-  height: calc(100vh - 240px);
+  height: calc(100vh - 310px);
   width: 100%;
-  margin-top: 30px;
+  margin-top: 10px;
   display: flex;
-  padding: 14px 24px;
+  padding: 14px 24px 0px;
 `;
 
 const Content = styled.div`
@@ -86,7 +85,7 @@ gap: 10px;
 border-radius: 2px;
 background: #FF8C33;
 color: #FFFFFF;
-margin-top: 30px;
+margin-top: 20px;
 cursor: pointer;
 `;
 
@@ -116,6 +115,7 @@ export const PersonalProjectItemPage = (props: PersonalProjectIdProps) => {
 
 
   return (
+    <BackgroundWrap>
     <Wrapper>     
       <Avatar src={projectFind?.avatarURL} />
       <Content>
@@ -138,10 +138,11 @@ export const PersonalProjectItemPage = (props: PersonalProjectIdProps) => {
           {projectFind?.description}
         </Description>
         {projectFind?.btnItem && <BtnItem>{projectFind.btnItem}</BtnItem>}       
-      </Content>
-        
-
+      </Content>          
 
     </Wrapper>
+    <PersonalTeams/>
+    </BackgroundWrap>
+    
   );
 };
