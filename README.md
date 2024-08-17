@@ -1,2 +1,2 @@
-# proj-topizdato-frontend
-Frontend for backoffice of Topizdato
+# proj-top-frontend
+Frontend for backoffice of Top
