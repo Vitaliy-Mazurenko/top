@@ -1,6 +1,6 @@
 import  { useState, } from 'react'
 import { NavLink, BrowserRouter as Router} from 'react-router-dom';
-import logoImg from 'shared/assets/img/logo.png'
+import logoImg from 'shared/assets/img/logo.svg'
 import userImg from 'shared/assets/img/user.png'
 import teamImg from 'shared/assets/img/team.png'
 import lockImg from 'shared/assets/img/lock.png'
